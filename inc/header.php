@@ -40,12 +40,6 @@ $config=mysql_fetch_array(mysql_query("select * from js_webconfig where no=1"));
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 	/>
-	<!-- swiper.js js-->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-	<script src="/common/js/incaron_ui.js"></script>
-	<script src="/common/js/front.js"></script>
-
 	<!-- 230228 -->
 	<link rel="stylesheet" href="/common/js/jquery.bxslider.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -65,6 +59,11 @@ $config=mysql_fetch_array(mysql_query("select * from js_webconfig where no=1"));
 	</script>
 </head>
 
+	<!-- swiper.js js-->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+	<script src="/common/js/incaron_ui.js"></script>
+	<script src="/common/js/front.js"></script>
 <body>
 <iframe name="AdminFrm" id="AdminFrm" style="display:none;"></iframe>
 
@@ -74,16 +73,10 @@ if(preg_match($mobileBrower, $_SERVER['HTTP_USER_AGENT'])) {
 }else{
 ?>
 <!-- 퀵메뉴 -->
-  <div class="quick-menu" style="top: 178px;">
+  <!-- <div class="quick-menu" style="top: 178px;">
     <p class="quick-title">
       Quick Menu
     </p>
-    <!-- <a href="" class="menu-item">
-        <div class="icon">
-            <span class="icon-quick-dart"></span>
-        </div>
-        빠른메뉴
-    </a> -->
     <a href="/mypage/sub04.php" class="menu-item">
         <div class="icon">
             <span class="icon-quick-docu"></span>
@@ -114,7 +107,7 @@ if(preg_match($mobileBrower, $_SERVER['HTTP_USER_AGENT'])) {
         </div>
         1:1상담
     </a>
-  </div> 
+  </div>  -->
 <?
 }
 ?>
