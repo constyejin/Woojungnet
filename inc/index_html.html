@@ -1,0 +1,646 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incaron</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/common/css/base.css?v=221208"/>
+
+	<link rel="stylesheet" type="text/css" href="/common/css/style.css"/>
+  <!-- 2022.11.25 css추가  -->
+	<link rel="stylesheet" type="text/css" href="/common/css/add_style.css?v=2212081209"/>  
+  <!-- 2022.11.25 css추가  -->
+	<link rel="stylesheet" type="text/css" href="/common/css/incaron_style.css"/>  
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	
+	<!-- swiper.js css-->
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+	/>
+	<!-- swiper.js js-->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <div id="wrap" class="main">
+    <header class="bg-white">
+      <!-- gnb -->
+      <div class="gnb">
+        <div class="suffix">
+          <a href="" class="link-manage">[관리자모드]</a>
+          <span class="user-name">
+            홍길동님
+          </span>
+          <ul class="login-wrap">
+            <li>
+              <a href="" class="btn btn-sm btn-outline-gray btn-round">마이페이지</a>
+            </li>
+            <li>
+              <a href="" class="btn btn-sm btn-outline-gray btn-round login">
+                로그아웃
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <h1><span class="incaron-logo"></span></h1>
+        <ul class="nav-list depth-01">
+          <li><a href=""><span class="item">차량등록</span></a></li>
+          <li><a href=""><span class="item">보험경공매</span></a></li>
+          <li><a href=""><span class="item">스페셜매물</span></a></li>
+          <li><a href=""><span class="item">일반경공매</span></a></li>
+          <li><a href=""><span class="item">중고부품</span></a></li>
+          <li><a href=""><span class="item">고객센터</span></a></li>
+        </ul>
+        <div class="depth-02">
+          <div class="company-info">
+            <div class="logo">
+              <img src="/images/front/index_logo_nav.png" alt="인카온 로고">
+            </div>
+            <p class="text">보험사경공매온라인서비스</p>
+            <p class="tel">TEL: 02-428-7723</p>
+          </div>
+          <ul class="depth-02-list">
+            <li>
+              <ul>
+                <li><a href="" class="item">차량등록</a></li>
+                <li><a href="" class="item">사진추가등록</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="" class="item">공매(파손/도난)</a></li>
+                <li><a href="" class="item">공매(침수차량)</a></li>
+                <li><a href="" class="item">경매(파손/도난)</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="" class="item">공매물건</a></li>
+                <li><a href="" class="item">경매물건</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="" class="item">공매물건</a></li>
+                <li><a href="" class="item">경매물건</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="" class="item">중고부품</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="" class="item">공지사항</a></li>
+                <li><a href="" class="item">질문과답변</a></li>
+                <li><a href="" class="item">자료실</a></li>
+                <li><a href="" class="item">1:1상담</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main visual -->
+    <div class="main-visual swiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <img src="/mainimg/1676597648.jpg" alt="메인비주얼">
+        </li>
+        <li class="swiper-slide">
+          <img src="/mainimg/1673052962.jpg" alt="메인비주얼">
+        </li>
+        <li class="swiper-slide">
+          <img src="/mainimg/1676597628.jpg" alt="메인비주얼">
+        </li>
+        <li class="swiper-slide">
+          <img src="/mainimg/1676597859.jpg" alt="메인비주얼">
+        </li>
+      </ul>
+      <div class="main-text">
+        <p class="catch-phrase">
+          보험사 경공매 온라인 서비스<br>인카온에서 입찰경매를 시작하세요!!
+        </p>
+        <p class="sub-text">
+          보험사잔존물,사고차, 폐차등의 가치평가! 공정하고 투명하게 안전한서비스를 제공합니다.
+        </p>
+      </div>
+      
+    </div>
+    <!-- //main visual -->
+    <!-- contents -->
+    <div id="contents_basic">
+        <div class="notice-banner">
+          <div class="container">
+            <div class="notice">
+              <span class="header">
+                공지사항
+              </span>
+              <div class="notice-item">
+                <a href="" class="title">공지사항입니다.</a>
+                <span class="date">
+                  2022-12-31
+                </span>
+              </div>
+            </div>
+            <div class="btn-wrap">
+              <a href="" class="btn-more">+ 더보기</a>
+            </div>
+          </div>
+        </div>
+        <!-- 1:자동차리스트 -->
+        <div class="co_car_all">
+          <div class="co_car_tit">
+            <div class="co_car_area">
+              <div class="ctit">오늘의 경공매차량</div>
+              <div class="view"><a href="/sub02/sub02_1.php"><span>+</span>더보기</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="co_car_list for-sale">
+
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('134380');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230131_16751545460.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('134380')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0101679</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 르노삼성 /  르노삼성 -->
+                  SM3 / SM3 
+                </div>
+                <p>
+                  <span>2010-11</span> 
+                  |<span>오토</span>
+                  |<span>가솔린</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 울산 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [10:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('133224');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230110_16733098650.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('133224')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차/이전</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0100525</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 전기차 / 전기차 -->
+                  에디슨이브이 / 스마트 EV Z
+                </div>
+                <p>
+                  <span>2022-08</span> 
+                  |<span>오토</span>
+                  |<span>전기</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 경기 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [11:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('133224');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230110_16733098650.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('133224')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차/이전</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0100525</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 전기차 / 전기차 -->
+                  에디슨이브이 / 스마트 EV Z
+                </div>
+                <p>
+                  <span>2022-08</span> 
+                  |<span>오토</span>
+                  |<span>전기</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 경기 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [11:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('133224');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230110_16733098650.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('133224')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차/이전</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0100525</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 전기차 / 전기차 -->
+                  에디슨이브이 / 스마트 EV Z
+                </div>
+                <p>
+                  <span>2022-08</span> 
+                  |<span>오토</span>
+                  |<span>전기</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 경기 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [11:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('133224');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230110_16733098650.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('133224')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차/이전</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0100525</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 전기차 / 전기차 -->
+                  에디슨이브이 / 스마트 EV Z
+                </div>
+                <p>
+                  <span>2022-08</span> 
+                  |<span>오토</span>
+                  |<span>전기</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 경기 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [11:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('133224');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230110_16733098650.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('133224')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차/이전</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0100525</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 전기차 / 전기차 -->
+                  에디슨이브이 / 스마트 EV Z
+                </div>
+                <p>
+                  <span>2022-08</span> 
+                  |<span>오토</span>
+                  |<span>전기</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 경기 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [11:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+          <!-- 각 차량 -->
+          <div class="carbox" onclick="auctionView('133224');">
+              <div class="image-wrap"> 
+                <img src="http://kaicc.co.kr/data/20230110_16733098650.jpg" alt="챠량이미지">
+              </div>
+              <div class="area_h">
+                <button>
+                    <span>
+                      <i class="ico_carheart" onclick="zzim('133224')"></i>
+                      <!--
+                        description
+                        아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+                      -->
+                    </span>
+                </button>
+                <div class="ct_c">전손</div>
+                <div class="ct_r">폐차/이전</div>
+              </div>
+              <div class="number">
+                <div class="n_tit">23-0100525</div>
+                <div class="n_tit"><span>공매(파손)</span></div>
+              </div>
+
+              <div class="carname">
+                <div class="c_model">
+                  <!-- 전기차 / 전기차 -->
+                  에디슨이브이 / 스마트 EV Z
+                </div>
+                <p>
+                  <span>2022-08</span> 
+                  |<span>오토</span>
+                  |<span>전기</span>
+                </p>
+              </div>
+              <div class="carcheck">
+                <p><span>보관 : </span> 경기 </p>
+                <p><span>마감 : </span> <strong>2023-02-02 [11:00]</strong></p>
+              </div>
+          </div>
+          <!-- //각 차량 끝 --> 
+
+        </div>
+        <!-- //1:자동차리스트 -->
+        <!-- 2:배너영역 -->
+        <div class="main-half-banner">
+          <div class="banner">
+            <p class="title">모바일웹 버전에서도 입찰이 가능!!</p>
+            <p class="sub-text">모바일웹을 이용하여 실시간 피씨버전과 같은방식으로 언제어디서나 입찰에 참여할수 있습니다.</p>
+            <a href="" class="btn btn-round btn-white link">
+              <span class="label">모바일 도메인 주소: </span><span class="url">m.incaron.co.kr</span>
+            </a>
+          </div>
+          <div class="banner">
+            <p class="title">가치평가 및 내차 팔기</p>
+            <p class="sub-text">손상, 사고, 폐차 상태인 자동차를 믿고 맡겨 주십시요.
+              높은 가격으로 신속, 정확히 매각 할 수 있습니다.</p>
+            <a href="" class="btn btn-round btn-white link">
+              <span class="label">차량상담</span><span class="icon-arrow-half"></span>
+            </a>
+          </div>
+        </div>
+        <!-- //2:배너영역 -->
+        <!-- 3:서비스영역 -->
+        <div class="co_car_ser">
+            <div class="ser_tit">인카온 경공매온라인서비스와  함께 하시면 국내 보험사의 입찰차량을 만날 수 있습니다.</div>
+            <div class="inform">
+                <div class="in_box">
+                    <span class="img-wrap"><img src="/images/front/img_banner_small_01.jpg" alt=""></span>
+                    <div class="in_tit">전문가의 정확한 판단</div>
+                    <p>내 차량에 대한 가치평가<br>차량전문가가 신속,정확하게<br>평가 진단하여 드립니다.</p>
+                </div>
+                <div class="in_box">
+                    <span class="img-wrap"><img src="/images/front/img_banner_small_02.jpg" alt=""></span>
+                    <div class="in_tit">국내 보험사잔존물 입찰</div>
+                    <p>보험사잔존물 매각물건을<br>인카온에서 입찰과 낙찰을<br>진행할 수 있습니다.</p>
+                </div>
+                <div class="in_box">
+                    <span class="img-wrap"><img src="/images/front/img_banner_small_03.jpg" alt=""></span>
+                    <div class="in_tit">경공매 온라인서비스</div>
+                    <p>매각물건에 대하여 투명하고<br>공정하게 회원사에 대한 원활한<br>소통을 제공합니다.</p>
+                </div>
+                <div class="in_box">
+                    <span class="img-wrap"><img src="/images/front/img_banner_small_04.jpg" alt=""></span>
+                    <div class="in_tit">신속! 정확! 안전한서비스</div>
+                    <p>매각물건에 대한 정확한 정보를<br>신속하고 정확하게 확인하여<br>회원사분들께  제공합니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- //3:서비스영역 -->
+        <!-- 4:고객센터영역 -->
+        <div class="co_car_cus">
+            <div class="ccus_box">
+                <div class="ccus_tit">고객센터 <span>Customer Service</span></div>
+                <div class="ccus_tel"><span>TEL.</span>02-428-7723</div>
+                <div class="ccus_tel"><span>FAX.</span>02-3414-0044</div>
+                <p class="ccus_time"><span>평일 09:00 ~ 18:00</span><span>주말 및 공휴일 휴무</span></p>
+            </div>
+            <div class="ccus_box">
+                <div class="ccus_tit">
+                    <div class="n_tit">공지사항</div>
+                    <div class="n_view"><a href="/board/board.php?id=notice">+ 더보기</a></div>
+                </div>
+    
+                <ul class="ccus_notice">
+                  <li><a href="/board/board.php?id=notice&amp;mode=view&amp;no=70">안녕하세요 공지사항입니다.</a></li>
+                  <li><a href="/board/board.php?id=notice&amp;mode=view&amp;no=69">공지사항 테스트</a></li>
+                  <li><a href="/board/board.php?id=notice&amp;mode=view&amp;no=69">공지사항 테스트</a></li>
+                  <li><a href="/board/board.php?id=notice&amp;mode=view&amp;no=69">공지사항 테스트</a></li>
+                  <li><a href="/board/board.php?id=notice&amp;mode=view&amp;no=69">공지사항 테스트</a></li>
+                </ul>
+            </div>
+            <div class="ccus_box">
+                <div class="ccus_tit">
+                  <div class="n_tit">자료실</div>
+                  <div class="n_view"><a href="/board/board.php?id=data">+ 더보기</a></div>
+                </div>
+                <ul class="ccus_notice">
+                  <ul class="ccus_notice">
+                    <li><a href="/board/board.php?id=notice&amp;mode=view&amp;no=70">자료실입니다.</a></li>
+                  </ul>
+                </ul>
+            </div>
+        </div>
+        <!-- //4:고객센터영역 -->
+    </div>
+    <!-- contents -->
+    <!-- footer -->
+    <footer id="new_wrap">
+      <!-- footer -->
+      <div class="cha_footer">
+        
+        <!-- 풋터바 -->
+        <div class="comepanyinfor">
+          <div class="cin_tit">
+            <div class="list">
+              <a href="../company/company.php">회사소개</a> |
+              <a href="/member/sub_agree04.php">이용약관</a> |
+              <a href="../member/sub_agree05.php">개인정보처리방침</a>
+            </div>
+            <div class="affiliates">
+              <span>
+                <img src="/mainimg/logo_alli_1.png" alt="국토교통부">
+                <img src="/mainimg/logo_alli_2.png" alt="금융감독원">
+                <img src="/mainimg/logo_alli_3.png" alt="손해보험협회">
+                <img src="/mainimg/logo_alli_4.png" alt="보험개발원">
+                <img src="/mainimg/logo_alli_5.png" alt="한국자동차해체재활용업협회">
+              </span>           
+            </div>
+          </div>
+        </div>
+        <!-- //풋터바 -->
+        <div class="footer_copyright">
+            <div class="logo">
+              <div class="wrap">
+                <img src="/images/front/footer_logo.png" alt="인카온 로고">
+                <span class="en">INCARON</span>
+              </div>
+
+              <p>자동차경공매온란인서비스</p>
+            </div>
+            <div class="copy">
+              <span>
+                대표번호  :  02-428-7723   |   FAX :  02-3414-0044   |  전자FAX :  02-6442-0470   |   상호 : (주) 인카온   |   대표자 : 이강춘, 김용선   |   사업자등록번호 : 120-88-09021<br>
+                개인정보관리책임자 : 이용범   |   주소 : 서울특별시 강남구 헌릉로745길 37, B동 324호(율현동, 강남 자동차매매장)   |   이메일 : incaron@nate.com
+              </span>
+              <p>Copyright © (주) 인카온 All Right Reserved.</p>
+            </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer -->
+    
+    <!--레이어팝업-->
+    <!--//레이어팝업-->
+    
+    
+    <script type="text/javascript">
+    function auctionView(idx) {
+      window.location.href="/sub02/sub02_1_view.php?idx="+idx;
+    }
+    function zzim(idx){
+      var f = document.signform;
+      f.no.value=idx;
+      f.target="hiddenframe";
+      f.action="/inc/myzzim.php";
+      f.submit();
+    } 
+    function zzim2(idx){
+      var f = document.signform;
+      f.no.value=idx;
+      f.target="hiddenframe";
+      f.action="/inc/myzzimDel.php";
+      f.submit();
+    } 
+    </script>
+    <iframe name="HiddenFrm" style="display:none;"></iframe>
+    <iframe name="hiddenframe" style="display:none;"></iframe>
+    <form name="signform" method="post">
+      <input type="hidden" name="no" value="">
+      <input type="hidden" name="userid" value="drg1038">
+    </form>
+  </div>
+
+  <aside class="quick-menu">
+    <p class="quick-title">Quick Menu</p>
+    <a href="/mypage/sub04.php" class="menu-item">
+        <div class="icon">
+            <span class="icon-quick-docu"></span>
+        </div>
+        입찰현황
+    </a>
+    <a href="/mypage/sub05.php" class="menu-item">
+        <div class="icon">
+            <span class="icon-quick-chart"></span>
+        </div>
+        낙찰현황
+    </a>
+    <a href="/mypage/sub03.php" class="menu-item">
+        <div class="icon">
+            <span class="icon-quick-heart"></span>
+        </div>
+        관심차량
+    </a>
+    <a href="/mypage/sub01.php" class="menu-item">
+        <div class="icon">
+            <span class="icon-quick-checklist"></span>
+        </div>
+        접수현황
+    </a>
+    <a href="/sub01/sub01_3.php" class="menu-item">
+        <div class="icon">
+            <span class="icon-quick-notice"></span>
+        </div>
+        1:1상담
+    </a>
+  </aside>
+  <script src="/common/js/incaron_ui.js"></script>
+</body>
+</html>
