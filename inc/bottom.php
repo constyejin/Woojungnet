@@ -31,8 +31,8 @@
     <div class="copy">
         <span>
         대표번호  :<strong> 031-278-6111</strong>   |   FAX :  031-278-6112   |   상호 : (주)태금모터스   |   대표자 :이형준   |   사업자등록번호 : 167-87-01230<br>
-        개인정보관리책임자 : 이형준   |   주소 : 경기도 수원시 권선구 매송고색로 840(평동)  |   이메일 : taegeum11@naver.com</span>
-        <p>Copyright © (주)태금모터스 All Right Reserved.</p>
+        개인정보관리책임자 : 이형준   |   주소 : 경기도 수원시 권선구 평동로79번길45 수원SKV1모터스 226호   |   이메일 : taegeum11@naver.com</span>
+      <p>Copyright © (주)태금모터스 All Right Reserved.</p>
   </div>
 </div>
 <!-- //copyright -->
