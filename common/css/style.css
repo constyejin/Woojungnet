@@ -232,7 +232,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 .title {text-align:left}
 
 /* ?????? */
-.car-info-view{
+.car-info-view {
 	width: 1200px;
 	margin: 20px auto;
 	padding-bottom: 50px;
@@ -266,22 +266,22 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 .car-info-view .car-image .img-wrap{
 	position:relative;
 	/* overflow: hidden; */
-	height: 520px;
+	height: 780px;
 }
 .car-info-view .car-image .img-wrap.swiper{
-	width: 780px;
-	height: 520px;
+	width: 1280px;
+	height: 780px;
 }
 .car-info-view .car-image .img-wrap.bxslider{
-	width: 780px;
-	height: 520px;
+	width: 1280px;
+	height: 750px;
 }
 .car-info-view .car-image.for-parts .img-wrap.swiper{
-	width: 1200px;
+	width: 1280px;
 	height: 750px;
 }
 .car-info-view .car-image.for-parts .img-wrap.bxslider{
-	width: 1200px;
+	width: 1280px;
 	height: 750px;
 }
 .car-info-view .car-image .bx-viewport{
@@ -289,12 +289,12 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	border: 1px solid #c1c1c1;
 }
 .layer-popup-wrap .car-image .img-wrap.bxslider-popup{
-	width: 1000px;
-	height: 600px;
+	width: 1280px;
+	height: 750px;
 }
 .layer-popup-wrap .car-image, .layer-popup-wrap .bx-wrapper{
-	min-width: 1000px;
-	height: 600px;
+	min-width: 1280px;
+	height: 750px;
 }
 .car-info-view .car-image .img-wrap img{
 	position: absolute;
@@ -319,16 +319,17 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 }
 .layer-popup-wrap .car-image .img-wrap.bxslider-popup img{
 	position: relative;
-	width: 100%;
 	top: unset;
+	width: 100%;
+	height: 750px;
 	transform: none;
-	height: 600px;
 	object-fit: contain;
 }
 .layer-popup-wrap .car-image .img-wrap.bxslider-popup .slide{
-	width: 1000px !important;
-	height: 600px;
+	width: 1280px;
+	height: 750px;
 }
+
 .car-info-view .img-wrap .nav-prev,
 .car-info-view .img-wrap .nav-next{
 	display: inline-flex;
@@ -843,6 +844,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	top:0;
 	left: 0;
 	right: 0;
+	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,.3);
 	z-index: 9999;
@@ -857,13 +859,16 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 1000px;
+	width: 1280px;
+	height: 750px;
 	min-height: 300px;	
 	background-color: #ffffff;
 }
 
 .layer-popup-wrap .popup-content .popup-header{
 	position: relative;
+	/* width: 100%;
+	height: 100%; */
 	padding: 15px;
 	text-align: left;
 	background-color: #2cade2;
@@ -877,13 +882,21 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	top: 14px;
 	color: #ffffff;
 }
+
+.layer-popup-wrap .popup-content > .car-image {
+	width: 100%;
+	height: 750px;
+}
+
 .layer-popup-wrap .popup-content .img-large{
-	height: 600px;
+	width: 1280px;
+	height: 750px;
 	background-color: rgba(0,0,0,.8);
 }
+
 .layer-popup-wrap .popup-content .img-large img{
-	height: 600px;
-	width: 1000px;
+	width: 100%;
+	height: 750px;
 	object-fit: contain;
 }
 
@@ -979,6 +992,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	padding: 25px;
 	min-height: 100px;
 }
+
 .main-layer-popup-wrap .main-layer-popup .popup-body img{
 	width: 100%;
 }
