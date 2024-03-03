@@ -1,0 +1,20 @@
+BODY,table, TD,TR,SELECT,input,DIV,form,TEXTAREA,center,option,pre,blockquote 
+{font-size:9pt; font-family:굴림; color:#555555; line-height:145%}
+
+
+
+A:link    {color:555555;text-decoration:none;}
+A:visited {color:555555;text-decoration:none;}
+A:active  {color:555555;text-decoration:none;}
+A:hover  {color:0072BC;text-decoration:none}
+
+.textarea_01 {font-family:돋움, seoul, arial, helvetica; border-width:1; border-color:#cccccc; border-style:groove; font-size:12px; color:#333333; margin-top:0; margin-bottom:0; line-height:125%}
+.listbox_01 {BORDER-RIGHT: 0px solid; BORDER-TOP: 0px solid; FONT-SIZE: 9pt; BORDER-LEFT: 0px solid; COLOR: 333333; BORDER-BOTTOM: 0px solid; HEIGHT: 19px; BACKGROUND-COLOR: F4F4F4}
+.submit_01 {BORDER-RIGHT: 0px solid; BORDER-TOP: 0px solid; FONT-SIZE: 9pt; BORDER-LEFT: 0px solid; COLOR: white; BORDER-BOTTOM: 0px solid; HEIGHT: 19px; BACKGROUND-COLOR: black}
+.text_01 {  font-family: "굴림"; font-size: 9pt; color: 555555; text-decoration: none; line-height: 18px}
+.text_02 {  font-family: "돋움"; font-size: 11px; color: 555555; text-decoration: none; line-height: 18px}
+.text_03 {  font-family: "tahoma"; font-size: 11px; color: 555555; text-decoration: none; line-height: 18px}
+.text_04 {font-family:tahoma;color:444444;font-size:8pt}
+.text_05 {  font-family: "굴림"; font-size: 11px; color: 333333; text-decoration: none; line-height: 14px}
+.text_06 {FONT-SIZE: 12px; COLOR: #888888}
+.text_07 {  font-family: "굴림"; font-size: 9pt; color: 555555; text-decoration: none; line-height: 22px}

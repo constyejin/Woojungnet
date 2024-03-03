@@ -1,0 +1,182 @@
+<?
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/header.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/top_menu.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/global.php';
+	$pno=4;
+?>
+<script type="text/javascript">
+<?
+	$view_article = 15; // 한화면에 나타날 게시물의 총 개수  
+	if (!$page) $page = 1; // 현재 페이지 지정되지 않았을 경우 1로 지정  
+	$start = ($page-1)*$view_article; 
+	 
+//pay nopay scharge sstoketype state Search_text
+	$href = "&caridxe=$caridx&search=$search&Search_text=$Search_text&admidx=$admidx ";
+	$where = " admcom_idx=$admidx ";
+	
+	// 검색 단어를 입력했을때   
+	if($Search_text){  	
+			$tmp1 = "company";$tmp2 = "bname";
+			$where .= " and ( ($tmp1 like '%$Search_text%') or ($tmp2 like '%$Search_text%')) ";
+	}  
+	$where .= " ORDER BY regdate desc";
+	$query = "select count(*) from cardata1 as a join cardata2 as b on a.idx=b.cardata_idx where $where ";  
+	//echo $query;
+	$result = mysql_query($query, $connect);  
+	$temp = mysql_fetch_row($result);  
+	$total_article = $temp[0]; // 현재 쿼리한 게시물의 총 개수를 구함
+?>
+
+<style type="text/css">
+<!--
+.style1 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.style2 {font-size: 12px}
+-->
+</style>
+<script language='javascript' src='../inc/Object.js'></script>
+<script language="JavaScript" src="/inc/default.js"></script>
+<link rel="stylesheet" href="/css/admin.css" type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<title>이천현대폐차산업</title>
+
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="12%" height="20"><img src="/img/icon/icon.gif"> 위치 : 결제리스트 &gt; <b><font color="#000000">결제하실내역서</font></b></td>
+                  </tr>
+                </table>
+                </td>
+                </tr>
+                <tr><td>
+                  
+                <table width="100%" height="40" border="0" cellspacing="0" cellpadding="0">
+                                    
+                        <tr>
+                          <td align="center"><input type="button" id="button" value="목록가기" class='btn' style='width:80px;cursor:hand' onclick='location.href="/admin/cash.php"'> &nbsp;</td>
+                                    </tr>
+                      </table>
+                      </td></tr>
+                <tr>
+                  <td>
+<form name="cform" method="post" target="HiddenFrm" style="margin:0px;">
+<input type=hidden value="allpay" name="mode">
+<input type=hidden value="href" name="<?=$href?>">
+
+                <table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " style="border-collapse:collapse;" class='pad_10'>
+                                          <tr>
+                                            <td width="5%" align="center" bgcolor="f3f3f3" class="p_tt">NO</td>
+                                            <td width="9%" align="center" bgcolor="f3f3f3" class="p_tt">등록일</td>
+                                            <td width="11%" align="center" bgcolor="f3f3f3" class="p_tt">차량명</td>
+                                            <td width="11%" align="center" bgcolor="f3f3f3" class="p_tt">차량번호</td>
+                                            <td width="11%" align="center" bgcolor="f3f3f3" class="p_tt">년식</td>
+                                            <td width="7%" align="center" bgcolor="f3f3f3" class="p_tt">연료</td>
+                                            <td width="9%" align="center" bgcolor="f3f3f3" class="p_tt">영업소</td>
+                                            <td width="10%" align="center" bgcolor="f3f3f3" class="p_tt">거래처</td>
+                                            <td width="10%" align="center" bgcolor="f3f3f3" class="p_tt">지급내역</td>
+                                            <td width="14%" align="center" bgcolor="f3f3f3" class="p_tt">미결금액</td>
+                                            <td width="3%" align="center" bgcolor="f3f3f3" class="p_tt">
+                                              <input type="checkbox" name="allchk" id="allcheck" onClick="chkall2()" />
+                                              </td>
+                                          </tr>
+                                          
+										   <?
+							if($total_article > 0){
+									$col = "regdate, a.idx as idx1, b.idx as idx2, carname, carnum, carym, oil, b.company as company2, payinfo, callpay, paydiv, sale_idx";
+									$qry = "SELECT $col from cardata1 as a join cardata2 as b on a.idx=b.cardata_idx where $where LIMIT $start, $view_article";
+									//echo $qry;
+									$result=mysql_query($qry);
+									$i=0;
+									while ($data2 = mysql_fetch_assoc($result)){	//regdate, a.idx as idx1, carname, carnum, carym, oil, b.company as company2, payinfo, callpay, paydiv, sale_idx
+										$crow = qrow("select company,phone from admcom where idx='$data2[sale_idx]'");
+							 
+							  ?>
+										  <tr onblur="this.style.backgroundColor='#deecee'" onfocus="this.style.backgroundColor='#FFF'" onMouseOver="this.style.backgroundColor='#deecee'" onMouseOut="this.style.backgroundColor='#FFF'" style="cursor:hand">
+                                            <td width="5%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$total_article-$i-(($page-1)*$view_article)?></td>
+                                            <td width="9%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=date("Y-m-d",$data2[regdate])?></td>
+                                            <td width="11%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$data2[carname]?></td>
+                                            <td width="11%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$data2[carnum]?></td>
+                                            <td width="11%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$data2[carym]?></td>
+                                            <td width="7%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$oil_arr2[$data2[oil]]?></td>
+                                            <td width="9%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$crow[0]?></td>
+                                            <td width="10%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$data2[company2]?></td>
+                                            <td width="10%" align="center" onclick='location.href="/admin/viewpay_cash.php?<?=$href?>&caridx=<?=$data2[idx1]?>"'><?=$data2[payinfo]?></td>
+                                            <td width="14%" align="center"><font color="#0033FF"><?=($data2[paydiv]==1)?number_format($data2[callpay]):0?></font></td>
+                                            <td width="3%" align="center"><input type="checkbox" onClick="paycheck();" name="check[]" value="<?=$data2[idx2]?>"><input type=hidden name="callpay[]" value="<?=($data2[paydiv]==1)?$data2[callpay]:0?>"></td>
+                                          </tr>
+                                         
+									<?		$i++;
+										  $totalsumpay+=($data2[paydiv]==1)?$data2[callpay]:0;
+										  }}?>
+</form>
+<?
+$brow = qrow("select bankname,banknum,bname,company from admcom where idx='$admidx'");
+?>
+                                          <tr>
+                                            <td colspan="2" align="center" bgcolor="f3f3f3" class="p_tt">입금계좌</td>
+                                            <td colspan="6" align="center" class="p_tt"><?=$brow[0]?> / <?=$brow[1]?>  / <?=$brow[2]?></td>
+                                            <td align="center" bgcolor="f3f3f3" class="p_tt">합계</td>
+                                            <td align="center"><font color="#3399FF"><b><?=number_format($totalsumpay)?></b></font></td>
+                                            <td align="center">&nbsp;</td>
+                    </tr>
+                  </table></td>
+                  </tr>
+                  <tr><td>
+                  
+                <table width="100%" height="106" border="0" cellspacing="0" cellpadding="0">
+                                    
+                        <tr>
+                <td height="49" align="center"><input type="button" id="button" value="목록가기" class='btn' style='width:80px;cursor:hand' onclick='location.href="/admin/cash.php"'> &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                      <td height="10" valign="top">
+                                      <table width="50%" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " class='pad_10' style="border-collapse:collapse;" align="right">
+                                       <tr>
+                                         <td colspan="4" align="center" bgcolor="#FF9999" class="p_tt">선택한 금액을 결제하시겠습니까? 다시 한번 확인하여 주십시요</td>
+                                        </tr>
+                                       <tr>
+                                         <td class="p_tt" width="20%"><?=$brow[3]?></td>
+                                         <td class="p_tt" width="40%"><?=$brow[0]?> / <?=$brow[1]?>  / <?=$brow[2]?></td>
+                                         <td align="center" width="15%"><font color="#CC0000"><b><span id="totalprice"></span></b></font></td>
+                                         <td align="center"><input type="button" value="결제하기" onClick="pay_list();"></td>
+                                       </tr>
+                                      </table>
+
+                                      
+                                      </td>
+                                    </tr>
+                  </table>
+                      </td></tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td bgcolor='dddddd' height='1' colspan='3'></td>
+              </tr>
+            </table>
+	      <!--/로고 & 탑메뉴-->		
+		</td>
+	</tr>
+	<tr>
+		<td height='100%'>
+			<!--body-->			
+			<!--/body-->
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+<title>(주)태금모터스</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="태금모터스">
+<meta property="og:description" content="보험사잔존물경공매,일반경매,중고부품,외제수입차전문수리">
+<meta property="og:image" content="http://www.taegeummotors.co.kr/images/myimage.jpg">
+<meta property="og:url" content="http://www.taegeummotors.co.kr">
+<meta name="robots" content="index,follow">
+<meta name="description" content="보험사잔존물경공매,일반경매,중고부품,외제수입차전문수리">
+<meta name="keywords" content="보험사잔존물경공매,일반경매,중고부품,외제수입차전문수리">
+<meta name="viewport" content="width=device-width">
+<link rel="canonical" href="http://www.taegeummotors.co.kr">
+<meta name="naver-site-verification" content="151e7be197e77a42cd514176ddf53691b803e036" />

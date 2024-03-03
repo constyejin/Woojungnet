@@ -1,0 +1,1 @@
+<center><a href="19.php"><img src="/images/18.jpg"  style="max-width:100%;"></a></center>

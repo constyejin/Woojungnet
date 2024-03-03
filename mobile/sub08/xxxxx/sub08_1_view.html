@@ -1,0 +1,289 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>incaron</title>
+  <link rel="stylesheet" type="text/css" href="/common/css/incaron_style_m.css"/>
+  <!-- jquery -->
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- swiper.js css-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+  <!-- swiper.js js-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- bxslider.js css-->
+  <link rel="stylesheet" href="/common/js/jquery.bxslider.css">
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <!-- 인카온 UI js -->
+  <script src="/common/js/incaron_ui_m.js"></script>
+</head>
+<body>
+  <header class="sub">
+    <div class="topper">
+      <div class="user-name">홍길동</div>
+      <div class="login-wrap">
+        <button class="btn btn-outline-gray btn-round">마이페이지</button>
+        <button class="btn btn-outline-gray btn-round login">로그아웃</button>
+      </div>
+    </div>
+    <div class="align-c logo">
+      <a href="" class="btn-all-menu"></a>
+      <h1>
+        <img src="/images/front/login_logo_m.png" class="incaron-logo" alt="인카온 로고">
+      </h1>
+    </div>
+  </header>
+  <nav class="all-menu">
+    <div class="header">
+      <span class="logo">인카온 INCARON</span>
+      <a href="" class="btn-close-menu"></a>
+    </div>
+    <ul class="menu-list">
+      <li><a href="/mobile/sub02/sub02_1.html">보험경공매</a></li> 
+      <li><a href="">스폐셜매물</a></li> 
+      <li><a href="">일반경공매</a></li> 
+      <li><a href="/mobile/sub08/sub08_1.html">중고부품</a></li> 
+      <li><a href="/mobile/sub01/sub01_1.html">차량등록</a></li> 
+      <li><a href="/mobile/sub01/sub01_2.html">사진추가</a></li> 
+      <li><a href="/mobile/board/board.html">고객센터</a></li> 
+      <li><a href="/mobile/mypage/sub04.html">마이페이지</a></li> 
+      <li><a href="/mobile/mypage/sub07.html">회원정보수정</a></li> 
+    </ul>
+  </nav>
+  <nav class="nav">
+    <ul>
+      <li><a href="/mobile/sub02/sub02_1.html">보험경공매</a></li>
+      <li><a href="">스페셜매물</a></li>
+      <li><a href="">일반경공매</a></li>
+      <li><a href="">중고부품</a></li>
+      <li><a href="/mobile/board/board.html">고객센터</a></li>
+    </ul>
+  </nav>
+  
+
+  <section class="title-wrap">
+    <h2>중고부품</h2>
+  </section>
+  <section class="view-detail">
+    <div class="car-image-slide bxslider">
+      <div class="slide"><img src="/data/20230118_16740003810.jpg" alt=""></div>
+      <div class="slide"><img src="https://picsum.photos/200/300" alt=""></div>
+      <div class="slide"><img src="https://picsum.photos/500/300" alt=""></div>
+    </div>
+    <div class="car-image-thumbnail">
+      <div class="thumb on">
+        <img src="/data/20230118_16740003810.jpg" alt="">
+      </div>
+      <div class="thumb">
+        <img src="/data/20230118_16740003810.jpg" alt="">
+      </div>
+      <div class="thumb">
+        <img src="/data/20230118_16740003810.jpg" alt="">
+      </div>
+    </div>
+    <div class="parts-description">
+      <div class="table-style">
+        <ul>
+          <li>
+            <div class="th">고유번호</div>
+            <div class="td">23-0100001</div>
+          </li>
+          <li>
+            <div class="th">부품구분</div>
+            <div class="td">후미등/안개등/방향등</div>
+          </li>
+          <li>
+            <div class="th">제조/모델</div>
+            <div class="td">기아 > K5</div>
+          </li>
+          <li>
+            <div class="th">년식</div>
+            <div class="td"></div>
+          </li>
+          <li>
+            <div class="th">등급</div>
+            <div class="td">A 등급</div>
+          </li>
+          <li>
+            <div class="th">재고</div>
+            <div class="td">1 개</div>
+          </li>
+          <li>
+            <div class="th">가격</div>
+            <div class="td">전화문의</div>
+          </li>
+        </ul>
+      </div>
+      <p class="notice">
+        * 재고수량과 판매가격등은 판매자와 상의하세요.
+      </p>
+
+      <h2>상세설명</h2>
+      <div class="description-text">
+        상세설명 입니다.
+      </div>
+      <div class="btn-group align-c">
+        <div class="center">
+          <a href="./sub08_1.html" class="btn btn-outline-primary btn-sm btn-round">목록보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="btn-wrap install">
+      <button class="btn btn-outline-gray btn-round">바탕아이콘설치(안드로이드)</button>
+      <button class="btn btn-black btn-round">PC 버전보기</button>
+    </div>
+    <p class="copyright">
+      상담 : TEL. 02-428-7723 (주말, 공휴일 휴무)<br>Copyright (c) (주)인카온 All rights reserved.
+    </p>
+  </footer>
+  <script>
+    $(document).ready(function() {
+        $('.car-image-slide').bxSlider({
+            auto: false,
+            autoControls: false,
+            stopAutoOnClick: false,
+            pager: true,
+            pagerType: 'short',
+            autoHover: false,
+            controls: true,
+            infiniteLoop: false
+        });
+    });
+  </script>
+
+  <div class="layer-pop">
+    <div class="pop-header">
+      <div class="title">입찰하기</div>
+      <a href="" class="btn-close-pop"></a>
+    </div>
+    <div class="pop-body">
+      <div class="topper">
+        <p class="title">소나타/소나타 E클래스</p>
+        <p class="summary">2020년 01월 / 세미오토/ 디젤 / 10,000cc / 100,000km</p>
+      </div>
+      <div class="action-info-table">
+        <ul>
+          <li class="emphas">
+            <span class="label">마감시간 </span>
+            <div class="data">
+              <span class="end-time">
+                2023년 01월 20일 11시 00분
+              </span>
+            </div>
+          </li>
+          <li class="emphas">
+            <span class="label">남은시간</span>
+            <div class="data">
+              <span class="remain-time">
+                2일 14시간 22분 50초
+              </span>
+            </div>
+          </li>
+          <li class="emphas">
+            <span class="label">폐차금액</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+          <li class="emphas">
+            <span class="label">명의이전</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+          <li>
+            <span class="label">입찰유형</span>
+            <div class="data">
+              <ul class="radio-group">
+                <li>
+                  <div class="radio-wrap">
+                    <input type="radio" name="bid-type" id="bidType1">
+                    <label class="radio-label" for="bidType1">명의이전</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="radio-wrap">
+                    <input type="radio" name="bid-type" id="bidType2">
+                    <label class="radio-label" for="bidType2">폐차</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <span class="label">입찰금액</span>
+            <div class="data">
+              <div class="input-wrap">
+                <input type="text">
+              </div>
+              <span class="unit">만원(만원 단위 임)</span>
+            </div>
+          </li>
+          <li>
+            <span class="label">부가세</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+          <li>
+            <span class="label">수수료</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+          <li>
+            <span class="label">견인,보관비</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+          <li>
+            <span class="label">서류대행료</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+          <li>
+            <span class="label">상사이전비</span>
+            <div class="data">
+              999,999,999 원
+            </div>
+          </li>
+        </ul>
+        <ul class="total-list">
+          <li>
+            <span class="label">입찰합계</span>
+            <div class="data">
+              <span class="total">
+                999,999,999 원
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="agree-wrap">
+        <div class="checkbox-wrap">
+          <input type="checkbox" name="" id="agreeConfirm">
+        </div>
+        <label for="agreeConfirm">입찰약관내용을 확인하고 동의합니다</label>
+        <a href="/inc/sub02_1_popup.html" target="_blank" class="link">[입찰약관보기]</a>
+      </div>
+
+      <div class="btn-wrap">
+        <button type="button" class="btn btn-submit-color btn-md">입찰하기</button>
+      </div>
+    </div>
+
+    <div class="pop-footer">
+      <a href="" class="btn-close-pop">[닫기]</a>
+    </div>
+  </div>
+</body>
+</html>

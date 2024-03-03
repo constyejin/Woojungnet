@@ -1,0 +1,81 @@
+<?
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/header.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/top_menu.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/global.php';
+	$pno=4;
+?>
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0">
+						
+<form name="cform" method=post action="/comm/setexc.php" target="HiddenFrm" style="margin:0px;" onSubmit="return false;">
+<td height="30" align="right"  class="p_tt"><input type="text" name="search" class="ipip" size="40" value="<?=$search?>">
+		                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <!--td width='145' align='center' valign="top" style='font-size:14px;'><? include "$DOCUMENT_ROOT/inc/sm_set01.php";?></td-->
+                            <td width="1" height="400" valign="top"><img src="../img/nor/sb.gif" width="1" /></td>
+                            <td valign="top" style='padding:10px;'><table width="1000" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " style="border-collapse:collapse;" class='pad_10'>
+                              <tr class="tab_bg2" height=28>
+                                <td width="28%" bgcolor="f3f3f3" class="p_tt" align="center">은 행 명</td>
+                                <td width="28%" align="center" bgcolor="f3f3f3" class="p_tt">예 금 주</td>
+                                <td width="28%" align="center" bgcolor="f3f3f3" class="p_tt">계좌번호</td>
+                                <td align="center" bgcolor="f3f3f3" class="p_tt">관 리</td>
+                              </tr>
+							  <?
+											$sql="select * from admbank order by idx";
+											$result=mysql_query($sql);
+											$i=1;
+											while ($data = mysql_fetch_assoc($result)){	
+										
+							?>
+                              <tr height=28>
+                                <td align="center" ><input type="text" class="ipip" name="bankname<?=$i?>" value="<?=$data[bankname]?>" size=30></td>
+                                <td align="center"><p><input type="text" class="ipip" name="bname<?=$i?>" value="<?=$data[bname]?>" size=30></p></td>
+                                <td align="center"><input type="text" class="ipip" name="banknum<?=$i?>" value="<?=$data[banknum]?>" size=30></td>
+                                <td align="center"><input type="button" value="수정" class="btn_pink" onClick="subreg('/comm/setexc.php?mode=bmod&idx=<?=$data[idx]?>&bankname=' + document.cform.bankname<?=$i?>.value+ '&banknum=' + document.cform.banknum<?=$i?>.value+ '&bname=' + document.cform.bname<?=$i?>.value);" style="cursor:hand">
+                                <input type="button" value="삭제" class="btn_gray" onClick="document.HiddenFrm.location.href='/comm/setexc.php?mode=bdel&idx=<?=$data[idx]?>'" style="cursor:hand"></td>
+                              </tr>
+                             <?$i++;}?>
+                              <tr height=28>
+                                <td height="35" align="center" bgcolor="f3f3f3"><input name="bankname" type="text"  size=30></td>
+                                <td height="35" align="center" bgcolor="f3f3f3"><p>
+                                  <input name="bname" type="text"  size=30>
+                                </p></td>
+                                <td height="35" align="center" bgcolor="f3f3f3"><input name="banknum" type="text"  size=30></td>
+                                <td height="35" align="center" bgcolor="f3f3f3"><input type="button" value="추가하기" class="btn_pink" onClick="document.cform.submit();"></td>
+                              </tr>
+                            </table>
+                            </tr>
+                          <tr>
+                            <td bgcolor='dddddd' height='1' colspan='3'></td>
+                          </tr>
+                        </table>
+	</form>
+      </td>
+	</tr>
+              <tr>
+                <td bgcolor='dddddd' height='1' colspan='3'></td>
+              </tr>
+            </table>
+	      <!--/로고 & 탑메뉴-->		
+		</td>
+	</tr>
+	<tr>
+		<td height='100%'>
+			<!--body-->			
+			<!--/body-->
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+</html>

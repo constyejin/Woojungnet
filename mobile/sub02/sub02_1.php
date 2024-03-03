@@ -1,0 +1,331 @@
+<?
+include $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/inc/menu.php";
+?>
+<?
+if (!$user_level && (!$loginId || $loginUsort == "indi")) {
+    echo "<script>alert('로그인후 사용 가능합니다.');location.href='/';</script>";
+}
+
+$query = mysql_query("select * from woojung_member where userId = '$loginId' limit 1");
+$member_new = mysql_fetch_array($query);
+//echo $member_new[power];
+
+if (!$gubun2) $gubun2 = "2";
+if ($gubun2 == "2") {
+    $kk = "보험경공매";
+}
+if ($gubun2 == "3") {
+    $kk = "스페셜매물";
+}
+if ($gubun2 == "4") {
+    $kk = "일반경공매";
+}
+?>
+<section class="title-wrap">
+    <h2><?= $kk ?></h2>
+</section>
+<section class="filter-wrap">
+    <div class="filter car-sale">
+        <ul>
+            <li <?= !$gubun3 ? 'class="active"' : "" ?>>
+                <button onclick="location.href='sub02_1.php?gubun2=2';">전체보기</button>
+            </li>
+            <li <?= $gubun3 == "3" ? 'class="active"' : "" ?>>
+                <button onclick="location.href='sub02_1.php?gubun2=2&gubun3=3';">공매(파손)</button>
+            </li>
+            <li <?= $gubun3 == "6" ? 'class="active"' : "" ?>>
+                <button onclick="location.href='sub02_1.php?gubun2=2&gubun3=6';">공매(침수)</button>
+            </li>
+            <li <?= $gubun3 == "2" ? 'class="active"' : "" ?>>
+                <button onclick="location.href='sub02_1.php?gubun2=2&gubun3=2';">경매(파손)</button>
+            </li>
+            <li>
+                <form name="sear" id="sear">
+                    <input type="hidden" name="gubun2" value="<?= $gubun2 ?>">
+                    <input type="hidden" name="gubun3" value="<?= $gubun3 ?>">
+                    <select name="wc_made" onchange="document.sear.submit();" class="form_select">
+                        <option value="">=== 제조사 ===</option>
+                        <?
+                        $team_cate_sql = mysql_query("select * from cate2 where depth='1'");
+                        while ($team_cate = mysql_fetch_array($team_cate_sql)) {
+                        ?>
+                            <option value="<?= $team_cate["idx"] ?>" <? if ($team_cate["idx"] == $wc_made) {
+                                                                            echo "selected";
+                                                                        } ?>>
+                                <?= $team_cate["name"] ?>
+                            </option>
+                        <? } ?>
+                    </select>
+            </li>
+            <li>
+                <?= WriteArrHTML('select', 'wc_keep_area1', $ArrcarPlace, $wc_keep_area1, 'onchange="document.sear.submit();"', '', 'all', '==보관지역==') ?>
+            </li>
+            <li>
+                <div class="search-input-wrap">
+                    <input type="text" class="search-input">
+                    <button class="btn-search">
+                        <img src="<?= $site_u[home_url] ?>/images/front/icon_search.png" alt="검색아이콘">
+                    </button>
+                </div>
+            </li>
+        </ul>
+        </form>
+        <div class="btn-list">
+            <button <?= $type == "1" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&type=1';">폐차</button>
+            <button <?= $type == "2" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&type=2';">명의이전</button>
+            <button <?= $evaltype == "1" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&evaltype=1';">전손</button>
+            <button <?= $evaltype == "2" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&evaltype=2';">분손</button>
+            <!-- 
+        <button <?= $t == "9" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&t=9';">09:30마감</button>
+        <button <?= $t == "10" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&t=10';">10:30마감</button>
+        <button <?= $t == "13" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&t=13';">13:30마감</button>
+        <button <?= $t == "15" ? 'class="active"' : "" ?> onclick="location.href='sub02_1.php?gubun2=<?= $gubun2 ?>&gubun3=<?= $gubun3 ?>&t=15';">15:30마감</button>
+				 -->
+        </div>
+</section>
+</div>
+
+<?
+/*
+			"폐차"=>"1",
+			"경/공매"=>"2",
+			"중고차"=>"3",
+			"감정평가"=>"4",
+			"기타"=>"5"
+			gubun_3 2,4 //경매 
+			gubun_3 3,5 //공매
+			이페이지는 경매
+			*/
+$view_article = 20; // 한화면에 나타날 게시물의 총 개수  
+$href = "&gubun2=$gubun2&type=$type&t=$t";
+$nowDate = date("YmdHi");
+$where = " wc_gubun4='2' ";
+if ($gubun2) {
+    $where .= " and wc_gubun2 = '$gubun2' ";
+} else {
+    $where .= " and wc_gubun2 = '2' ";
+}
+if ($gubun3) {
+    if ($gubun3 == "3") {
+        $where .= " and (wc_gubun3 = '3' or wc_gubun3 = '5') ";
+    } else if ($gubun3 == "2") {
+        $where .= " and (wc_gubun3 = '2' or wc_gubun3 = '4') ";
+    } else {
+        $where .= " and wc_gubun3 = '$gubun3' ";
+    }
+}
+if ($sear1) {
+    $where .= " and c.wc_go_type = '$sear1' ";
+}
+if ($sear3) {
+    $where .= " and car_cate = '$sear3' ";
+}
+if ($wc_made) {
+    $where .= " and wc_made = '$wc_made' ";
+}
+if ($wc_model) {
+    $where .= " and wc_model='$wc_model' ";
+}
+if ($t == "9") {
+    $where .= " and (wc_go_end_hh = '09' and wc_go_end_mm = '30') ";
+}
+if ($t == "10") {
+    $where .= " and (wc_go_end_hh = '10' and wc_go_end_mm = '30') ";
+}
+if ($t == "13") {
+    $where .= " and (wc_go_end_hh = '13' and wc_go_end_mm = '30') ";
+}
+if ($t == "15") {
+    $where .= " and (wc_go_end_hh = '15' and wc_go_end_mm = '30') ";
+}
+if ($type == "1") {
+    $where .= " and (wc_go_type = '1' or wc_go_type = '3') ";
+}
+if ($type == "2") {
+    $where .= " and (wc_go_type = '2' or wc_go_type = '3') ";
+}
+if ($evaltype == "1") {
+    $where .= " and (evalAmt_type = '전손') ";
+}
+if ($evaltype == "2") {
+    $where .= " and (evalAmt_type = '분손') ";
+}
+
+if ($wc_keep_area1) {
+    $where .= " and wc_keep_area1='$wc_keep_area1' ";
+}
+if ($sear4) {
+    $where .= " and ( wc_no  like '%$sear4%' or wc_orderno like '%$sear4%' or wc_model  like '%$sear4%' or wc_model2  like '%$sear4%' ) ";
+}
+$where .= " and concat(REPLACE (c.wc_go_end_date, '-', ''), wc_go_end_hh , wc_go_end_mm) >= '$nowDate' ";
+
+$qry_cnt = mysql_query("SELECT count(*) FROM woojung_car as a left join woojung_car_go as c on a.wc_idx = c.wcg_wcidx  WHERE  $where ");
+$temp = mysql_fetch_row($qry_cnt);
+$total_article = $temp[0]; // 현재 쿼리한 게시물의 총 개수를 구함	
+?>
+<section class="car-list-wrap">
+    <div class="count">
+        <p><span class="fc-emphas"><?= $total_article ?></span>개 매물 있음</p> ㅣ 이전/다음 매물은 매물을 좌우로 이동하세요
+    </div>
+    <div class="car-list swiper">
+        <ul class="swiper-wrapper">
+
+            <?
+            $query = mysql_query("SELECT * FROM woojung_car as a left join woojung_car_go as c on a.wc_idx = c.wcg_wcidx  WHERE  $where order by concat(REPLACE (c.wc_go_end_date, '-', ''), wc_go_end_hh , wc_go_end_mm) asc ");
+            //echo "SELECT * FROM woojung_car as a left join woojung_car_go as c on a.wc_idx = c.wcg_wcidx  WHERE  $where order by concat(REPLACE (c.wc_go_end_date, '-', ''), wc_go_end_hh , wc_go_end_mm) asc LIMIT $start, $view_article";
+            $kk = 1;
+            while ($row = mysql_fetch_object($query)) {
+                if ($row->wc_go_type == 2) {
+                    $p_img = "<img src='/img/sub/btn_04.jpg'>";
+                } else if ($row->wc_go_type == 1) {
+                    $p_img = "<img src='/img/sub/btn_05.jpg'>";
+                }
+                $car_img_arr = explode('/', $row->wc_img_1);
+
+                $year            = cutStr($row->wc_go_end_date, 0, 4);
+                $month            = cutStr($row->wc_go_end_date, 5, 2);
+                $day            = cutStr($row->wc_go_end_date, 8, 2);
+                $hour            = $row->wc_go_end_hh;
+                $min            = $row->wc_go_end_mm;
+                $last_end_date = $year . '-' . $month . '-' . $day . ' [' . $hour . ':' . $min . ']';
+                if ($row->wc_go_type == "1") {
+                    if ($member_new[power] == "1" || $member_new[power] == "3") {
+                        $onc = "auctionView('$row->wc_idx','$gubun2');";
+                    } else {
+                        $onc = "alert('입찰권한이 없습니다. 운영자에게 문의하세요');";
+                    }
+                } else if ($row->wc_go_type == "2") {
+                    if ($member_new[power] == "2" || $member_new[power] == "3") {
+                        $onc = "auctionView('$row->wc_idx','$gubun2');";
+                    } else {
+                        $onc = "alert('입찰권한이 없습니다. 운영자에게 문의하세요');";
+                    }
+                } else if ($row->wc_go_type == "3") {
+                    $onc = "auctionView('$row->wc_idx','$gubun2');";
+                }
+
+                if ($loginUsort == "admin" || $loginUsort == "superadmin" || $loginUsort == "indi2") {
+                    $onc = "auctionView('$row->wc_idx','$gubun2');";
+                }
+
+                if ($row->wc_go_cost_type == "2") { // 낙찰자 부담일 경우만 금액 적어준다
+                    $wc_go_cost = $row->wc_go_cost;
+                    $total_amt = $row->wc_go_cost;
+                } else {
+                    $wc_go_cost = 0;
+                    $total_amt = 0;
+                }
+            ?>
+                <li class="swiper-slide" onclick="window.location='./sub02_1_view.php?idx=<?= $row->wc_idx ?>'">
+                    <div class="carbox">
+                        <span class="item-number">
+                            <?= $total_article--; ?>
+                        </span>
+                        <div class="image-wrap">
+                            <img src="<?= $site_u[home_url] ?>/data/<?= $car_img_arr[0] ?>" alt="챠량이미지">
+                        </div>
+                        <div class="area_h" style="align-items:center">
+                            <div>
+                                <span>
+                                    <?
+                                    $sql = "select * from car_zzim where no='" . $row->wc_idx . "' and userid='" . $loginId . "'";
+                                    $que = mysql_query($sql);
+                                    $rowZim = mysql_fetch_array($que);
+                                    if (!$rowZim[idx]) {
+                                    ?>
+                                        <span class="icon-heart"></span>
+                                    <? } else { ?>
+                                        <span class="icon-heart on"></span>
+                                    <? } ?>
+                                    <!--
+											description
+											아이콘 클래스에 'on'을 붙이면 빨간색 하트 아이콘 노출
+										-->
+                                </span>
+
+                            </div>
+                            <div class="ct_c"><?= $row->evalAmt_type ?></div>
+                            <div class="ct_r">
+                                <? WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '', 'direct', ''); ?>
+                            </div>
+                        </div>
+                        <div class="number">
+                            <div class="n_tit"><?= $row->wc_orderno ?></div>
+                            <div class="n_tit"><span>
+                                    <?
+                                    WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');
+                                    ?>
+                                </span></div>
+                        </div>
+                        <div class="carname">
+                            <div class="c_model">
+                                <? if ($row->wc_model) echo $row->wc_model; ?>
+                                <? if ($row->wc_model2) echo $row->wc_model2; ?>
+                            </div>
+                            <p>
+                                <span>
+                                    <? if ($row->wc_age) ?><?= substr($row->wc_age, 0, 4) ?>-<?= substr($row->wc_age, 4, 2) ?>
+                                </span>
+                                |<span><?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?></span>
+                                |<span><?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?></span>
+                            </p>
+                        </div>
+                        <div class="carcheck">
+                            <p><span>보관 : </span>
+                                <?
+                                if ($row->wc_keep_area2) {
+                                    $keep_area = WriteArrHTML('select', 'area1', $ArrcarPlace, $row->wc_keep_area2, '', '', 'direct', '');
+                                } else {
+                                    $keep_area = WriteArrHTML('select', 'area1', $ArrcarPlace, $row->wc_keep_area1, '', '', 'direct', '');
+                                }
+                                ?>
+                            </p>
+                            <p><span class="fw-bold fc-red"><?= $last_end_date ?></span></p>
+                        </div>
+                    </div>
+                </li>
+            <?
+                $kk++;
+            }
+            if ($kk == 1) {
+                echo " <div>진행중인 물건이 없습니다 </div> ";
+            }
+            ?>
+
+        </ul>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+<?
+include $_SERVER['DOCUMENT_ROOT'] . "/inc/footer.php";
+?>
+</body>
+
+</html>
+
+
+<script>
+    function zzim(idx) {
+        var f = document.signform;
+        f.no.value = idx;
+        f.target = "hiddenframe";
+        f.action = "/inc/myzzim.php";
+        f.submit();
+    }
+
+    function zzim2(idx) {
+        var f = document.signform;
+        f.no.value = idx;
+        f.target = "hiddenframe";
+        f.action = "/inc/myzzimDel.php";
+        f.submit();
+    }
+</script>
+
+<iframe name="hiddenframe" style="display:none;"></iframe>
+<form name='signform' method='post'>
+    <input type="hidden" name="no" value="<?= $idx ?>">
+    <input type="hidden" name="userid" value="<?= $loginId ?>">
+</form>

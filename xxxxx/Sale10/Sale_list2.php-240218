@@ -1,0 +1,300 @@
+<?
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/header.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/top_menu.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/manage/inc/global.php';
+?>
+<?
+	$pno=1;
+	$tb_name = "cardata1";
+	$tb_name2 = "cardata2";
+
+	$view_article = 2000; // 한화면에 나타날 게시물의 총 개수  
+	if (!$page) $page = 1; // 현재 페이지 지정되지 않았을 경우 1로 지정  
+	$start = ($page-1)*$view_article; 
+	 
+//pay nopay scharge sstoketype state Search_text
+	$href = "&page=$page&search=$search&state=$state&scom=$scom&scharge=$scharge&sstoketype=$sstoketype&Search_text=$Search_text";
+	$where = " 1 ";
+	
+	if($scom) $where .= " and set_idx1='".$scom."' ";
+	if($scharge) $where .= " and set_idx2='".$scharge."' ";
+	if($ssale) $where .= " and sale_idx='".$ssale."' ";
+	if($sstoketype) $where .= " and stoketype = '".$sstoketype."' ";
+	if($state){
+		if($state==12) $where .= " and (state = '1' or state = '2') ";
+			else $where .= " and state = '".$state."' ";
+	}
+
+	// 검색 단어를 입력했을때   
+	if($Search_text){  	
+			$tmp1 = "carname";$tmp2 = "carnum";$tmp3 = "carym";$tmp4 = "stoketype";$tmp5 = "charge";
+			$where .= " and ( ($tmp1 like '%$Search_text%') or ($tmp2 like '%$Search_text%') or ($tmp3 like '%$Search_text%') or ($tmp4 like '%$Search_text%') or ($tmp5 like '%$Search_text%')) ";
+	}  
+	$where .= " ORDER BY regdate desc";
+	$query = "select count(*) from $tb_name where $where ";  
+	//echo $query;
+	$result = mysql_query($query, $connect);  
+	$temp = mysql_fetch_row($result);  
+	$total_article = $temp[0]; // 현재 쿼리한 게시물의 총 개수를 구함
+
+
+?>
+<style>
+  .btn_blue {
+    cursor: pointer;
+    background-color: #e7f1f9;
+    color: #084573;
+    border: #636563 1px solid;
+  }
+  .btn_pink{
+  cursor: pointer;
+  background-color: #fae3e3;
+  color: #ff0000;
+  border: #ff0000 1px solid;
+  }
+  .btn_gray{
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px #636563 solid;
+  font-weight: bold;
+  }
+  </style>
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function exl_down(que,tb_name,tb_name2,cal){
+	if(!que){
+		window.open('./exldown.php?querya=1&tb_name='+tb_name+'&tb_name2='+tb_name2+'&cal='+cal,'exl_pop','width=500,height=500');
+	} else {
+		window.open('./exldown.php?querya='+que+'&tb_name='+tb_name+'&tb_name2='+tb_name2+'&cal='+cal,'exl_pop','width=500,height=500');
+	}
+}
+function chkall(){
+ 	var cobj = document.getElementById('allcheck');
+	var obj = document.getElementsByName('check[]');
+	//alert(2);
+	for(var i=0; i < obj.length ; i++){
+		if (cobj.checked == true)
+		{
+			obj[i].checked = true;
+		}else{
+			obj[i].checked = false;
+		}
+	}
+
+}
+//-->
+</script>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" height='100%'>
+	<tr>
+		<td valign='top'>
+			<? include "$DOCUMENT_ROOT/inc/center.php";?>
+    	    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <!-- <td width='145' align='center' valign="top" style='font-size:14px;'>
+				<-? // left ?>	
+				<-? include "../inc/sm_calculate.php";?>
+				</td>
+                <td width="1" height="400" valign="top" style="background-color:#bbb;"></td> -->
+                <td valign="top" style='padding:10px;'>
+                
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <td>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="42" colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td><img src="/manage/img/icon02.gif"> 위치 : 입고리스트</td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="fbfbfb"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+                        <tr>
+                          <td><table width="100%" border="0" cellspacing="0">
+                            <tr>
+                              <td width="40%">1. <strong>요청누계</strong>: 담당자가 결제올린 금액의 합계액임</td>
+                              <td>2. <strong>결제누계</strong>: 해당건의 결제금액 합계액임</td>
+                            </tr>
+                            <tr>
+                              <td>3. <strong>차액(미결)</strong>: 요청누계-결제누계=차액(미결)</td>
+                              <td>4. <strong>초과결제</strong>: 차대비 < 결제누계=초과결제</td>
+                            </tr>
+                          </table>
+                            </td>
+                        </tr>
+                      </table>                        </td>
+                    </tr>
+                  </table>                    </td>
+                  </tr>
+                <tr>                  </tr>
+                  <tr>
+                  <td class="p_tt">
+<form name="search" method="get" action="/admin/calculate.php" style="margin:0px;">
+<input type=hidden value="1" name="search">
+				  <span class="p_tt">
+                    <input type="button" value="입고등록" class='btn_pink' style='cursor:hand;' onClick="window.location='../admin/calculate_01.php'"/></span>&nbsp;<input type="button" value="엑셀다운" class='btn_pink' style='cursor:hand;' onClick="exl_down('<?=urlencode($where)?>','<?=$tb_name?>','<?=$tb_name2?>','calculate01')"/></td>
+                  <td align="right" class="p_tt"><!-- <input type="button" value="결제조회" class='btn6_1' style='cursor:hand;' onClick="window.location='/admin/calculate.php?<?=$href?>&pay=1'"/>
+                    <input type="button" value="미결조회" class='btn1_1' style='cursor:hand;' onClick="window.location='/admin/calculate.php?<?=$href?>&nopay=1'"/> -->
+                    <select name="scom" id="select5" onChange="document.location.href='?<?=$href?>&scom='+this.value">
+                      <option value="">영업소별</option>
+                      <?
+											$sql="select idx,company from setting where tdiv=1 order by idx";
+											$result=mysql_query($sql);
+											while ($data = mysql_fetch_assoc($result)){	
+										
+									?>
+                                            <option value="<?=$data[idx]?>" <?=($scom==$data[idx])?"selected":""?>><?=$data[company]?></option>
+									<?}?>
+                    </select>
+					<select name="ssale" id="select5" onChange="document.location.href='?<?=$href?>&ssale='+this.value">
+                      <option value="">매입처별</option>
+                      <?
+											$sql="select idx,company from admcom order by idx";
+											$result=mysql_query($sql);
+											while ($data = mysql_fetch_assoc($result)){	
+										
+									?>
+                                            <option value="<?=$data[idx]?>" <?=($ssale==$data[idx])?"selected":""?>><?=$data[company]?></option>
+									<?}?>
+                    </select>
+                    <select name="scharge" id="select6" onChange="document.location.href='?<?=$href?>&scharge='+this.value">
+                      <option value="">담당자별</option>
+					   <?
+											$sql="select idx,name from setting where tdiv=2 or tdiv=3 order by idx";
+											$result=mysql_query($sql);
+											while ($data = mysql_fetch_assoc($result)){	
+										
+									?>
+                                            <option value="<?=$data[idx]?>" <?=($scharge==$data[idx])?"selected":""?>><?=$data[name]?></option>
+									<?}?>
+                    </select>
+                    <select name="sstoketype" id="select4" onChange="document.location.href='?<?=$href?>&sstoketype='+this.value">
+                      <option value="" >입고유형</option>
+                      <option value="1" <?=($sstoketype==1)?"selected":""?>>일반폐차</option>
+                      <option value="2" <?=($sstoketype==2)?"selected":""?>>차량초과</option>
+                      <option value="3" <?=($sstoketype==3)?"selected":""?>>조기폐차</option>
+                    </select>
+                    <select name="state" id="select" onChange="document.location.href='?<?=$href?>&state='+this.value">
+                      <option value="">:::상태:::</option>
+                      <option value="1" <?=($state==1)?"selected":""?>>미결</option>
+                      <option value="2" <?=($state==2)?"selected":""?>>발급</option>
+                      <option value="3" <?=($state==3)?"selected":""?>>종결</option>
+                      <option value="12" <?=($state==12)?"selected":""?>>미결+발급</option>
+                    </select>
+                    <!-- <select name="select6" id="select3">
+                      <option>::결제조회::</option>
+                      <option>차액(미결)</option>
+                      <option>초과결제</option>
+                    </select> -->
+                    <input type="text"  name="Search_text" value="<?=($Search_text)?$Search_text:""?>" class="ipip"  size="20">
+                    <input name="input" type="submit" value="검색" class="btn_blue">
+                    </span></td>
+                  </tr>
+                <tr>
+                  <td height="10" colspan="2" class="p_tt"></td>
+                  </tr>
+                </table>
+</form>
+                </td>
+                </tr>
+                <tr>
+                  <td>
+<form name="cform" method="post" target="HiddenFrm" style="margin:0px;">
+<input type=hidden value="alldel" name="mode">
+                <table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " style="border-collapse:collapse;" class='pad_10'>
+<tr>
+                                            <td width="3%" height="30" align="center" bgcolor="f3f3f3" class="p_tt"><input type="checkbox" name="allchk" id="allcheck" onClick="chkall()" /></td>
+                                            <td width="3%" align="center" bgcolor="f3f3f3" class="p_tt">NO</td>
+                                            <td width="8%" align="center" bgcolor="f3f3f3" class="p_tt">입고일</td>
+                      <td width="8%" align="center" bgcolor="f3f3f3" class="p_tt">차량명</td>
+                                            <td width="9%" align="center" bgcolor="f3f3f3" class="p_tt">차량번호</td>
+                                            <td width="7%" align="center" bgcolor="f3f3f3" class="p_tt">년식</td>
+                                            <td width="7%" align="center" bgcolor="f3f3f3" class="p_tt">입고유형</td>
+                      <td align="center" bgcolor="f3f3f3" class="p_tt">매입처</td>
+                      <td width="6%" align="center" bgcolor="f3f3f3" class="p_tt">영업소</td>
+                      <td width="6%" align="center" bgcolor="f3f3f3" class="p_tt">담당자</td>
+                                            <td width="8%" align="center" bgcolor="f3f3f3" class="p_tt">차대비</td>
+                      <td width="8%" align="center" bgcolor="f3f3f3" class="p_tt">요청누계</td>
+                      <td width="8%" align="center" bgcolor="f3f3f3" class="p_tt">결제누계</td>
+                      <td width="8%" align="center" bgcolor="f3f3f3" class="p_tt">차액(미결)</td>
+                      <td width="5%" align="center" bgcolor="f3f3f3" class="p_tt">상태</td>
+                    </tr>
+										  <?
+							if($total_article > 0){
+									$qry = "SELECT * FROM $tb_name WHERE $where LIMIT $start, $view_article";
+									//echo $qry;
+									$result=mysql_query($qry);
+									$i=0;
+									while ($data2 = mysql_fetch_assoc($result)){	
+
+										$crow = mysql_fetch_row(mysql_query("select company from admcom where idx='$data2[sale_idx]'"));
+										$drow = mysql_fetch_row(mysql_query("select name from setting where idx='$data2[set_idx2]'"));
+										$prow = mysql_fetch_row(mysql_query("select company from setting where idx='$data2[set_idx1]'"));
+										
+										$sumcallpay = mysql_fetch_row(mysql_query("select sum(callpay) from cardata2 where cardata_idx='$data2[idx]'"));
+										$sumdivpay = mysql_fetch_row(mysql_query("select sum(callpay) from cardata2 where cardata_idx='$data2[idx]' and paydiv=1"));
+							  		    $sumpay = mysql_fetch_row(mysql_query("select sum(callpay) from cardata2 where cardata_idx='$data2[idx]' and paydiv=2"));
+										$paydvice =$sumcallpay[0]-$sumpay[0];
+							 if($paydvice > 0){
+							  ?>
+<tr onblur="this.style.backgroundColor='#deecee'" onfocus="this.style.backgroundColor='#FFF'" onMouseOver="this.style.backgroundColor='#deecee'" onMouseOut="this.style.backgroundColor='#FFF'" style="cursor:hand">
+                                            <td width="3%" height="30" align="center" class="p_tt"><input type="checkbox" name="check[]" value="<?=$data2[idx]?>"></td>
+                                            <td width="3%" align="center" onclick='location.href="/admin/viewpay.php"'><?=$total_article-$i-(($page-1)*$view_article)?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$data2[stokeday]?></td>
+                                            <td width="8%" align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$data2[carname]?></td>
+                                            <td width="9%" align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$data2[carnum]?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$data2[carym]?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$stoke_arr2[$data2[stoketype]]?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$crow[0]?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$prow[0]?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=$drow[0]?></td>
+                                            <td width="8%" align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=number_format($data2[carbody])?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=number_format($sumcallpay[0])?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=number_format($sumpay[0])?></td>
+                                            <td align="center" onclick='location.href="/admin/viewpay.php?<?=$href?>&caridx=<?=$data2[idx]?>"'><?=number_format($sumcallpay[0]-$sumpay[0])?></td>
+                      <td width="5%" align="center">
+											<select name="status" id="select2" onChange="subreg('/comm/regexc.php?mode=status&idx=<?=$data2[idx]?>&sno='+ this.value);">
+                                              <option value=1 <?if($data2[state]==1){echo "selected";}?>>미결</option>
+                                              <option value=2 <?if($data2[state]==2){echo "selected";}?>>발급</option>
+                                              <option value=3 <?if($data2[state]==3){echo "selected";}?>>종결</option>
+                                            </select>
+					  </td>
+</tr>
+                                          			<? $i++;}}}?>
+						</form>
+                    </table>
+</td>
+                  </tr>
+                  <!-- 하단 선택삭제 G-->
+                 <table border="0" cellpadding="0" cellspacing="0"  style='margin-top:10px;' width='100%'>	
+							<tr>
+								<td width='50'><?if($_SESSION[loginLevel] > 1){}else{?><input type="button" value="선택삭제" class='btn_gray' onClick="delete_list('regexc.php');"><?}?></td>
+								<td>
+									<?//Normal_Page("/admin/calculate.php?")?>								</td>
+								<td  width='50'></td>
+							</tr>
+						</table>
+                        <!-- 하단 선택삭제 E-->
+                  </table>
+                              </tr>
+              <tr>
+                <td bgcolor='dddddd' height='1' colspan='3'></td>
+              </tr>
+            </table>
+	      <!--/로고 & 탑메뉴-->		
+		</td>
+	</tr>
+	<tr>
+		<td height='100%'>
+			<!--body-->			
+			<!--/body-->
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+

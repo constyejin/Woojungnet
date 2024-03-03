@@ -1,0 +1,149 @@
+<?include_once "../admin_setting.php";?>
+<?
+	$tb_name = "cardata1";
+	$tb_name2 = "cardata2";
+?>
+<script language='javascript' src='../inc/Object.js'></script>
+<script language="JavaScript" src="/inc/default.js"></script>
+<link rel="stylesheet" href="/css/admin.css" type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<body>
+<table width="800" border="0" align="center" cellpadding="10" cellspacing="0">
+        <tr>
+          <td align="center" valign="top">
+<table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " style="border-collapse:collapse;" class='pad_10'>
+  <tr>
+    <td colspan="9" class="p_tt">1.차량정보</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="f3f3f3" class="p_tt">등록일</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">차량명</td>
+    <td width="17%" height="30" align="center" bgcolor="f3f3f3" class="p_tt">차량번호</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">년식</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">연료</td>
+    <td width="13%" height="30" align="center" bgcolor="f3f3f3" class="p_tt">담당자</td>
+  </tr>
+<?
+
+	$qry = "SELECT * FROM $tb_name WHERE idx=$caridx";
+	//echo $qry;
+	$result=mysql_query($qry);
+	$data = mysql_fetch_assoc($result);
+		$crow1 = qrow("select company from admcom where idx='$data[sale_idx]'");
+		$crow2 = qrow("select name from setting where idx='$data[set_idx2]'");
+?>
+  <tr>
+    <td width="14%" height="30" align="center"><?=($data[regdate])?date("Y-m-d",$data[regdate]):""?></td>
+    <td width="14%" height="30" align="center"><?=$data[carname]?></td>
+    <td height="30" align="center"><?=$data[carnum]?></td>
+    <td width="10%" height="30" align="center"><?=$data[carym]?></td>
+    <td width="12%" height="30" align="center"><?=$oil_arr2[$data[oil]]?></td>
+    <td height="30" align="center"><?=$crow2[0]?></td>
+  </tr>
+
+</table>
+<br>
+<table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " style="border-collapse:collapse;" class='pad_10'>
+                                          <tr>
+                                            <td colspan="9" class="p_tt">2.지급요청내역</td>
+        </tr>
+ <tr>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt" >NO</td>
+    <td align="center" bgcolor="f3f3f3" class="p_tt">거래처</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">은행명</td>
+    <td width="17%" height="30" align="center" bgcolor="f3f3f3" class="p_tt">계좌번호</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">예금주</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">지급내역</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">청구금액</td>
+    <td width="9%" height="30" align="center" bgcolor="f3f3f3" class="p_tt">구분</td>
+    <td height="30" align="center" bgcolor="f3f3f3" class="p_tt">결제금액</td>
+  </tr>
+ <?
+											$sql2="select * from cardata2 where cardata_idx=$caridx order by idx";
+											$result2=mysql_query($sql2);
+											$i=1;
+											while ($data2 = mysql_fetch_assoc($result2)){	
+												$grow = qrow("select bankname,banknum,bname from admcom where idx='$data2[admcom_idx]'");
+										?>
+  <tr>
+    <td width="3%" height="30" align="center"><?=$i?></td>
+    <td width="14%" height="30" align="center"><?=$data2[company]?></td>
+    <td width="11%" height="30" align="center"><?=$grow[0]?></td>
+    <td height="30" align="center"><?=$grow[1]?></td>
+    <td width="10%" height="30" align="center"><?=$grow[2]?></td>
+    <td width="12%" height="30" align="center"><?=$data2[payinfo]?></td>
+    <td width="13%" height="30" align="center"><?=number_format($data2[callpay])?></td>
+    <td height="30" align="center"><?=$gubun_arr2[$data2[cardiv]]?></td>
+    <td width="11%" height="30" align="center"><?=($data2[paydiv]==2)?number_format($data2[callpay]):0?></td>
+  </tr>
+<?
+										$totalpay1 +=($data2[paydiv]==1)?$data2[callpay]:0; 
+										$totalpay2 +=($data2[paydiv]==2)?$data2[callpay]:0;
+										$i++;}?>
+  <tr>
+    <td height="30" colspan="2" align="center" bgcolor="f7f7f7" class="p_tt">차대비</td>
+    <td height="30" colspan="2" align="center" class="p_tt"><?=number_format($data[carbody])?></td>
+    <td height="30" colspan="2" align="center" bgcolor="f7f7f7" class="p_tt">청구합계</td>
+    <td height="30" align="center" class="p_tt"><font color="#3399FF"><?=number_format($totalpay1)?></font></td>
+    <td height="30" align="center" class="p_tt">&nbsp;</td>
+    <td height="30" align="center" class="p_tt"><font color="#990000"><?=number_format($totalpay2)?></font></td>
+  </tr>
+</table>
+<br>
+            <table width="800" border="1" cellpadding="3" cellspacing="0" bordercolor="#626262" frame="border or box " style="border-collapse:collapse;" class='pad_10'>
+          <form name="gage" method="post" action="gage_ok.php">
+                <input type="hidden" name="type" value="2">
+                <input type="hidden" name="smonth" value="01">
+                <input type="hidden" name="sday" value="31">
+                <input type="hidden" name="stoday" value="2012">
+                <tr>
+                  <td colspan="8" class="p_tt">3.결제내역</td>
+                </tr>
+                <tr class="tab_bg2" height=28>
+                  <td width="3%" align="center" bgcolor="f3f3f3" class="p_tt">NO</td>
+                  <td width="12%" align="center" bgcolor="f3f3f3" class="p_tt">결제일자</td>
+                  <td width="20%" align="center" bgcolor="f3f3f3" class="p_tt">거 래 처</td>
+                  <td width="9%" align="center" bgcolor="f3f3f3" class="p_tt">예금주</td>
+                  <td width="9%" align="center" bgcolor="f3f3f3" class="p_tt">결제자</td>
+                  <td align="center" bgcolor="f3f3f3" class="p_tt">결 제 통 장</td>
+                  <td width="15%" align="center" bgcolor="f3f3f3" class="p_tt">결제금액</td>
+                  <td width="12%" align="center" bgcolor="f3f3f3" class="p_tt">관   리</td>
+              </tr>
+			  <?
+											$sql2="select * from cardata2 where cardata_idx=$caridx and paydiv=2 order by idx";
+											$result2=mysql_query($sql2);
+											$i=1;
+											while ($data2 = mysql_fetch_assoc($result2)){	
+												$grow = qrow("select bankname,banknum,bname from admcom where idx='$data2[admcom_idx]'");
+												$crow = qrow("select name from setting where idx='$data2[payment]'");
+												$drow = qrow("select bankname,bname from admbank where idx='$data2[admbank]'");
+												//echo "select name from setting where idx='$data2[payment]'";
+										?>
+                <tr height=28>
+                <td align="center"> <?=$i?> </td>
+                  <td align="center"><?=($data2[paydate])?date("Y-m-d",$data2[paydate]):""?></td>
+                  <td align="center"><?=$data2[company]?></td>
+                  <td align="center"><?=$grow[2]?></td>
+                  <td align="center"><?=$crow[0]?></td>
+                  <td align="center"><?=$drow[0]?>(<?=$drow[1]?>)</td>
+                  <td align="center"> <?=number_format($data2[callpay])?></td>
+                  <td align="center"><input type="button" value="삭제하기" class="btn" style='cursor:hand' onClick="subreg('/comm/regexc.php?mode=paycancel&caridx=<?=$caridx?>&idx2=<?=$data2[idx]?>');opener.document.location.reload(true);"></td>
+                </tr>
+              <?
+										$totalpay +=$data2[callpay]; 
+									
+										$i++;}?>
+                <tr height=28>
+                <td colspan="6" align="center" bgcolor="f3f3f3" class="p_tt"> 합 계</td>
+                  <td align="center"><font color="#3399FF"><b><?=number_format($totalpay)?></b></font></td>
+                  <td align="center">&nbsp;</td>
+              </tr>
+            </table>
+
+            <br><input type="button" value="닫기" class="btn" onClick="javascript:window.close()"><br>
+            <br>
+          </td>
+  </tr>
+      </table>
+
+</body>
