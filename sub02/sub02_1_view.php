@@ -949,7 +949,7 @@ if($row->wc_mem_name=="동부"){
 		var bx = $('.bxslider').bxSlider({
 			mode: 'fade',
 			speed: 100,
-			slideWidth: 1280,
+			slideWidth: 780,
 			pagerType: 'short',
 			nextText: '',
 			prevText: '',

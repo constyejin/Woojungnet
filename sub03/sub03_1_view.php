@@ -1059,7 +1059,7 @@ for($i=1; $i<=100; $i++) {
 			var PopBx = $('.bxslider-popup').bxSlider({
 				mode: 'fade',
 				speed: 100,
-				slideWidth: 900,
+				slideWidth: 1280,
 				pagerType: 'short',
 				nextText: '',
 				prevText: '',
