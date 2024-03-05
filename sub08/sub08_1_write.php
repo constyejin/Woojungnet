@@ -214,6 +214,13 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
         </tr>
 
         <tr>
+          <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">차량번호 Registration number</td>
+          <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$cate1[name]?></td>
+          <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">사고이력 History of accidents</td>
+          <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px;  border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_model]?></td>
+        </tr>
+
+        <tr>
           <td width="170" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">제조사 Manufacturer</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
           
@@ -236,6 +243,7 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
                      
  
         </td>
+        
           <td width="170" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">모델명 Model</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
 
@@ -263,7 +271,10 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
           <td width="170" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">년식 Model year</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;">
           <input name="wc_age" type="text" size="5" value="<?=$row[wc_age]?>" class="form_control bold fs-15"/>
-                                년</td>
+            <span>년</span>
+          <input name="wc_age" type="text" size="5" value="" class="form_control bold fs-15"/>
+            <span>월</span>
+            </td>
         
         </td>
           <td width="170" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">변속기 Transmission</td>

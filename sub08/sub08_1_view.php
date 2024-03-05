@@ -323,8 +323,17 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
    <div class="div_information">
     <table style="width:1200px;margin: 0 auto; margin-top:0px;" border="0" cellspacing="0" cellpadding="0">
       <tbody style="border: 1px solid #cccccc"> 
-              <tr>
-          <td width="100%" height="50" align="center" colspan="4" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">차량 이미지</td>
+        <tr>
+          <td width="100%" height="50" align="center" colspan="4" bgcolor="#2cade2" style="padding-right: 5px;  padding-top: 2px; border:1px solid #CCCCCC;color: #fff;font-size: 14px;">
+            <span style="font-weight : 700">차량명</span> |
+            <span>차량번호</span> |
+            <span>사고이력</span> |
+            <span>년-월</span> |
+            <span>변속기</span> |
+            <span>연료</span> |
+            <span>cc</span> |
+            <span>km</span>
+          </td>
         </tr>
         
         <tr>
@@ -422,6 +431,13 @@ for($i=1; $i<=60; $i++) {
         </tr>
 
         <tr>
+          <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">차량번호 Registration number</td>
+          <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$cate1[name]?></td>
+          <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">사고이력 History of accidents</td>
+          <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px;  border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_model]?></td>
+        </tr>
+
+        <tr>
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">제조사 Manufacturer</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$cate1[name]?></td>
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">모델명 Model</td>
@@ -430,7 +446,10 @@ for($i=1; $i<=60; $i++) {
 
         <tr>
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">년식 Model year</td>
-          <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px;  border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_age]?> <span style="font-weight: normal">년</span></td>
+          <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px;  border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_age]?> 
+          <span style="font-weight: normal; margin-right : 8px">년</span>
+          <span style="font-weight: normal">월</span>
+        </td>
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">변속기 Transmission</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_trans]?></td>
         </tr>
