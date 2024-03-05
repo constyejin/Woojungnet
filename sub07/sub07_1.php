@@ -122,6 +122,8 @@ function delete_member() {
                                                                                 <p
                                                                                     style="float:left; margin-top : 3px;padding-left:10px;text-align: center;font-size : 1.1em;font-weight:500">
                                                                                     다양한 차종보유!! 방문을 환영합니다</p>
+                                                                                    <button class="btn-tiny red">sale</button>
+                                                                                    <button class="btn-tiny black">sold out</button>
                                                                                 <select name="wc_made"
                                                                                     onchange="document.cform.submit();"
                                                                                     class="form_select">
@@ -195,132 +197,113 @@ function delete_member() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td height="5" colspan="2">
-                                                <!--서브내용-->
-                                                <!--center start-->
-                                                <table width="1200" height="350" border="0" align="center"
-                                                    cellpadding="0" cellspacing="0">
-                                                    <tr>
-                                                        <td width="20%"></td>
-                                                        <td width="20%"></td>
-                                                        <td width="20%"></td>
-                                                        <td width="20%"></td>
-                                                        <td width="20%"></td>
-                                                    </tr>
-                                                    <tr>
+                                          <td height="5" colspan="2">
+                                              <!--서브내용-->
+                                              <!--center start-->
+                                              <table width="1200" height="350" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td width="25%"></td>
+                                                  <td width="25%"></td>
+                                                  <td width="25%"></td>
+                                                  <td width="25%"></td>
+                                                </tr>
+                                                    
+                                                <tr>
+                                                  <form name="f" action="proc.php" method="post">
+                                                    <input type="hidden" name="mode" value="delete">
+                                                    <input type="hidden" name="back_url" value="o">
+                                                    <input type="hidden" name="gubun4" value="<?= $gubun4 ?>">
+                                                    <input type="hidden" name="page" value="<?= $page ?>">
+                                                    <?
+                                                      $kk = 1;
+                                                      $num = $total_article - (($page - 1) * $view_article) + 1;
+                                                      $query = mysql_query("SELECT * FROM woojung_part  WHERE  $where order by wc_regdate desc LIMIT $start, $view_article");
+                                                      while ($row = mysql_fetch_array($query)) {
+                                                        $car_img_arr = explode('/', $row[wc_img_1]);
+                                                        $cate1 = mysql_fetch_array(mysql_query("select * from cate2 where idx='" . $row[wc_made] . "'"));
+                                                        $cate3 = mysql_fetch_array(mysql_query("select * from cate3 where idx='" . $row[wc_trans] . "'"));
+                                                      ?>
 
-                                                        <form name="f" action="proc.php" method="post">
-                                                            <input type="hidden" name="mode" value="delete">
-                                                            <input type="hidden" name="back_url" value="o">
-                                                            <input type="hidden" name="gubun4" value="<?= $gubun4 ?>">
-                                                            <input type="hidden" name="page" value="<?= $page ?>">
-                                                            <?
-															$kk = 1;
-															$num = $total_article - (($page - 1) * $view_article) + 1;
-															$query = mysql_query("SELECT * FROM woojung_part  WHERE  $where order by wc_regdate desc LIMIT $start, $view_article");
-															while ($row = mysql_fetch_array($query)) {
-																$car_img_arr = explode('/', $row[wc_img_1]);
-																$cate1 = mysql_fetch_array(mysql_query("select * from cate2 where idx='" . $row[wc_made] . "'"));
-																$cate3 = mysql_fetch_array(mysql_query("select * from cate3 where idx='" . $row[wc_trans] . "'"));
-															?>
+                                                      <td width="400" height="300" align="center"
+                                                            style="vertical-align:top;">
+                                                        <table width="200" border="0" cellpadding="0"
+                                                                cellspacing="0" style="border : 1px solid red;">
 
-                                                            <td width="210" height="300" align="center"
-                                                                style="vertical-align:top; padding:20Px">
-                                                                <table width="200" border="0" cellpadding="0"
-                                                                    cellspacing="0">
+                                                              <tr style="cursor:pointer;">
+                                                                  <td valign="middle">
+                                                                    <table border="0" align="center"
+                                                                        cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                          <td height="30" align="left"
+                                                                              bgcolor="#FFFFFF"><input
+                                                                                  type="checkbox"
+                                                                                  name="check[]" id="check[]"
+                                                                                  value="<?= $row[wc_idx] ?>"
+                                                                                  style="vertical-align:middle;" />
+                                                                              NO : <?= $row[wc_orderno] ?>
+                                                                          </td>
 
-                                                                    <tr style="cursor:pointer;">
-                                                                        <td valign="middle">
-                                                                            <table width="185" border="0" align="center"
-                                                                                cellpadding="0" cellspacing="0">
-                                                                                <tr>
-                                                                                    <td height="30" align="left"
-                                                                                        bgcolor="#FFFFFF"><input
-                                                                                            type="checkbox"
-                                                                                            name="check[]" id="check[]"
-                                                                                            value="<?= $row[wc_idx] ?>"
-                                                                                            style="vertical-align:middle" />
-                                                                                        NO : <?= $row[wc_orderno] ?>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="left" bgcolor="#FFFFFF"
-                                                                                        onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-                                                                                        <? if ($car_img_arr[0]) { ?>
-                                                                                        <img src="../data2/<?= $car_img_arr[0] ?>"
-                                                                                            width="200" height="160"
-                                                                                            border="0" />
-                                                                                        <? } else { ?>
-                                                                                        <img src="<?= getImg($row[wc_option_add]) ?>"
-                                                                                            width="200" height="160"
-                                                                                            border="0" />
-                                                                                        <? } ?>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
+                                                                                                                                                                                                                        <td height="25" align="center"
+                                                                              style=" padding :10px;">
+                                                                              <? if ($row[calltype] == "1") { ?>
+                                                                              <a href
+                                                                                  class="btn-tiny red">sale</a>
+                                                                              <? } else if ($row[calltype] == "2") { ?>
+                                                                              <a href
+                                                                                  class="btn-tiny black">soldout</a>
+                                                                              <? } ?>
+                                                                          </td>
+                                                                        </tr>
 
-                                                                    <tr style="cursor:pointer;"
-                                                                        onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-                                                                        <td valign="middle" style="padding-top:5px;">
-                                                                            <table width="200" align="center"
-                                                                                cellpadding="2" cellspacing="0"
-                                                                                style="width:200px;">
-                                                                                <!--tr><Td height="25" align="left"><strong><?= $row[wc_orderno] ?></strong></Td>
-					  </tr-->
-                                                                                <tr>
-                                                                                    <td height="25" align="center"
-                                                                                        style=" padding :10px;">
-                                                                                        <? if ($row[calltype] == "1") { ?>
-                                                                                        <a href
-                                                                                            class="btn btn-sm btn-red btn-round">sale</a>
-                                                                                        <? } else if ($row[calltype] == "2") { ?>
-                                                                                        <a href
-                                                                                            class="btn btn-sm btn-black btn-round">soldout</a>
-                                                                                        <? } ?>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <!-- <tr>
-                                                                                    <td height="25" align="center">
-                                                                                        <strong><?= $cate3[name] ?></strong>
-                                                                                    </td>
-                                                                                </tr> -->
-                                                                                <tr>
-                                                                                    <td height="25" align="center"
-                                                                                        style="font-size: 16px;font-weight:700;">
-                                                                                        <?= $row['wc_mem_etc'] ?></td>
-                                                                                </tr>
+                                                                        <tr>
+                                                                          <td align="left" bgcolor="#FFFFFF"
+                                                                              onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
+                                                                              <? if ($car_img_arr[0]) { ?>
+                                                                              <img src="../data2/<?= $car_img_arr[0] ?>"
+                                                                                  width="100%" height="160"
+                                                                                  border="0" />
+                                                                              <? } else { ?>
+                                                                              <img src="<?= getImg($row[wc_option_add]) ?>"
+                                                                                  width="100%" height="160"
+                                                                                  border="0" />
+                                                                              <? } ?>
+                                                                          </td>
+                                                                        </tr>
+                                                                      </table>
+                                                                    </td>
+                                                                  </tr>
 
-                                                                                <tr>
-                                                                                    <td height="25" align="center"
-                                                                                        style="color: #595959; font-weight:600;">
-                                                                                        <span
-                                                                                            style="padding : 0 5px;"><?= $row[wc_age] ?></span>
-                                                                                        ㅣ<span
-                                                                                            style="padding : 0 5px;"><?= $row[wc_trans] ?></span>
-                                                                                        ㅣ<span
-                                                                                            style="padding : 0 5px;"><?= $row[wc_fual] ?></span>
+                                                                <tr style="cursor:pointer;" onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
+                                                                  <td valign="middle" style="padding-top:5px;">
+                                                                    <table width="100%" align="center" ellpadding="2" cellspacing="0">
+                                                                </tr>
+      
+                                                            <tr>
+                                                              <td height="25" align="center"
+                                                                  style="font-size: 16px;font-weight:700;">
+                                                                  <?= $row['wc_mem_etc'] ?></td>
+                                                            </tr>
 
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <!--tr>
-                      <td height="25" align="center" style=" padding :10px;">
-					  <? if ($row[calltype] == "1") { ?>
-					  <a href class="btn btn-sm btn-red btn-round">sale</a>
-					  <? } else if ($row[calltype] == "2") { ?>
-					  <a href class="btn btn-sm btn-black btn-round">soldout</a>
-					  <? } ?>
-                      </td>
-                    </tr-->
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
+                                                            <tr>
+                                                              <td height="25" align="center"
+                                                                  style="color: #595959; font-weight:600;">
+                                                                <span
+                                                                    style="padding : 0 5px;"><?= $row[wc_age] ?></span>
+                                                                ㅣ<span
+                                                                    style="padding : 0 5px;"><?= $row[wc_trans] ?></span>
+                                                                ㅣ<span
+                                                                    style="padding : 0 5px;"><?= $row[wc_fual] ?></span>
+                                                              </td>
+                                                            </tr>
+
+                                                            </table>
+                                                              </td>
+                                                                </tr>
                                                                 </table>
                                                             </td>
                                                             <?
-																if ($kk % 5 == 0) {
-																	echo "		<tr><td colspan='5' height='1' bgcolor='#d8d8d8'></td></tr>";
+																if ($kk % 4 == 0) {
+																	echo "		<tr><td colspan='4' height='1' bgcolor='#d8d8d8'></td></tr>";
 																}
 																$kk++;
 															}
