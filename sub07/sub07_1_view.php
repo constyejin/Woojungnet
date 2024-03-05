@@ -319,19 +319,21 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
 
    <div class="div_information">
     <table style="width:1200px;margin: 0 auto; margin-top:0px;" border="0" cellspacing="0" cellpadding="0">
-      <tbody style="border: 1px solid #cccccc"> 
-              <tr>
-          <td width="100%" height="50" align="center" colspan="4" bgcolor="#2cade2" style="padding-right: 5px;  padding-top: 2px; border:1px solid #CCCCCC;color: #fff; font-size: 14px;">
-            <span style="font-weight : 700">차량명</span> |
-            <span>차량번호</span> |
-            <span>사고이력</span> |
-            <span>년-월</span> |
-            <span>변속기</span> |
-            <span>연료</span> |
-            <span>cc</span> |
-            <span>km</span>
-        </td>
+      <thead>
+        <tr>
+          <td width="100%" height="50" align="left" colspan="4" bgcolor="#2cade2" style="padding-left : 20px ;padding-right: 5px; padding-top: 2px; color: #fff; font-size: 16px;">
+            <span class="label">No :</span><span class="dd">24-0202552</span> &nbsp;/&nbsp;
+            <span class="dd">싼타페</span> &nbsp;/&nbsp;
+            <span class="dd">차량번호</span> &nbsp;/&nbsp;
+            <span class="dd">사고이력</span> &nbsp;/&nbsp;
+            <span class="dd">  년 월</span> &nbsp;/&nbsp;
+            <span class="dd">자동/오토</span> &nbsp;/&nbsp;
+            <span class="dd">하이브리드</span> &nbsp;/&nbsp;
+            <span class="dd">cc</span> &nbsp;/&nbsp;
+            <span class="dd">km</span>
+          </td>
         </tr>
+        
         <tr>
           <td colspan="4">
             <!-- 차량이미지 -->
@@ -403,22 +405,30 @@ for($i=1; $i<=60; $i++) {
                 </ul>
               </div>
             </div>
-            <!-- //차량이미지 리스트 --> 
           </td>
         </tr>
-      <!--차량 정보 표 -->
-        <tr style="border-top : 1px solid #ccc">
+
+        <tr style="display : block; margin-bottom : 10px"></tr>
+      </thead>
+
+      <tbody style="border: 1px solid #cccccc;> 
+        <tr style="border-top : 1px solid #ccc;">
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">고유번호 No.</td>
+
           <td width="200" height="50"  align="center" bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold;"><?=$row['wc_orderno']?></td>
+
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">판매상태 Sales status</td>
+
           <td width="200" height="50"  align="center" colspan="3" bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 13px;font-weight: bold">
-          <div class="btn-group">
-		  <? if($row[calltype]=="1"){ ?>
-		  <a href class="btn btn-sm btn-red btn-round">sale</a>
-		  <? }else if($row[calltype]=="2"){ ?>
-		  <a href class="btn btn-sm btn-black btn-round">soldout</a>
-		  <? } ?>
-          </div></td>
+
+            <div class="btn-group">
+              <? if($row[calltype]=="1"){ ?>
+              <a href class="btn btn-sm btn-red btn-round">sale</a>
+              <? }else if($row[calltype]=="2"){ ?>
+              <a href class="btn btn-sm btn-black btn-round">soldout</a>
+              <? } ?>
+            </div>
+          </td>
         </tr>
 
         <tr>

@@ -24,7 +24,6 @@ if($wc_idx){
 		$_SESSION['VISIT'][2] = $_SESSION['VISIT'][1];
 		$_SESSION['VISIT'][1] = $temp_p_no;
 	}
-
 }
 
 ?>
@@ -32,7 +31,6 @@ if($wc_idx){
 <script language="JavaScript" src="/admin/inc/default.js"></script>
 <script type="text/javascript" src="/common/js/form.js"></script>
  <script type="text/javascript">
-
 
 function detailView(pic, e) {
 	
@@ -43,30 +41,24 @@ function detailView(pic, e) {
 	}	
 
 	window.open('../inc/popup_pic3.php?pic='+pic+'&'+'idx='+<?=$idx?>,'imageWin','top=100,left=100,width=910,height=800,scrollbars=yes');
-
 }
 
+//onkeyup 이벤트 발생시 호출되는 함수 
+function getHttprequest(URL,param_auct_idx) { 
+  document.all.price.value = 'Loading..';
+    req = newXMLHttpRequest(); //request 객체 생성 
+    req.onreadystatechange = processReqChange;// 요청후 처리될 콜백함수를 정의합니다. 
+    req.open("POST", "../inc/getprice.php", true); //POST방식으로 sample.php 에 요청한다는것을 정의합니다. 
+    req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//요청헤더의 정의 
+    var p_auct_idx = param_auct_idx;
 
-
-
-
-    //onkeyup 이벤트 발생시 호출되는 함수 
-    function getHttprequest(URL,param_auct_idx) { 
-    
-    	document.all.price.value = 'Loading..';
-        req = newXMLHttpRequest(); //request 객체 생성 
-        req.onreadystatechange = processReqChange;// 요청후 처리될 콜백함수를 정의합니다. 
-        req.open("POST", "../inc/getprice.php", true); //POST방식으로 sample.php 에 요청한다는것을 정의합니다. 
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//요청헤더의 정의 
-        var p_auct_idx = param_auct_idx;
-
-        req.send("p_auct_idx="+p_auct_idx);  // sample.php에 값을 넘깁니다. 
-        // 중요!!: sample.php에 값이 넘어갈때에는 UTF-8로 인코딩되어 넘어갑니다. 
-    } 
+    req.send("p_auct_idx="+p_auct_idx);  
+    // sample.php에 값을 넘깁니다. 
+    // 중요!!: sample.php에 값이 넘어갈때에는 UTF-8로 인코딩되어 넘어갑니다. 
+} 
 //request객체생성 함수 
 // function from http://www-128.ibm.com/developerworks/kr/library/j-ajax1/index.html 
 function newXMLHttpRequest() { 
-
   var xmlreq = false; 
 
   if (window.XMLHttpRequest) { //파이어폭스나 맥의 사파리의 경우처리 
@@ -96,20 +88,22 @@ function newXMLHttpRequest() {
 // function from http://developer.apple.com/internet/webcontent/xmlhttpreq.html 
 // handle onreadystatechange event of req object 
 function processReqChange() { 
-    // only if req shows "loaded" 
-    if (req.readyState == 4) { 
-        // only if "OK" 
-        if (req.status == 200) { 
-            printData(); //kin()의 요청이 정상적으로 처리되고 출력된 값을 어떻게 처리할지의 함수 
-        } else { 
-            alert("There was a problem retrieving the XML data:\n" + req.statusText); 
-        } 
+  // only if req shows "loaded" 
+  if (req.readyState == 4) { 
+    // only if "OK" 
+    if (req.status == 200) { 
+      printData(); 
+      //kin()의 요청이 정상적으로 처리되고 출력된 값을 어떻게 처리할지의 함수 
+    } else { 
+      alert("There was a problem retrieving the XML data:\n" + req.statusText); 
     } 
+  } 
 } 
+
 //sample.php에서 출력된 내용을 어떻게 처리할것인지? 
 function printData(txt) { 
-    document.all.price.value = req.responseText; 
-    
+  document.all.price.value = req.responseText; 
+  
 } 
 
 function zoomView(f, n, e){
@@ -131,8 +125,6 @@ function zoomView(f, n, e){
 	// }
 	document.getElementById('zoomimgno').value = n;	
 }
-
-
 
 function ReSizeImg(){
 	var obj = document.getElementById('zoomimg');
@@ -159,60 +151,40 @@ function zzim(){
 	f.submit();
 }
 
-
 </script>
-<style type="text/css">
-.info-table tr, td{
-  border-bottom: 1px solid #cccccc;
-}
-
-.div_information th,tr {
-  
-}
-
-</style>
 <script type="text/javascript" src="/common/js/form.js"></script>
 
 <script type="text/javascript">
-function addComma (str)
-{
- var input_str = str.toString();
+  function addComma (str) {
+    var input_str = str.toString();
 
- if (input_str == '') return false;
- input_str = parseInt(input_str.replace(/[^0-9]/g, '')).toString();
- if (isNaN(input_str)) { return false; }
+    if (input_str == '') return false;
+    input_str = parseInt(input_str.replace(/[^0-9]/g, '')).toString();
+    if (isNaN(input_str)) { return false; }
 
- var sliceChar = ',';
- var step = 3;
- var step_increment = -1;
- var tmp  = '';
- var retval = '';
- var str_len = input_str.length;
+    var sliceChar = ',';
+    var step = 3;
+    var step_increment = -1;
+    var tmp  = '';
+    var retval = '';
+    var str_len = input_str.length;
 
- for (var i=str_len; i>=0; i--)
- {
-  tmp = input_str.charAt(i);
-  if (tmp == sliceChar) continue;
-  if (step_increment%step == 0 && step_increment != 0) retval = tmp + sliceChar + retval;
-  else retval = tmp + retval;
-  step_increment++;
- }
+    for (var i=str_len; i>=0; i--) {
+      tmp = input_str.charAt(i);
+      if (tmp == sliceChar) continue;
+      if (step_increment%step == 0 && step_increment != 0) retval = tmp + sliceChar + retval;
+      else retval = tmp + retval;
+      step_increment++;
+    }
+    return retval;
+  } 
 
- return retval;
+function rs(str){
+  str = str.replace(/,/g, "");
+  return str;
 }
 
-
-
-function rs(str)
-{
-   
-    str = str.replace(/,/g, "");
-    return str;
-}
-
-
-function bid_submit() {
-
+function bid_submit(){
 	var f = document.auctForm;
 
 	if(f.agree.checked!=true){
@@ -220,40 +192,28 @@ function bid_submit() {
 		return false;
 	}
 	
-	
 	if(f.goSale[0].checked == false && f.goSale[1].checked == false){
 		alert("매각유형을 선택해 주세요");
 		return false;
 	}
-/*	
 
-
-	if(	rs(f.c_bid_price.value) < <?=$auction_strt_amt?>)
-	{
-		var strt_amt	= '<?=number_format($auction_strt_amt)?>';
-		alert("입찰금액이 경매시작가 ("+strt_amt+"원) 보다 작을수 없습니다.");
-		return false;
-		
-	}
-	*/
 	var strt_amt_j	= '<?=$auction_strt_amt?>';
 	var bid_c = rs(f.c_bid_price.value);
 	var bid_p = bid_c.replace(/^\$|,/g,"");
-	if(parseInt(strt_amt_j) > parseInt(bid_p)  ){
+
+	if(parseInt(strt_amt_j) > parseInt(bid_p)){
 		var strt_amt	= '<?=number_format($auction_strt_amt)?>';
+    
 		alert("입찰금액이 경매시작가 ("+strt_amt	+"원) 보다 작을수 없습니다.");
 		return false;
 	}
 
 	var but = document.getElementById('bidButton').disabled;
-	if(!validate(f)) {
+	if(!validate(f)){
 		return false;
 		but = false;
 	}
-	
-		return true;
-	
-	
+  return true;
 }
 
 function part_del(idx){
@@ -263,10 +223,8 @@ function part_del(idx){
 }
 </script>
 
-  <div id="contents_basic">
- 
-    <div class="co_car_all">
-
+<div id="contents_basic">
+  <div class="co_car_all">
   	<div class="sub-visual">
 			<div class="sub-text">
 				<p class="catch-phrase">
@@ -276,34 +234,31 @@ function part_del(idx){
         수출,내수차량 및 부품차량을 다량 보유하고 있습니다.
 				</p>
 			</div>
-		</div>
-        
+		</div>   
    <div class="div_basic car-info-view">
 
     <table style="width:1200px;heidght:50px; margin:20 auto;">
-
-    <tbody>
-
-      <tr>
-        <td heigth="50" colspan="3" align="center">
-				<table width="140" border="0" cellpadding="5" cellspacing="0" style=" width:140px;margin-bottom: 40px;margin-top: 20px;">
-                  <tr>
-                    <td width="65">
-                      <a href="sub08_1.php" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #0066CC; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color:#0066CC; ">
-                        목록보기
-                      </a>
-                    </td>
-                    <td width="65">
-<?
-if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" || $loginUsort == "superadmin" || $loginUsort == "jisajang2"){
-?>
-        <a href="sub08_1_write.php?wc_idx=<?=$wc_idx?>" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #cc3535; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color: #cc3535;margin-left: 10px; ">
-				수정하기
-			</a>
-<?
-}
-?>
-					</td>
+      <tbody>
+       <tr>
+          <td heigth="50" colspan="3" align="center">
+				  <table width="140" border="0" cellpadding="5" cellspacing="0" style=" width:140px;margin-bottom: 40px;margin-top: 20px;">
+            <tr>
+              <td width="65">
+                <a href="sub08_1.php" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #0066CC; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color:#0066CC; ">
+                  목록보기
+                </a>
+              </td>
+              <td width="65">
+              <?
+              if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" || $loginUsort == "superadmin" || $loginUsort == "jisajang2"){
+              ?>
+                <a href="sub08_1_write.php?wc_idx=<?=$wc_idx?>" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #cc3535; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color: #cc3535;margin-left: 10px; ">
+                수정하기
+              </a>
+              <?
+              }
+              ?>
+				  	</td>
                   </tr>
 
                 </table>                  
@@ -322,17 +277,18 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
 
    <div class="div_information">
     <table style="width:1200px;margin: 0 auto; margin-top:0px;" border="0" cellspacing="0" cellpadding="0">
-      <tbody style="border: 1px solid #cccccc"> 
+      <thead>
         <tr>
-          <td width="100%" height="50" align="center" colspan="4" bgcolor="#2cade2" style="padding-right: 5px;  padding-top: 2px; border:1px solid #CCCCCC;color: #fff;font-size: 14px;">
-            <span style="font-weight : 700">차량명</span> |
-            <span>차량번호</span> |
-            <span>사고이력</span> |
-            <span>년-월</span> |
-            <span>변속기</span> |
-            <span>연료</span> |
-            <span>cc</span> |
-            <span>km</span>
+          <td width="100%" height="50" align="left" colspan="4" bgcolor="#2cade2" style="padding-left : 20px ;padding-right: 5px;  padding-top: 2px; color: #fff; font-size: 16px;">
+            <span class="label">No :</span><span class="dd">24-0202552</span> &nbsp;/&nbsp;
+            <span class="dd">싼타페</span> &nbsp;/&nbsp;
+            <span class="dd">차량번호</span> &nbsp;/&nbsp;
+            <span class="dd">사고이력</span> &nbsp;/&nbsp;
+            <span class="dd">  년 월</span> &nbsp;/&nbsp;
+            <span class="dd">자동/오토</span> &nbsp;/&nbsp;
+            <span class="dd">하이브리드</span> &nbsp;/&nbsp;
+            <span class="dd">cc</span> &nbsp;/&nbsp;
+            <span class="dd">km</span>
           </td>
         </tr>
         
@@ -407,10 +363,13 @@ for($i=1; $i<=60; $i++) {
                 </ul>
               </div>
             </div>
-            <!-- //차량이미지 리스트 --> 
           </td>
         </tr>
-      <!--차량 정보 표 -->
+
+        <tr style="display : block; margin-bottom : 10px"></tr>
+      </thead>
+
+      <tbody style="border: 1px solid #cccccc"> 
         <tr>
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">고유번호 No.</td>
           <td width="200" height="50"  align="center" bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold;"><?=$row['wc_orderno']?></td>

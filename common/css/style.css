@@ -1,7 +1,7 @@
 body{
 	-webkit-text-size-adjust: none;
 }
-/* ���̾ƿ�*/
+
 #wrap{
 	width:100%;background:#FFF;
 	position: relative;
@@ -195,8 +195,8 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 #bottom_area2 {position:absolute;left:210px;top:50px;text-align:left;}
 #bottom_area1 {position:absolute;left:200px;top:20px;}
 #bottom_area1 li{
-	display:inline-block;
 	float: left;
+	display:inline-block;
 	padding:0 10px;
 }
 
@@ -285,7 +285,6 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 }
 .car-info-view .car-image .bx-viewport{
 	min-height: 520px;
-	border: 1px solid #c1c1c1;
 }
 .layer-popup-wrap .car-image .img-wrap.bxslider-popup{
 	width: 1280px;
@@ -1002,7 +1001,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	height: 17px;
 }
 .btn-blue{
-	display:inline-flex; justify-content: center; align-items:center;border: 2px solid #0066CC; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color:#0066CC;"
+	display:inline-flex; justify-content: center; align-items:center;border: 2px solid #0066CC; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color:#0066CC;
 }
 .btn-red{
 	display: inline-flex;justify-content: center;align-items: center;border: 2px solid #cc3535;border-radius: 20px;min-width: 80px;height: 32px;font-size: 12px;font-weight: 600;color: #cc3535;
