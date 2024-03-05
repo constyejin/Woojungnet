@@ -162,13 +162,10 @@ function zzim(){
 
 </script>
 <style type="text/css">
-.info-table td{
+.info-table tr, td{
   border-bottom: 1px solid #cccccc;
 }
 
-.div_information th,tr {
-  
-}
 
 </style>
 <script type="text/javascript" src="/common/js/form.js"></script>

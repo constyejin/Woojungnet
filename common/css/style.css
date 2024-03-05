@@ -265,24 +265,23 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 }
 .car-info-view .car-image .img-wrap{
 	position:relative;
-	/* overflow: hidden; */
-	height: 780px;
+	height: 768px;
 }
 .car-info-view .car-image .img-wrap.swiper{
 	width: 1280px;
-	height: 780px;
+	height: 768px;
 }
 .car-info-view .car-image .img-wrap.bxslider{
 	width: 1280px;
-	height: 750px;
+	height: 768px;
 }
 .car-info-view .car-image.for-parts .img-wrap.swiper{
 	width: 1280px;
-	height: 750px;
+	height: 768px;
 }
 .car-info-view .car-image.for-parts .img-wrap.bxslider{
 	width: 1280px;
-	height: 750px;
+	height: 768px;
 }
 .car-info-view .car-image .bx-viewport{
 	min-height: 520px;
@@ -290,11 +289,11 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 }
 .layer-popup-wrap .car-image .img-wrap.bxslider-popup{
 	width: 1280px;
-	height: 750px;
+	height: 768px;
 }
 .layer-popup-wrap .car-image, .layer-popup-wrap .bx-wrapper{
 	min-width: 1280px;
-	height: 750px;
+	height: 768px;
 }
 .car-info-view .car-image .img-wrap img{
 	position: absolute;
@@ -313,7 +312,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	object-fit: cover;
 }
 .car-info-view .car-image.for-parts .img-wrap.bxslider img{
-	height: 750px;
+	height: 768px;
 	object-fit: contain;
 	background-color: rgba(0,0,0,.3);
 }
@@ -321,13 +320,13 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	position: relative;
 	top: unset;
 	width: 100%;
-	height: 750px;
+	height: 768px;
 	transform: none;
 	object-fit: contain;
 }
 .layer-popup-wrap .car-image .img-wrap.bxslider-popup .slide{
 	width: 1280px !important;
-	height: 750px !important;
+	height: 768px !important;
 }
 
 .car-info-view .img-wrap .nav-prev,
