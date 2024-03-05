@@ -1104,15 +1104,16 @@ table.table-standard tr td {
   background-position: center;
   background-size: cover;
   height: 332px;
-  /* margin-top: calc(46px + 80px); */
 }
+
 .sub-visual .sub-text {
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
 }
+
 .sub-visual .sub-text .catch-phrase {
   font-size: 35px;
   font-weight: 700;
@@ -2151,4 +2152,3 @@ table.table-standard tr td {
   }
 }
 
-/*# sourceMappingURL=incaron_style.css.map */
