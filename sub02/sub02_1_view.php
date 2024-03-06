@@ -1022,10 +1022,11 @@ for($i=1; $i<=100; $i++) {
 				</div>
 			</div>
 			<!-- //차량이미지 -->
-
 			<!-- 차량이미지 리스트 -->
 			<div class="img-list-wrap">
 				<div class="img-list">
+					<button>왼</button>
+					<button>오</button>
 					<ul>
 <?
 for($i=1; $i<=100; $i++) {

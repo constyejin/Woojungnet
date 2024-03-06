@@ -894,9 +894,10 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 .layer-popup-wrap .img-list-wrap{
 	margin-top: 10px;
 }
+
 .layer-popup-wrap .img-list-wrap .img-list ul{
+	border: 2px solid red !important;
 	display: flex;
-	flex-wrap: wrap;
 	background-color: #ffffff;
 }
 .layer-popup-wrap .img-list-wrap .img-list li{
