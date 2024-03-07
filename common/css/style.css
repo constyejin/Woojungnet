@@ -358,7 +358,6 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	text-align: center;
 	line-height: 1;
 	z-index: 1;
-	/* border: 1px solid red; */
 }
 .nav-prev{
 	left: 10px;
@@ -853,9 +852,9 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	display: block;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	width: 1280px;
 	min-height: 300px;	
+	transform: translate(-50%, -50%);
 	background-color: #fff;
 }
 
@@ -893,23 +892,29 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 
 .layer-popup-wrap .img-list-wrap{
 	margin-top: 10px;
+	overflow: hidden;
+}
+
+.layer-popup-wrap .img-list-wrap .img-list .img-btn-list {
+	border: 1px solid blue;
 }
 
 .layer-popup-wrap .img-list-wrap .img-list ul{
-	border: 2px solid red !important;
 	display: flex;
 	background-color: #ffffff;
+
 }
 .layer-popup-wrap .img-list-wrap .img-list li{
+	/* flex: 0 0 5%; */
+	width: 64px;
 	background-color: #ffffff;
-	flex: 0 0 5%;
 	height: 40px;
-	overflow: hidden;
+
 }
 .layer-popup-wrap .img-list-wrap .img-list li > img{
 	width: 100%;
-	opacity: 0.5;
 	height: 100%;
+	opacity: 0.5;
 	object-fit: cover;
 }
 .layer-popup-wrap .img-list-wrap .img-list li.active{

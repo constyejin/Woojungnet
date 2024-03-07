@@ -1025,8 +1025,10 @@ for($i=1; $i<=100; $i++) {
 			<!-- 차량이미지 리스트 -->
 			<div class="img-list-wrap">
 				<div class="img-list">
-					<button>왼</button>
-					<button>오</button>
+					<div class="img-btn-list">
+						<button class="prev-btn">Prev</button>
+						<button class="next-btn">Next</button>
+					</div>
 					<ul>
 <?
 for($i=1; $i<=100; $i++) {
@@ -1043,6 +1045,36 @@ for($i=1; $i<=100; $i++) {
 					</ul>
 				</div>
 			</div>
+
+			<script>
+				$(document).ready(function(){
+					let cur = 0;
+					let len = $('.layer-popup-wrap .img-list > ul > li').length;
+					$('.layer-popup-wrap .img-list > ul').width(64 * len);
+
+					function sliding(dir){
+						cur = cur + dir;
+						if(cur >= len) {
+							cur = 0;
+						} else if(cur < 0) {
+							cur = len - 1;
+						}
+
+						$('.layer-popup-wrap .img-list > ul').animate({
+							marginLeft : -64 * cur + "px"
+						})
+					}
+
+					// Prev, Next 버튼
+					$('.prev-btn').on('click', function(){
+						sliding(-20);
+					})
+
+					$('.next-btn').on('click', function(){
+						sliding(20);
+					})
+				})
+			</script>
 			<!-- //차량이미지 리스트 -->
 		</div>
 		<div class="popip-footer">
@@ -1067,6 +1099,12 @@ for($i=1; $i<=100; $i++) {
 					$('.layer-popup-wrap .img-list > ul > li[data-thumb="'+(newIndex+1)+'"]').addClass('active').siblings().removeClass('active');
 				}
 			});
+
+			// $(function(){
+			// 	let imgList = $('.layer-popup-wrap .img-list > ul > li').bxSlider({
+			// 		slidesPerView: 20, // 한번에 보여질 슬라이드 개수
+			// 	})
+			// })
 			
 			$('.layer-popup-wrap .img-list > ul > li').on('click',function(e){
 				var target = $(this).data('thumb');

@@ -47,6 +47,7 @@ const incaronUI = {
       }
     })  
   },
+  
   mainImageSlide: function(){
     var swiper = new Swiper(".swiper.main-visual", {
       autoplay: {
@@ -59,6 +60,8 @@ const incaronUI = {
       }
     });
   },
+
+  
 }
 $(function(){
   // incaronUI.gnbScrollEffect();
