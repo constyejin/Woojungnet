@@ -895,8 +895,32 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	overflow: hidden;
 }
 
-.layer-popup-wrap .img-list-wrap .img-list .img-btn-list {
-	border: 1px solid blue;
+.layer-popup-wrap .img-list-wrap .img-list {
+	position: relative;
+}
+
+.layer-popup-wrap .img-list-wrap .img-list button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 100;
+	width: 24px;
+	height: 24px;
+	color: #fff;
+	font-weight: 600;
+	border: none;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,.8);
+}
+
+.layer-popup-wrap .img-list-wrap .img-list .prev-btn {
+	left: 10px;
+	padding-right: 2px;
+}
+
+.layer-popup-wrap .img-list-wrap .img-list .next-btn {
+	right: 10px;
+	padding-left: 2px;
 }
 
 .layer-popup-wrap .img-list-wrap .img-list ul{

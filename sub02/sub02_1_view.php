@@ -1025,9 +1025,9 @@ for($i=1; $i<=100; $i++) {
 			<!-- 차량이미지 리스트 -->
 			<div class="img-list-wrap">
 				<div class="img-list">
-					<div class="img-btn-list">
-						<button class="prev-btn">Prev</button>
-						<button class="next-btn">Next</button>
+					<div class="thum-btn-list">
+						<button class="thum-btn prev-btn">&lt;</button>
+						<button class="thum-btn next-btn">&gt;</button>
 					</div>
 					<ul>
 <?
@@ -1046,35 +1046,37 @@ for($i=1; $i<=100; $i++) {
 				</div>
 			</div>
 
-			<script>
-				$(document).ready(function(){
-					let cur = 0;
-					let len = $('.layer-popup-wrap .img-list > ul > li').length;
-					$('.layer-popup-wrap .img-list > ul').width(64 * len);
+	<script>
+		$(document).ready(function(){
+			let cur = 0;
+			let len = $('.layer-popup-wrap .img-list > ul > li').length;
+			$('.layer-popup-wrap .img-list > ul').width(64 * len);
 
-					function sliding(dir){
-						cur = cur + dir;
-						if(cur >= len) {
-							cur = 0;
-						} else if(cur < 0) {
-							cur = len - 1;
-						}
+			function sliding(dir){
+				cur = cur + dir;
+				if(cur >= len) {
+					$('.prev-btn').attr('disabled', true);
+					$('.next-btn').attr('disabled', true);
+				} else if(cur < 0) {
+					$('.prev-btn').attr('disabled', true);
+					$('.next-btn').attr('disabled', true);
+				}
 
-						$('.layer-popup-wrap .img-list > ul').animate({
-							marginLeft : -64 * cur + "px"
-						})
-					}
-
-					// Prev, Next 버튼
-					$('.prev-btn').on('click', function(){
-						sliding(-20);
-					})
-
-					$('.next-btn').on('click', function(){
-						sliding(20);
-					})
+				$('.layer-popup-wrap .img-list > ul').animate({
+					marginLeft : -64 * cur + "px"
 				})
-			</script>
+			}
+
+			// Prev, Next 버튼
+			$('.prev-btn').on('click', function(){
+				sliding(-20);
+			})
+
+			$('.next-btn').on('click', function(){
+				sliding(20);
+			})
+		})
+	</script>
 			<!-- //차량이미지 리스트 -->
 		</div>
 		<div class="popip-footer">
