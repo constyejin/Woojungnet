@@ -40,230 +40,395 @@
 		</div>
 
     <!-- 추가 -->
-    <div class="div_basic">
-     <table style="width:1200px;heidght:50px; margin:20 auto;">
-      <tbody>
-        <tr>
-          <td heigth="50" colspan="3" align="center">
-            <table width="140" border="0" cellpadding="5" cellspacing="0" style=" width:140px;margin-bottom: 40px;margin-top: 20px;">
-              <tbody>
-                <tr>
-                  <td width="65">
-                    <a href="sub07_1.php" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #0066CC; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color:#0066CC; ">
-                      목록보기
-                    </a>
-                  </td>
-                
-                  <td width="65">
-                    <?
-                    if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" || $loginUsort == "superadmin" || $loginUsort == "jisajang2"){
-                    ?>
-                    <a href="javascript:out_submit();" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #cc3535; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color: #cc3535;margin-left: 10px; ">
-                      등록하기
-                    </a>
-                    <?
-                    }
-                    ?>
-                  </td>
-                </tr>
-              </tbody>
-            </table>     
-
-            <form name='outForm' method='post' action='car_info_update.php' enctype="multipart/form-data" >
-              <input type="hidden" name="mode" id="mode" value="<?=$mode?>">
-              <input type="hidden" name="wc_idx" value="<?=$wc_idx?>">
-              <input type="hidden" name="wc_go_idx" value="">
-              <input type="hidden" name="aucidx" value="<?=$aucidx?>">
-              <input type="hidden" name="aucorderNo" value="<?=$aucNo?>">
-              <input type="hidden" name="href" value="<?=$href?>">
-              <input type="hidden" name="gubun4" value="2">
-              <input type="hidden" name="hidFileName"/>
-              <div class="div_information">
-                <table style="width:1200px;margin: 0 auto; margin-top:0px;" border="0" cellspacing="0" cellpadding="0">
-                  <tbody style="border: 1px solid #cccccc"> 
-                    <!--차량 정보 표 -->
-                    <tr>
-                      <td height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">고유번호 No.</td>
-
-                      <td width="200" height="50"  align="left" bgcolor="#FFFFFF" style="padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">24-0200000</td>
-
-                      <td width="200px" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">판매상태 Sales status</td>
-
-                      <td width="200" height="50"  align="left" colspan="3" bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 13px;font-weight: bold">
-
-                      <div class="btn-group">
-                      <ul class="radio-list">
-                            <li  style="display:inline-block">
-                              <input type='radio' name='calltype' value='1' <?=$row[calltype]=="1"?"checked":""?>>
-                              <span href class="btn btn-sm btn-red btn-round">sale</span>
-                            </li>
-                            <li  style="display:inline-block; margin-left:5px;">
-                              <input type='radio' name='calltype' value='2' <?=$row[calltype]=="2"?"checked":""?>>
-                              <span href class="btn btn-sm btn-black btn-round" style="margin-left:5px;">soldout</span>
-                            </li>
-                          </ul>
-                        
-                      </div></td>
-                    </tr>
-
-                    <tr>
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">차량명 Vehicle name</td>
-                      <td width="200" height="50"  align="left" colspan="3" bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left;border-bottom:1px solid #CCCCCC; font-size: 16px;font-weight: bold;">
-                      <input type="text" name="wc_mem_etc" class="form_control bold" size="80" value="<?=$row[wc_mem_etc]?>"></td>
-                    
-                    </tr>
-
-                    <tr>
-                      <td width="127" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">차량번호 Registration number</td>
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$cate1[name]?></td>
-                      <td width="127" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">사고이력 History of accidents</td>
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px;  border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_model]?></td>
-                    </tr>
-
-                    <tr>
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">제조사 Manufacturer</td>
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
-                      
-                      
-                      <select name="made" onchange="si_chk(this)" class="form_select bold">
-                                              <option value="" selected="selected">== 제조사 ==</option>
-                                              <?
-                                $sql="select * from cate2 where depth='1' order by name asc ";
-                                $result_made=mysql_query($sql);
-                                while($data_made=mysql_fetch_array($result_made)){
-                                ?>
-                                              <option value="<?=$data_made[idx]?>" <?if($row[wc_made]==$data_made[idx]) echo "selected";?>>
-                                                <?=$data_made[name]?>
-                                            </option>
-                                              <?
-                                }
-                                ?>
-                                            </select>
-
-                                
-            
+     <!-- 위에 상세설명 표  -->
+     <div class="div_basic">
+      <table style="width:1200px; margin:20 auto;">
+        <tbody>
+          <tr>
+            <td colspan="3" align="center">
+              <table width="140" border="0" cellpadding="5" cellspacing="0" style=" width:140px;margin-bottom: 40px;margin-top: 20px;">
+                <tbody>
+                  <tr>
+                    <td width="65">
+                      <a href="sub07_1.php" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #0066CC; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color:#0066CC; ">
+                        목록보기
+                      </a>
                     </td>
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">모델명 Model</td>
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
+                  
+                    <td width="65">
+                      <?
+                      if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" || $loginUsort == "superadmin" || $loginUsort == "jisajang2"){
+                      ?>
+                      <a href="javascript:out_submit();" style="display:inline-flex; justify-content: center; align-items:center;border: 2px solid #cc3535; border-radius: 20px; min-width: 80px; height: 32px;font-size: 12px;font-weight: 600;color: #cc3535;margin-left: 10px; ">
+                        등록하기
+                      </a>
+                      <?
+                      }
+                      ?>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>     
 
-                                              <select name="car_name" class="form_select bold" >
-                                                <option value="" selected="selected">== 차명 ==</option>
-                                                <?
+              <form name='outForm' method='post' action='car_info_update.php' enctype="multipart/form-data" >
+                  <input type="hidden" name="mode" id="mode" value="<?=$mode?>">
+                <input type="hidden" name="wc_idx" value="<?=$wc_idx?>">
+                <input type="hidden" name="wc_go_idx" value="">
+                <input type="hidden" name="aucidx" value="<?=$aucidx?>">
+                <input type="hidden" name="aucorderNo" value="<?=$aucNo?>">
+                <input type="hidden" name="href" value="<?=$href?>">
+                <input type="hidden" name="gubun4" value="2">
+                <input type="hidden" name="hidFileName"/>
+                <div class="div_information">
+                  <table style="width:1200px; height:50px; margin: 0 auto; font-weight: bold; background-color:#fff;" border="0" cellspacing="0" cellpadding="0">
+                    <tbody style="border: 1px solid #ccc"> 
+                      <!--차량 정보 표 -->
+                      <tr height="50px">
+                        <td width="198px" bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;color:#888; box-sizing:border-box;">
+                          고유번호 No.
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc">
+                          24-0200000
+                        </td>
+
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;color: #888;">
+                          판매상태 Sales status
+                        </td>
+
+                        <td style="padding:4px 12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <div class="btn-group">
+                            <ul class="radio-list">
+                              <li style="display:inline-block">
+                                <input type='radio' name='calltype' value='1' <?=$row[calltype]=="1"?"checked":""?>>
+                                <span href class="btn btn-sm btn-red btn-round">sale</span>
+                              </li>
+                              <li style="display:inline-block; margin-left:5px;">
+                                <input type='radio' name='calltype' value='2' <?=$row[calltype]=="2"?"checked":""?>>
+                                <span href class="btn btn-sm btn-black btn-round" style="margin-left:5px;">soldout</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          차량명 Vehicle name
+                        </td>
+                        <td colspan="3" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                        <input type="text" name="wc_mem_etc" class="form_control bold" size="80" value="<?=$row[wc_mem_etc]?>"></td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          차량번호 Registration number
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;"><?=$cate1[name]?>
+                          <input type="text" class="form_control bold">
+                        </td>
+
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          사고이력 History of accidents
+                        </td>
+
+                        <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <span style="margin-right:8px;">
+                            <input type="radio" name="" value="">
+                            <span style="margin-left:2px;">무사고</span>
+                          </span>
+                          <span>
+                            <input type="radio" name="" value="">
+                            <span style="margin-left:2px;">사고있음</span>
+                          </span>
+                          <?=$row[wc_model]?>
+                        </td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color:#888;">
+                          제조사 Manufacturer
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <select name="made" onchange="si_chk(this)" class="form_select bold">
+                          <option value="" selected="selected">== 제조사 ==</option>
+                            <?
+                              $sql="select * from cate2 where depth='1' order by name asc ";
+                              $result_made=mysql_query($sql);
+                              while($data_made=mysql_fetch_array($result_made)){
+                            ?>
+                              <option value="<?=$data_made[idx]?>" <?if($row[wc_made]==$data_made[idx]) echo "selected";?>><?=$data_made[name]?>
+                              </option>
+                            <?
+                            }
+                            ?>
+                          </select>
+                        </td>
+
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888888">
+                          모델명 Model
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <select name="car_name" class="form_select bold" >
+                            <option value="" selected="selected">== 차명 ==</option>
+                              <?
                                 if($row[wc_made]){
                                 $sql="select * from cate2 where code='$row[wc_made]' order by name asc";
                                 $result_made=mysql_query($sql);
                                 while($data_made=mysql_fetch_array($result_made)){
-                                ?>
-                                                <option value="<?=$data_made[name]?>" <?if($row[wc_model]==$data_made[name]) {echo "selected";}?>>
-                                                  <?=$data_made[name]?>
-                                                </option>
-                                                <?
-                                }
-                                }
-                                ?>
-                                              </select>                          
-
-                    </td>
-                    </tr>
-
-                    <tr>
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        년식 Model year
-                      </td>
-
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;">
-                        <input name="wc_age" type="text" size="5" value="<?=$row[wc_age]?>" class="form_control bold"/>
-                        <span>년</span>
-                        <input name="wc_age" type="text" size="5" value="" class="form_control bold fs-15"/>             
-                        <span>월</span>
-                      </td>
-              
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        변속기 Transmission
-                      </td>
-
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
-                        <select name="trans" class="form_select bold">
-                          <option value="" selected>:: 변속기 ::</option>
+                              ?>
+                            <option value="<?=$data_made[name]?>" <?if($row[wc_model]==$data_made[name]) {echo "selected";}?>>
+                              <?=$data_made[name]?>
+                            </option>
                             <?
-                              $sql="select * from cate where code='1' ";
+                                }
+                              }
+                            ?>
+                          </select>                          
+                        </td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          년식 Model year
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <span style="margin-right:4px;">
+                            <input name="wc_age" type="text" size="5" value="<?=$row[wc_age]?>" class="form_control bold"/>
+                            <span>년</span>
+                          </span>
+                          <span>
+                            <select class="month" name="month" style="display:inline-block; height:23px; border:1px solid #ccc; font-weight:bold">
+                              <option value="">월</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="11">12</option>
+                            </select>
+                            <span>월</span>
+                          </span>
+                        </td>
+                
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          변속기 Transmission
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <select name="trans" class="form_select bold">
+                            <option value="" selected>:: 변속기 ::</option>
+                              <?
+                                $sql="select * from cate where code='1' ";
+                                $result_made=mysql_query($sql);
+                                while($data_made=mysql_fetch_array($result_made)){
+                              ?>
+                                <option value="<?=trim($data_made[name])?>" <?if(trim($row[wc_trans])==trim($data_made[name])) echo "selected";?>><?=$data_made[name]?></option>
+                              <?
+                              }
+                              ?>
+                          </select> 
+                        </td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          연료 Fuel type
+                        </td>
+
+                        <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <select name="fual" class="form_select bold">
+                            <option value="" selected>:: 연료 ::</option>
+                              <?
+                              $sql="select * from cate where code='2' ";
                               $result_made=mysql_query($sql);
                               while($data_made=mysql_fetch_array($result_made)){
-                            ?>
-                              <option value="<?=trim($data_made[name])?>" <?if(trim($row[wc_trans])==trim($data_made[name])) echo "selected";?>><?=$data_made[name]?></option>
-                            <?
-                            }
-                            ?>
-                        </select> 
-                      </td>
-                    </tr>
+                              ?>
+                                <option value="<?=$data_made[name]?>" <?if($row[wc_fual]==$data_made[name]) echo "selected";?>><?=$data_made[name]?></option>
+                              <?
+                              }
+                              ?>
+                          </select> 
+                        </td>
 
+                        <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
+                          배기량 Displacement
+                        </td>
+
+                        <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                        <input type="text" name="carcc" style='width:100;' onKeyup="javascript:comma(this);" class="form_control bold" value="<?=number($row[wc_cc])?>">
+                          cc 
+                        </td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color:#888;">
+                          주행거리 Odometer
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                        <input type="text" name="carmile"  style='width:100;' onKeyup="javascript:comma(this);" class="form_control bold" value="<?=number($row[wc_mileage])?>">km
+                        </td>
+
+                        <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color:#888;">
+                          가격 Price
+                        </td>
+
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <input name="wc_keep_tel1" type="text" size="25" value="<?=number($row[wc_keep_tel1])?>" onKeyup="javascript:comma(this);" class="form_control bold"/>
+                          <input type="checkbox" name="wc_cost" value="1" checked="checked" />
+                          <font color="#FF0000">전화문의</font>
+                        </td>
+                      </tr>
+
+                      <tr height="50px">
+                        <td align="center" colspan="4" bgcolor="#f2f2f2" style="border-right:1px solid #CCCCCC; border-bottom:1px solid #ccc;color: #888; font-size:15px;">
+                          상세설명 Sale Information
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="div_basic">
+                  <table align="center" style="width: 1200px; margin: auto;" >
                     <tr>
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        연료 Fuel type
-                      </td>
+                      <td align="center" >
+                        <tr>
+                          <td height="200" colspan="5" bgcolor="#FFFFFF" >
+                            <textarea name="carOptionadd" id="ir1" rows="10" cols="100" style="width:100%; height:320px; display:none;"><?=$row[wc_option_add]?>
+                            </textarea>
+                          </td>
+                        </tr>
+            
+                        <tr> 
+                          <td colspan="4"  align="center" bgcolor="ffffff" style=""><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="50" align="left">등록파일: <span id="img_count">0</span> / 60개</td>
 
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
-                        <select name="fual" class="form_select bold">
-                          <option value="" selected>:: 연료 ::</option>
-                            <?
-                            $sql="select * from cate where code='2' ";
-                            $result_made=mysql_query($sql);
-                            while($data_made=mysql_fetch_array($result_made)){
-                            ?>
-                              <option value="<?=$data_made[name]?>" <?if($row[wc_fual]==$data_made[name]) echo "selected";?>><?=$data_made[name]?></option>
-                            <?
-                            }
-                            ?>
-                        </select> 
-                      </td>
+                              <td align="right">
+                                <input type="button" style="BORDER: #ff0000 1px solid; background-color : #ffe3e7; font-family:'맑은 고딕'; font-size: 9pt; color: #ff0000;  padding:0 6px 0 6px; height:26px; cursor:pointer;" value="파일찾기" onclick="file_click();"/>
 
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        배기량 Displacement
-                      </td>
+                                <input type="button" id="img_del" style="BORDER: #7FA8C4 1px solid; background-color : #edf1f6; font-family:'맑은 고딕'; font-size: 9pt; color: #165899; padding:0 6px 0 6px; height:26px; cursor:pointer;" value="초기화" />
+                                
+                                <? for($i=1;$i<=10;$i++){ ?>
+                                <input type="file" accept="image/*" multiple="multiple" onchange="fileInfo(this)" name="upfile[]" id="uf<?=$i?>" style="display:none;"/>
+                                <? } ?>
+                              </td>
+                            </tr>
 
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;">
-                      <input type="text" name="carcc" style='width:100;' onKeyup="javascript:comma(this);" class="form_control bold" value="<?=number($row[wc_cc])?>">
-                        cc 
-                      </td>
+                            <tr>
+                              <td height="100" colspan="2" align="left" style=""><div id="img_box" style="width:1200px; height:110px; overflow-y:scroll; padding:10px; border:1px solid #cccccc; margin-bottom:5px; "></td>
+                            </tr>
+                          </td>
+                        </tr>
+                      </td> 
                     </tr>
+                  </table>
+                </div>
+              </form>  
+            </td>             
+          </tr>
+        </tbody>
+      
+       <? if($wc_idx){ ?>
+        <tr>
+          <td height="130" colspan="5" bgcolor="#FFFFFF" style="padding:10px; border:1px solid #cccccc "><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="13" colspan="2" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="100" ></td><td width="100"></td><td width="100"></td><td width="100"></td><td width="100"></td><td width="100"></td><td width="100"></td><td width="100"></td>
+                </tr>
+              </td>
+            </tr>
 
-                    <tr>
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        주행거리 Odometer
-                      </td>
+            <tr>
+              <?
+                $imgCnt = 0;
+                for($i=1; $i<=60; $i++) {
+                  $fim="wc_img_".$i;
+                  $fileName = $row[$fim];
+                  $real_name = explode('/', $fileName);	
+              
+                  if(strlen($real_name[0]) == 0){
+                    $fileName = '';
+                    $script = "";
+                    break;
+                  }
+                  else {
+                    $imgCnt++;
+                    $fileName = $site_u[home_url]."/data2/".$real_name[0];
+                    $script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;\" ";
+                  }
+                  
+                  if($i%10==1) echo "</tr><tr>";
+                ?>
 
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;">
-                      <input type="text" name="carmile"  style='width:100;' onKeyup="javascript:comma(this);" class="form_control bold" value="<?=number($row[wc_mileage])?>">km
-                      </td>
+                <td td width="10%" height="100" align="center" style="line-height:90%;padding: 5px">
+                  <? if($fileName){ ?>
+                    <img src="<?=$fileName?>" width="100" height="100"    <?=$script?> />
+                  <? } ?>
+                  <?if($fileName){?><br>
+                    <a href="javascript:img_del('<?=$cnt+1?>','<?=$wc_idx?>');">
+                    <span style="font-size:12px">삭제</span></a> <?}?>
+                </td>
 
-                      <td width="170" height="50" align="left" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        가격 Price
-                      </td>
-
-                      <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; text-align:left; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold">
-                        <input name="wc_keep_tel1" type="text" size="25" value="<?=number($row[wc_keep_tel1])?>" onKeyup="javascript:comma(this);" class="form_control bold"/>
-                        <input type="checkbox" name="wc_cost" value="1" checked="checked" />
-                        <font color="#FF0000">전화문의</font>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td width="100%" height="50" align="center" colspan="4" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">
-                        상세설명 Sale Information
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </form>  
-          </td>             
+                <?
+                  $cnt++;
+                  }	
+                ?>
+            </tr>
+          </td>
         </tr>
-    </div>
-    <!-- footer -->
-	  <div class="cha_footer"><? include "../inc/bottom.php" ?></div>
-  </div>
+       <? } ?>
+
+       <tr>
+        <td height="2">&nbsp;</td>
+       </tr>
+
+        <tr>
+          <td height="3" align="right"></td>
+        </tr>
+
+        <tr>
+          <td height="5">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td align="center">
+            <table style="width:1200px;margin:20px auto 40px;"  border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td align="center">
+                  <a href="sub07_1.php" onclick="history.back();" class="btn-blue">목록보기</a>
+                  <a href="javascript:void(0)" onclick="out_submit();" class="btn-red" style="margin-left: 10px">등록하기</a>
+                </td>
+              </tr>
+            </table>                   
+          </td>
+        </tr>
+
+        <tr>
+          <td height="5">&nbsp;</td>
+        </tr>    
+      </table>
+     </div>
+	</div>
+
+
+  <!-- footer -->
+  <div class="cha_footer"><? include "../inc/bottom.php" ?></div>
 </div>
+
 
 <script language="JavaScript" src="/admin/inc/default.js"></script>
 <script type="text/javascript" src="/lib/form.js"></script>

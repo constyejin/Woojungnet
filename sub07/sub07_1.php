@@ -108,8 +108,12 @@ function getImg($content) {
                                         <td align="right" height="37"style="padding-right: 30px;">
                                           <p style="float:left; margin-top : 3px;padding-left:10px;text-align: center;font-size : 1.1em;font-weight:500">다양한 차종보유!! 방문을 환영합니다
                                           </p>
-                                          <button class="btn-tiny red">sale</button>
-                                          <button class="btn-tiny black">sold out</button>
+                                          <select name="wc-state"class="form_select">
+                                            <option value="">==상태==</option>
+                                            <option value="">판매차량</option>
+                                            <option value="">판매완료</option>
+                                          </select>
+
                                           <select name="wc_made" onchange="document.cform.submit();"class="form_select">
                                             <option value="">==제조==</option>
                                             <?
@@ -191,7 +195,7 @@ function getImg($content) {
                                   $cate3 = mysql_fetch_array(mysql_query("select * from cate3 where idx='" . $row[wc_trans] . "'"));
                               ?>
 
-                              <td height="300" align="center" style="vertical-align:top; padding : 8px;">
+                              <td height="300" align="center" style="vertical-align:top; padding : 8px">
                                 <table width="300" border="0" cellpadding="0" cellspacing="0">
                                   <tr style="cursor:pointer;">
                                     <td valign="middle">
@@ -202,9 +206,7 @@ function getImg($content) {
                                                 type="checkbox"
                                                 name="check[]" id="check[]"
                                                 value="<?= $row[wc_idx] ?>"
-                                                style="vertical-align:middle;" />
-                                            NO : <?= $row[wc_orderno] ?>
-                                          </td>
+                                                style="vertical-align:middle;" /> NO : <?= $row[wc_orderno] ?></td>
 
                                                                                                                                                                                                                                                                             <!-- <td height="25" align="right">
                                             <? if ($row[calltype] == "1") { ?>
@@ -219,14 +221,15 @@ function getImg($content) {
 
                                       <tr>
                                         <td width="100%" align="left" bgcolor="#FFFFFF"
-                                            onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-                                            <? if ($car_img_arr[0]) { ?>
-                                            <img src="../data2/<?= $car_img_arr[0] ?>"
-                                                width="100%" height="200" border="0" />
-                                            <? } else { ?>
-                                            <img src="<?= getImg($row[wc_option_add]) ?>"
-                                                width="100%" height="200" border="0" />
-                                            <? } ?>
+                                          onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'" style="cursor:pointer; position: relative;">
+                                            <span class="soldout"></span>
+                                              <? if ($car_img_arr[0]) { ?>
+                                                <img src="../data2/<?= $car_img_arr[0] ?>"
+                                                  width="100%" height="200" border="0" />
+                                              <? } else { ?>
+                                               <img src="<?= getImg($row[wc_option_add]) ?>"
+                                                  width="100%" height="200" border="0" />
+                                              <? } ?>
                                         </td>
                                       </tr>
                                     </td>
@@ -239,28 +242,25 @@ function getImg($content) {
                                   </tr>
 
                                   <tr>
-                                    <td height="0px !important" align="center" style="font-size: 16px;font-weight:700; padding: 10px 0;">
+                                    <td height="60px" align="center" style="font-size: 16px;font-weight:700; padding: 10px 0;">
                                       <?= $row['wc_mem_etc'] ?>
                                     </td>
                                   </tr>
 
                                   <tr align="center">
                                     <td style="padding:4px 0;">
-                                      <span style="font-size : 14px;font-weight : bold;">1,000만원</span>
+                                      <span style="font-size : 14px;font-weight : bold;">만원</span>
                                       <span>|</span>
                                       <span style="color : red;">할부가능</span>
                                     </td>
                                   </tr>  
 
                                   <tr>
-                                    <td height="25" align="center"
-                                        style="color: #595959; font-weight:600; padding-bottom:12px">
-                                      <span
-                                          style="padding : 0 5px;"><?= $row[wc_age] ?></span>|
-                                      <span
-                                          style="padding : 0 5px;"><?= $row[wc_trans] ?></span>ㅣ
-                                      <span
-                                          style="padding : 0 5px;"><?= $row[wc_fual] ?></span>
+                                    <td height="25" align="center" style="color: #595959; font-weight:600; padding-bottom:12px">
+                                      <span><?= $row[wc_age] ?>-</span>
+                                      <span style="padding-right:5px">01</span>|
+                                      <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>ㅣ
+                                      <span style="padding : 0 4px;"><?= $row[wc_fual] ?></span>
                                     </td>
                                  </tr>                  
                                </table>
