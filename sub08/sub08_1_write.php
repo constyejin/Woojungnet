@@ -113,9 +113,7 @@ if($row[wc_made]){
 <script type="text/javascript" src="/lib/form.js"></script>
 
 <div id="contents_basic">
- 
     <div class="co_car_all">
-
   	<div class="sub-visual">
 			<div class="sub-text">
 				<p class="catch-phrase">
@@ -126,10 +124,10 @@ if($row[wc_made]){
 				</p>
 			</div>
 		</div>
-<!-- 추가 -->
-<div class="div_basic">
 
-    <table style="width:1200px;heidght:50px; margin:20 auto;">
+    <!-- 추가 -->
+    <div class="div_basic">
+      <table style="width:1200px;heidght:50px; margin:20 auto;">
 
     <tbody>
 
@@ -406,14 +404,17 @@ function setDefaultFont() {
 	var nFontSize = 24;
 	oEditors.getById["ir1"].setDefaultFont(sDefaultFont, nFontSize);
 }
-                        </script></td>
+                        </script>
+                        </td>
                         </tr>
  
 		<tr> 
-          <td colspan="4"  align="center" bgcolor="ffffff" style=""><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <td colspan="4"  align="center" bgcolor="ffffff" style="">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
            
             <tr>
               <td height="50" align="left">등록파일: <span id="img_count">0</span> / 60개</td>
+
               <td align="right"><input type="button" style="BORDER: #ff0000 1px solid; background-color : #ffe3e7; font-family:'맑은 고딕'; font-size: 9pt; color: #ff0000;  padding:0 6px 0 6px; height:26px; cursor:pointer;" value="파일찾기" onclick="file_click();"/>
                   <input type="button" id="img_del" style="BORDER: #7FA8C4 1px solid; background-color : #edf1f6; font-family:'맑은 고딕'; font-size: 9pt; color: #165899; padding:0 6px 0 6px; height:26px; cursor:pointer;" value="초기화" />
                   <? for($i=1;$i<=10;$i++){ ?>
@@ -423,16 +424,19 @@ function setDefaultFont() {
             </tr>
 
             <tr>
-              <td height="100" colspan="2" align="left" style=""><div id="img_box" style="width:1200px; height:110px; overflow-y:scroll; padding:10px; border:1px solid #cccccc; margin-bottom:5px; "></div></td>
+              <td height="100" colspan="2" align="left" style=""><div id="img_box" style="width:1200px; height:110px; overflow-y:scroll; padding:10px; border:1px solid #cccccc; margin-bottom:5px; "></div>
+            </td>
             </tr>
-          </table></td>
+          </table>
+        </td>
         </tr>
 <? if($wc_idx){ ?>
-                                <tr style="border: 1px solid #cccccc ">
-                                  <td height="130" colspan="5" bgcolor="#FFFFFF" style="padding:10px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                      <td height="13" colspan="2" align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                      <tr id="img_list">
+          <tr style="border: 1px solid #cccccc ">
+            <td height="130" colspan="5" bgcolor="#FFFFFF" style="padding:10px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="13" colspan="2" align="left">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr id="img_list">
 <?
 $imgCnt = 0;
 for($i=1; $i<=60; $i++) {
@@ -468,12 +472,14 @@ for($i=1; $i<=60; $i++) {
 }	
 ?>
                                       </tr>
-                                  </table></td>
+                                  </table>
+                                </td>
                                     </tr>
 									</table>
 									</td>
 									</tr>
 <? } ?>
+
                       </table></td>
                   </tr>
                   <tr>

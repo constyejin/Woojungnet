@@ -80,10 +80,10 @@ function getImg($content) {
     <div class="sub-visual">
       <div class="sub-text">
         <p class="catch-phrase">
-            중고차/보유차량
+            중고차 / 보유차량
         </p>
         <p class="description-text">
-            중고차/ 사고차/수출차량을  다량 보유하고 있습니다.
+            중고차 / 사고차 / 수출차량을 다량 보유하고 있습니다.
         </p>
       </div>
     </div>

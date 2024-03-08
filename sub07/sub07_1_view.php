@@ -266,12 +266,12 @@ function part_del(idx){
 
   	<div class="sub-visual">
 			<div class="sub-text">
-				<p class="catch-phrase">
-					보유차량
-				</p>
-				<p class="description-text">
-        수출,내수차량 및 부품차량을 다량 보유하고 있습니다.
-				</p>
+        <p class="catch-phrase">
+          중고차 / 보유차량
+        </p>
+        <p class="description-text">
+          중고차 / 사고차 / 수출차량을 다량 보유하고 있습니다.
+        </p>
 			</div>
 		</div>
         

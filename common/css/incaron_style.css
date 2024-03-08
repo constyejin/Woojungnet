@@ -213,12 +213,12 @@ button {
 }
 
 .soldout::after {
-  content: 'soldout';
+  content: 'Sold out';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: red;
+  color: #fff;
   font-size: 28px;
   font-weight: 600;
 }
