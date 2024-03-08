@@ -1,4 +1,4 @@
-<?include "../inc/header.php" ?>
+  <?include "../inc/header.php" ?>
 <?
 if($loginUsort != "admin" && $loginUsort != "admin1" && $loginUsort != "admin2" && $loginUsort != "superadmin" && $loginUsort != "jisajang2"){
 	movepage("/index.php", "관리자 로그인이 필요합니다.");
@@ -10,7 +10,6 @@ if($loginUsort != "admin" && $loginUsort != "admin1" && $loginUsort != "admin2" 
 $idx = $_GET['wc_idx'];
 if(!$wc_idx)$mode = 'regist';
 else $mode = 'modify';
-
 if($wc_idx){
 	$qry = "select * from woojung_part where wc_idx = '$wc_idx'  ";
 	$row = mysql_fetch_array(mysql_query($qry));
@@ -177,7 +176,7 @@ if($loginUsort == "admin" || $loginUsort == "admin2" || $loginUsort == "admin3" 
 <input type="hidden" name="href" value="<?=$href?>">
 <input type="hidden" name="gubun4" value="2">
 <input type="hidden" name="hidFileName"/>
-   <div class="div_information">
+  <div class="div_information">
     <table style="width:1200px;margin: 0 auto; margin-top:0px;" border="0" cellspacing="0" cellpadding="0">
       <tbody style="border: 1px solid #cccccc"> 
       <!--차량 정보 표 -->
@@ -344,11 +343,11 @@ while($data_made=mysql_fetch_array($result_made)){
 
 
    <div class="div_basic">
-       <table align="center" style="width: 1200px; margin: auto;" >
-	  <tr>
-		<td align="center" >
-                        <tr>
-                          <td height="200" colspan="5" bgcolor="#FFFFFF" >
+    <table align="center" style="width: 1200px; margin: auto;" >
+	    <tr>
+		    <td align="center" >
+          <tr>
+              <td height="200" colspan="5" bgcolor="#FFFFFF" >
           <script type="text/javascript" src="../board/js/HuskyEZCreator.js" charset="utf-8"></script>
 						  <textarea name="carOptionadd" id="ir1" rows="10" cols="100" style="width:100%; height:320px; display:none;"><?=$row[wc_option_add]?>
                       </textarea>
@@ -430,7 +429,8 @@ function setDefaultFont() {
           </table>
         </td>
         </tr>
-<? if($wc_idx){ ?>
+
+        <? if($wc_idx){ ?>
           <tr style="border: 1px solid #cccccc ">
             <td height="130" colspan="5" bgcolor="#FFFFFF" style="padding:10px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -480,7 +480,8 @@ for($i=1; $i<=60; $i++) {
 									</tr>
 <? } ?>
 
-                      </table></td>
+                      </table>
+                    </td>
                   </tr>
                   <tr>
                     <td height="2">&nbsp;</td>

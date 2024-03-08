@@ -145,8 +145,8 @@
                   </tr>
                 </tbody>
               </table>
-
-              <form name='outForm' method='post' action='car_info_update.php' enctype="multipart/form-data" >
+                      
+              <form name='outForm' method='post' action='car_info_update.php' enctype="multipart/form-data">
                 <input type="hidden" name="mode" id="mode" value="<?=$mode?>">
                 <input type="hidden" name="wc_idx" value="<?=$wc_idx?>">
                 <input type="hidden" name="wc_go_idx" value="">
@@ -382,191 +382,189 @@
                   <table align="center" style="width: 1200px; margin: auto;" >
                     <tbody>
                       <tr>
-                        <td align="center" >
-                          <tr>
-                            <td height="200" colspan="5" bgcolor="#FFFFFF" >
-                              <script type="text/javascript" src="/board/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
+                        <td height="200" colspan="5" bgcolor="#FFFFFF" >
+                          <script type="text/javascript" src="/board/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
 
-                              <textarea name="carOptionadd" id="ir1" rows="10" cols="100" style="width:100%; height:320px; display:none;"><?=$row[wc_option_add]?>
-                              </textarea>
+                          <textarea name="carOptionadd" id="ir1" rows="10" cols="100" style="width:100%; height:320px; display:none;"><?=$row[wc_option_add]?>
+                          </textarea>
 
-                              <script type="text/javascript">
-                                var oEditors = [];
+                          <script type="text/javascript">
+                            var oEditors = [];
 
-                                // 추가 글꼴 목록
-                                //var aAdditionalFontSet = [["MS UI Gothic", "MS UI Gothic"], ["Comic Sans MS", "Comic Sans MS"],["TEST","TEST"]];
+                            // 추가 글꼴 목록
+                            //var aAdditionalFontSet = [["MS UI Gothic", "MS UI Gothic"], ["Comic Sans MS", "Comic Sans MS"],["TEST","TEST"]];
 
-                                nhn.husky.EZCreator.createInIFrame({
-                                  oAppRef: oEditors,
-                                  elPlaceHolder: "ir1",
-                                  sSkinURI: "/board/smarteditor2/SmartEditor2Skin.html",	
-                                  htParams : {
-                                    bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-                                    bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-                                    bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
-                                    //aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
-                                    fOnBeforeUnload : function(){
-                                      //alert("완료!");
-                                    }
-                                  }, //boolean
-                                  fOnAppLoad : function(){
-                                    //예제 코드
-                                    //oEditors.getById["ir1"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]);
-                                  },
-                                  fCreator: "createSEditor2"
-                                });
-
-                                function pasteHTML() {
-                                  var sHTML = "<span style='color:#FF0000;'>이미지도 같은 방식으로 삽입합니다.<\/span>";
-                                  oEditors.getById["ir1"].exec("PASTE_HTML", [sHTML]);
+                            nhn.husky.EZCreator.createInIFrame({
+                              oAppRef: oEditors,
+                              elPlaceHolder: "ir1",
+                              sSkinURI: "/board/smarteditor2/SmartEditor2Skin.html",	
+                              htParams : {
+                                bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+                                bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+                                bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+                                //aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
+                                fOnBeforeUnload : function(){
+                                  //alert("완료!");
                                 }
+                              }, //boolean
+                              fOnAppLoad : function(){
+                                //예제 코드
+                                //oEditors.getById["ir1"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]);
+                              },
+                              fCreator: "createSEditor2"
+                            });
 
-                                function showHTML() {
-                                  var sHTML = oEditors.getById["ir1"].getIR();
-                                  alert(sHTML);
-                                }
-                                  
-                                function submitContents(elClickedObj) {
-                                  oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
-                                  
-                                  // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-                                  
-                                  try {
-                                    elClickedObj.form.submit();
-                                  } catch(e) {}
-                                }
+                            function pasteHTML() {
+                              var sHTML = "<span style='color:#FF0000;'>이미지도 같은 방식으로 삽입합니다.<\/span>";
+                              oEditors.getById["ir1"].exec("PASTE_HTML", [sHTML]);
+                            }
 
-                                function setDefaultFont() {
-                                  var sDefaultFont = '궁서';
-                                  var nFontSize = 24;
-                                  oEditors.getById["ir1"].setDefaultFont(sDefaultFont, nFontSize);
-                                }
-                              </script>
-                            </td>
-                          </tr>
+                            function showHTML() {
+                              var sHTML = oEditors.getById["ir1"].getIR();
+                              alert(sHTML);
+                            }
+                              
+                            function submitContents(elClickedObj) {
+                              oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
+                              
+                              // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
+                              
+                              try {
+                                elClickedObj.form.submit();
+                              } catch(e) {}
+                            }
 
-                          <tr>
-                            <td colspan="4"  align="center" bgcolor="ffffff" style="">
-                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tbody>
-                                  <tr>
-                                    <td height="50" align="left">등록파일: <span id="img_count">0</span> / 60개</td>
+                            function setDefaultFont() {
+                              var sDefaultFont = '궁서';
+                              var nFontSize = 24;
+                              oEditors.getById["ir1"].setDefaultFont(sDefaultFont, nFontSize);
+                            }
+                          </script>
+                        </td>
+                      </tr>
 
-                                    <td align="right">
-                                      <input type="button" style="BORDER: #ff0000 1px solid; background-color : #ffe3e7; font-family:'맑은 고딕'; font-size: 9pt; color: #ff0000;  padding:0 6px 0 6px; height:26px; cursor:pointer;" value="파일찾기" onclick="file_click();"/>
-                                      <input type="button" id="img_del" style="BORDER: #7FA8C4 1px solid; background-color : #edf1f6; font-family:'맑은 고딕'; font-size: 9pt; color: #165899; padding:0 6px 0 6px; height:26px; cursor:pointer;" value="초기화" />
-                                      <? for($i=1;$i<=10;$i++){ ?>
-                                      <input type="file" accept="image/*" multiple="multiple" onchange="fileInfo(this)" name="upfile[]" id="uf<?=$i?>" style="display:none;"/>
-                                      <? } ?>
-                                    </td>
-                                  </tr>
-                                  
-                                  <tr>
-                                    <td height="100" colspan="2" align="left">
-                                      <div id="img_box" style="width:1200px; height:110px; overflow-y:scroll; padding:10px; border:1px solid #cccccc; margin-bottom:5px; "></div>
-                                    </td>
-                                  </tr>
+                      <tr>
+                        <td colspan="4"  align="center" bgcolor="ffffff" style="">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td height="50" align="left">등록파일: <span id="img_count">0</span> / 60개</td>
 
-                                  <? if($wc_idx){ ?>
+                                <td align="right">
+                                  <input type="button" style="BORDER: #ff0000 1px solid; background-color : #ffe3e7; font-family:'맑은 고딕'; font-size: 9pt; color: #ff0000;  padding:0 6px 0 6px; height:26px; cursor:pointer;" value="파일찾기" onclick="file_click();"/>
+                                  <input type="button" id="img_del" style="BORDER: #7FA8C4 1px solid; background-color : #edf1f6; font-family:'맑은 고딕'; font-size: 9pt; color: #165899; padding:0 6px 0 6px; height:26px; cursor:pointer;" value="초기화" />
+                                  <? for($i=1;$i<=10;$i++){ ?>
+                                  <input type="file" accept="image/*" multiple="multiple" onchange="fileInfo(this)" name="upfile[]" id="uf<?=$i?>" style="display:none;"/>
+                                  <? } ?>
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <td height="100" colspan="2" align="left">
+                                  <div id="img_box" style="width:1200px; height:110px; overflow-y:scroll; padding:10px; border:1px solid #cccccc; margin-bottom:5px;">
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>  
+                              <? if($wc_idx){ ?>
+                                <tr style="border: 1px solid #cccccc ">
+                                  <td height="130" colspan="5" bgcolor="#FFFFFF" style="padding:10px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                      <td height="130" colspan="4" bgcolor="#FFFFFF" style="padding:10px; border:1px solid #cccccc ">
-                                        <tr>
-                                          <td height="13" colspan="2" align="left">
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                              <?
-                                                $imgCnt = 0;
-                                                for($i=1; $i<=60; $i++) {
-                                                  $fim="wc_img_".$i;
-                                                  $fileName = $row[$fim];
-                                                  $real_name = explode('/', $fileName);	
+                                      <td height="13" colspan="2" align="left">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                          <tr id="img_list">
+                                            <?
+                                            $imgCnt = 0;
+                                            for($i=1; $i<=60; $i++) {
+
+                                              $fim="wc_img_".$i;
+                                              $fileName = $row[$fim];
+                                              $real_name = explode('/', $fileName);	
                                               
-                                                  if(strlen($real_name[0]) == 0){
-                                                    $fileName = '';
-                                                    $script = "";
-                                                    break;
-                                                  }
-                                                  else {
-                                                    $imgCnt++;
-                                                    $fileName = $site_u[home_url]."/data2/".$real_name[0];
-                                                    $script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;\" ";
-                                                  }
-                                                  
-                                                  if($i%10==1) echo "</tr><tr>";
-                                                ?>
+                                              if(strlen($real_name[0]) == 0)
+                                              {
+                                                $fileName = '';
+                                                $script = "";
+                                                break;
+                                              }
+                                              else
+                                              {
+                                                $imgCnt++;
+                                                $fileName = $site_u[home_url]."/data2/".$real_name[0];
+                                                $script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;border:1px solid #000000;margin-bottom: 5px\" ";
+                                              }
+                                            //	if($i%10==1) echo "</tr><tr>";
+                                            ?>
+                                            <td width="10%" height="130" align="center" style="float:left;line-height:90%;padding: 5px" id="img<?=$cnt+1?>">
+                                              <? if($fileName){ ?>
+                                            <img src="<?=$fileName?>" width="100" height="100"    <?=$script?> />
+                                              <? } ?>
+                                              <?if($fileName){?><br>
+                                              <a href="javascript:img_del('<?=$cnt+1?>','<?=$wc_idx?>');">
+                                              <span style="font-size:12px">삭제</span></a> <?}?>
+                                            </td>
+                                            <?
+                                              $cnt++;
+                                            }	
+                                            ?>
 
-                                                <td td width="10%" height="100" align="center" style="line-height:90%;padding: 5px">
-                                                  <? if($fileName){ ?>
-                                                    <img src="<?=$fileName?>" width="100" height="100"    <?=$script?> />
-                                                  <? } ?>
-                                                  <?if($fileName){?><br>
-                                                    <a href="javascript:img_del('<?=$cnt+1?>','<?=$wc_idx?>');">
-                                                    <span style="font-size:12px">삭제</span></a> <?}?>
-                                                </td>
-
-                                                <?
-                                                  $cnt++;
-                                                  }	
-                                                ?>
                                           </tr>
                                         </table>
                                       </td>
                                     </tr>
-                                  <? } ?>
-                                </tbody>
-                              </table>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <? } ?>
+                        
+                          </td>
+                      </tr>
+          
+                    <tr>
+                      <td height="2">&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                      <td height="3" align="right"></td>
+                    </tr>
+
+                    <tr>
+                      <td height="5">&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                      <td align="center">
+                        <table style="width:1200px;margin:20px auto 40px;"  border="0" cellspacing="0" cellpadding="0">
+                          <tr> 
+                            <td align="center">
+                              <a href="sub07_1.php" onclick="history.back();" class="btn-blue">목록보기</a>
+                              <a href="javascript:void(0)" onclick="out_submit();" class="btn-red" style="margin-left: 10px">등록하기</a>
                             </td>
                           </tr>
+                        </table>                   
+                      </td>
+                    </tr>
 
-
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>                     
+                    <tr>
+                      <td height="5">&nbsp;</td>
+                    </tr>
+                  </table>
                 </div>
               </form>
-            </td>
-          </tr>
-
-          <tr>
-            <td height="2">&nbsp;</td>
-          </tr>
-
-          <tr>
-            <td height="3" align="right"></td>
-          </tr>
-
-          <tr>
-            <td height="5">&nbsp;</td>
-          </tr>
-
-          <tr>
-            <td align="center">
-              <table style="width:1200px;margin:20px auto 40px;"  border="0" cellspacing="0" cellpadding="0">
-                <tr> 
-                  <td align="center">
-                    <a href="sub07_1.php" onclick="history.back();" class="btn-blue">목록보기</a>
-                    <a href="javascript:void(0)" onclick="out_submit();" class="btn-red" style="margin-left: 10px">등록하기</a>
-                  </td>
-                </tr>
-              </table>                   
-            </td>
-          </tr>
-
-          <tr>
-            <td height="5">&nbsp;</td>
-          </tr>   
+            </tr>
         </tbody>
       </table>
     </div>
 	</div>
-  <!-- footer -->
-  <div class="cha_footer"><? include "../inc/bottom.php" ?></div>
+
+    <!-- footer -->
+    <div class="cha_footer"><? include "../inc/bottom.php" ?></div>
+  </div>
 </div>
 
 
 <script type="text/javascript" src="../board/js/HuskyEZCreator.js" charset="utf-8"></script>
-
-
 </body>
 </html>
