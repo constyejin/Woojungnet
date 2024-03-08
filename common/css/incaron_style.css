@@ -1,4 +1,4 @@
-@charset "UTF-8";
+  @charset "UTF-8";
 @font-face {
   font-family: "SUIT";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2") format("woff2");
@@ -201,6 +201,26 @@ button {
 }
 .btn.btn-wide {
   width: 100%;
+}
+
+.soldout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(100, 100, 100, .8);
+}
+
+.soldout::after {
+  content: 'soldout';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .input-wrap {
@@ -734,7 +754,7 @@ footer {
 
 table td,
 table th {
-  font-size: 13px;
+  font-size: 14px;
 }
 table .form-table {
   border-collapse: collapse;
