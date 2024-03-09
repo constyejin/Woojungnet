@@ -219,7 +219,6 @@
                             <input type="radio" name="" value="">
                             <span style="margin-left:2px;">사고있음</span>
                           </span>
-                          <?=$row[wc_model]?>
                         </td>
                       </tr>
 
@@ -358,13 +357,15 @@
                         </td>
 
                         <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color:#888;">
-                          가격 Price
+                          판매가격 Price
                         </td>
 
                         <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
-                          <input name="wc_keep_tel1" type="text" size="25" value="<?=number($row[wc_keep_tel1])?>" onKeyup="javascript:comma(this);" class="form_control bold"/>
+                          <input name="wc_keep_tel1" type="text" size="25" value="<?=number($row[wc_keep_tel1])?>" style='width:100; margin-right:4px;' onKeyup="javascript:comma(this);" class="form_control bold"/>
+                          <span style="margin-right:8px;">만원</span>
                           <input type="checkbox" name="wc_cost" value="1" checked="checked" />
-                          <font color="#FF0000">전화문의</font>
+                          
+                          <font color="#FF0000">할부가능</font>
                         </td>
                       </tr>
 
