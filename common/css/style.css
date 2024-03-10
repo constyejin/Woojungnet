@@ -374,12 +374,11 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	height: 30px;
 	text-align: center;
 }
-.nav-prev:before{
-	content: '<';
+
+.bx-prev {
+	border:  1px soldi red;
 }
-.nav-next:before{
-	content: '>';
-}
+
 .bx-prev:before{
 	content: '<';
 	vertical-align: middle;
@@ -388,6 +387,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	content: '>';
 	vertical-align: middle;
 }
+
 .btn-zoom{
 	position: absolute;
 	bottom: 20px;

@@ -258,8 +258,10 @@ function getImg($content) {
                                   <tr>
                                     <td height="25" align="center" style="color: #595959; font-weight:600; padding-bottom:12px">
                                       <span><?= $row[wc_age] ?>-</span>
-                                      <span style="padding-right:5px">01</span>|
-                                      <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>ㅣ
+                                      <span style="padding-right:5px">01</span>
+                                      <span>|</span>
+                                      <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>
+                                      <span>|</span>
                                       <span style="padding : 0 4px;"><?= $row[wc_fual] ?></span>
                                     </td>
                                  </tr>                  

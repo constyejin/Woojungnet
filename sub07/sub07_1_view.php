@@ -470,7 +470,7 @@ for($i=1; $i<=60; $i++) {
         <tr>
           <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">주행거리 Odometer</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=number($row[wc_mileage])?> <span style="font-weight: normal">km</span></td>
-          <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">가격 Price</td>
+          <td width="127" height="50" align="center" bgcolor="#f2f2f2" style="padding-right: 5px;  padding-top: 2px; border-right:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;color: #888888;font-size: 14px;font-weight: bold">판매가격 Price</td>
           <td width="200" height="50"  align="center"  bgcolor="#FFFFFF" style="padding-left: 5px; padding-top: 2px; border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC; font-size: 15px;font-weight: bold"><?=$row[wc_cost]!="1"?number($row[wc_keep_tel1])."원":"전화문의"?></td>
         </tr>
 
