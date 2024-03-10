@@ -201,168 +201,174 @@ if ($row->wc_gubun2 == "4") {
         f.submit();
     }
 </script>
-<section class="view-detail">
-    <div class="header">
-        <p class="title">
-            <? if ($row->wc_model) echo $row->wc_model; ?>
-            <? if ($row->wc_model2) echo $row->wc_model2; ?>
-        </p>
-        <p class="summary"><?= substr($row->wc_age, 0, 4) ?>년 <?= substr($row->wc_age, 4, 2) ?>월 /
-            <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> /
-            <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> / <?= number($row->wc_cc) ?>cc /
-            <?= number($row->wc_mileage)  ?>km</p>
-        <div class="car-info">
-            <div class="auction-number"><?= $row->wc_orderno ?></div>
-            <div class="auction-status"><?= $row->evalAmt_type ?></div>
-            <div class="auction-type">
-                <? WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');      ?>
-                <? //WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '' , 'direct', '');
-                ?>
-            </div>
-            <div class="auction-like">
-                <?
-                $sql = "select * from car_zzim where no='" . $row->wc_idx . "' and userid='" . $loginId . "'";
-                $que = mysql_query($sql);
-                $rowZim = mysql_fetch_array($que);
-                if (!$rowZim[idx]) {
-                ?>
-                    <a href="javascript:zzim('<?= $row->wc_idx ?>')"><span class="icon-heart"></span> 관심차량</a>
-                <? } else { ?>
-                    <a href="javascript:zzim2('<?= $row->wc_idx ?>')"><span class="icon-heart on"></span> 관심차량</a>
-                <? } ?>
-            </div>
-        </div>
-        <div class="auction-time">
-            <div class="end">
-                <span class="label">마감시간 :</span>
-                <span class="time"><?= $last_end_date2 ?></span>
-            </div>
 
-            <div class="remain">
-                <span class="label">남은시간 :</span>
-                <span class="time"><span id="counter" /></span>
-                <input name="end_maker" type="hidden" class="counter" id="end_maker" style='border-width:0; border-color:#7C7A84;font-weight:bold; border-style:solid;color:#FF0000;width: 50%' size="1" readonly="readonly" /></span>
-            </div>
-        </div>
-    </div>
-    <div class="car-image-slide bxslider">
-        <?
-        for ($i = 1; $i <= 100; $i++) {
-            $fileName = $row->{"wc_img_" . $i};
-            $real_name = explode('/', $fileName);
-            if (strlen($real_name[0]) == 0) break;
-            $fileName = $site_u[home_url] . "/data/" . $real_name[0];
-        ?>
-            <div class="slide"><img src="<?= $fileName ?>" alt=""></div>
-        <?
-        }
-        ?>
-    </div>
-    <div class="car-description">
-        <h2>차량정보</h2>
-        <div class="content-wrap">
-            <ul class="car-info-list">
-                <li>
-                    <span class="label">
-                        제조 / 모델
-                    </span>
-                    <span class="data">
-                        <? $sql = "select * from cate2 where idx='$row->wc_made' ";
-                        $result_made = mysql_query($sql);
-                        $data_made = mysql_fetch_array($result_made);
-                        echo $data_made[name]; ?> /
-                        <? if ($row->wc_model) echo $row->wc_model; ?>
-                        <? if ($row->wc_model2) echo $row->wc_model2; ?>
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        차대번호
-                    </span>
-                    <span class="data">
-                        <?= $row->wc_prog_area_price ?>
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        차량내용
-                    </span>
-                    <span class="data">
-                        <?= substr($row->wc_age, 0, 4) ?>년 <?= substr($row->wc_age, 4, 2) ?>월 ㅣ
-                        <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> ㅣ
-                        <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> ㅣ
-                        <br><?= number($row->wc_cc) ?>cc ㅣ <?= number($row->wc_mileage)  ?>km
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        예상수리비
-                    </span>
-                    <span class="data">
-                        <?= number($row->wc_cost) ?>원
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        세전출고가
-                    </span>
-                    <span class="data">
-                        <?= number($row->wc_price) ?>원
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        발생비용
-                    </span>
-                    <span class="data">
-                        <?= number_format($wc_go_cost) ?>원
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        사고발생일
-                    </span>
-                    <span class="data">
-                        <?= $row->wc_acc_date ?>
-                    </span>
-                </li>
-                <li>
-                    <span class="label">
-                        보관장소
-                    </span>
-                    <span class="data">
-                        <? WriteArrHTML('select', 'area1', $ArrcarPlace, $row->wc_keep_area1, '', '', 'direct', ''); ?>
-                        /
-                        <?
-                        if ($row->moveKeepReq) {
-                            echo $row->moveKeepReq;
-                        } else {
-                            echo $row->wc_keep_place1;
-                        }
-                        ?>
-                    </span>
-                </li>
-            </ul>
-        </div>
-        <h2>차량설명</h2>
-        <div class="content-wrap">
-            <p class="car-description-text"><?= nl2br($row->wc_damage) ?></p>
-        </div>
-        <h2>주의사항</h2>
-        <div class="content-wrap notice">
-            <ul>
-                <li>* 본 사이트에서 제공된 정보는 법적인 효력이 없으므로 참고 자료로만 활용하시기 바랍니다.</li>
-                <li>* 정해진 기한내에 입찰 횟수 제한은 없습니다.</li>
-                <li>* 반드시 실물 확인후 입찰에 참가를 요하며 미확인으로 인하여 발생하는 문제는 당사에서 책임지지 않습니다.</li>
-                <li>* 낙찰후 금액조정은 일체 허용되지 않습니다.</li>
-                <li>* 차량 출고후 일어나는 모든사항은 당사에서 책임지지 않습니다.</li>
-                <li>* 낙찰 포기시 바로 패널티가 적용이 됩니다.</li>
-                <li>* 낙찰포기시 회원자격이 해지될 수 있으며, 차순위 입찰자로 낙찰결정 진행시 차감되는 금액을 낙찰포기 회원이 책임질시 회원의 자격은 유지가능합니다.</li>
-                <li>* 낙찰자의무:낙찰 통보일로 부터 익일12시까지 낙찰정산 금액을 입금하여야하며 만일 기일 내 미납시 낙찰물건의 권리 및 보증보험의 권리를 포기하는 것으로 간주합니다.</li>
-            </ul>
-        </div>
-    </div>
+<section class="view-detail">
+  <div class="header">
+      <p class="title">
+          <? if ($row->wc_model) echo $row->wc_model; ?>
+          <? if ($row->wc_model2) echo $row->wc_model2; ?>
+      </p>
+      <p class="summary"><?= substr($row->wc_age, 0, 4) ?>년 <?= substr($row->wc_age, 4, 2) ?>월 /
+          <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> /
+          <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> / <?= number($row->wc_cc) ?>cc /
+          <?= number($row->wc_mileage)  ?>km</p>
+      <div class="car-info">
+          <div class="auction-number"><?= $row->wc_orderno ?></div>
+          <div class="auction-status"><?= $row->evalAmt_type ?></div>
+          <div class="auction-type">
+              <? WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');      ?>
+              <? //WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '' , 'direct', '');
+              ?>
+          </div>
+          <div class="auction-like">
+              <?
+              $sql = "select * from car_zzim where no='" . $row->wc_idx . "' and userid='" . $loginId . "'";
+              $que = mysql_query($sql);
+              $rowZim = mysql_fetch_array($que);
+              if (!$rowZim[idx]) {
+              ?>
+                  <a href="javascript:zzim('<?= $row->wc_idx ?>')"><span class="icon-heart"></span> 관심차량</a>
+              <? } else { ?>
+                  <a href="javascript:zzim2('<?= $row->wc_idx ?>')"><span class="icon-heart on"></span> 관심차량</a>
+              <? } ?>
+          </div>
+      </div>
+      <div class="auction-time">
+          <div class="end">
+              <span class="label">마감시간 :</span>
+              <span class="time"><?= $last_end_date2 ?></span>
+          </div>
+
+          <div class="remain">
+              <span class="label">남은시간 :</span>
+              <span class="time"><span id="counter" /></span>
+              <input name="end_maker" type="hidden" class="counter" id="end_maker" style='border-width:0; border-color:#7C7A84;font-weight:bold; border-style:solid;color:#FF0000;width: 50%' size="1" readonly="readonly" /></span>
+          </div>
+      </div>
+  </div>
+
+  <div class="car-image-slide bxslider">
+      <?
+      for ($i = 1; $i <= 100; $i++) {
+          $fileName = $row->{"wc_img_" . $i};
+          $real_name = explode('/', $fileName);
+          if (strlen($real_name[0]) == 0) break;
+          $fileName = $site_u[home_url] . "/data/" . $real_name[0];
+      ?>
+          <div class="slide">
+            <img src="<?= $fileName ?>" alt="">
+          </div>
+      <?
+      }
+      ?>
+  </div>
+
+  <div class="car-description">
+      <h2>차량정보</h2>
+      <div class="content-wrap">
+          <ul class="car-info-list">
+              <li>
+                  <span class="label">
+                      제조 / 모델
+                  </span>
+                  <span class="data">
+                      <? $sql = "select * from cate2 where idx='$row->wc_made' ";
+                      $result_made = mysql_query($sql);
+                      $data_made = mysql_fetch_array($result_made);
+                      echo $data_made[name]; ?> /
+                      <? if ($row->wc_model) echo $row->wc_model; ?>
+                      <? if ($row->wc_model2) echo $row->wc_model2; ?>
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      차대번호
+                  </span>
+                  <span class="data">
+                      <?= $row->wc_prog_area_price ?>
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      차량내용
+                  </span>
+                  <span class="data">
+                      <?= substr($row->wc_age, 0, 4) ?>년 <?= substr($row->wc_age, 4, 2) ?>월 ㅣ
+                      <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> ㅣ
+                      <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> ㅣ
+                      <br><?= number($row->wc_cc) ?>cc ㅣ <?= number($row->wc_mileage)  ?>km
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      예상수리비
+                  </span>
+                  <span class="data">
+                      <?= number($row->wc_cost) ?>원
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      세전출고가
+                  </span>
+                  <span class="data">
+                      <?= number($row->wc_price) ?>원
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      발생비용
+                  </span>
+                  <span class="data">
+                      <?= number_format($wc_go_cost) ?>원
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      사고발생일
+                  </span>
+                  <span class="data">
+                      <?= $row->wc_acc_date ?>
+                  </span>
+              </li>
+              <li>
+                  <span class="label">
+                      보관장소
+                  </span>
+                  <span class="data">
+                      <? WriteArrHTML('select', 'area1', $ArrcarPlace, $row->wc_keep_area1, '', '', 'direct', ''); ?>
+                      /
+                      <?
+                      if ($row->moveKeepReq) {
+                          echo $row->moveKeepReq;
+                      } else {
+                          echo $row->wc_keep_place1;
+                      }
+                      ?>
+                  </span>
+              </li>
+          </ul>
+      </div>
+      <h2>차량설명</h2>
+      <div class="content-wrap">
+          <p class="car-description-text"><?= nl2br($row->wc_damage) ?></p>
+      </div>
+      <h2>주의사항</h2>
+      <div class="content-wrap notice">
+          <ul>
+              <li>* 본 사이트에서 제공된 정보는 법적인 효력이 없으므로 참고 자료로만 활용하시기 바랍니다.</li>
+              <li>* 정해진 기한내에 입찰 횟수 제한은 없습니다.</li>
+              <li>* 반드시 실물 확인후 입찰에 참가를 요하며 미확인으로 인하여 발생하는 문제는 당사에서 책임지지 않습니다.</li>
+              <li>* 낙찰후 금액조정은 일체 허용되지 않습니다.</li>
+              <li>* 차량 출고후 일어나는 모든사항은 당사에서 책임지지 않습니다.</li>
+              <li>* 낙찰 포기시 바로 패널티가 적용이 됩니다.</li>
+              <li>* 낙찰포기시 회원자격이 해지될 수 있으며, 차순위 입찰자로 낙찰결정 진행시 차감되는 금액을 낙찰포기 회원이 책임질시 회원의 자격은 유지가능합니다.</li>
+              <li>* 낙찰자의무:낙찰 통보일로 부터 익일12시까지 낙찰정산 금액을 입금하여야하며 만일 기일 내 미납시 낙찰물건의 권리 및 보증보험의 권리를 포기하는 것으로 간주합니다.</li>
+          </ul>
+      </div>
+  </div>
 </section>
+
 <section class="bottom-fixed fade-in">
     <? if ($row->wc_gubun4 == 2) { ?>
         <button type="button" class="btn btn-secondary btn-wide bid layer-pop-toggle" id="sb_img2">
@@ -371,6 +377,7 @@ if ($row->wc_gubun2 == "4") {
         </button>
     <? } ?>
 </section>
+
 <footer>
     <div class="btn-wrap install">
         <button class="btn btn-outline-gray btn-round">바탕아이콘설치(안드로이드)</button>
@@ -380,6 +387,7 @@ if ($row->wc_gubun2 == "4") {
         상담 : TEL. 02-428-7723 (주말, 공휴일 휴무)<br>Copyright (c) (주)인카온 All rights reserved.
     </p>
 </footer>
+
 <script>
     $(document).ready(function() {
         console.log($('.car-image-slide'));
@@ -391,7 +399,9 @@ if ($row->wc_gubun2 == "4") {
             pagerType: 'short',
             autoHover: false,
             controls: true,
-            infiniteLoop: false
+            infiniteLoop: false,
+            nextText: '>',
+			    	prevText: '<',
         });
     });
 </script>
@@ -1025,5 +1035,4 @@ if ($row->wc_gubun2 == "4") {
     //
     -->
 </script>
-
 </html>
