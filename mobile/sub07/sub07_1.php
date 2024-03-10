@@ -186,6 +186,7 @@ function allcancel() {
                         </div>
                         <div class="image-wrap"
                             onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
+                            <span class="soldout"></span>
                             <img src="<?= $site_u[home_url] ?>/data2/<?= $car_img_arr[0] ?>" alt="챠량이미지">
                         </div>
                         <div style="text-align: center; padding-top: 5px; transform:scale(0.8)">

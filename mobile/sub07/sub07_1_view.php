@@ -30,11 +30,24 @@ if ($wc_idx) {
 ?>
 
 <section class="title-wrap">
-    <h2>보유차량</h2>
+  <h2>보유차량</h2>
 </section>
+
 <section class="view-detail">
-    <div class="car-image-slide bxslider">
-        <?
+  <div class="div_information">
+    <span class="label">No :</span><span class="dd">24-0202552</span> &nbsp;/&nbsp;
+    <span class="dd">싼타페</span> &nbsp;/&nbsp;
+    <span class="dd">차량번호</span> &nbsp;/&nbsp;
+    <span class="dd">사고이력</span> &nbsp;/&nbsp;
+    <span class="dd">  년 월</span> &nbsp;/&nbsp;
+    <span class="dd">자동/오토</span> &nbsp;/&nbsp;
+    <span class="dd">하이브리드</span> &nbsp;/&nbsp;
+    <span class="dd">cc</span> &nbsp;/&nbsp;
+    <span class="dd">km</span>
+  </div>
+  
+  <div class="car-image-slide bxslider">
+      <?
     for ($i = 1; $i <= 60; $i++) {
       $fim = "wc_img_" . $i;
       $fileName = $row[$fim];
@@ -44,14 +57,18 @@ if ($wc_idx) {
       } else {
         $fileName = $site_u[home_url] . "/data2/" . $real_name[0];
     ?>
-        <div class="slide"><img src="<?= $fileName ?>" alt=""></div>
+        <div class="slide">
+          <img src="<?= $fileName ?>" alt="">
+        </div>
         <?
       }
     }
-    ?>
-    </div>
-    <div class="car-image-thumbnail">
-        <?
+  ?>
+  </div>
+
+  <!-- thumbnail -->
+  <!-- <div class="car-image-thumbnail">
+    <?
     for ($i = 1; $i <= 60; $i++) {
       $fim = "wc_img_" . $i;
       $fileName = $row[$fim];
@@ -59,14 +76,15 @@ if ($wc_idx) {
       if (strlen($real_name[0]) > 0) {
         $fileName = $site_u[home_url] . "/data2/" . $real_name[0];
     ?>
-        <div data-thumb="<?= $i ?>" class="thumb<?= $i == 1 ? ' on' : "" ?>">
-            <img src="<?= $fileName ?>" alt="">
-        </div>
-        <?
-      }
+      <div data-thumb="<?= $i ?>" class="thumb<?= $i == 1 ? ' on' : "" ?>">
+          <img src="<?= $fileName ?>" alt="">
+      </div>
+      <?
     }
-    ?>
-    </div>
+  }
+  ?>
+  </div> -->
+
     <div class="parts-description">
         <div class="table-style w-100">
             <ul>
@@ -118,28 +136,30 @@ include $_SERVER['DOCUMENT_ROOT'] . "/inc/footer.php";
 ?>
 <script>
 $(document).ready(function() {
-    const bx = $('.car-image-slide').bxSlider({
-        mode: 'fade',
-        speed: 100,
-        auto: false,
-        autoControls: false,
-        stopAutoOnClick: false,
-        pager: true,
-        pagerType: 'short',
-        autoHover: false,
-        controls: true,
-        infiniteLoop: false,
-        onSlideAfter: function($slideElement, oldIndex, newIndex) {
-            $('.car-image-thumbnail > div[data-thumb="' + (newIndex + 1) + '"]').addClass('on')
-                .siblings().removeClass('on');
+  const bx = $('.car-image-slide').bxSlider({
+      // mode: 'fade',
+      // speed: 100,
+      auto: false,
+      autoControls: false,
+      stopAutoOnClick: false,
+      pager: true,
+      pagerType: 'short',
+      autoHover: false,
+      controls: true,
+      infiniteLoop: false,
+      nextText: '>',
+      prevText: '<',
+      // onSlideAfter: function($slideElement, oldIndex, newIndex) {
+      //     $('.car-image-thumbnail > div[data-thumb="' + (newIndex + 1) + '"]').addClass('on')
+      //         .siblings().removeClass('on');
 
-        }
-    });
-    $('.car-image-thumbnail > div').on('mouseenter', function(e) {
-        var target = $(this).data('thumb');
-        $(this).addClass('on').siblings().removeClass('on');
-        bx.goToSlide(target - 1);
-    });
+      // }
+  });
+  // $('.car-image-thumbnail > div').on('mouseenter', function(e) {
+  //     var target = $(this).data('thumb');
+  //     $(this).addClass('on').siblings().removeClass('on');
+  //     bx.goToSlide(target - 1);
+  // });
 });
 </script>
 

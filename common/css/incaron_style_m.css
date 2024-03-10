@@ -219,6 +219,27 @@ button {
   width: 100%;
 }
 
+.soldout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(100, 100, 100, .8);
+}
+
+.soldout::after {
+  content: 'Sold out';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
 footer {
   background-color: #e9e9e9;
   padding: 1.4285714286rem 0 2.1428571429rem;
@@ -353,7 +374,7 @@ header .logo h1 img {
 }
 
 nav.nav {
-  background-color: #259bff;
+  background-color: rgb(44, 173, 226);
   overflow-x: auto;
 }
 nav.nav ul {
@@ -785,13 +806,20 @@ nav.all-menu .menu-list li a:after {
 }
 
 section.title-wrap {
-  padding: 0.7142857143rem 0;
+  padding: 2rem 0;
   background-color: #ffffff;
 }
 section.title-wrap h2 {
   margin: 0;
   font-size: 1.375rem;
   text-align: center;
+}
+
+.div_information {
+  color: #fff;
+  background-color: rgb(44, 173, 226);
+  padding: 8px 12px;
+  font-size: 14px;
 }
 
 .car-list-wrap {
@@ -1132,6 +1160,7 @@ section.title-wrap h2 {
   font-size: 0.7142857143rem;
   padding: 0.3571428571rem;
   font-family: "SUIT", sans-serif;
+  z-index: 100;
 }
 .view-detail .car-description h2 {
   margin: 0;
