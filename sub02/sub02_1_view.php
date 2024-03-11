@@ -686,19 +686,19 @@ input[type="text"].counter{
 
 <?if($row->wc_gubun2!="5"){?>
 	<?if($row->wc_gubun3=="2" || $row->wc_gubun3=="4"){?>									
-                            <form name="auctForm" method="post" action="/ssfire/bid_regist.php" onsubmit="return bid_submit()" target="HiddenFrm">
+		<form name="auctForm" method="post" action="/ssfire/bid_regist.php" onsubmit="return bid_submit()" target="HiddenFrm">
 	<?}else{?>
-                            <form name="auctForm" method="post" action="/ssfire/bid_regist2.php" onsubmit="return bid_submit()" target="HiddenFrm">
+		<form name="auctForm" method="post" action="/ssfire/bid_regist2.php" onsubmit="return bid_submit()" target="HiddenFrm">
 	<?}?>
 <?}else{?>
 	<?if($row->wc_gubun3=="2" || $row->wc_gubun3=="4"){?>									
-                            <form name="auctForm" method="post" action="/ssfire/bid_regist_r.php" onsubmit="return bid_submit()" target="HiddenFrm">
+		<form name="auctForm" method="post" action="/ssfire/bid_regist_r.php" onsubmit="return bid_submit()" target="HiddenFrm">
 	<?}else{?>
-                            <form name="auctForm" method="post" action="/ssfire/bid_regist_r2.php" onsubmit="return bid_submit()" target="HiddenFrm">
+		<form name="auctForm" method="post" action="/ssfire/bid_regist_r2.php" onsubmit="return bid_submit()" target="HiddenFrm">
 	<?}?>
-<?}?>
-                              <input type='hidden' name='idx' value='<?=$_GET['idx']?>' />
-                              <input type='hidden' name='mode' value='regist' />
+		<?}?>
+			<input type='hidden' name='idx' value='<?=$_GET['idx']?>' />
+			<input type='hidden' name='mode' value='regist' />
 			<div class="price-list bar-gray">
 				<ul>
 					<li>
@@ -803,19 +803,19 @@ input[type="text"].counter{
 		<div class="car-image">
 			<div class="img-wrap bxslider">
 			<?
-for($i=1; $i<=100; $i++) {
+				for($i=1; $i<=100; $i++) {
 
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-    $fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-					<div data-hash="<?=$i?>" class="slide">
-						<img src="<?=$fileName?>" alt="차량이미지">
-					</div> 
-<? 
-}	
-?>  
+					$fileName = $row->{"wc_img_".$i};
+					$real_name = explode('/', $fileName);	
+					if(strlen($real_name[0]) == 0) break;
+						$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+				?>
+				<div data-hash="<?=$i?>" class="slide">
+					<img src="<?=$fileName?>" alt="차량이미지">
+				</div> 
+			<? 
+				}	
+			?>  
 			</div>
 			<a href="javascript:void(0)" onclick="openLayerPop()" class="btn-zoom">더보기</a>
 		</div>
@@ -838,6 +838,10 @@ for($i=1; $i<=100; $i++) {
 					}	
 					?>
 				</ul>
+				<!-- <div class="thum-btn-list">
+					<button class="thum-btn prev-btn">&lt;</button>
+					<button class="thum-btn next-btn">&gt;</button>
+				</div> -->
 			</div>
 		</div>
 		<!-- //차량이미지 리스트 --> 
@@ -1007,20 +1011,20 @@ if($pic)
 			<!-- 차량이미지 -->
 			<div class="car-image">
 				<div class="img-wrap bxslider-popup img-large">
-<?
-for($i=1; $i<=100; $i++) {
+					<?
+					for($i=1; $i<=100; $i++) {
 
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-		$fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-					<div data-hash="<?=$i?>" class="slide">
-						<img src="<?=$fileName?>" alt="차량이미지">
-					</div> 
-<? 
-}	
-?>  
+						$fileName = $row->{"wc_img_".$i};
+						$real_name = explode('/', $fileName);	
+						if(strlen($real_name[0]) == 0) break;
+							$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+					?>
+						<div data-hash="<?=$i?>" class="slide">
+							<img src="<?=$fileName?>" alt="차량이미지">
+						</div> 
+					<? 
+					}	
+					?>  
 				</div>
 			</div>
 			<!-- //차량이미지 -->
@@ -1032,57 +1036,22 @@ for($i=1; $i<=100; $i++) {
 						<button class="thum-btn next-btn">&gt;</button>
 					</div>
 					<ul>
-<?
-for($i=1; $i<=100; $i++) {
+						<?
+						for($i=1; $i<=100; $i++) {
 
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-    $fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-  <li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
-<? 
-}	
-?>
+							$fileName = $row->{"wc_img_".$i};
+							$real_name = explode('/', $fileName);	
+							if(strlen($real_name[0]) == 0) break;
+								$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+						?>
+							<li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
+						<? 
+						}	
+						?>
 					</ul>
 				</div>
 			</div>
 
-	<script>
-		$(document).ready(function(){
-			let cur = 0;
-			let len = $('.layer-popup-wrap .img-list > ul > li').length;
-			$('.layer-popup-wrap .img-list > ul').width(64 * len);
-
-			function sliding(dir){
-				cur = cur + dir;
-				if(cur >= len - 20) {
-					$('.prev-btn').attr('disabled', false);
-					$('.next-btn').attr('disabled', true);
-				} else if(cur <= 0) {
-					cur = 0;
-					$('.prev-btn').attr('disabled', true);
-					$('.next-btn').attr('disabled', false);
-				} else {
-					$('.prev-btn').attr('disabled', false);
-					$('.next-btn').attr('disabled', false);
-				}
-
-				$('.layer-popup-wrap .img-list > ul').animate({
-					marginLeft : -64 * cur + "px"
-				})
-			}
-
-			// Prev, Next 버튼
-			$('.prev-btn').on('click', function(){
-				sliding(-20);
-			})
-
-			$('.next-btn').on('click', function(){
-				sliding(20);
-			})
-		})
-	</script>
 			<!-- //차량이미지 리스트 -->
 		</div>
 		<div class="popip-footer">
@@ -1091,6 +1060,38 @@ for($i=1; $i<=100; $i++) {
 	</div>
 	<script>
 		// 팝업 swiper
+		let cur = 0;
+		let len = $('.layer-popup-wrap .img-list > ul > li').length;
+		$('.layer-popup-wrap .img-list > ul').width(64 * len);
+
+		function sliding(dir){
+			cur = cur + dir;
+			if(cur >= len - 20) {
+				$('.prev-btn').attr('disabled', false);
+				$('.next-btn').attr('disabled', true);
+			} else if(cur <= 0) {
+				cur = 0;
+				$('.prev-btn').attr('disabled', true);
+				$('.next-btn').attr('disabled', false);
+			} else {
+				$('.prev-btn').attr('disabled', false);
+				$('.next-btn').attr('disabled', false);
+			}
+
+			$('.layer-popup-wrap .img-list > ul').animate({
+				marginLeft : -64 * cur + "px"
+			})
+		}
+
+		// Popup Prev, Next 버튼
+		$('.layer-popup-wrap .img-list .prev-btn').on('click', function(){
+			sliding(-20);
+		})
+
+		$('.layer-popup-wrap .img-list .next-btn').on('click', function(){
+			sliding(20);
+		})
+
 		// 차량이미지 swipe기능
 		$(function(){
 			var PopBx = $('.bxslider-popup').bxSlider({
@@ -1103,8 +1104,11 @@ for($i=1; $i<=100; $i++) {
 				pager: true,
 				infiniteLoop: false,
 				onSlideAfter: function($slideElement, oldIndex, newIndex){
-					console.log('bx', newIndex);
 					$('.layer-popup-wrap .img-list > ul > li[data-thumb="'+(newIndex+1)+'"]').addClass('active').siblings().removeClass('active');
+
+					$('.layer-popup-wrap .img-list > ul').animate({
+   					 marginLeft: -(Math.floor(newIndex / 20) * 1280) + "px"
+					});
 				}
 			});
 
@@ -1117,7 +1121,6 @@ for($i=1; $i<=100; $i++) {
 			$('.layer-popup-wrap .img-list > ul > li').on('click',function(e){
 				var target = $(this).data('thumb');
 				$(this).addClass('active').siblings().removeClass('active');
-				console.log(target);
 				PopBx.goToSlide(target-1);
 			});
 
