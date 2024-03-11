@@ -155,87 +155,88 @@ function allcancel() {
 </section>
 
 <section class="parts-list-wrap">
-    <form name="frmdel" method="post">
-        <input type="hidden" name="mode" value="delete">
-        <input type="hidden" name="back_url" value="o">
-        <input type="hidden" name="gubun4" value="<?= $gubun4 ?>">
-        <input type="hidden" name="page" value="<?= $page ?>">
-        <div class="parts-list">
-            <ul>
-                <?
-				$kk = 1;
-				$num = $total_article - (($page - 1) * $nperpage) + 1;
-				$query = mysql_query("SELECT * FROM woojung_part  WHERE  $where order by wc_regdate desc LIMIT $first, $nperpage");
-				while ($row = mysql_fetch_array($query)) {
-					$car_img_arr = explode('/', $row[wc_img_1]);
-					$cate1 = mysql_fetch_array(mysql_query("select * from cate2 where idx='" . $row[wc_made] . "'"));
-					$cate3 = mysql_fetch_array(mysql_query("select * from cate3 where idx='" . $row[wc_trans] . "'"));
-					if (file_exists($_SERVER[DOCUMENT_ROOT] . "/data2/" . $car_img_arr[0])) {
-						copy($_SERVER[DOCUMENT_ROOT] . "/data2/" . $car_img_arr[0], "../../data2/" . $car_img_arr[0]);
-					}
-				?>
-                <li>
-                    <div class="carbox" style="border:0">
-                        <div class="topper">
-                            <!-- <div class="checkbox-wrap">
-                                <input type="checkbox" name='chk[]' value="<?= $row[wc_idx] ?>">
-                            </div> -->
-                            <span class="item-id">
-                                <?= $row[wc_orderno] ?>
-                            </span>
-                        </div>
-                        <div class="image-wrap"
-                            onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-                            <span class="soldout"></span>
-                            <img src="<?= $site_u[home_url] ?>/data2/<?= $car_img_arr[0] ?>" alt="챠량이미지">
-                        </div>
+  <form name="frmdel" method="post">
+    <input type="hidden" name="mode" value="delete">
+    <input type="hidden" name="back_url" value="o">
+    <input type="hidden" name="gubun4" value="<?= $gubun4 ?>">
+    <input type="hidden" name="page" value="<?= $page ?>">
+    <div class="parts-list">
+      <ul>
+        <?
+        $kk = 1;
+        $num = $total_article - (($page - 1) * $nperpage) + 1;
+        $query = mysql_query("SELECT * FROM woojung_part  WHERE  $where order by wc_regdate desc LIMIT $first, $nperpage");
+        while ($row = mysql_fetch_array($query)) {
+          $car_img_arr = explode('/', $row[wc_img_1]);
+          $cate1 = mysql_fetch_array(mysql_query("select * from cate2 where idx='" . $row[wc_made] . "'"));
+          $cate3 = mysql_fetch_array(mysql_query("select * from cate3 where idx='" . $row[wc_trans] . "'"));
+          if (file_exists($_SERVER[DOCUMENT_ROOT] . "/data2/" . $car_img_arr[0])) {
+              copy($_SERVER[DOCUMENT_ROOT] . "/data2/" . $car_img_arr[0], "../../data2/" . $car_img_arr[0]);
+          }
+        ?>
+        <li>
+          <div class="carbox" style="border:0">
+            <div class="topper">
+                <!-- <div class="checkbox-wrap">
+                    <input type="checkbox" name='chk[]' value="<?= $row[wc_idx] ?>">
+                </div> -->
+                <span class="item-id">
+                    <?= $row[wc_orderno] ?>
+                </span>
+            </div>
+            <div class="image-wrap"
+                onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
+                <span class="soldout"></span>
+                <img src="<?= $site_u[home_url] ?>/data2/<?= $car_img_arr[0] ?>" alt="챠량이미지">
+            </div>
 
-                        <!-- <div style="text-align: center; padding-top: 5px; transform:scale(0.8)">
-                            <? if ($row[calltype] == "1") { ?>
-                            <a href="" class="btn btn-sm btn-red btn-round">sale</a>
-                            <? } else if ($row[calltype] == "2") { ?>
-                            <a href="" class="btn btn-sm btn-black btn-round">sold out</a>
-                            <? } ?>
-                        </div> -->
+            <!-- <div style="text-align: center; padding-top: 5px; transform:scale(0.8)">
+                <? if ($row[calltype] == "1") { ?>
+                <a href="" class="btn btn-sm btn-red btn-round">sale</a>
+                <? } else if ($row[calltype] == "2") { ?>
+                <a href="" class="btn btn-sm btn-black btn-round">sold out</a>
+                <? } ?>
+            </div> -->
 
-                        <div class="detail-info-list" style="text-align: center"
-                            onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-                            <div height="60px" align="center" style="font-size: 16px;font-weight:700; padding: 10px 0;">
-                              <?= $row['wc_mem_etc'] ?>
-                            </div>
+            <div class="detail-info-list" style="text-align: center"
+                onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
+              <div height="60px" align="center" style="font-size: 16px;font-weight:700; padding: 10px 0;">
+                <?= $row['wc_mem_etc'] ?>
+              </div>
 
-                            <div style="padding:4px 0;">
-                              <span style="font-size : 14px;font-weight : bold;">만원</span>
-                              <span>|</span>
-                              <span style="color : red;">할부가능</span>
-                            </div>
-                            
-                            <div height="25" align="center" style="color: #595959; font-weight:600; padding-bottom:12px">
-                              <span><?= $row[wc_age] ?>-</span>
-                              <span style="padding-right:5px">01</span>
-                              <span>|</span>
-                              <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>
-                              <span>|</span>
-                              <span style="padding : 0 4px;"><?= $row[wc_fual] ?></span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <?
-					$kk++;
-				}
-				?>
-            </ul>
-        </div>
-    </form>
-
-
-    <div class="pagination">
-        <div class="prev-wrap">
-            <? list_number(); ?>
-        </div>
+              <div style="padding:4px 0;">
+                <span style="font-size : 14px;font-weight : bold;">만원</span>
+                <span>|</span>
+                <span style="color : red;">할부가능</span>
+              </div>
+                
+              <div height="25" align="center" style="color: #595959; font-weight:600; padding-bottom:12px">
+                <span><?= $row[wc_age] ?>-</span>
+                <span style="padding-right:5px">01</span>
+                <span>|</span>
+                <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>
+                <span>|</span>
+                <span style="padding : 0 4px;"><?= $row[wc_fual] ?></span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <?
+            $kk++;
+        }
+        ?>
+      </ul>
     </div>
+  </form>
+
+
+  <div class="pagination">
+    <div class="prev-wrap">
+      <? list_number(); ?>
+    </div>
+  </div>
 </section>
+
 <?
 include $_SERVER['DOCUMENT_ROOT'] . "/inc/footer.php";
 ?>

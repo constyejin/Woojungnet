@@ -350,9 +350,12 @@ if ($row->wc_gubun2 == "4") {
           </ul>
       </div>
 
-      <h2>참고사항
-        <span style="float:right; font-weight:400">참고설명이 나오는곳입니다.</span>
-      </h2>
+      <h2>참고사항</h2>
+      <div class="content-wrap">
+        <p class="car-description-text">
+          참고설명이 나오는곳입니다.
+        </p>
+      </div>
 
       <h2>차량설명</h2>
       <div class="content-wrap">
