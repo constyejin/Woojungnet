@@ -824,6 +824,10 @@ input[type="text"].counter{
 		<!-- 차량이미지 리스트 -->
 		<div class="img-list-wrap view-thumb">
 			<div class="img-list">
+				<div class="thum-btn-list">
+					<button class="thum-btn prev-btn">&lt;</button>
+					<button class="thum-btn next-btn">&gt;</button>
+				</div>
 				<ul> 
 					<?
 					for($i=1; $i<=100; $i++) {
@@ -833,15 +837,13 @@ input[type="text"].counter{
 						if(strlen($real_name[0]) == 0) break;
 							$fileName = $site_u[home_url]."/data/".$real_name[0]; 
 					?>
-						<li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
+						<li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>>
+							<img src="<?=$fileName?>" alt="차량이미지 썸네일">
+						</li> 
 					<? 
 					}	
 					?>
 				</ul>
-				<!-- <div class="thum-btn-list">
-					<button class="thum-btn prev-btn">&lt;</button>
-					<button class="thum-btn next-btn">&gt;</button>
-				</div> -->
 			</div>
 		</div>
 		<!-- //차량이미지 리스트 --> 
@@ -938,15 +940,12 @@ input[type="text"].counter{
 </form>
 <script>
 	function detailView(pic) {
-		
 		var no = document.getElementById('zoomimgno').value;
 		if(!pic)
 		{
 			pic = no;
 		}	
-	
 		window.open('../inc/popup_pic.php?pic='+pic+'&'+'idx='+<?=$idx?>,'imageWin','top=100,left=100,width=910,height=900');
-	
 	}
 
 	// swiper
@@ -962,15 +961,17 @@ input[type="text"].counter{
 			pager: true,
 			infiniteLoop: false,
 			onSlideAfter: function($slideElement, oldIndex, newIndex){
-				console.log('bx', newIndex);
 				$('.view-thumb .img-list > ul > li[data-thumb="'+(newIndex+1)+'"]').addClass('active').siblings().removeClass('active');
+
+				$('.view-thumb .img-list > ul').animate({
+					marginLeft: -(Math.floor(newIndex / 10) * 780) + "px"
+				});
 			}
 		});
 		
 		$('.view-thumb .img-list > ul > li').on('mouseenter',function(e){
 			var target = $(this).data('thumb');
 			$(this).addClass('active').siblings().removeClass('active');
-			console.log(target);
 			bx.goToSlide(target-1);
 		});
 
@@ -1061,12 +1062,17 @@ if($pic)
 	<script>
 		// 팝업 swiper
 		let cur = 0;
+
+		let viewLength = $('.view-thumb .img-list > ul > li').length;
+		$('.view-thumb .img-list > ul').width(78 * viewLength);
+
 		let len = $('.layer-popup-wrap .img-list > ul > li').length;
 		$('.layer-popup-wrap .img-list > ul').width(64 * len);
+		
 
-		function sliding(dir){
+		function sliding(dir,num){
 			cur = cur + dir;
-			if(cur >= len - 20) {
+			if(cur >= len - num) {
 				$('.prev-btn').attr('disabled', false);
 				$('.next-btn').attr('disabled', true);
 			} else if(cur <= 0) {
@@ -1078,18 +1084,31 @@ if($pic)
 				$('.next-btn').attr('disabled', false);
 			}
 
+			$('.view-thumb .img-list > ul').animate({
+				marginLeft : -78 * cur + "px"
+			})
+
 			$('.layer-popup-wrap .img-list > ul').animate({
 				marginLeft : -64 * cur + "px"
 			})
 		}
 
+		// view prev, next 버튼
+		$('.view-thumb .img-list .prev-btn').on('click', function(){
+			sliding(-10, 10);
+		})
+
+		$('.view-thumb .img-list .next-btn').on('click', function(){
+			sliding(10, 10);
+		})
+
 		// Popup Prev, Next 버튼
 		$('.layer-popup-wrap .img-list .prev-btn').on('click', function(){
-			sliding(-20);
+			sliding(-20, 20);
 		})
 
 		$('.layer-popup-wrap .img-list .next-btn').on('click', function(){
-			sliding(20);
+			sliding(20, 20);
 		})
 
 		// 차량이미지 swipe기능
@@ -1127,7 +1146,6 @@ if($pic)
 			$('.view-thumb .img-list > ul > li').on('click',function(e){
 				var target = $(this).data('thumb');
 				// $(this).addClass('active').siblings().removeClass('active');
-				// console.log(target);
 				$('.layer-popup-wrap .img-list > ul > li[data-thumb="'+target+'"]').addClass('active').siblings().removeClass('active');
 				PopBx.goToSlide(target-1);
 				openLayerPop();

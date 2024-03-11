@@ -449,7 +449,6 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 
 .car-info-view .img-list-wrap .img-list li{
 	background-color: #ffffff;
-	flex: 0 0 10%;
 	height: 60px;
 	overflow: hidden;
 }
