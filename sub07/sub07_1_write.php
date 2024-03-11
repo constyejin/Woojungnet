@@ -166,7 +166,7 @@
                         </td>
 
                         <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc">
-                          24-0200000
+                          <?=$row[wc_orderno]?>
                         </td>
 
                         <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;color: #888;">
@@ -177,7 +177,7 @@
                           <div class="btn-group">
                             <ul class="radio-list">
                               <li style="display:inline-block">
-                                <input type='radio' name='calltype' value='1' <?=$row[calltype]=="1"?"checked":""?>>
+                                <input type='radio' name='calltype' value='1' <?=$row[calltype]=="1"||!$wc_idx?"checked":""?>>
                                 <span href class="btn btn-sm btn-red btn-round">sale</span>
                               </li>
                               <li style="display:inline-block; margin-left:5px;">
@@ -202,8 +202,8 @@
                           차량번호 Registration number
                         </td>
 
-                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;"><?=$cate1[name]?>
-                          <input type="text" class="form_control bold">
+                        <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
+                          <input type="text" class="form_control bold" name="carno" value="<?=$row[wc_no]?>">
                         </td>
 
                         <td bgcolor="#f2f2f2" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc; color: #888;">
@@ -212,11 +212,11 @@
 
                         <td width="200" height="50"  align="left"  bgcolor="#FFFFFF" style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
                           <span style="margin-right:8px;">
-                            <input type="radio" name="" value="">
+                            <input type="radio" name="wc_damage" value="1" <?=$row[wc_damage]=="1"||!$wc_idx?"checked":""?>>
                             <span style="margin-left:2px;">무사고</span>
                           </span>
                           <span>
-                            <input type="radio" name="" value="">
+                            <input type="radio" name="wc_damage" value="2" <?=$row[wc_damage]=="2"?"checked":""?>>
                             <span style="margin-left:2px;">사고있음</span>
                           </span>
                         </td>
@@ -278,20 +278,11 @@
                             <span>년</span>
                           </span>
                           <span>
-                            <select class="month" name="month" style="display:inline-block; height:23px; border:1px solid #ccc; font-weight:bold">
+                            <select class="month" name="wc_kind" style="display:inline-block; height:23px; border:1px solid #ccc; font-weight:bold">
                               <option value="">월</option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
-                              <option value="11">11</option>
-                              <option value="11">12</option>
+							  <? for($i=1;$i<13;$i++){ ?>
+                              <option value="<?=$i?>" <?=$i==$row[wc_kind]?"selected":""?>><?=$i?></option>
+							  <? } ?>
                             </select>
                             <span>월</span>
                           </span>
@@ -363,8 +354,7 @@
                         <td style="padding:12px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;">
                           <input name="wc_keep_tel1" type="text" size="25" value="<?=number($row[wc_keep_tel1])?>" style='width:100; margin-right:4px;' onKeyup="javascript:comma(this);" class="form_control bold"/>
                           <span style="margin-right:8px;">만원</span>
-                          <input type="checkbox" name="wc_cost" value="1" checked="checked" />
-                          
+                          <input type="checkbox" name="wc_cost" value="1" <?=$row[wc_cost]=="1"?"checked":""?> />
                           <font color="#FF0000">할부가능</font>
                         </td>
                       </tr>

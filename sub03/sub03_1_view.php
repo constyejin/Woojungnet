@@ -904,6 +904,8 @@ if($row->wc_mem_name=="동부"){
 				} 
 				?>				
 				</dd>
+				<dt class="label">참고사항</dt>
+				<dd class="info-data stretch"><?=nl2br($row->wc_option_add)?></dd>
 				<dt class="label">차량설명</dt>
 				<dd class="info-data stretch"><?=nl2br($row->wc_damage)?></dd>
 			</dl>

@@ -11,9 +11,12 @@ $start = ($page - 1) * $view_article;
 
 $nowDate = date("YmdHi");
 
-$href = "&wc_made=$wc_made&wc_model=$wc_model&wc_model2=$wc_model2&wc_trans=$wc_trans&wc_trans2=$wc_trans2&gubun4=$gubun4&sear4=$sear4";
+$href = "&wc_made=$wc_made&wc_model=$wc_model&wc_model2=$wc_model2&wc_trans=$wc_trans&wc_trans2=$wc_trans2&gubun4=$gubun4&sear4=$sear4&calltype=$calltype";
 
 $where = " wc_gubun1='1' ";
+if ($calltype) {
+	$where .= " and calltype = '$calltype' ";
+}
 if ($wc_made) {
 	$where .= " and wc_made = '$wc_made' ";
 }
@@ -108,10 +111,10 @@ function getImg($content) {
                                         <td align="right" height="37"style="padding-right: 30px;">
                                           <p style="float:left; margin-top : 3px;padding-left:10px;text-align: center;font-size : 1.1em;font-weight:500">다양한 차종보유!! 방문을 환영합니다
                                           </p>
-                                          <select name="wc-state"class="form_select">
+                                          <select name="calltype"class="form_select" onchange="document.cform.submit();">
                                             <option value="">==상태==</option>
-                                            <option value="">판매차량</option>
-                                            <option value="">판매완료</option>
+                                            <option value="1" <?=$calltype=="1"?"selected":""?>>판매차량</option>
+                                            <option value="2" <?=$calltype=="2"?"selected":""?>>판매완료</option>
                                           </select>
 
                                           <select name="wc_made" onchange="document.cform.submit();"class="form_select">
@@ -222,7 +225,9 @@ function getImg($content) {
                                       <tr>
                                         <td width="100%" align="left" bgcolor="#FFFFFF"
                                           onclick="location.href='sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'" style="cursor:pointer; position: relative;">
-                                            <span class="soldout"></span>
+											<? if($row[calltype]=="2"){ ?>
+											<span class="soldout"></span>
+											<? } ?>
                                               <? if ($car_img_arr[0]) { ?>
                                                 <img src="../data2/<?= $car_img_arr[0] ?>"
                                                   width="100%" height="200" border="0" />
@@ -249,16 +254,18 @@ function getImg($content) {
 
                                   <tr align="center">
                                     <td style="padding:4px 0;">
-                                      <span style="font-size : 14px;font-weight : bold;">만원</span>
+                                      <span style="font-size : 14px;font-weight : bold;"><?=number($row[wc_keep_tel1])?> 만원</span>
+									  <? if($row[wc_cost]=="1"){ ?>
                                       <span>|</span>
                                       <span style="color : red;">할부가능</span>
+									  <? } ?>
                                     </td>
                                   </tr>  
 
                                   <tr>
                                     <td height="25" align="center" style="color: #595959; font-weight:600; padding-bottom:12px">
                                       <span><?= $row[wc_age] ?>-</span>
-                                      <span style="padding-right:5px">01</span>
+                                      <span style="padding-right:5px"><?=$row[wc_kind]?></span>
                                       <span>|</span>
                                       <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>
                                       <span>|</span>
