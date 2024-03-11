@@ -30,7 +30,7 @@ if ($wc_idx) {
 ?>
 
 <section class="title-wrap">
-  <h2>보유차량</h2>
+  <h2>중고차량</h2>
 </section>
 
 <section class="view-detail">

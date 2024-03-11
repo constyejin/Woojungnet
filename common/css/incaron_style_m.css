@@ -847,8 +847,8 @@ section.title-wrap h2 {
   height: 21.4285714286rem;
 }
 .car-list.swiper .carbox {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   width: 100%;
   background: #fff;
   border: 0.0357142857rem solid #d9d9d9;
@@ -1741,9 +1741,10 @@ section.title-wrap h2 {
 .parts-list > ul {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.3571428571rem;
 }
+
 .parts-list .carbox {
   display: inline-block;
   position: relative;

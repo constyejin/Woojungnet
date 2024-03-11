@@ -175,19 +175,20 @@ function allcancel() {
           }
         ?>
         <li>
-          <div class="carbox" style="border:0">
+          <div class="carbox" style="border:1px solid #ccc">
             <div class="topper">
-                <!-- <div class="checkbox-wrap">
-                    <input type="checkbox" name='chk[]' value="<?= $row[wc_idx] ?>">
-                </div> -->
-                <span class="item-id">
-                    <?= $row[wc_orderno] ?>
-                </span>
+              <!-- <div class="checkbox-wrap">
+                <input type="checkbox" name='chk[]' value="<?= $row[wc_idx] ?>">
+              </div> -->
+              <span class="item-id" style="font-size="14px">
+                <?= $row[wc_orderno] ?>
+              </span>
             </div>
+
             <div class="image-wrap"
                 onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-                <span class="soldout"></span>
-                <img src="<?= $site_u[home_url] ?>/data2/<?= $car_img_arr[0] ?>" alt="챠량이미지">
+              <span class="soldout"></span>
+              <img src="<?= $site_u[home_url] ?>/data2/<?= $car_img_arr[0] ?>" alt="챠량이미지">
             </div>
 
             <!-- <div style="text-align: center; padding-top: 5px; transform:scale(0.8)">
@@ -200,29 +201,29 @@ function allcancel() {
 
             <div class="detail-info-list" style="text-align: center"
                 onclick="window.location='./sub07_1_view.php?wc_idx=<?= $row[wc_idx] ?>'">
-              <div height="60px" align="center" style="font-size: 16px;font-weight:700; padding: 10px 0;">
+              <div height="60px" align="center" style="font-size: 16px; font-weight:700; padding:10px 0;">
                 <?= $row['wc_mem_etc'] ?>
               </div>
 
               <div style="padding:4px 0;">
-                <span style="font-size : 14px;font-weight : bold;">만원</span>
+                <span style="font-size:14px; font-weight:bold;">1,000만원</span>
                 <span>|</span>
-                <span style="color : red;">할부가능</span>
+                <span style="font-size:13px; color:red;">할부가능</span>
               </div>
                 
-              <div height="25" align="center" style="color: #595959; font-weight:600; padding-bottom:12px">
+              <div align="center" style="height:35px; color: #595959;font-size:13px; font-weight:600; padding-bottom:12px;">
                 <span><?= $row[wc_age] ?>-</span>
                 <span style="padding-right:5px">01</span>
                 <span>|</span>
-                <span style="padding : 0 4px;"><?= $row[wc_trans] ?></span>
+                <span style="padding: 0 4px;"><?= $row[wc_trans] ?></span>
                 <span>|</span>
-                <span style="padding : 0 4px;"><?= $row[wc_fual] ?></span>
+                <span style="padding: 0 4px;"><?= $row[wc_fual] ?></span>
               </div>
             </div>
           </div>
         </li>
         <?
-            $kk++;
+          $kk++;
         }
         ?>
       </ul>
