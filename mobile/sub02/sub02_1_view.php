@@ -401,7 +401,7 @@ if ($row->wc_gubun2 == "4") {
             controls: true,
             infiniteLoop: false,
             nextText: '>',
-			    	prevText: '<',
+            prevText: '<',
         });
     });
 </script>

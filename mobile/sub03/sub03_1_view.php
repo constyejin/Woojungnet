@@ -389,17 +389,18 @@ function zzim2(idx) {
 </footer>
 <script>
 $(document).ready(function() {
-    console.log($('.car-image-slide'));
-    $('.car-image-slide').bxSlider({
-        auto: false,
-        autoControls: false,
-        stopAutoOnClick: false,
-        pager: true,
-        pagerType: 'short',
-        autoHover: false,
-        controls: true,
-        infiniteLoop: false
-    });
+  $('.car-image-slide').bxSlider({
+      auto: false,
+      autoControls: false,
+      stopAutoOnClick: false,
+      pager: true,
+      pagerType: 'short',
+      autoHover: false,
+      controls: true,
+      infiniteLoop: false,
+      nextText: '>',
+      prevText: '<',
+  });
 });
 </script>
 

@@ -384,19 +384,21 @@ function zzim2(idx) {
         상담 : TEL. 02-428-7723 (주말, 공휴일 휴무)<br>Copyright (c) (주)인카온 All rights reserved.
     </p>
 </footer>
+
 <script>
 $(document).ready(function() {
-    console.log($('.car-image-slide'));
-    $('.car-image-slide').bxSlider({
-        auto: false,
-        autoControls: false,
-        stopAutoOnClick: false,
-        pager: true,
-        pagerType: 'short',
-        autoHover: false,
-        controls: true,
-        infiniteLoop: false
-    });
+  $('.car-image-slide').bxSlider({
+      auto: false,
+      autoControls: false,
+      stopAutoOnClick: false,
+      pager: true,
+      pagerType: 'short',
+      autoHover: false,
+      controls: true,
+      infiniteLoop: false,
+      nextText: '>',
+      prevText: '<',
+  });
 });
 </script>
 
