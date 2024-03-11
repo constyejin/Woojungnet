@@ -204,68 +204,65 @@ function zzim2(idx) {
     f.submit();
 }
 </script>
-
 <section class="view-detail">
-  <div class="header">
-      <p class="title">
-          <? if ($row->wc_model) echo $row->wc_model; ?>
-          <? if ($row->wc_model2) echo $row->wc_model2; ?>
-      </p>
-      <p class="summary"><?= substr($row->wc_age, 0, 4) ?>년 <?= substr($row->wc_age, 4, 2) ?>월 /
-          <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> /
-          <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> / <?= number($row->wc_cc) ?>cc /
-          <?= number($row->wc_mileage)  ?>km</p>
-      <div class="car-info">
-          <div class="auction-number"><?= $row->wc_orderno ?></div>
-          <div class="auction-status"><?= $row->evalAmt_type ?></div>
-          <div class="auction-type">
-              <? WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');    ?>
-              <? //WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '' , 'direct', '');
-      ?>
-          </div>
-          <div class="auction-like">
-              <?
-      $sql = "select * from car_zzim where no='" . $row->wc_idx . "' and userid='" . $loginId . "'";
-      $que = mysql_query($sql);
-      $rowZim = mysql_fetch_array($que);
-      if (!$rowZim[idx]) {
-      ?>
-              <a href="javascript:zzim('<?= $row->wc_idx ?>')"><span class="icon-heart"></span> 관심차량</a>
-              <? } else { ?>
-              <a href="javascript:zzim2('<?= $row->wc_idx ?>')"><span class="icon-heart on"></span> 관심차량</a>
-              <? } ?>
-          </div>
-      </div>
-      <div class="auction-time">
-          <div class="end">
-              <span class="label">마감시간 :</span>
-              <span class="time"><?= $last_end_date2 ?></span>
-          </div>
+    <div class="header">
+        <p class="title">
+            <? if ($row->wc_model) echo $row->wc_model; ?>
+            <? if ($row->wc_model2) echo $row->wc_model2; ?>
+        </p>
+        <p class="summary"><?= substr($row->wc_age, 0, 4) ?>년 <?= substr($row->wc_age, 4, 2) ?>월 /
+            <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> /
+            <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> / <?= number($row->wc_cc) ?>cc /
+            <?= number($row->wc_mileage)  ?>km</p>
+        <div class="car-info">
+            <div class="auction-number"><?= $row->wc_orderno ?></div>
+            <div class="auction-status"><?= $row->evalAmt_type ?></div>
+            <div class="auction-type">
+                <? WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');    ?>
+                <? //WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '' , 'direct', '');
+        ?>
+            </div>
+            <div class="auction-like">
+                <?
+        $sql = "select * from car_zzim where no='" . $row->wc_idx . "' and userid='" . $loginId . "'";
+        $que = mysql_query($sql);
+        $rowZim = mysql_fetch_array($que);
+        if (!$rowZim[idx]) {
+        ?>
+                <a href="javascript:zzim('<?= $row->wc_idx ?>')"><span class="icon-heart"></span> 관심차량</a>
+                <? } else { ?>
+                <a href="javascript:zzim2('<?= $row->wc_idx ?>')"><span class="icon-heart on"></span> 관심차량</a>
+                <? } ?>
+            </div>
+        </div>
+        <div class="auction-time">
+            <div class="end">
+                <span class="label">마감시간 :</span>
+                <span class="time"><?= $last_end_date2 ?></span>
+            </div>
 
-          <div class="remain">
-              <span class="label">남은시간 :</span>
-              <span class="time"><span id="counter" /></span>
-              <input name="end_maker" type="hidden" class="counter" id="end_maker"
-                  style='border-width:0; border-color:#7C7A84;font-weight:bold; border-style:solid;color:#FF0000;width: 50%'
-                  size="1" readonly="readonly" /></span>
-          </div>
-      </div>
-  </div>
-
-  <div class="car-image-slide bxslider">
-    <?
-      for ($i = 1; $i <= 100; $i++) {
-        $fileName = $row->{"wc_img_" . $i};
-        $real_name = explode('/', $fileName);
-        if (strlen($real_name[0]) == 0) break;
-        $fileName = $site_u[home_url] . "/data/" . $real_name[0];
-      ?>
-        <div class="slide"><img src="<?= $fileName ?>" alt=""></div>
-      <?
-       }
-      ?>
+            <div class="remain">
+                <span class="label">남은시간 :</span>
+                <span class="time"><span id="counter" /></span>
+                <input name="end_maker" type="hidden" class="counter" id="end_maker"
+                    style='border-width:0; border-color:#7C7A84;font-weight:bold; border-style:solid;color:#FF0000;width: 50%'
+                    size="1" readonly="readonly" /></span>
+            </div>
+        </div>
     </div>
-
+    <div class="car-image-slide bxslider">
+        <?
+    for ($i = 1; $i <= 100; $i++) {
+      $fileName = $row->{"wc_img_" . $i};
+      $real_name = explode('/', $fileName);
+      if (strlen($real_name[0]) == 0) break;
+      $fileName = $site_u[home_url] . "/data/" . $real_name[0];
+    ?>
+        <div class="slide"><img src="<?= $fileName ?>" alt=""></div>
+        <?
+    }
+    ?>
+    </div>
     <div class="car-description">
         <h2>차량정보</h2>
         <div class="content-wrap">
@@ -357,7 +354,7 @@ function zzim2(idx) {
         <h2>참고사항</h2>
         <div class="content-wrap">
           <p class="car-description-text">
-            참고설명이 나오는곳입니다.
+            <?=nl2br($row->wc_option_add)?>
           </p>
         </div>
         
@@ -380,290 +377,287 @@ function zzim2(idx) {
         </div>
     </div>
 </section>
-
 <section class="bottom-fixed fade-in">
-  <? if ($row->wc_gubun4 == 2) { ?>
+    <? if ($row->wc_gubun4 == 2) { ?>
     <button type="button" class="btn btn-secondary btn-wide bid layer-pop-toggle" id="sb_img2">
         입찰하기
-      <img src="http://www.skrcauto.co.kr/images/front/icon-bid.png" alt="입찰하기 아이콘" style="width: 17px;margin-left: 5px;" />
+        <img src="http://www.skrcauto.co.kr/images/front/icon-bid.png" alt="입찰하기 아이콘"
+            style="width: 17px;margin-left: 5px;" />
     </button>
-  <? } ?>
+    <? } ?>
 </section>
-
 <footer>
-  <div class="btn-wrap install">
-      <button class="btn btn-outline-gray btn-round">바탕아이콘설치(안드로이드)</button>
-      <button class="btn btn-black btn-round">PC 버전보기</button>
-  </div>
+    <div class="btn-wrap install">
+        <button class="btn btn-outline-gray btn-round">바탕아이콘설치(안드로이드)</button>
+        <button class="btn btn-black btn-round">PC 버전보기</button>
+    </div>
     <p class="copyright">
-      상담 : TEL. 02-428-7723 (주말, 공휴일 휴무)<br>Copyright (c) (주)인카온 All rights reserved.
+        상담 : TEL. 02-428-7723 (주말, 공휴일 휴무)<br>Copyright (c) (주)인카온 All rights reserved.
     </p>
 </footer>
-
 <script>
 $(document).ready(function() {
   $('.car-image-slide').bxSlider({
-    auto: false,
-    autoControls: false,
-    stopAutoOnClick: false,
-    pager: true,
-    pagerType: 'short',
-    autoHover: false,
-    controls: true,
-    infiniteLoop: false,
-    nextText: '>',
-    prevText: '<',
+      auto: false,
+      autoControls: false,
+      stopAutoOnClick: false,
+      pager: true,
+      pagerType: 'short',
+      autoHover: false,
+      controls: true,
+      infiniteLoop: false,
+      nextText: '>',
+      prevText: '<',
   });
 });
 </script>
 
 <div class="layer-pop">
-  <div class="pop-header">
-    <div class="title">입찰하기</div>
-    <a href="" class="btn-close-pop"></a>
-  </div>
+    <div class="pop-header">
+        <div class="title">입찰하기</div>
+        <a href="" class="btn-close-pop"></a>
+    </div>
+    <div class="pop-body">
+        <div class="header">
+            <p class="title">
+                <? if ($row->wc_model) echo $row->wc_model; ?>
+                <? if ($row->wc_model2) echo $row->wc_model2; ?>
+            </p>
+            <p class="summary"><?= substr($row->wc_age, 0, 4) ?>년
+                <?= substr($row->wc_age, 4, 2) ?>월 /
+                <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> /
+                <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> / <?= number($row->wc_cc) ?>cc /
+                <?= number($row->wc_mileage)  ?>km</p>
+            <div class="car-info">
+                <div class="auction-number"><?= $row->wc_orderno ?></div>
+                <div class="auction-status"><?= $row->evalAmt_type ?></div>
+                <div class="auction-type">
+                    <? WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');    ?>
+                    <? //WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '' , 'direct', '');
+          ?>
+                </div>
+                <div class="auction-like"><span class="icon-heart"></span> 관심차량</div>
+            </div>
+            <div class="auction-time">
+                <div class="end">
+                    <span class="label">마감시간 :</span>
+                    <span class="time"><?= $last_end_date2 ?></span>
+                </div>
+                <div class="remain">
+                    <span class="label">남은시간 :</span>
+                    <span class="time"><span id="counter2"></span>
+                </div>
+            </div>
+        </div>
+        <iframe name="HiddenFrm" style="display:none;"></iframe>
+        <? if ($row->wc_gubun2 != "5") { ?>
+        <? if ($row->wc_gubun3 == "2" || $row->wc_gubun3 == "4") { ?>
+        <form name="auctForm" method="post" action="/ssfire/bid_regist.php" target="HiddenFrm">
+            <? } else { ?>
+            <form name="auctForm" method="post" action="/ssfire/bid_regist2.php" target="HiddenFrm">
+                <? } ?>
+                <? } else { ?>
+                <? if ($row->wc_gubun3 == "2" || $row->wc_gubun3 == "4") { ?>
+                <form name="auctForm" method="post" action="/ssfire/bid_regist_r.php" target="HiddenFrm">
+                    <? } else { ?>
+                    <form name="auctForm" method="post" action="/ssfire/bid_regist_r2.php" target="HiddenFrm">
+                        <? } ?>
+                        <? } ?>
+                        <input type='hidden' name='idx' value='<?= $_GET['idx'] ?>' />
+                        <input type='hidden' name='mode' value='regist' />
+                        <div class="action-info-table">
+                            <ul>
+                                <li class="emphas">
+                                    <span class="label">폐차금액입찰</span>
+                                    <div class="data">
+                                        <?= $bid_price2 ?> 원 / <span style="color:red"><?= $bid_price2_total ?></span> 원
+                                    </div>
+                                </li>
+                                <li class="emphas">
+                                    <span class="label">명의이전입찰</span>
+                                    <div class="data">
+                                        <?= $bid_price1 ?> 원 / <span style="color:red"><?= $bid_price1_total ?></span> 원
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">입찰유형</span>
+                                    <div class="data">
+                                        <ul class="radio-group">
+                                            <? if ($row->wc_go_type == "1") { ?>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <? if ($member_new[power] == "2") { ?>
+                                                    <input type="radio" name='goSale' value='1' id="bidType2"
+                                                        onclick='this.checked=false;alert(\"명의이전 권한만 있습니다.\");'>
+                                                    <? } else { ?>
+                                                    <input type="radio" name='goSale' value='1' id="bidType2" checked>
+                                                    <input type='radio' name='goSale' id='gu' value=''
+                                                        style='display:none;'>
+                                                    <? } ?>
+                                                    <label class="radio-label" for="bidType2">폐차</label>
+                                                </div>
+                                            </li>
+                                            <? } elseif ($row->wc_go_type == "2") { ?>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <? if ($member_new[power] == "1") { ?>
+                                                    <input type="radio" name='goSale' value='2' id="bidType2"
+                                                        onclick='this.checked=false;alert(\"폐차 권한만 있습니다.\");'>
+                                                    <? } else { ?>
+                                                    <input type="radio" name='goSale' value='2' id="bidType2" checked>
+                                                    <input type='radio' name='goSale' id='gu' value=''
+                                                        style='display:none;'>
+                                                    <? } ?>
+                                                    <label class="radio-label" for="bidType1">명의이전</label>
+                                                </div>
+                                            </li>
+                                            <? } elseif ($row->wc_go_type == "3") { ?>
+                                            <? if ($member_new[power] == "1") { ?>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <input type="radio" name='goSale' value='2' id="bidType1"
+                                                        onclick='this.checked=false;alert(\"폐차 권한만 있습니다.\");'>
+                                                    <label class="radio-label" for="bidType1">명의이전</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <input type="radio" name='goSale' value='1' id="bidType2"
+                                                        onclick='bidCount()'>
+                                                    <label class="radio-label" for="bidType2">폐차</label>
+                                                </div>
+                                            </li>
+                                            <? } else if ($member_new[power] == "2") { ?>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <input type="radio" name='goSale' value='2' id="bidType1"
+                                                        onclick='bidCount()'>
+                                                    <label class="radio-label" for="bidType1">명의이전</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <input type="radio" name='goSale' value='1' id="bidType2"
+                                                        onclick='this.checked=false;alert(\"명의이전 권한만 있습니다.\");'>
+                                                    <label class="radio-label" for="bidType2">폐차</label>
+                                                </div>
+                                            </li>
+                                            <? } else if ($row->wc_go_type == "3") { ?>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <input type="radio" name='goSale' value='2' id="bidType1"
+                                                        onclick='bidCount()'>
+                                                    <label class="radio-label" for="bidType1">명의이전</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="radio-wrap">
+                                                    <input type="radio" name='goSale' value='1' id="bidType2"
+                                                        onclick='bidCount()'>
+                                                    <label class="radio-label" for="bidType2">폐차</label>
+                                                </div>
+                                            </li>
+                                            <? } ?>
+                                            <? } ?>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">입찰금액(만원)</span>
+                                    <div class="data">
+                                        <div class="input-wrap">
+                                            <input type="text" name="bid_price" id="bid_price" value=""
+                                                onkeyup="bidCount()"><input name="c_bid_price" id="c_bid_price"
+                                                type="hidden" readonly="" />
+                                        </div>
+                                        <span class="unit">만원</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">부가세</span>
+                                    <div class="data">
+                                        <div class="input-wrap">
+                                            <input type="text" name="vat_bid_price" value=""
+                                                style="background-color: transparent;box-sizing: border-box;border: 0;"
+                                                readonly>
+                                        </div>
+                                        <span class="unit">원</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">수수료</span>
+                                    <div class="data">
+                                        <div class="input-wrap">
+                                            <input type="text" name="succ_bid_sub_price" value=""
+                                                style="background-color: transparent;box-sizing: border-box;border: 0;"
+                                                readonly>
+                                        </div>
+                                        <span class="unit">원</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">발생비용</span>
+                                    <div class="data">
+                                        <div class="input-wrap">
+                                            <input type="text" name="bid_total_price" value="<?= number($wc_go_cost) ?>"
+                                                style="background-color: transparent;box-sizing: border-box;border: 0;"
+                                                readonly>
+                                        </div>
+                                        <span class="unit">원</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">상사이전비</span>
+                                    <div class="data">
+                                        <div class="input-wrap">
+                                            <input type="text" name="sang_price" value=""
+                                                style="background-color: transparent;box-sizing: border-box;border: 0;"
+                                                readonly>
+                                        </div>
+                                        <span class="unit">원</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="label">서류대행료</span>
+                                    <div class="data">
+                                        <div class="input-wrap">
+                                            <input type="text" name="seo_price" value=""
+                                                style="background-color: transparent;box-sizing: border-box;border: 0;"
+                                                readonly>
+                                        </div>
+                                        <span class="unit">원</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="total-list">
+                                <li>
+                                    <span class="label">입찰합계</span>
+                                    <div class="data">
+                                        <div class="total">
+                                            <input type="text" name="last_bid_price" readonly
+                                                style="display:none;" /><span id="last_bid_price_html"></span>
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                    <div class="agree-wrap">
+                        <div class="checkbox-wrap">
+                            <input type="checkbox" id="agree">
+                        </div>
+                        <label for="agreeConfirm">입찰약관내용을 확인하고 동의합니다</label>
+                        <a href="/inc/sub02_1_popup.php" target="_blank" class="link">[입찰약관보기]</a>
+                    </div>
 
-  <div class="pop-body">
-      <div class="header">
-          <p class="title">
-              <? if ($row->wc_model) echo $row->wc_model; ?>
-              <? if ($row->wc_model2) echo $row->wc_model2; ?>
-          </p>
-          <p class="summary"><?= substr($row->wc_age, 0, 4) ?>년
-              <?= substr($row->wc_age, 4, 2) ?>월 /
-              <?= $row->wc_mem_name == "동부" ? $row->trans_dong : $row->wc_trans ?> /
-              <?= $row->wc_mem_name == "동부" ? $row->fual_dong : $row->wc_fual ?> / <?= number($row->wc_cc) ?>cc /
-              <?= number($row->wc_mileage)  ?>km</p>
-          <div class="car-info">
-              <div class="auction-number"><?= $row->wc_orderno ?></div>
-              <div class="auction-status"><?= $row->evalAmt_type ?></div>
-              <div class="auction-type">
-                  <? WriteArrHTML('select', 'gubun3', ${"Arrgubun3_" . $row->wc_gubun2}, $row->wc_gubun3, '', '', 'direct', '');    ?>
-                  <? //WriteArrHTML('radio', 'Arrgubun2', $ArrgoSale, $row->wc_go_type, '', '' , 'direct', '');
-        ?>
-              </div>
-              <div class="auction-like"><span class="icon-heart"></span> 관심차량</div>
-          </div>
-          <div class="auction-time">
-              <div class="end">
-                  <span class="label">마감시간 :</span>
-                  <span class="time"><?= $last_end_date2 ?></span>
-              </div>
-              <div class="remain">
-                  <span class="label">남은시간 :</span>
-                  <span class="time"><span id="counter2"></span>
-              </div>
-          </div>
-      </div>
-      <iframe name="HiddenFrm" style="display:none;"></iframe>
-      <? if ($row->wc_gubun2 != "5") { ?>
-      <? if ($row->wc_gubun3 == "2" || $row->wc_gubun3 == "4") { ?>
-      <form name="auctForm" method="post" action="/ssfire/bid_regist.php" target="HiddenFrm">
-          <? } else { ?>
-          <form name="auctForm" method="post" action="/ssfire/bid_regist2.php" target="HiddenFrm">
-              <? } ?>
-              <? } else { ?>
-              <? if ($row->wc_gubun3 == "2" || $row->wc_gubun3 == "4") { ?>
-              <form name="auctForm" method="post" action="/ssfire/bid_regist_r.php" target="HiddenFrm">
-                  <? } else { ?>
-                  <form name="auctForm" method="post" action="/ssfire/bid_regist_r2.php" target="HiddenFrm">
-                      <? } ?>
-                      <? } ?>
-                      <input type='hidden' name='idx' value='<?= $_GET['idx'] ?>' />
-                      <input type='hidden' name='mode' value='regist' />
-                      <div class="action-info-table">
-                          <ul>
-                              <li class="emphas">
-                                  <span class="label">폐차금액입찰</span>
-                                  <div class="data">
-                                      <?= $bid_price2 ?> 원 / <span style="color:red"><?= $bid_price2_total ?></span> 원
-                                  </div>
-                              </li>
-                              <li class="emphas">
-                                  <span class="label">명의이전입찰</span>
-                                  <div class="data">
-                                      <?= $bid_price1 ?> 원 / <span style="color:red"><?= $bid_price1_total ?></span> 원
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">입찰유형</span>
-                                  <div class="data">
-                                      <ul class="radio-group">
-                                          <? if ($row->wc_go_type == "1") { ?>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <? if ($member_new[power] == "2") { ?>
-                                                  <input type="radio" name='goSale' value='1' id="bidType2"
-                                                      onclick='this.checked=false;alert(\"명의이전 권한만 있습니다.\");'>
-                                                  <? } else { ?>
-                                                  <input type="radio" name='goSale' value='1' id="bidType2" checked>
-                                                  <input type='radio' name='goSale' id='gu' value=''
-                                                      style='display:none;'>
-                                                  <? } ?>
-                                                  <label class="radio-label" for="bidType2">폐차</label>
-                                              </div>
-                                          </li>
-                                          <? } elseif ($row->wc_go_type == "2") { ?>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <? if ($member_new[power] == "1") { ?>
-                                                  <input type="radio" name='goSale' value='2' id="bidType2"
-                                                      onclick='this.checked=false;alert(\"폐차 권한만 있습니다.\");'>
-                                                  <? } else { ?>
-                                                  <input type="radio" name='goSale' value='2' id="bidType2" checked>
-                                                  <input type='radio' name='goSale' id='gu' value=''
-                                                      style='display:none;'>
-                                                  <? } ?>
-                                                  <label class="radio-label" for="bidType1">명의이전</label>
-                                              </div>
-                                          </li>
-                                          <? } elseif ($row->wc_go_type == "3") { ?>
-                                          <? if ($member_new[power] == "1") { ?>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <input type="radio" name='goSale' value='2' id="bidType1"
-                                                      onclick='this.checked=false;alert(\"폐차 권한만 있습니다.\");'>
-                                                  <label class="radio-label" for="bidType1">명의이전</label>
-                                              </div>
-                                          </li>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <input type="radio" name='goSale' value='1' id="bidType2"
-                                                      onclick='bidCount()'>
-                                                  <label class="radio-label" for="bidType2">폐차</label>
-                                              </div>
-                                          </li>
-                                          <? } else if ($member_new[power] == "2") { ?>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <input type="radio" name='goSale' value='2' id="bidType1"
-                                                      onclick='bidCount()'>
-                                                  <label class="radio-label" for="bidType1">명의이전</label>
-                                              </div>
-                                          </li>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <input type="radio" name='goSale' value='1' id="bidType2"
-                                                      onclick='this.checked=false;alert(\"명의이전 권한만 있습니다.\");'>
-                                                  <label class="radio-label" for="bidType2">폐차</label>
-                                              </div>
-                                          </li>
-                                          <? } else if ($row->wc_go_type == "3") { ?>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <input type="radio" name='goSale' value='2' id="bidType1"
-                                                      onclick='bidCount()'>
-                                                  <label class="radio-label" for="bidType1">명의이전</label>
-                                              </div>
-                                          </li>
-                                          <li>
-                                              <div class="radio-wrap">
-                                                  <input type="radio" name='goSale' value='1' id="bidType2"
-                                                      onclick='bidCount()'>
-                                                  <label class="radio-label" for="bidType2">폐차</label>
-                                              </div>
-                                          </li>
-                                          <? } ?>
-                                          <? } ?>
-                                      </ul>
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">입찰금액(만원)</span>
-                                  <div class="data">
-                                      <div class="input-wrap">
-                                          <input type="text" name="bid_price" id="bid_price" value=""
-                                              onkeyup="bidCount()"><input name="c_bid_price" id="c_bid_price"
-                                              type="hidden" readonly="" />
-                                      </div>
-                                      <span class="unit">만원</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">부가세</span>
-                                  <div class="data">
-                                      <div class="input-wrap">
-                                          <input type="text" name="vat_bid_price" value=""
-                                              style="background-color: transparent;box-sizing: border-box;border: 0;"
-                                              readonly>
-                                      </div>
-                                      <span class="unit">원</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">수수료</span>
-                                  <div class="data">
-                                      <div class="input-wrap">
-                                          <input type="text" name="succ_bid_sub_price" value=""
-                                              style="background-color: transparent;box-sizing: border-box;border: 0;"
-                                              readonly>
-                                      </div>
-                                      <span class="unit">원</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">발생비용</span>
-                                  <div class="data">
-                                      <div class="input-wrap">
-                                          <input type="text" name="bid_total_price" value="<?= number($wc_go_cost) ?>"
-                                              style="background-color: transparent;box-sizing: border-box;border: 0;"
-                                              readonly>
-                                      </div>
-                                      <span class="unit">원</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">상사이전비</span>
-                                  <div class="data">
-                                      <div class="input-wrap">
-                                          <input type="text" name="sang_price" value=""
-                                              style="background-color: transparent;box-sizing: border-box;border: 0;"
-                                              readonly>
-                                      </div>
-                                      <span class="unit">원</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <span class="label">서류대행료</span>
-                                  <div class="data">
-                                      <div class="input-wrap">
-                                          <input type="text" name="seo_price" value=""
-                                              style="background-color: transparent;box-sizing: border-box;border: 0;"
-                                              readonly>
-                                      </div>
-                                      <span class="unit">원</span>
-                                  </div>
-                              </li>
-                          </ul>
-                          <ul class="total-list">
-                              <li>
-                                  <span class="label">입찰합계</span>
-                                  <div class="data">
-                                      <div class="total">
-                                          <input type="text" name="last_bid_price" readonly
-                                              style="display:none;" /><span id="last_bid_price_html"></span>
-                                          <span>원</span>
-                                      </div>
-                                  </div>
-                              </li>
-                          </ul>
-                      </div>
-                  </form>
-                  <div class="agree-wrap">
-                      <div class="checkbox-wrap">
-                          <input type="checkbox" id="agree">
-                      </div>
-                      <label for="agreeConfirm">입찰약관내용을 확인하고 동의합니다</label>
-                      <a href="/inc/sub02_1_popup.php" target="_blank" class="link">[입찰약관보기]</a>
-                  </div>
-
-                  <? if ($row->wc_gubun4 == 2) { ?>
-                  <div class="btn-wrap">
-                      <button type="button" id="sb_img" class="btn btn-submit-color btn-md"
-                          onclick="bid_submit()">입찰하기</button>
-                  </div>
-                  <? } ?>
-  </div>
+                    <? if ($row->wc_gubun4 == 2) { ?>
+                    <div class="btn-wrap">
+                        <button type="button" id="sb_img" class="btn btn-submit-color btn-md"
+                            onclick="bid_submit()">입찰하기</button>
+                    </div>
+                    <? } ?>
+    </div>
 
     <div class="pop-footer">
         <a href="" class="btn-close-pop">[닫기]</a>
@@ -1043,4 +1037,5 @@ document.onload = Timer(<?= $diff_in_secs ?>, <?= $diff_in_mins ?>, <?= $diff_in
 //
 -->
 </script>
+
 </html>

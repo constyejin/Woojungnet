@@ -35,15 +35,15 @@ if ($wc_idx) {
 
 <section class="view-detail">
   <div class="div_information">
-    <span class="label">No :</span><span class="dd">24-0202552</span> &nbsp;/&nbsp;
-    <span class="dd">싼타페</span> &nbsp;/&nbsp;
-    <span class="dd">차량번호</span> &nbsp;/&nbsp;
-    <span class="dd">사고이력</span> &nbsp;/&nbsp;
-    <span class="dd">  년 월</span> &nbsp;/&nbsp;
-    <span class="dd">자동/오토</span> &nbsp;/&nbsp;
-    <span class="dd">하이브리드</span> &nbsp;/&nbsp;
-    <span class="dd">cc</span> &nbsp;/&nbsp;
-    <span class="dd">km</span>
+	<span class="label">No :</span><span class="dd"><?=$row['wc_orderno']?></span> &nbsp;/&nbsp;
+	<span class="dd"><?=$row['wc_mem_etc']?></span> &nbsp;/&nbsp;
+	<span class="dd"><?=$row[wc_no]?></span> &nbsp;/&nbsp;
+	<span class="dd"><?=$arr_wc_damage[$row[wc_damage]]?></span> &nbsp;/&nbsp;
+	<span class="dd"><?=$row[wc_age]?> 년 <?=$row[wc_kind]?sprintf("%02d",$row[wc_kind]):""?> 월</span> &nbsp;/&nbsp;
+	<span class="dd"><?=$row[wc_trans]?></span> &nbsp;/&nbsp;
+	<span class="dd"><?=$row[wc_fual]?></span> &nbsp;/&nbsp;
+	<span class="dd"><?=number($row[wc_cc])?>cc</span> &nbsp;/&nbsp;
+	<span class="dd"><?=number($row[wc_mileage])?>km</span>
   </div>
   
   <div class="car-image-slide bxslider">
@@ -91,10 +91,26 @@ if ($wc_idx) {
                 <li>
                     <div class="th">NO</div>
                     <div class="td"><?= $row[wc_orderno] ?></div>
+                    <div class="th">판매상태</div>
+                    <div class="td">
+					<? if($row[calltype]=="1"){ ?>
+					<a href class="btn btn-sm btn-red btn-round">sale</a>
+					<? }else if($row[calltype]=="2"){ ?>
+					<a href class="btn btn-sm btn-black btn-round">soldout</a>
+					<? } ?>					
+					</div>
                 </li>
                 <li>
                     <div class="th">차량명</div>
                     <div class="td"><?= $row['wc_mem_etc'] ?></div>
+                </li>
+                <li>
+                    <div class="th">차량번호</div>
+                    <div class="td"><?= $row['wc_no'] ?></div>
+                </li>
+                <li>
+                    <div class="th">사고이력</div>
+                    <div class="td"><?=$arr_wc_damage[$row[wc_damage]]?></div>
                 </li>
                 <li>
                     <div class="th">제조사</div>
@@ -112,7 +128,7 @@ if ($wc_idx) {
                         <span><?= number($row[wc_cc]) ?>cc</span> ㅣ <span><?= number($row[wc_mileage]) ?>km</span>
                         <br>
                         <br>
-                        <span>전화문의</span>
+                        <span<?=number($row[wc_keep_tel1])?>만원 <?=$row[wc_cost]!="1"?"":"할부가능"?></span>
                     </div>
                 </li>
                 <li>

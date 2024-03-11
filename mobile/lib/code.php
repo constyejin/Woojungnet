@@ -592,6 +592,7 @@ function TableQuery($table, $tablecol = "*", $where){
 
 
 $arr_power=array('','폐차','이전','폐차/이전');
+$arr_wc_damage=array('','무사고','사고있음');
 
 
 function cutStr($str, $s=0, $e){

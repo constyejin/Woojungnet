@@ -351,7 +351,7 @@ function zzim2(idx) {
         <h2>참고사항</h2>
         <div class="content-wrap">
             <p class="car-description-text">
-            참고설명이 나오는곳입니다.
+            <?=nl2br($row->wc_option_add)?>
             </p>
         </div>
         

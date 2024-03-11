@@ -206,14 +206,16 @@ function allcancel() {
               </div>
 
               <div style="padding:4px 0;">
-                <span style="font-size:14px; font-weight:bold;">1,000만원</span>
+                <span style="font-size:14px; font-weight:bold;"><?=number($row[wc_keep_tel1])?>만원</span>
+				<? if($row[wc_cost]=="1"){ ?>
                 <span>|</span>
                 <span style="font-size:13px; color:red;">할부가능</span>
+				<? } ?>
               </div>
                 
               <div align="center" style="height:35px; color: #595959;font-size:13px; font-weight:600; padding-bottom:12px;">
                 <span><?= $row[wc_age] ?>-</span>
-                <span style="padding-right:5px">01</span>
+                <span style="padding-right:5px"><?=$row[wc_kind]?sprintf("%02d",$row[wc_kind]):""?></span>
                 <span>|</span>
                 <span style="padding: 0 4px;"><?= $row[wc_trans] ?></span>
                 <span>|</span>
