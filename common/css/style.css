@@ -440,11 +440,13 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	margin-top: 10px;
 	overflow: hidden;
 }
+
 .car-info-view .img-list-wrap .img-list ul{
 	display: flex;
 	flex-wrap: nowrap;
 	background-color: #ffffff;
 }
+
 .car-info-view .img-list-wrap .img-list li{
 	background-color: #ffffff;
 	flex: 0 0 10%;
@@ -841,7 +843,7 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,.3);
+	background-color: rgba(0,0,0,.7);
 	z-index: 9999;
 }
 .layer-popup-wrap.open{
@@ -892,14 +894,16 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 }
 
 .layer-popup-wrap .img-list-wrap{
-	margin-top: 10px;
+	margin: 10px 0;
 	overflow: hidden;
 }
 
+.view-container .img-list-wrap .img-list,
 .layer-popup-wrap .img-list-wrap .img-list {
 	position: relative;
 }
 
+.view-container .img-list-wrap .img-list button,
 .layer-popup-wrap .img-list-wrap .img-list button {
 	position: absolute;
 	top: 50%;
@@ -914,11 +918,13 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 	background-color: rgba(0,0,0,.8);
 }
 
+.view-container .img-list-wrap .img-list .prev-btn,
 .layer-popup-wrap .img-list-wrap .img-list .prev-btn {
 	left: 10px;
 	padding-right: 2px;
 }
 
+.view-container .img-list-wrap .img-list .next-btn,
 .layer-popup-wrap .img-list-wrap .img-list .next-btn {
 	right: 10px;
 	padding-left: 2px;
