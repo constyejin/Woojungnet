@@ -2,7 +2,6 @@ const incaronUI = {
   gnbScrollEffect: function(){
    let offsetTop = 0;
    $(document).on('scroll', function(){
-    // console.log('scroll', $(window).scrollTop());
     offsetTop = $(window).scrollTop();
     if( offsetTop > 0 ){
       $('header').addClass('bg-white');
@@ -20,7 +19,6 @@ const incaronUI = {
 
     $('.nav-list > li').hover(function(e){
       // mouseover
-      console.log('hover', $(this).index());
       index = $(this).index();
       $('header').addClass('open');
       $('.nav-list > li').eq(index).addClass('on').siblings().removeClass('on');
