@@ -444,27 +444,30 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 .car-info-view .img-list-wrap .img-list ul{
 	display: flex;
 	flex-wrap: nowrap;
-	background-color: #ffffff;
+	background-color: #fff;
 }
 
 .car-info-view .img-list-wrap .img-list li{
 	width: 78px;
 	height: 60px;
-	background-color: #ffffff;
 	overflow: hidden;
+	/* background-color: #fff; */
 }
+
 .car-info-view .car-image.for-parts + .img-list-wrap .img-list li{
 	height: 90px;
 }
+
 .car-info-view .img-list-wrap .img-list li > img{
 	width: 100%;
-	opacity: 0.5;
 	height: 100%;
+	opacity: 0.5;
 	object-fit: cover;
 }
+
 .car-info-view .img-list-wrap .img-list li.active{
-	box-sizing: border-box;
 	border: 2px solid #00b5ff;
+	box-sizing: border-box;
 }
 .car-info-view .img-list-wrap .img-list li.active > img{
 	opacity: 1;
