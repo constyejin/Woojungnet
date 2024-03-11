@@ -86,57 +86,59 @@ if ($wc_idx) {
   </div> -->
 
     <div class="parts-description">
-        <div class="table-style w-100">
-            <ul>
-                <li>
-                    <div class="th">NO</div>
-                    <div class="td"><?= $row[wc_orderno] ?></div>
-                    <div class="th">판매상태</div>
-                    <div class="td">
-					<? if($row[calltype]=="1"){ ?>
-					<a href class="btn btn-sm btn-red btn-round">sale</a>
-					<? }else if($row[calltype]=="2"){ ?>
-					<a href class="btn btn-sm btn-black btn-round">soldout</a>
-					<? } ?>					
-					</div>
-                </li>
-                <li>
-                    <div class="th">차량명</div>
-                    <div class="td"><?= $row['wc_mem_etc'] ?></div>
-                </li>
-                <li>
-                    <div class="th">차량번호</div>
-                    <div class="td"><?= $row['wc_no'] ?></div>
-                </li>
-                <li>
-                    <div class="th">사고이력</div>
-                    <div class="td"><?=$arr_wc_damage[$row[wc_damage]]?></div>
-                </li>
-                <li>
-                    <div class="th">제조사</div>
-                    <div class="td"><?= $cate1[name] ?> &gt; <?= $row[wc_model] ?></div>
-                </li>
-                <li>
-                    <div class="th w-100">차량정보</div>
-                </li>
-                <li>
-                    <div class="td align-c">
-                        <span><?= $row[wc_age] ?></span> ㅣ <span><?= $row[wc_trans] ?></span> ㅣ
-                        <span><?= $row[wc_fual] ?></span>
-                        <br>
-                        <br>
-                        <span><?= number($row[wc_cc]) ?>cc</span> ㅣ <span><?= number($row[wc_mileage]) ?>km</span>
-                        <br>
-                        <br>
-                        <span<?=number($row[wc_keep_tel1])?>만원 <?=$row[wc_cost]!="1"?"":"할부가능"?></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="td">
-                        <?= $row[wc_option_add] ?>
-                    </div>
-                </li>
-            </ul>
+      <div class="table-style w-100">
+        <ul>
+          <li>
+            <div class="th">NO</div>
+            <div class="td" style="width:100%; display:flex; justify-content:space-between; align-items:center">
+              <div><?= $row[wc_orderno] ?></div>
+              <div>
+                <? if($row[calltype]=="1"){ ?>
+                <a href class="btn btn-sm btn-red btn-round">sale</a>
+                <? }else if($row[calltype]=="2"){ ?>
+                <a href class="btn btn-sm btn-black btn-round">soldout</a>
+                <? } ?>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="th">차량명</div>
+            <div class="td"><?= $row['wc_mem_etc'] ?></div>
+          </li>
+          <li>
+            <div class="th">차량번호</div>
+            <div class="td"><?= $row['wc_no'] ?></div>
+          </li>
+          <li>
+            <div class="th">사고이력</div>
+            <div class="td"><?=$arr_wc_damage[$row[wc_damage]]?></div>
+          </li>
+          <li>
+            <div class="th">제조사</div>
+            <div class="td"><?= $cate1[name] ?> &gt; <?= $row[wc_model] ?></div>
+          </li>
+          <li>
+            <div class="th w-100">차량정보</div>
+          </li>
+          <li>
+            <div class="td align-c">
+              <span><?= $row[wc_age] ?></span> ㅣ <span><?= $row[wc_trans] ?></span> ㅣ
+              <span><?= $row[wc_fual] ?></span>
+              <br>
+              <br>
+              <span><?= number($row[wc_cc]) ?>cc</span> ㅣ <span><?= number($row[wc_mileage]) ?>km</span>
+              <br>
+              <br>
+              <span<?=number($row[wc_keep_tel1])?>만원 <?=$row[wc_cost]!="1"?"":"할부가능"?></span>
+            </div>
+          </li>
+          <li>
+            <div class="td">
+              <?= $row[wc_option_add] ?>
+            </div>
+            </li>
+          </ul>
         </div>
         <div class="btn-group align-c">
             <div class="center">
