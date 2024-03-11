@@ -825,18 +825,18 @@ for($i=1; $i<=100; $i++) {
 		<div class="img-list-wrap view-thumb">
 			<div class="img-list">
 				<ul> 
-<?
-for($i=1; $i<=100; $i++) {
+					<?
+					for($i=1; $i<=100; $i++) {
 
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-    $fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-  <li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
-<? 
-}	
-?>
+						$fileName = $row->{"wc_img_".$i};
+						$real_name = explode('/', $fileName);	
+						if(strlen($real_name[0]) == 0) break;
+							$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+					?>
+						<li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
+					<? 
+					}	
+					?>
 				</ul>
 			</div>
 		</div>
@@ -847,16 +847,16 @@ for($i=1; $i<=100; $i++) {
 			<dl>
 				<dt class="label">제조사</dt>
 				<dd class="info-data">
-<?
-if($row->wc_mem_name=="동부"){
-	echo $row->made_dong;
-}else{
-	$sql="select * from cate2 where idx='$row->wc_made' ";
-	$result_made=mysql_query($sql);
-	$data_made=mysql_fetch_array($result_made);
-	echo $data_made[name];
-}
-?>	
+					<?
+					if($row->wc_mem_name=="동부"){
+						echo $row->made_dong;
+					}else{
+						$sql="select * from cate2 where idx='$row->wc_made' ";
+						$result_made=mysql_query($sql);
+						$data_made=mysql_fetch_array($result_made);
+						echo $data_made[name];
+					}
+					?>	
 				</dd>
 				<dt class="label">모델명</dt>
 				<dd class="info-data"><?=$row->wc_model ?>
@@ -1056,12 +1056,16 @@ for($i=1; $i<=100; $i++) {
 
 			function sliding(dir){
 				cur = cur + dir;
-				if(cur >= len) {
-					$('.prev-btn').attr('disabled', true);
+				if(cur >= len - 20) {
+					$('.prev-btn').attr('disabled', false);
 					$('.next-btn').attr('disabled', true);
-				} else if(cur < 0) {
+				} else if(cur <= 0) {
+					cur = 0;
 					$('.prev-btn').attr('disabled', true);
-					$('.next-btn').attr('disabled', true);
+					$('.next-btn').attr('disabled', false);
+				} else {
+					$('.prev-btn').attr('disabled', false);
+					$('.next-btn').attr('disabled', false);
 				}
 
 				$('.layer-popup-wrap .img-list > ul').animate({

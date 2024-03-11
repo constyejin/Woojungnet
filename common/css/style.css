@@ -438,10 +438,11 @@ input.checkbox{margin:-1px 2px 0 0; vertical-align:middle;}
 }
 .car-info-view .img-list-wrap{
 	margin-top: 10px;
+	overflow: hidden;
 }
 .car-info-view .img-list-wrap .img-list ul{
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	background-color: #ffffff;
 }
 .car-info-view .img-list-wrap .img-list li{
