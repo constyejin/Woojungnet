@@ -4,7 +4,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/lib/global.php';
 include $_SERVER['DOCUMENT_ROOT'].'/lib/phpfun.class.php';
 $phpfun = new phpfun();
 
-$site_u[home_url]="http://www.skrcauto.co.kr";
+$site_u[home_url]="http://www.taegeummotors.co.kr";
 ?>
 <html lang="ko">
 <head>
@@ -15,10 +15,10 @@ $site_u[home_url]="http://www.skrcauto.co.kr";
   <meta property="og:type" content="website">
   <meta property="og:title" content="태금모터스">
   <meta property="og:description" content="보험사잔존물경공매, 폐차,수출,자동차부품">
-  <meta property="og:image" content="http://www.taegeummotors.com/myimage.jpg">
-  <meta property="og:url" content="http://www.taegeummotors.com">
+  <meta property="og:image" content="http://www.taegeummotors.co.kr/myimage.jpg">
+  <meta property="og:url" content="http://www.taegeummotors.co.kr">
   <meta name="description" content="보험사잔존물경공매, 폐차,수출,자동차부품">
-  <link rel="stylesheet" type="text/css" href="http://www.taegeummotors.com/common/css/incaron_style_m.css"/>
+  <link rel="stylesheet" type="text/css" href="http://www.taegeummotors.co.kr/common/css/incaron_style_m.css"/>
   <!-- jquery -->
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <!-- swiper.js css-->
@@ -29,10 +29,10 @@ $site_u[home_url]="http://www.skrcauto.co.kr";
   <!-- swiper.js js-->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <!-- bxslider.js css-->
-	<link rel="stylesheet" href="www.taegeummotors.com/common/js/jquery.bxslider.css">
+	<link rel="stylesheet" href="www.taegeummotors.co.kr/common/js/jquery.bxslider.css">
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
   <!-- skrcauto UI js -->
-  <script src="http://www.taegeummotors.com/common/js/incaron_ui_m.js"></script>
+  <script src="http://www.taegeummotors.co.kr/common/js/incaron_ui_m.js"></script>
 </head>
 <body>
 <iframe name="AdminFrm" id="AdminFrm" style="display:none;"></iframe>

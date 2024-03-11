@@ -115,6 +115,8 @@ if($mode == 'regist' || $mode == 'modify') {
 	$carprice		= str_replace(",", "", $_POST['carprice']);
 	//carcost 예상수리비
 	$carcost		= str_replace(",", "", $_POST['carcost']);
+
+	$wc_keep_tel1= str_replace(",", "", $_POST['wc_keep_tel1']);
 	//caraccdate 사고발생일
 	$caraccdate		= $_POST['caraccdate'];
 	//carOption[] 기본옵션
@@ -254,7 +256,7 @@ if($mode == 'regist' || $mode == 'modify') {
 				$copyname=$copyday."_".$k.".".$extension;
 				$k++;
 			}
-			thumbnail($file1, $copyname, $_SERVER[DOCUMENT_ROOT]."/data2/", 1280, 800);
+			thumbnail($file1, $copyname, $_SERVER[DOCUMENT_ROOT]."/data2/", 1280, 960);
 
 			$sql.=  $imgName." =  '".$copyname."', ";	
 

@@ -389,20 +389,21 @@ if ($row->wc_gubun2 == "4") {
 </footer>
 
 <script>
-  $(document).ready(function() {
-    $('.car-image-slide').bxSlider({
-      auto: false,
-      autoControls: false,
-      stopAutoOnClick: false,
-      pager: true,
-      pagerType: 'short',
-      autoHover: false,
-      controls: true,
-      infiniteLoop: false,
-      nextText: '>',
-      prevText: '<',
+    $(document).ready(function() {
+        console.log($('.car-image-slide'));
+        $('.car-image-slide').bxSlider({
+            auto: false,
+            autoControls: false,
+            stopAutoOnClick: false,
+            pager: true,
+            pagerType: 'short',
+            autoHover: false,
+            controls: true,
+            infiniteLoop: false,
+            nextText: '>',
+			    	prevText: '<',
+        });
     });
-  });
 </script>
 
 <div class="layer-pop">

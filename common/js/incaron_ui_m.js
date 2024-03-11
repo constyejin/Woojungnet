@@ -58,11 +58,11 @@ const incaronUI = {
     
     var userAgent = navigator.userAgent.toLowerCase();
     
-    var url = "http://skrcauto.co.kr/";
+    var url = "http://www.taegeummotors.com/";
     
-    var icon = "http://skrcauto.co.kr/images/front/icon_app_install.png";
+    var icon = "http://www.taegeummotors.com/images/front/icon_app_install.png";
     
-    var title = "SKRC AUTO";
+    var title = "Taegeum";
     
     var serviceCode = "nstore";
     

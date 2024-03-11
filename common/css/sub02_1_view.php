@@ -900,8 +900,6 @@ if($row->wc_mem_name=="동부"){
 				} 
 				?>				
 				</dd>
-				<dt class="label">참고사항</dt>
-				<dd class="info-data stretch"><?=nl2br($row->wc_option_add)?></dd>
 				<dt class="label">차량설명</dt>
 				<dd class="info-data stretch"><?=nl2br($row->wc_damage)?></dd>
 			</dl>
@@ -1027,10 +1025,8 @@ for($i=1; $i<=100; $i++) {
 			<!-- 차량이미지 리스트 -->
 			<div class="img-list-wrap">
 				<div class="img-list">
-					<div class="thum-btn-list">
-						<button class="thum-btn prev-btn">&lt;</button>
-						<button class="thum-btn next-btn">&gt;</button>
-					</div>
+					<button class="prev-btn">Prev</button>
+					<button class="next-btn">Next</button>
 					<ul>
 <?
 for($i=1; $i<=100; $i++) {
@@ -1048,7 +1044,7 @@ for($i=1; $i<=100; $i++) {
 				</div>
 			</div>
 
-	<script>
+			<script>
 		$(document).ready(function(){
 			let cur = 0;
 			let len = $('.layer-popup-wrap .img-list > ul > li').length;
@@ -1057,11 +1053,9 @@ for($i=1; $i<=100; $i++) {
 			function sliding(dir){
 				cur = cur + dir;
 				if(cur >= len) {
-					$('.prev-btn').attr('disabled', true);
-					$('.next-btn').attr('disabled', true);
+					cur = 0;
 				} else if(cur < 0) {
-					$('.prev-btn').attr('disabled', true);
-					$('.next-btn').attr('disabled', true);
+					cur = len - 1;
 				}
 
 				$('.layer-popup-wrap .img-list > ul').animate({

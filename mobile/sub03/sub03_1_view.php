@@ -674,19 +674,12 @@ function bidCount() {
     }
 
     if (f.bid_price.value)
-        if (!isNumeric(f.bid_price)) return; <
-    ?
-    if ($row - > vat == "2") {
-        ?
-        >
-        var vatp = 0.1; <
-        ?
-    } else {
-        ?
-        >
-        var vatp = 0; <
-        ?
-    } ? >
+        if (!isNumeric(f.bid_price)) return; 
+<? if($row->vat=="2"){ ?>
+	var vatp=0.1;
+<? }else{ ?>
+	var vatp=0;
+<? } ?>
 
     if (f.bid_price.value) {
         if (f.bid_price.value >= 1 && f.bid_price.value < 500) {
@@ -757,19 +750,12 @@ function bidCount() {
     }
 
     if (f.bid_price.value)
-        if (!isNumeric(f.bid_price)) return; <
-    ?
-    if ($row - > vat == "2") {
-        ?
-        >
-        var vatp = 0.1; <
-        ?
-    } else {
-        ?
-        >
-        var vatp = 0; <
-        ?
-    } ? >
+        if (!isNumeric(f.bid_price)) return; 
+<? if($row->vat=="2"){ ?>
+	var vatp=0.1;
+<? }else{ ?>
+	var vatp=0;
+<? } ?>
 
     if (f.bid_price.value) {
 
@@ -843,69 +829,60 @@ function addComma(str) {
 /////////////////////////경매요율 설정 //////////////
 /////////////////////////////////////////////////////
 function auction_per(price) {
+	
+	var min_price = "<?=$salelowprice?>";
+	var max_price = "<?=$salehighprice?>";
+	var returnsum = 0;
+	<? if($gubun3 == "4" || $gubun3 == "5") { ?>
+		var salePecrcent = "<?=$salePercent1/100?>";
+	<? }else{ ?>
+	if(price<=999000){
+		var salePecrcent = "<?=$salePercent2/100?>";
+	}else if(price<=9999999){
+		var salePecrcent = "<?=$salePercent3/100?>";
+	}else if(price<=29999999){
+		var salePecrcent = "<?=$salePercent4/100?>";
+	}else{
+		var salePecrcent = "<?=$salePercent5/100?>";
+	}
+	<? } ?>
+		
+	var sum = salePecrcent * price;
+	sum=Math.floor(sum/10)*10;
+	
+	<? if($gubun3 == "7" ) { ?>
+	sum="<?=$salePercent8?>";
+	<? } ?>
 
-    var min_price = "<?= $salelowprice ?>";
-    var max_price = "<?= $salehighprice ?>";
-    var returnsum = 0; <
-    ?
-    if ($gubun3 == "4" || $gubun3 == "5") {
-        ?
-        >
-        var salePecrcent = "<?= $salePercent1 / 100 ?>"; <
-        ?
-    } else {
-        ?
-        >
-        if (price <= 999000) {
-            var salePecrcent = "<?= $salePercent2 / 100 ?>";
-        } else if (price <= 9999999) {
-            var salePecrcent = "<?= $salePercent3 / 100 ?>";
-        } else if (price <= 29999999) {
-            var salePecrcent = "<?= $salePercent4 / 100 ?>";
-        } else {
-            var salePecrcent = "<?= $salePercent5 / 100 ?>";
-        } <
-        ?
-    } ? >
-
-    var sum = salePecrcent * price;
-    sum = Math.floor(sum / 10) * 10;
-
-    <
-    ?
-    if ($gubun3 == "7") {
-        ?
-        >
-        sum = "<?= $salePercent8 ?>"; <
-        ?
-    } ? >
-
-    if ("<?= $gubun3 ?>" == "7") {
-        document.all.succ_bid_sub_price.value = addComma(sum);
-        returnsum = sum;
-    } else {
-        if (sum <= <?= $salelowprice ?>) {
-
-            returnsum = '<?= $salelowprice ?>';
-            document.all.succ_bid_sub_price.value = addComma('<?= $salelowprice ?>');
-
-        } else {
-            if (sum >= <?= $salehighprice ?>) { // 최고값보다크다면
-                sum = <?= $salehighprice ?>;
-
-                document.all.succ_bid_sub_price.value = addComma(<?= $salehighprice ?>);
-                returnsum = sum;
-
-            } else {
-                document.all.succ_bid_sub_price.value = addComma(sum);
-                returnsum = sum;
-
-            }
-        }
-    }
-
-
-    return returnsum;
+	if("<?=$gubun3?>"=="7"){
+		document.all.succ_bid_sub_price.value = addComma(sum);
+		returnsum = sum;
+	}else{
+		if(sum <= <?=$salelowprice?> )
+		{
+		
+			returnsum = '<?=$salelowprice?>';
+			document.all.succ_bid_sub_price.value = addComma('<?=$salelowprice?>');
+			
+		}
+		else
+		{
+			if(  sum >= <?=$salehighprice?> ){ // 최고값보다크다면
+				sum = <?=$salehighprice?>;
+				
+				document.all.succ_bid_sub_price.value = addComma(<?=$salehighprice?>);
+				returnsum = sum;
+				
+			}else{
+				document.all.succ_bid_sub_price.value = addComma(sum);
+				returnsum = sum;
+				
+			}
+		}
+	}
+	
+	
+	return returnsum;
 }
 
 function rs(str) {
@@ -919,22 +896,17 @@ function bid_submit() {
 
     var f = document.auctForm;
 
-    <
-    ?
-    if ($row - > wc_gubun3 == "2" || $row - > wc_gubun3 == "4") {
-        ?
-        >
+<?if($row->wc_gubun3=="2" || $row->wc_gubun3=="4"){?>									
 
-        var strt_amt_j = '<?= $auction_strt_amt ?>';
-        var bid_c = rs(f.c_bid_price.value);
-        var bid_p = bid_c.replace(/^\$|,/g, "");
-        if (parseInt(strt_amt_j) > parseInt(bid_p)) {
-            var strt_amt = '<?= number_format($auction_strt_amt) ?>';
-            alert("입찰금액이 경매시작가 (" + strt_amt + "원) 보다 작을수 없습니다.");
-            return false;
-        } <
-        ?
-    } ? >
+            var strt_amt_j = '<?= $auction_strt_amt ?>';
+            var bid_c = rs(f.c_bid_price.value);
+            var bid_p = bid_c.replace(/^\$|,/g, "");
+            if (parseInt(strt_amt_j) > parseInt(bid_p)) {
+                var strt_amt = '<?= number_format($auction_strt_amt) ?>';
+                alert("입찰금액이 경매시작가 (" + strt_amt + "원) 보다 작을수 없습니다.");
+                return false;
+            }
+<?}?>
 
     if (f.goSale[0].checked == false && f.goSale[1].checked == false) {
         alert("매각유형을 선택해 주세요");

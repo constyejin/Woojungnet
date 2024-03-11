@@ -254,7 +254,7 @@ if($mode == 'regist' || $mode == 'modify') {
 				$copyname=$copyday."_".$k.".".$extension;
 				$k++;
 			}
-			thumbnail($file1, $copyname, $_SERVER[DOCUMENT_ROOT]."/data1/", 1280, 800);
+			thumbnail($file1, $copyname, $_SERVER[DOCUMENT_ROOT]."/data1/", 1280, 960);
 
 			$sql.=  $imgName." =  '".$copyname."', ";	
 

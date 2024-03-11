@@ -2,7 +2,7 @@
     <div class="btn-wrap install">
       <button class="btn btn-outline-gray btn-round home-down-load" onclick="incaronUI.home_key()">
         바탕아이콘설치(안드로이드)</button>
-      <button class="btn btn-black btn-round" onclick="location.href='http://www.taegeummotors.com/index.php?pc=1';">PC 버전보기</button>
+      <button class="btn btn-black btn-round" onclick="location.href='http://www.taegeummotors.co.kr/index.php?pc=1';">PC 버전보기</button>
     </div>
     <p class="notice-for-install">
       *네이버웹이 설치된 경우만 바탕바로가기 연동됩니다 
@@ -13,3 +13,4 @@
     </p>
   </footer>
  
+ <? // /common/js/incaron_ui_m.js 56~71라인 ?>
