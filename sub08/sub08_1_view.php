@@ -297,34 +297,34 @@ function part_del(idx){
             <!-- 차량이미지 -->
             <div class="car-image for-parts">
               <div class="img-wrap bxslider">
-<?
-$imgCnt = 0;
-for($i=1; $i<=60; $i++) {
+                <?
+                $imgCnt = 0;
+                for($i=1; $i<=60; $i++) {
 
-	$fim="wc_img_".$i;
-	$fileName = $row[$fim];
-	$real_name = explode('/', $fileName);	
-	
-	if(strlen($real_name[0]) == 0)
-	{
-		$fileName = '';
-		$script = "";
-		break;
-	}
-	else
-	{
-		$imgCnt++;
-		$fileName = $site_u[home_url]."/data1/".$real_name[0];
-		$script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;\" ";
-	}
-?>
+                  $fim="wc_img_".$i;
+                  $fileName = $row[$fim];
+                  $real_name = explode('/', $fileName);	
+                  
+                  if(strlen($real_name[0]) == 0)
+                  {
+                    $fileName = '';
+                    $script = "";
+                    break;
+                  }
+                  else
+                  {
+                    $imgCnt++;
+                    $fileName = $site_u[home_url]."/data1/".$real_name[0];
+                    $script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;\" ";
+                  }
+                ?>
                 <div data-hash="<?=$i?>" class="slide">
                   <img src="<?=$fileName?>" alt="차량이미지">
                 </div> 
-<?
-	$cnt++;
-}	
-?>
+                <?
+                  $cnt++;
+                }	
+                ?>
               </div>
               <!-- <a href="javascript:void(0)" onclick="openLayerPop()" class="btn-zoom">더보기</a> -->
             </div>
@@ -333,33 +333,39 @@ for($i=1; $i<=60; $i++) {
             <!-- 차량이미지 리스트 -->
             <div class="img-list-wrap view-thumb">
               <div class="img-list">
+                <div class="thum-btn-list">
+                  <button class="thum-btn prev-btn">&lt;</button>
+                  <button class="thum-btn next-btn">&gt;</button>
+                </div>
                 <ul> 
-<?
-$imgCnt = 0;
-for($i=1; $i<=60; $i++) {
+                  <?
+                  $imgCnt = 0;
+                  for($i=1; $i<=60; $i++) {
 
-	$fim="wc_img_".$i;
-	$fileName = $row[$fim];
-	$real_name = explode('/', $fileName);	
-	
-	if(strlen($real_name[0]) == 0)
-	{
-		$fileName = '';
-		$script = "";
-		break;
-	}
-	else
-	{
-		$imgCnt++;
-		$fileName = $site_u[home_url]."/data1/".$real_name[0];
-		$script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;\" ";
-	}
-?>
-                  <li data-thumb="<?=$i?>" <?=$i==1?'class="active"':''?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
-<?
-	$cnt++;
-}	
-?>
+                    $fim="wc_img_".$i;
+                    $fileName = $row[$fim];
+                    $real_name = explode('/', $fileName);	
+                    
+                    if(strlen($real_name[0]) == 0)
+                    {
+                      $fileName = '';
+                      $script = "";
+                      break;
+                    }
+                    else
+                    {
+                      $imgCnt++;
+                      $fileName = $site_u[home_url]."/data1/".$real_name[0];
+                      $script = " onClick=\"detailView($i)\" onmouseover=\"zoomView('$fileName', $i)\" style=\"cursor:pointer;\" ";
+                    }
+                  ?>
+                  <li data-thumb="<?=$i?>" <?=$i==1?'class="active"':''?> style="width:120px">
+                    <img src="<?=$fileName?>" alt="차량이미지 썸네일">
+                  </li> 
+                  <?
+                    $cnt++;
+                  }	
+                  ?>
                 </ul>
               </div>
             </div>
@@ -441,6 +447,52 @@ for($i=1; $i<=60; $i++) {
       </table>
       <script>
         // swiper
+        let cur = 0;
+
+        let len = $('.div_information .img-list > ul > li').length;
+        $('.div_information .img-list > ul').width(120 * len);
+            
+        function sliding(dir,num){
+          cur = cur + dir;
+          if(len <= num) {
+            // 아이템이 10개 미만인 경우
+            $('.prev-btn').attr('disabled', true);
+            $('.next-btn').attr('disabled', true);
+            return;
+          }
+          if(cur >= len - num) {
+            // 마지막 페이지일 떄
+            cur = len - num;
+            $('.prev-btn').attr('disabled', false);
+            $('.next-btn').attr('disabled', true);
+          } else if(cur <= 0) {
+            // 첫 번째 페이지일 때
+            cur = 0;
+            $('.prev-btn').attr('disabled', true);
+            $('.next-btn').attr('disabled', false);
+          } else {
+            $('.prev-btn').attr('disabled', false);
+            $('.next-btn').attr('disabled', false);
+          }
+
+          $('.div_information .img-list > ul').animate({
+            marginLeft : -120 * cur + "px"
+          })
+
+          $('.div_information .img-list > ul').animate({
+            marginLeft : -120 * cur + "px"
+          })
+        }
+
+        $('.div_information .img-list .prev-btn').on('click', function(){
+          sliding(-10, 10);
+        })
+
+        $('.div_information .img-list .next-btn').on('click', function(){
+          sliding(10, 10);
+        })
+
+
         // 차량이미지 swipe기능
         $(function(){
           var bx = $('.bxslider').bxSlider({
@@ -455,6 +507,10 @@ for($i=1; $i<=60; $i++) {
             onSlideAfter: function($slideElement, oldIndex, newIndex){
               console.log('bx', newIndex);
               $('.view-thumb .img-list > ul > li[data-thumb="'+(newIndex+1)+'"]').addClass('active').siblings().removeClass('active');
+
+              $('.view-thumb .img-list > ul').animate({
+                marginLeft: -(Math.floor(newIndex / 10) * 1200) + "px"
+              });
             }
           });
           
@@ -464,7 +520,6 @@ for($i=1; $i<=60; $i++) {
             console.log(target);
             bx.goToSlide(target-1);
           });
-
         })
       </script>
     </div>

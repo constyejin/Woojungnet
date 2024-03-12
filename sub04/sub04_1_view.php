@@ -801,20 +801,19 @@ input[type="text"].counter{
 		<!-- 차량이미지 -->
 		<div class="car-image">
 			<div class="img-wrap bxslider">
-			<?
-for($i=1; $i<=100; $i++) {
-
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-    $fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
+				<?
+				for($i=1; $i<=100; $i++) {
+					$fileName = $row->{"wc_img_".$i};
+					$real_name = explode('/', $fileName);	
+					if(strlen($real_name[0]) == 0) break;
+					$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+				?>
 					<div data-hash="<?=$i?>" class="slide">
 						<img src="<?=$fileName?>" alt="차량이미지">
 					</div> 
-<? 
-}	
-?>  
+				<? 
+				}	
+				?>  
 			</div>
 			<a href="javascript:void(0)" onclick="openLayerPop()" class="btn-zoom">더보기</a>
 		</div>
@@ -823,19 +822,23 @@ for($i=1; $i<=100; $i++) {
 		<!-- 차량이미지 리스트 -->
 		<div class="img-list-wrap view-thumb">
 			<div class="img-list">
+					<div class="thum-btn-list">
+					<button class="thum-btn prev-btn">&lt;</button>
+					<button class="thum-btn next-btn">&gt;</button>
+				</div>
 				<ul> 
-<?
-for($i=1; $i<=100; $i++) {
+					<?
+					for($i=1; $i<=100; $i++) {
 
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-    $fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-  <li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
-<? 
-}	
-?>
+						$fileName = $row->{"wc_img_".$i};
+						$real_name = explode('/', $fileName);	
+						if(strlen($real_name[0]) == 0) break;
+							$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+					?>
+						<li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
+					<? 
+					}	
+					?>
 				</ul>
 			</div>
 		</div>
@@ -846,16 +849,16 @@ for($i=1; $i<=100; $i++) {
 			<dl>
 				<dt class="label">제조사</dt>
 				<dd class="info-data">
-<?
-if($row->wc_mem_name=="동부"){
-	echo $row->made_dong;
-}else{
-	$sql="select * from cate2 where idx='$row->wc_made' ";
-	$result_made=mysql_query($sql);
-	$data_made=mysql_fetch_array($result_made);
-	echo $data_made[name];
-}
-?>	
+					<?
+					if($row->wc_mem_name=="동부"){
+						echo $row->made_dong;
+					}else{
+						$sql="select * from cate2 where idx='$row->wc_made' ";
+						$result_made=mysql_query($sql);
+						$data_made=mysql_fetch_array($result_made);
+						echo $data_made[name];
+					}
+					?>	
 				</dd>
 				<dt class="label">모델명</dt>
 				<dd class="info-data"><?=$row->wc_model ?>
@@ -957,6 +960,10 @@ if($row->wc_mem_name=="동부"){
 			onSlideAfter: function($slideElement, oldIndex, newIndex){
 				console.log('bx', newIndex);
 				$('.view-thumb .img-list > ul > li[data-thumb="'+(newIndex+1)+'"]').addClass('active').siblings().removeClass('active');
+
+				$('.view-thumb .img-list > ul').animate({
+					marginLeft: -(Math.floor(newIndex / 10) * 780) + "px"
+				});
 			}
 		});
 		
@@ -981,7 +988,6 @@ if($pic)
 	$wc_car_img1 = explode("/",$info["wc_img_".$pic]);
 	$defaultFile = $site_u[home_url]."/data/".$wc_car_img1[0]; 
 }
-
 ?>
 
 <!-- layerPopup -->
@@ -1004,51 +1010,101 @@ if($pic)
 			<!-- 차량이미지 -->
 			<div class="car-image">
 				<div class="img-wrap bxslider-popup img-large">
-<?
-for($i=1; $i<=100; $i++) {
-
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-		$fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-					<div data-hash="<?=$i?>" class="slide">
-						<img src="<?=$fileName?>" alt="차량이미지">
-					</div> 
-<? 
-}	
-?>  
+					<?
+					for($i=1; $i<=100; $i++) {
+						$fileName = $row->{"wc_img_".$i};
+						$real_name = explode('/', $fileName);	
+						if(strlen($real_name[0]) == 0) break;
+						$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+					?>
+						<div data-hash="<?=$i?>" class="slide">
+							<img src="<?=$fileName?>" alt="차량이미지">
+						</div> 
+					<? 
+					}	
+					?>  
 				</div>
 			</div>
 			<!-- //차량이미지 -->
-
 			<!-- 차량이미지 리스트 -->
 			<div class="img-list-wrap">
 				<div class="img-list">
+					<div class="thum-btn-list">
+						<button class="thum-btn prev-btn">&lt;</button>
+						<button class="thum-btn next-btn">&gt;</button>
+					</div>
 					<ul>
-<?
-for($i=1; $i<=100; $i++) {
+						<?
+						for($i=1; $i<=100; $i++) {
 
-	$fileName = $row->{"wc_img_".$i};
-	$real_name = explode('/', $fileName);	
-	if(strlen($real_name[0]) == 0) break;
-    $fileName = $site_u[home_url]."/data/".$real_name[0]; 
-?>
-  <li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
-<? 
-}	
-?>
+							$fileName = $row->{"wc_img_".$i};
+							$real_name = explode('/', $fileName);	
+							if(strlen($real_name[0]) == 0) break;
+								$fileName = $site_u[home_url]."/data/".$real_name[0]; 
+						?>
+							<li data-thumb="<?=$i?>" <?if($i == 1){?>class="active"<?}?>><img src="<?=$fileName?>" alt="차량이미지 썸네일"></li> 
+						<? 
+						}	
+						?>
 					</ul>
 				</div>
 			</div>
 			<!-- //차량이미지 리스트 -->
 		</div>
 		<div class="popip-footer">
-
 		</div>
 	</div>
 	<script>
 		// 팝업 swiper
+		let cur = 0;
+
+		let viewLength = $('.view-thumb .img-list > ul > li').length;
+		$('.view-thumb .img-list > ul').width(78 * viewLength);
+
+		let len = $('.layer-popup-wrap .img-list > ul > li').length;
+		$('.layer-popup-wrap .img-list > ul').width(64 * len);
+				
+		function sliding(dir,num){
+			cur = cur + dir;
+			if(cur >= len - num) {
+				$('.prev-btn').attr('disabled', false);
+				$('.next-btn').attr('disabled', true);
+			} else if(cur <= 0) {
+				cur = 0;
+				$('.prev-btn').attr('disabled', true);
+				$('.next-btn').attr('disabled', false);
+			} else {
+				$('.prev-btn').attr('disabled', false);
+				$('.next-btn').attr('disabled', false);
+			}
+
+			$('.view-thumb .img-list > ul').animate({
+				marginLeft : -78 * cur + "px"
+			})
+
+			$('.layer-popup-wrap .img-list > ul').animate({
+				marginLeft : -64 * cur + "px"
+			})
+		}
+
+		// view prev, next 버튼
+		$('.view-thumb .img-list .prev-btn').on('click', function(){
+			sliding(-10, 10);
+		})
+
+		$('.view-thumb .img-list .next-btn').on('click', function(){
+			sliding(10, 10);
+		})
+
+		// Popup Prev, Next 버튼
+		$('.layer-popup-wrap .img-list .prev-btn').on('click', function(){
+			sliding(-20, 20);
+		})
+
+		$('.layer-popup-wrap .img-list .next-btn').on('click', function(){
+			sliding(20, 20);
+		})
+
 		// 차량이미지 swipe기능
 		$(function(){
 			var PopBx = $('.bxslider-popup').bxSlider({
@@ -1063,6 +1119,10 @@ for($i=1; $i<=100; $i++) {
 				onSlideAfter: function($slideElement, oldIndex, newIndex){
 					console.log('bx', newIndex);
 					$('.layer-popup-wrap .img-list > ul > li[data-thumb="'+(newIndex+1)+'"]').addClass('active').siblings().removeClass('active');
+
+					$('.layer-popup-wrap .img-list > ul').animate({
+						marginLeft: -(Math.floor(newIndex / 20) * 1280) + "px"
+					});
 				}
 			});
 			
