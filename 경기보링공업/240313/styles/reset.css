@@ -16,6 +16,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   margin: 0 auto;
+  color: #262626;
 }
 
 h1 {
@@ -57,4 +58,8 @@ ol {
 
 address {
   font-style: normal;
+}
+
+.visually-hidden {
+  display: none;
 }
