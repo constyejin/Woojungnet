@@ -1,0 +1,86 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자</title>
+
+<!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- admin css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../js/script.js"></script>
+
+</head>
+<body>
+  <div class="narmi-admin">
+    <!-- 본문 -->
+    <div class="container-fluid">
+      <section class="vehicle-slider-wrap">
+        <p class="h3">
+          나르미 1톤 롱바디
+        </p>
+        <div class="swiper vehicle-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="">
+                <img src="../image/img_vehicle_slide.png" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="">
+                <img src="../image/img_vehicle_slide.png" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="">
+                <img src="../image/img_vehicle_slide.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </section>
+    </div>
+  </div>
+  <script>
+    function storeTruckSlider(){
+      const swiper = new Swiper('.vehicle-slider', {
+        loop: true,
+        slidesPerView: 1,
+        loopAdditionalSlides: 1,
+        loopedSlides: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          960:{
+            slidesPerView: 'auto'
+          }
+        }
+      })
+    }
+    storeTruckSlider();
+  </script>
+</body>
+</html>
