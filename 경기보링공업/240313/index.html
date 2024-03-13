@@ -3,67 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width:1200">
   <title>경기보링공업관리자</title>
   <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/buttons.css">
   <link rel="stylesheet" href="./style.css">
+  <!-- Slick Slide -->
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="wrapper">
     <header class="global-header">
-      <h1 class="logo">
-        <a href="">
-          <p>&#40;주&#41;경기보람공업</p>
-          <span>자동차보링전문기업</span>
-        </a>
-      </h1>
+      <div>
+        <h1 class="logo">
+          <a href="">
+            <p>&#40;주&#41;경기보링공업</p>
+            <span>자동차보링전문기업</span>
+          </a>
+        </h1>
 
-      <nav>
-        <h2 class="visually-hidden">메뉴</h2>
-        <ul class="gnb-nav-list">
-          <li class="gnb-nav-item">
-            <a href="">회사소개</a>
+        <nav>
+          <h2 class="visually-hidden">메뉴</h2>
+          <ul class="gnb-nav-list">
+            <li class="gnb-nav-item">
+              <a href="">회사소개</a>
+            </li>
+            <li class="gnb-nav-item">
+              <a href="">작업현황</a>
+            </li>
+            <li class="gnb-nav-item">
+              <a href="">스페셜매물</a>
+            </li>
+            <li class="gnb-nav-item">
+              <a href="">일반경공매</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <!-- NOTE : 로그인 한 경우 -->
+        <ul class="auth user-info">
+          <li class="admin">
+            <a href="">&#91;관리자모드&#93;</a>
           </li>
-          <li class="gnb-nav-item">
-            <a href="">작업현황</a>
-          </li>
-          <li class="gnb-nav-item">
-            <a href="">스페셜매물</a>
-          </li>
-          <li class="gnb-nav-item">
-            <a href="">일반경공매</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- NODE : 로그인 한 경우 -->
-      <!-- <ul class="user-info">
-        <li class="admin">
-          <a href="">&#91;관리자모드&#93;</a>
-        </li>
-        <li class="user-name">
-          <span>관리자</span>님
-        </li>
-        <li>
-          <button>마이페이지</button>
-        </li>
-        <li>
-          <button>로그아웃
-            <i class="fa-regular fa-user"></i>
-          </button>
-        </li>
-      </ul> -->
-
-      <!-- NODE : 로그인 하지 않은 경우 -->
-      <ul class="join">
-          <li>
-            <button>회원가입</button>
+          <li class="user-name">
+            <span>관리자</span>님
           </li>
           <li>
-            <button>로그인
-              <i class="fa-regular fa-user"></i>
-            </button>
+            <button class="btn-blue" href="">마이페이지</button>
+          </li>
+          <li>
+            <button class="btn-blue" href="">로그아웃</button>
           </li>
         </ul>
+
+        <!-- NOTE : 로그인 하지 않은 경우 -->
+        <!-- <ul class="auth join">
+            <li>
+              <button class="btn-blue">회원가입</button>
+            </li>
+            <li>
+              <button class="btn-blue">로그인</button>
+            </li>
+          </ul> -->
+      </div>
     </header>
 
     <section class="slide">
@@ -80,21 +87,24 @@
           </li>
         </ul>
 
-        <div class="slide-txt">
-          <p>자동차엔진 !!! 경기보링공업에 맡겨주십시요</p>
-          <p>신속,정확,안전한 서비스를 보장합니다</p>
-          <p>30년 노하우로 고객님들께 정성을 다하겠습니다</p>
-          <p>상담문의 : 010-4369-4117</p>
-        </div>
+        <div class="slide-container">
+          <div class="slide-fix-txt">
+            <div class="slide-fix-txt-main">
+              <p>자동차엔진 !!! 경기보링공업에 맡겨주십시요</p>
+              <p>신속,정확,안전한 서비스를 보장합니다</p>
+            </div>
+            <p class="slide-fix-txt-sub">30년 노하우로 고객님들께 정성을 다하겠습니다</p>
+            <p class="slide-fix-txt-num">상담문의 : 010-4369-4117</p>
+          </div>
 
-        <div class="back">
-          <img src="./assets/images/back-obj.jpeg" alt="">
+          <div class="slide-fix-img">
+            <img src="./assets/images/back-obj.png" alt="">
+          </div>
         </div>
-
       </div>
     </section>
 
-    <footer>
+    <footer class="global-footer">
       <ul>
         <li>&#40;주&#41;경기보람공업</li>
         <li>대표:이상수</li>
@@ -106,5 +116,7 @@
       </ul>
     </footer>
   </div>
+
+  <script src="./script/main-slide.js"></script>
 </body>
 </html>
