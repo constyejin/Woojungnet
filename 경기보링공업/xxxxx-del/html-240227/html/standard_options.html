@@ -1,0 +1,146 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자</title>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- admin css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="../js/script.js"></script>  
+
+</head>
+<body>
+  <div class="narmi-admin">
+    <header class="gnb">
+      <h1>관리자모드</h1>
+      <div class="suffix">
+        <a href="" class="btn btn-link"><i class="bi bi-house"></i> 홈으로</a>
+        <a href="" class="btn btn-link"><i class="bi bi-box-arrow-right"></i> 로그아웃</a>
+        <!-- <a href="" class="btn btn-link"><i class="bi bi-box-arrow-in-right"></i></i> 로그인</a> -->
+      </div>
+    </header>
+    <nav class="lnb">
+      <div class="title">
+        업무관리
+      </div>
+      <ul>
+        <li><a href="./contact-manage.html">상담문의</a></li>
+        <li><a href="./estimate-list.html">견적신청</a></li>
+        <li><a href="./released-list.html">출고차량</a></li>
+      </ul>
+      <div class="title">
+        차량관리
+      </div>
+      <ul>
+        <li><a href="./product-list.html">차량등록</a></li>
+        <li><a href="./color-options.html">색상옵션</a></li>
+        <li><a href="./standard_options.html">기본옵션</a></li>
+        <li><a href="./additional-options.html">선택옵션</a></li>
+        <li><a href="./smart-store.html">부품구매</a></li>
+      </ul>
+      <div class="title">
+        이미지관리
+      </div>
+      <ul>
+        <li><a href="./category-manage.html">카테고리</a></li>
+        <li><a href="./main-manage.html">메인이미지</a></li>
+        <li><a href="./sub-image.html">서브이미지</a></li>
+        <li><a href="./menu-image.html">메뉴이미지</a></li>
+        <li><a href="./dimession-image.html">구조이미지</a></li>
+        <li><a href="./certification-list.html">인증서등록</a></li>
+      </ul>
+      <div class="title">
+        사이트관리
+      </div>
+      <ul>
+        <li><a href="./info-company.html">업체정보 </a></li>
+        <li><a href="./popup-setting.html">팝업설정</a></li>
+        <li><a href="./board-manage.html">게시판</a></li>
+        <li><a href="./connect-info.html">접속자료</a></li>
+        <li><a href="./site-setting.html">사이트설정</a></li>
+      </ul>
+    </nav>
+    <!-- 본문 -->
+    <div class="container-fluid title">
+      <h2>기본옵션</h2>
+    </div>
+    <div class="content-container">
+      <div class="container-fluid additional-options-form">
+        <!-- 기본옵션 테이블 -->
+        <div class="light-border-box mt-5">
+          <div class="form-group">
+            <span class="label">정렬</span>
+            <input type="text" class="form-control arrange-number">
+            <p class="form-text">예: 01</p>
+          </div>
+
+          <div class="form-group">
+            <span class="label">옵션명</span>
+            <input type="text" class="form-control option-title">
+          </div>
+          <div class="form-group">
+            <span class="label">가격</span>
+            <input type="text" class="form-control price">
+            원
+          </div>
+
+
+          <div class="form-group">
+            <button type="button" class="btn btn-outline-secondary btn-sm">등록하기</button>
+          </div>
+        </div>
+        <!-- //기본옵션 테이블 -->
+
+        
+
+      </div>
+      <div class="container-fluid mb-5 mt-5 additional-options-list">
+        <!-- 기본옵션 리스트 -->
+        <!-- <h3>기본옵션</h3> -->
+        <table class="table table-layout border-type text-center table-hover">
+          <colgroup>
+            <col style="width: 100px">
+            <col style="width: auto">
+            <col style="width: 150px">
+            <col style="width: 200px">
+          </colgroup>
+          <thead class="table-light">
+            <tr>
+              <th>No</th>
+              <th>기본옵션명</th>
+              <th>부품가격</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>옵션명옵션명</td>
+              <td>
+                90,000
+              </td>
+              <td>
+                <button class="btn btn-outline-secondary btn-sm">수정</button>
+                <button class="btn btn-outline-dark btn-sm">삭제</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- //기본옵션 리스트 -->
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
