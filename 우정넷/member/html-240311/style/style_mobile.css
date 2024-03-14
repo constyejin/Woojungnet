@@ -1,8 +1,4 @@
 @media screen and (max-width: 860px){
-  .sm-only {
-    display: block;
-  }
-  
   /* gnb */
   .gnb .container, .content.join .container{
     width: 100%;
@@ -61,16 +57,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .content .portfolio-list ul li a .dim{
-      opacity: 1;
-    }
-
-  .inquiry {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* login */
+  /* 견적문의 */
   .join .join-form{
     margin-top: 30px;
   }
@@ -112,8 +99,7 @@
   .join .join-form .spam{
     position: relative;
     display: flex;
-    justify-content: space-between;
-    /* flex-direction: column; */
+    flex-direction: column;
   }
   .join .spam span.fc-red{
     position: absolute;
@@ -152,7 +138,7 @@
     font-size: 14px;
   }
 
-  /* 로그?�� */
+  /* 로그인 */
   .login-wrap > h1{
     font-size: 25px;
   }
@@ -211,36 +197,26 @@
   footer .container .info{
     text-align: center;
   }
-
-  .banner{
-    position: sticky;
-    left: 0;
-    bottom: 0;
+  footer .banner{
     display: block;
     background-color: #0940a6;
     color: #ffffff;
-    padding: 12px 0;
+    padding: 40px 0;
   }
-
-  .banner a {
-    color: #fff;
+  footer .banner p{
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
   }
-
-  .banner p {
-      text-align: center;
-      margin: 0;
-      font-size: 20px;
-    }
-
-  .banner p .tag{
-      display: inline-flex;
-      background-color: #ffffff;
-      font-size: 18px;
-      align-items: center;
-      padding: 0 5px;
-      color: #0940a6;
-      height: 30px;
-      border-radius: 20px;
-      margin-left: 10px;
-    }
+  footer .banner p .tag{
+    display: inline-flex;
+    background-color: #ffffff;
+    font-size: 18px;
+    align-items: center;
+    padding: 0 5px;
+    color: #0940a6;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
 }

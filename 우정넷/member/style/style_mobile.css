@@ -1,8 +1,4 @@
 @media screen and (max-width: 860px){
-  .sm-only {
-    display: block;
-  }
-  
   /* gnb */
   .gnb .container, .content.join .container{
     width: 100%;
@@ -152,7 +148,7 @@
     font-size: 14px;
   }
 
-  /* 로그?�� */
+  /* 로그?�� */
   .login-wrap > h1{
     font-size: 25px;
   }
