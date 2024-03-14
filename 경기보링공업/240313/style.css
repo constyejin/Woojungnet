@@ -187,15 +187,16 @@
 
 /* ----- Quick Menu ----- */
 .quick-menu {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 100;
-  width: 146px;
+  width: 150px;
   text-align: center;
   background-color: #fff;
   border-radius: 12px;
   border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.7);
 
   h4 {
     margin-top: 8px;
