@@ -75,6 +75,8 @@
   font-weight: 700;
 }
 
+
+/* ----- Slide ----- */
 .slide {
   height: 800px;
 }
@@ -155,23 +157,47 @@
 }
 
 .global-footer {
+  padding: 20px 0;
   background-color: #EBF0F4;
+
   div {
     max-width: 1200px;
+    min-width: 1200px;
     margin: 0 auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   ul {
     display: flex;
-    flex-wrap: wrap;
     font-weight: 500;
     color: #828181;
 
+    li:not(:last-child)::after {
+      content: '|';
+      padding: 0 8px;
+    }
   }
 }
 
-.global-footer ul li:not(:last-child)::after {
-  content: '|';
-  padding: 0 8px;
+.footer-info {
+  margin-top: 12px;
+  font-size: 13.6px;
+}
+
+
+/* ----- Quick Menu ----- */
+.quick-menu {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  z-index: 100;
+  width: 130px;
+}
+
+
+.quick-menu-num {
+  text-align: center;
+  padding: 12px;
+  border-radius: 56px 56px 4px 4px;
+  background-color: #FDCD12;
 }

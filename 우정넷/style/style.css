@@ -10,6 +10,10 @@ li{
   list-style: none;
 }
 
+.sm-only {
+  display: none;
+}
+
 /* font */
 @font-face {
   font-family: 'ScoreDream';

@@ -2,21 +2,21 @@
   <div class="gnb">
     <div class="container">
       <div class="prefix">
-        <h1><a href="/">우정넷 WOOJUNGNET</a></h1>
+        <h1><a href="/">?????? WOOJUNGNET</a></h1>
       </div>
       <div class="suffix">
         <? if($_SESSION[user_id]){ ?>
-                <a href="/admin/sub04/sub01.php" class="btn-manage">관리자모드</a>
+                <a href="/admin/sub04/sub01.php" class="btn-manage">????????</a>
         <? } ?>
         <? if($_SESSION[user_id]){ ?>
-                <span class="user"><?=$_SESSION[user_name]?>님</span>
+                <span class="user"><?=$_SESSION[user_name]?>??</span>
         <? } ?>
           <ul class="links">
-          <li><a href="/sub05/">견적문의</a></li>
+          <li><a href="/sub05/">????????</a></li>
         <? if($_SESSION[user_id]){ ?>
-          <li><a href="/member/logout.php">로그아웃</a></li>
+          <li><a href="/member/logout.php">??????</a></li>
         <? }else{ ?>
-           <li><a href="/member/login.php">로그인</a></li>
+           <li><a href="/member/login.php">??????</a></li>
         <? } ?>
         </ul>
       </div>
@@ -28,11 +28,11 @@
     </div>
     <div class="nav">
       <ul>
-        <li class="on"><a href="">우정넷</a></li>
-        <li><a href="">홈페이지제작</a></li>
-        <li><a href="">유지보수</a></li>
-        <li><a href="">웹호스팅</a></li>
-        <li>언제든지 연락주세요 1899-3840 / 02-2601-6569</li>
+        <li class="on"><a href="">??????</a></li>
+        <li><a href="">???????????</a></li>
+        <li><a href="">????????</a></li>
+        <li><a href="">???????</a></li>
+        <li>???????? ????????? 1899-3840 / 02-2601-6569</li>
       </ul>
     </div>
   </div>
@@ -40,7 +40,7 @@
   <div class="content">
     <div class="container">
       <h2>PORTFOLIO</h2>
-      <p class="sub-phrase">기업(고객)의 입장에서 최상의 맞춤서비스와 최고의 퀄리티로 최선을 다하겠습니다</p>
+      <p class="sub-phrase">???(????)?? ?????? ????? ??????? ????? ??????? ????? ?????????</p>
       <div class="portfolio-list">
         <ul>
           <?
@@ -73,7 +73,7 @@
               <div class="dim">
                 <span class="text"><?=$data[com_name]?></span>
                 <span class="icon-home"></span>
-                <span>바로가기</span>
+                <span>??????</span>
               </div>
             </a>
           </li>
@@ -93,29 +93,29 @@
   <footer>
     <div class="container">
         <? if($_SESSION[user_id]){ ?>
-      <p onclick="location.href='/admin/sub04/sub01.php';">[관리자모드]</p>
+      <p onclick="location.href='/admin/sub04/sub01.php';">[????????]</p>
         <? } ?>
       <div class="logo">
         <h1>
-          <span>우정넷</span>
+          <span>??????</span>
           <span>WOOJUNGNET</span>
         <? if($_SESSION[user_id]){ ?>
-          <a href="/member/logout.php" class="link-to-pc">로그아웃</a>
+          <a href="/member/logout.php" class="link-to-pc">??????</a>
         <? }else{ ?>
-          <a href="/member/login.php" class="link-to-pc">로그인</a>
+          <a href="/member/login.php" class="link-to-pc">??????</a>
         <? } ?>
         </h1>
       </div>
       <div class="info">
-        <div>문의: 1899-3840/02-2601-6569~70  팩스: 02)2601-6691 | 이메일: drg1038@naver.com</div>
-        <div>상호: 우정넷 ㅣ 사업자번호: 152-25-00212  |  대표: 권이수  ㅣ  주소: 서울 강서구 화곡로185 서안이지텔 505호</div>
+        <div>????: 1899-3840/02-2601-6569~70  ???: 02)2601-6691 | ?????: drg1038@naver.com</div>
+        <div>???: ?????? ?? ???????: 152-25-00212  |  ???: ?????  ??  ???: ???? ?????? ????185 ?????????? 505?</div>
       </div>
     </div>
   </footer>
-  <div class="banner">
+  <div class="banner sm-only">
     <a href="/sub05">
-      <p>홈페이지제작 견적문의 
-        <span class="tag">바로가기</span>
+      <p>??????????? ???????? 
+        <span class="tag">??????</span>
       </p>
     </a>
   </div>
