@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+<title>우정넷 홈페이지제작</title>
+<meta name="naver-site-verification" content="dbbcbecfb7c1f921b7094e331475656bf1d01436" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="우정넷 홈페이지제작">
+<meta property="og:description" content="홈페이지제작,모바일홈페이지제작/자동차경공매전문,웹호스팅,홈피유지보수.">
+<meta property="og:image" content="http://www.woojungnet.com/myimage.jpg">
+<meta property="og:url" content="http://www.woojungnet.com">
+<meta name="robots" content="홈페이지제작,모바일홈페이지제작/자동차경공매전문,웹호스팅,홈피유지보수.">
+<meta name="description" content="홈페이지제작,모바일홈페이지제작/자동차경공매전문,웹호스팅,홈피유지보수.">
+<meta name="keywords" content="홈페이지제작,모바일홈페이지제작/자동차경공매전문,웹호스팅,홈피유지보수.">
+<link rel="canonical" href="http://www.woojungnet.com">
+

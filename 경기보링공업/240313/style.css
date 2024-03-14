@@ -155,15 +155,19 @@
 }
 
 .global-footer {
-  min-width: 1200px;
+  background-color: #EBF0F4;
+  div {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid red;
+  }
 
   ul {
     display: flex;
-    justify-content: center;
-    padding: 40px 0;
+    flex-wrap: wrap;
     font-weight: 500;
     color: #828181;
-    background-color: #EBF0F4;
+
   }
 }
 

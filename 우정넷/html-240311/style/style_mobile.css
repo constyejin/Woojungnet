@@ -1,0 +1,222 @@
+@media screen and (max-width: 860px){
+  /* gnb */
+  .gnb .container, .content.join .container{
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  
+  .gnb .container .prefix{
+    flex: 1 1 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .gnb .container h1{
+    margin-top: 0;
+  }
+  .gnb .container h1 a{
+    font-size: 30px;
+  }
+  .gnb .container .suffix{
+    display: none;
+  }
+
+
+
+  /* header */
+  .header{
+    min-width: 100%;
+  }
+  .header .nav{
+    font-size: 14px;
+  }
+  .header .nav ul{
+    flex-wrap: wrap;
+  }
+  .header .main-visaul{
+    height: 40vw;
+  }
+
+  /* content */
+  .content .container{
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+  .content .container h2{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .content .container .sub-phrase{
+    margin-top: 5px;
+    font-size: 15px;
+    padding: 0 20px;
+  }
+  .content .portfolio-list ul{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* 견적문의 */
+  .join .join-form{
+    margin-top: 30px;
+  }
+  .join .join-form > ul{
+    display: block;
+  }
+  .join .join-form > ul > li{
+    display: flex;
+    flex-direction: column;
+  }
+  .join .join-form > ul > li > div.th{
+    width: auto;
+    padding-left: unset;
+  }
+  .join .join-form > ul > li > div{
+    height: auto;
+  }
+  .join .join-form .input-custom{
+    height: 30px;
+    font-size: 14px;
+  }
+  .join .join-form .input-custom.md{
+    width: auto;
+  }
+  .join .join-form > ul > li{
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .join .join-form > ul > li > div{
+    border: 0;
+  }
+  .join .join-form > ul > li > div.th{
+    background-color: #ffffff;
+    font-size: 14px;
+  }
+  .join .join-form > ul > li > div.td .phone{
+    width: 250px;
+  }
+  .join .join-form .spam{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .join .spam span.fc-red{
+    position: absolute;
+    left: 60%;
+    top: 0;
+    font-size: 14px;
+  }
+  .join .btn-wrap{
+    margin: 30px 0;
+  }
+  .join .btn-wrap button{
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+  }
+  .join .radio-list ul li{
+    margin-bottom: 5px;
+  }
+  .radio-custom + label{
+    font-size: 12px;
+  }
+  .privacy{
+    margin-top: 30px;
+    padding: 10px;
+  }
+  .privacy .term-box{
+    padding: 15px;
+    font-size: 12px;
+  }
+  .privacy .term-box .term-content{
+    height: 150px;
+    line-height: 1.6;
+  }
+  .privacy .term-box .agree-wrap{
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* 로그인 */
+  .login-wrap > h1{
+    font-size: 25px;
+  }
+  .login-wrap .login-box{
+    width: calc(100% - 20px);
+    padding: 20px;
+    margin: auto;
+  }
+  .login-wrap .login-box h2{
+    font-size: 28px;
+  }
+  .login-wrap .input-custom{
+    height: 50px;
+    font-size: 14px;
+  }
+  .login-wrap .login-box .btn-wrap button{
+    height: 50px;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .login-wrap .copyright{
+    padding: 0 20px;
+    word-break: keep-all;
+  }
+  .login-wrap .copyright span{
+    display: inline-block;
+  }
+
+  
+  /* footer */
+  footer{
+    min-width: 100%;
+  }
+  footer .container{
+    flex-direction: column;
+    gap: unset;
+  }
+  footer h1{
+    display: flex;
+    gap: 10px;
+  }
+  footer h1 .link-to-pc{
+    display: inline-flex;
+    background-color: #ffffff;
+    font-size: 14px;
+    align-items: center;
+    padding: 0 5px;
+    color: #0940a6;
+    height: 28px;
+    border-radius: 20px;
+    margin-left: 5px;
+  }
+  footer h1 span{
+    font-size: 18px;
+  }
+  footer .container .info{
+    text-align: center;
+  }
+  footer .banner{
+    display: block;
+    background-color: #0940a6;
+    color: #ffffff;
+    padding: 40px 0;
+  }
+  footer .banner p{
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+  }
+  footer .banner p .tag{
+    display: inline-flex;
+    background-color: #ffffff;
+    font-size: 18px;
+    align-items: center;
+    padding: 0 5px;
+    color: #0940a6;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+}
