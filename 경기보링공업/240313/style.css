@@ -21,10 +21,8 @@
 }
 
 .logo {
-  display: flex;
   width: 250px;
   height: 70px;
-  /* border: 1px solid blue; */
 }
 
 .logo-sub {
@@ -32,7 +30,6 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 13.4px;
-  /* border: 1px solid red; */
 }
 
 .gnb-nav-list {
@@ -78,7 +75,7 @@
 
 /* ----- Slide ----- */
 .slide {
-  height: 800px;
+  height: 850px;
 }
 
 .slide > div {
@@ -86,14 +83,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 900px;
+  height: 950px;
   overflow: hidden;
 }
 
 .slick-slide {
   position: relative;
   width: 100%;
-  height: 900px !important;
+  height: 950px !important;
   overflow: hidden;
 
   img {
@@ -156,21 +153,14 @@
   font-weight: 400;
 }
 
-.global-footer {
-  padding: 20px 0;
-  background-color: #EBF0F4;
 
-  div {
-    max-width: 1200px;
-    min-width: 1200px;
-    margin: 0 auto;
-    /* border: 1px solid red; */
-  }
+/* ----- Footer ----- */
+.global-footer {
+  padding: 30px 0;
+  background-color: #EBF0F4;
 
   ul {
     display: flex;
-    font-weight: 500;
-    color: #828181;
 
     li:not(:last-child)::after {
       content: '|';
@@ -179,9 +169,41 @@
   }
 }
 
+.global-footer-wrap {
+  max-width: 1200px;
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
 .footer-info {
-  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 13.6px;
+}
+
+.footer-logo {
+  width: 250px;
+  height: 70px;
+
+  .logo-sub {
+    margin-left: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 9.6px;
+  }
+}
+
+.copyright {
+  margin-top: 8px;
+}
+
+.footer-menu {
+  align-self: start;
+  
+  a {
+    font-weight: 700;
+  }
 }
 
 
