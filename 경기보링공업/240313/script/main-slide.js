@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.slide-img-list').slick({
-    prevArrow: "<button type='button' class='slick-prev'><i class='fa-solid fa-angle-left'></i></button>",         
-    nextArrow: "<button type='button' class='slick-next'><i class='fa-solid fa-angle-right'></i></button>",    
+    prevArrow: false,         
+    nextArrow: false,    
     dots: true,
     autoplay: true,
     autoplaySpeed: 4000
