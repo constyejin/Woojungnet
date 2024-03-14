@@ -24,7 +24,7 @@
   width: 800px;
   padding: 30px 0;
   text-align: center;
-  color: #fff;
+  color: var(--white);
   background-color: rgba(0, 0, 0, 0.7);
 
   div {
@@ -53,7 +53,7 @@
   h2 {
     padding: 20px 0;
     text-align: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-bright);
   }
 }
 
@@ -96,16 +96,16 @@
 
     thead {
       th {
-        background-color: #eee;
+        background-color: var(--table-back);
       }
 
       tr:first-child {
-        border-top: 1px solid #262626;
-        border-bottom: 1px solid #ccc;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-bright)
       }
 
       tr:last-child {
-        border-bottom: 1px solid #262626;
+        border-bottom: 1px solid var(--border);
       }
 
       td {
@@ -118,5 +118,5 @@
 .table-map {
   height: 400px;
   text-align: center;
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid var(--border);
 }

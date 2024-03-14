@@ -1,3 +1,13 @@
+:root {
+  --primary : #262626;
+  --white : #fff;
+  --red : #ea0000;
+  --blue : #417ed0;
+  --border : #404347;
+  --border-bright : #ccc;
+  --table-back : #f3f3f3;
+}
+
 * {
   font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
@@ -16,7 +26,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   margin: 0 auto;
-  color: #262626;
+  color: var(--primary);
 }
 
 h1 {
