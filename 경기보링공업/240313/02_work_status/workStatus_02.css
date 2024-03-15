@@ -5,7 +5,6 @@
     border-bottom: 1px solid var(--border-bright);
   }
 
-
   table {
     width: 1200px;
     margin: 60px auto;
@@ -26,7 +25,7 @@
         width: 280px;
       }
     }
-
+    
     input {
       width: 90%;
       border: 1px solid var(--border-bright);
@@ -37,5 +36,22 @@
 .estimate .year {
   input {
     width: 20%;
+  }
+}
+
+.smart-editor td {
+  border: none !important;
+  padding: 0 !important;
+}
+
+.file-post {
+  td {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 70%;
+      margin-right: 8px;
+    }
   }
 }
