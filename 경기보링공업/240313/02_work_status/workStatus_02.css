@@ -4,5 +4,38 @@
     text-align: center;
     border-bottom: 1px solid var(--border-bright);
   }
+
+
+  table {
+    width: 1200px;
+    margin: 60px auto;
+    border-collapse: collapse;
+
+    th {
+      color: var(--th);
+      background-color: var(--table-back);
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid var(--border-bright);
+    }
+
+    thead {
+      th {
+        width: 280px;
+      }
+    }
+
+    input {
+      width: 90%;
+      border: 1px solid var(--border-bright);
+    }
+  }
 }
 
+.estimate .year {
+  input {
+    width: 20%;
+  }
+}
