@@ -27,4 +27,39 @@
   cursor:pointer;
 }
 
+.reset-btn {
+  height:26px; 
+  padding:0 6px 0 6px; 
+  color: #ff0000;  
+  background-color : #ffe3e7; 
+  font-size: 9px; 
+  border: 1px solid #ff0000; 
+  cursor:pointer;
+}
+
+.post-btn {
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px; 
+  height: 32px;
+  font-size: 12px;
+  font-weight: 600; 
+  border-radius: 20px; 
+}
+
+.select-del-btn {
+  border: 2px solid #000; 
+}
+
+.show-list-btn {
+  color:#0066CC;
+  border: 2px solid #0066CC; 
+}
+
+.register-btn {
+  margin-left: 10px;
+  color:#cc3535;
+  border: 2px solid #cc3535; 
+}
 
