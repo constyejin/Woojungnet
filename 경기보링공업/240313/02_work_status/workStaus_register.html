@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../styles/buttons.css">
   <link rel="stylesheet" href="../styles/main-banner.css">
   <link rel="stylesheet" href="../styles/form-table.css">
+  <link rel="stylesheet" href="./workStatus.css">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
 </head>
@@ -90,26 +91,23 @@
           <table>
             <thead>
               <tr>
-                <th>이름</th>
+                <th>차량명</th>
                 <td><div class="input-wrap"><input type="text"></div></td>
               </tr>
-              <tr>
-                <th>연락처</th>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <th>이메일</th>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <th>차량명</th>
-                <td><input type="text"></td>
-              </tr>
+
               <tr>
                 <th>년식</th>
-                <td class="year">
+                <td class="sm-input">
                   <input type="text">
                   <span>년</span>
+                </td>
+              </tr>
+
+              <tr>
+                <th>작업비</th>
+                <td class="sm-input">
+                  <input type="text">
+                  <span>원</span>
                 </td>
               </tr>
             </thead>
@@ -198,6 +196,14 @@
               </tr>
             </tbody>
           </table>
+
+          <div class="post-btn-box">
+            <button class="post-btn select-del-btn">선택삭제</button>
+            <div>
+              <button class="post-btn show-list-btn">목록보기</button>
+              <button class="post-btn register-btn">등록하기</button>
+            </div>
+          </div>
         </form>
       </section>
     </main>
