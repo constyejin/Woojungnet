@@ -59,9 +59,29 @@
   }
 }
 
+.post-control-btn {
+  position: relative;
+  max-width: 1200px;
+}
+
+.select-del-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.post-control-btn > div {
+  display: flex;
+  justify-content: center;
+}
+
+.personal-info {
+  margin-top: 60px;
+}
+
 .personal-info-txt {
   width: 100%;
-  height: 100px;
+  height: 110px;
   overflow-y: scroll;
   font-size: 14px;
   margin-top: 12px;
@@ -86,3 +106,6 @@
     border-radius: 30px;
   }
 }
+
+
+
