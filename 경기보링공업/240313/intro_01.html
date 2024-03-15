@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./styles/footer.css">
   <link rel="stylesheet" href="./styles/quickMenu.css">
   <link rel="stylesheet" href="./styles/buttons.css">
+  <link rel="stylesheet" href="./styles/main-banner.css">
   <link rel="stylesheet" href="./styles/intro_01.css">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
@@ -44,7 +45,7 @@
         </nav>
         
         <!-- NOTE : 로그인 한 경우 -->
-        <ul class="auth user-info">
+        <!-- <ul class="auth user-info">
           <li class="admin">
             <a href="">&#91;관리자모드&#93;</a>
           </li>
@@ -52,19 +53,19 @@
             <span>관리자</span>님
           </li>
           <li>
-            <button class="btn-blue" href="">로그아웃</button>
+            <button class="btn-blue-sm">로그아웃</button>
           </li>
-        </ul>
+        </ul> -->
 
         <!-- NOTE : 로그인 하지 않은 경우 -->
-        <!-- <ul class="auth join">
+        <ul class="auth join">
             <li>
-              <button class="btn-blue">회원가입</button>
+              <a href="" class="btn-blue-sm">회원가입</a>
             </li>
             <li>
-              <button class="btn-blue">로그인</button>
+              <a href="./login.html" class="btn-blue-sm">로그인</a>
             </li>
-          </ul> -->
+          </ul>
       </div>
     </header>
 
@@ -120,7 +121,9 @@
             </tr>
           </thead>
           <tr class="table-map">
-            <td colspan="2">지도</td>
+            <td colspan="2">
+              지도
+            </td>
           </tr>
         </table>
       </section>
