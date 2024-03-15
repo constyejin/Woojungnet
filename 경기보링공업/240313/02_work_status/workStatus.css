@@ -6,6 +6,7 @@
 /* workStatus_Edit */
 .register-img-list {
   display: flex;
+  flex-wrap: wrap;
   width : 1200px; 
   height : 110px; 
   padding : 10px; 
@@ -27,6 +28,7 @@
 
 .existing-img-list {
   display: flex;
+  flex-wrap: wrap;
   width : 1200px; 
   height : 280px; 
   padding : 10px; 
