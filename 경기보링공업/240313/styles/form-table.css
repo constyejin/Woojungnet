@@ -25,7 +25,7 @@ table {
   }
 }
 
-.estimate .year {
+.sm-input {
   input {
     width: 20%;
   }
@@ -48,9 +48,10 @@ table {
   }
 }
 
-.post-control-btn {
+.post-btn-box {
   position: relative;
   max-width: 1200px;
+  margin-bottom: 50px;
 }
 
 .select-del-btn {
@@ -59,7 +60,7 @@ table {
   left: 0;
 }
 
-.post-control-btn > div {
+.post-btn-box > div {
   display: flex;
   justify-content: center;
 }
