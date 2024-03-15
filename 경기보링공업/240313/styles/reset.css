@@ -74,3 +74,8 @@ address {
 .visually-hidden {
   display: none;
 }
+
+input[type="text"]:focus {
+  border: 1px solid var(--blue) !important;
+  background-color: rgb(65, 126, 208, .1)
+}
