@@ -42,3 +42,9 @@
   font-size: 20px;
   font-weight: 400;
 }
+
+.sub-title {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-bright);
+}

@@ -4,14 +4,6 @@
   margin: 0 auto;
 }
 
-.company-info-content {
-  h2 {
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 1px solid var(--border-bright);
-  }
-}
-
 .company-info-content > div {
   display: flex;
   justify-content: center;
