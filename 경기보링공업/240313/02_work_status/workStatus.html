@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../styles/quickMenu.css">
   <link rel="stylesheet" href="../styles/buttons.css">
   <link rel="stylesheet" href="../styles/main-banner.css">
+  <link rel="stylesheet" href="./workStatus.css">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
 </head>
@@ -82,11 +83,97 @@
       </div>
     </section>
 
-    <main>
+    <main class="work-status">
       <section>
         <h2 class="sub-title">작업현황</h2>
-        <a href="./workStatus_edit.html">수정하기</a>
-        <a href="./workStaus_register.html">등록하기</a>
+        <form action="" method="">
+          <ul class="work-status-list">
+            <li class="work-status-item">
+              <div class="work-status-chk">
+                <input type="checkbox" name="" value="">
+                <span>5</span>
+              </div>
+              <div class="work-status-img">
+                <img src="../assets/images/slide01.jpeg" alt="">
+              </div>
+              <b>2018 BMW</b>
+            </li>
+            <li class="work-status-item">
+              <div class="work-status-chk">
+                <input type="checkbox" name="" value="">
+                <span>4</span>
+              </div>
+              <div class="work-status-img">
+                <img src="../assets/images/slide01.jpeg" alt="">
+              </div>
+              <b>2018 BMW</b>
+            </li>
+            <li class="work-status-item">
+              <div class="work-status-chk">
+                <input type="checkbox" name="" value="">
+                <span>3</span>
+              </div>
+              <div class="work-status-img">
+                <img src="../assets/images/slide01.jpeg" alt="">
+              </div>
+              <b>2018 BMW</b>
+            </li>
+            <li class="work-status-item">
+              <div class="work-status-chk">
+                <input type="checkbox" name="" value="">
+                <span>2</span>
+              </div>
+              <div class="work-status-img">
+                <img src="../assets/images/slide01.jpeg" alt="">
+              </div>
+              <b>2018 BMW</b>
+            </li>
+            <li class="work-status-item">
+              <div class="work-status-chk">
+                <input type="checkbox" name="" value="">
+                <span>1</span>
+              </div>
+              <div class="work-status-img">
+                <img src="../assets/images/slide01.jpeg" alt="">
+              </div>
+              <b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, ducimus.</b>
+            </li>
+          </ul>
+        </form>
+      </section>
+
+      <section class="work-status-control">
+        <button class="post-btn select-del-btn">선택삭제</button>
+
+        <div class="pagenation">
+          <div>
+            <a href="">
+              <i class="fa-solid fa-angles-left"></i>
+            </a>
+            <a href="">
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+          </div>
+
+          <ol>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+          </ol>
+
+          <div>
+            <a href="">
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+            <a href="">
+              <i class="fa-solid fa-angles-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <button class="post-btn register-btn">
+          <a href="./workStaus_register.html">등록하기</a>
+        </button>
       </section>
     </main>
 
