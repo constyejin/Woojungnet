@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="../styles/quickMenu.css">
   <link rel="stylesheet" href="../styles/buttons.css">
   <link rel="stylesheet" href="../styles/main-banner.css">
+  <link rel="stylesheet" href="../styles/form-table.css">
+  <link rel="stylesheet" href="./workStatus.css">
+  <!-- Slick Slide -->
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
 </head>
@@ -82,8 +89,88 @@
       </div>
     </section>
 
-    <main>
+    <main class="work-status">
+      <section>
+        <h2 class="sub-title">작업현황</h2>
+        <form name="" method="" action="" enctype="">
+          <table>
+            <thead>
+              <tr>
+                <th>차량명</th>
+                <td><div class="input-wrap"><input type="text"></div></td>
+              </tr>
 
+              <tr>
+                <th>년식</th>
+                <td class="sm-input">
+                  <input type="text">
+                  <span>년</span>
+                </td>
+              </tr>
+
+              <tr>
+                <th>작업비</th>
+                <td class="sm-input">
+                  <input type="text">
+                  <span>원</span>
+                </td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th colspan="2">상세설명</th>
+              </tr>
+
+              <tr class="item-description">
+                <td colspan="2">
+                  <p>상세설명 : 1</p>
+                  <p>상세설명 : 2</p>
+                  <p>상세설명 : 3</p>
+                  <p>상세설명 : 4</p>
+                  <p>상세설명 : 5</p>
+                </td>
+              </tr>
+
+              <tr>
+                <th colspan="2">차량이미지</th>
+              </tr>
+
+              <tr class="item-img">
+                <td class="slide" colspan="2" style="padding:0;">
+                    <ul class="slide-img-list">
+                      <li class="slide-img-item">
+                        <img src="../assets/images/slide01.jpeg" alt="slide-img01">
+                      </li>
+                      <li class="slide-img-item">
+                        <img src="../assets/images/slide02.jpeg" alt="slide-img02">
+                      </li>
+                      <li class="slide-img-item">
+                        <img src="../assets/images/slide03.jpeg" alt="slide-img03">
+                      </li>
+                      <li class="slide-img-item">
+                        <img src="../assets/images/road.jpeg" alt="slide-img03">
+                      </li>
+                    </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="2" style="padding:0;"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="post-btn-box">
+            <div>
+              <button class="post-btn show-list-btn">
+                <a href="./workStatus.html">목록보기</a>
+              </button>
+              <button class="post-btn register-btn">수정하기</button>
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
 
     <footer class="global-footer">
@@ -148,5 +235,7 @@
       </div>
     </aside>
   </div>
+
+  <script src="../script/car-slide.js"></script>
 </body>
 </html>
