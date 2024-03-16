@@ -1,0 +1,79 @@
+.work-status {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item-description {
+  p {
+    font-weight: 500;
+  }
+}
+
+
+
+.car-image {
+  width: 1200px;
+  height: 768px;
+}
+
+.car-image .img-wrap {
+  position: relative;
+  border: 5px solid blue;
+
+  img {
+    width: 100%;
+    height: 768px;
+    object-fit: contain;
+    background-color: rgba(0,0,0,.8)
+  }
+}
+
+.car-image .img-wrap.bxslider {
+	width: 100%;
+	height: 768px;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 5px;
+  width: 30px;
+  height: 45px;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.bx-prev::before{
+	content: '<';
+}
+.bx-next:before{
+	content: '>';
+	/* vertical-align: middle; */
+}
+
+
+/* .car-image .bx-wrapper .bx-pager.bx-default-pager {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	width: 60px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 20px;
+	background-color: #000000;
+	color: #ffffff;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+.car-image.for-parts .bx-wrapper .bx-pager.bx-default-pager {
+	left: unset;
+	right: 20px;
+} */
+

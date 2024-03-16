@@ -12,13 +12,20 @@
   <link rel="stylesheet" href="../styles/buttons.css">
   <link rel="stylesheet" href="../styles/main-banner.css">
   <link rel="stylesheet" href="../styles/form-table.css">
-  <link rel="stylesheet" href="./workStatus.css">
+  <link rel="stylesheet" href="./workStatus_view.css">
+
+  <link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+	/>
+	<!-- swiper.js js-->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- bxslider -->
   <link rel="stylesheet" href="../styles/jquery.bxslider.css">
-  <!-- Slick Slide -->
-  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
 </head>
@@ -139,77 +146,34 @@
 
               <tr class="item-img">
                 <td colspan="2" style="padding:0; border:none;">
-                  <div class="main-slide slide">
-                    <ul class="slide-img-list">
-                      <li class="slide-img-item">
-                        <img src="../assets/images/slide01.jpeg" alt="slide-img01">
-                      </li>
-                      <li class="slide-img-item">
-                        <img src="../assets/images/slide02.jpeg" alt="slide-img02">
-                      </li>
-                      <li class="slide-img-item">
-                        <img src="../assets/images/slide03.jpeg" alt="slide-img03">
-                      </li>
-                      <li class="slide-img-item">
-                        <img src="../assets/images/road.jpeg" alt="slide-img03">
-                      </li>
-                    </ul>
+                  <div class="car-image for-parts">
+                    <div class="img-wrap bxslider">
+                      <div class="slide">
+                        <img src="../assets/images/road.jpeg" alt="차량이미지">
+                      </div> 
+
+                      <div class="slide">
+                        <img src="../assets/images/slide01.jpeg" alt="차량이미지">
+                      </div> 
+                    </div>
                   </div>
 
-                  <div class="slide-thums">
-                    <div class="thum-btn-list">
-                      <button class="thum-btn prev-btn">&lt;</button>
-                      <button class="thum-btn next-btn">&gt;</button>
+                  <div class="img-list-wrap view-thumb">
+                    <div class="img-list">
+                      <div class="thum-btn-list">
+                        <button class="prev-btn">
+                          <i class="fa-solid fa-angle-left"></i>
+                        </button>
+                        <button class="next-btn">
+                          <i class="fa-solid fa-angle-right"></i>
+                        </button>
+                      </div>
+                      <ul> 
+                        <li>
+                          <img src="../assets/images/road.jpeg" alt="차량이미지 썸네일">
+                        </li> 
+                      </ul>
                     </div>
-                    <ul class="slide-thum-list">
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/slide01.jpeg" alt="slide-img01">
-                      </li>
-
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/slide02.jpeg" alt="slide-img02">
-                      </li>
-
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/slide03.jpeg" alt="slide-img01">
-                      </li>
-
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                      <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                                        <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                                        <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                                        <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                                        <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-
-                                        <li class="slide-thum-item">
-                        <img src="../assets/images/road.jpeg" alt="">
-                      </li>
-                    </ul>
                   </div>
                 </td>
               </tr>
