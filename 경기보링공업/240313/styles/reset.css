@@ -1,8 +1,10 @@
 :root {
   --primary : #262626;
   --white : #fff;
+  --black : #000;
   --red : #ea0000;
   --blue : #417ed0;
+  --active : #00b5ff;
   --border : #404347;
   --border-bright : #ccc;
   --table-back : #f3f3f3;
