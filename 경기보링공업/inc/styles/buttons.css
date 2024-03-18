@@ -1,0 +1,65 @@
+.btn-blue-sm {
+  padding: 4px 10px;
+  color: #fff;
+  background-color: #417ed0;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 16px;
+}
+
+.btn-blue-lg {
+  width: 100%;
+  color: #fff;
+  padding: 12px;
+  background-color: #417ed0;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.file-btn {
+  height:26px; 
+  padding:0 6px 0 6px; 
+  color: #165899;  
+  background-color : #edf1f6; 
+  font-size: 9px; 
+  border: 1px solid #7FA8C4; 
+  cursor:pointer;
+}
+
+.reset-btn {
+  height:26px; 
+  padding:0 6px 0 6px; 
+  color: #ff0000;  
+  background-color : #ffe3e7; 
+  font-size: 9px; 
+  border: 1px solid #ff0000; 
+  cursor:pointer;
+}
+
+.post-btn {
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px; 
+  height: 32px;
+  font-size: 12px;
+  font-weight: 600; 
+  border-radius: 20px; 
+}
+
+.select-del-btn {
+  border: 2px solid #000; 
+}
+
+.show-list-btn {
+  color:#0066CC;
+  border: 2px solid #0066CC; 
+}
+
+.register-btn {
+  margin-left: 10px;
+  color:#cc3535;
+  border: 2px solid #cc3535; 
+}
+

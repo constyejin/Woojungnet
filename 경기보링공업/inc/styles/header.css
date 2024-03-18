@@ -1,0 +1,73 @@
+.global-header {
+  position: relative;
+  z-index: 100;
+  height: 100px;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--border);
+  transition: all 300ms ease-in-out;
+}
+
+.global-header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  min-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  color: var(--white);
+  transition: color 200ms ease-in-out;
+}
+
+.logo {
+  width: 250px;
+  height: 70px;
+}
+
+.logo-sub {
+  margin-left: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 13.4px;
+}
+
+.gnb-nav-list {
+  display: flex;
+}
+
+.gnb-nav-item a {
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 300ms ease-in-out;
+}
+
+.gnb-nav-item a:hover {
+  color: var(--red);
+}
+
+.gnb-nav-item:not(:last-child)::after {
+  content: '|';
+  position: relative;
+  top: -2px;
+  padding: 0 16px;
+  font-weight: 700;
+}
+
+.auth {
+  display: flex;
+
+  li:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.admin {
+  color: red;
+  font-weight: 700;
+}
+
+.user-name {
+  color: var(--blue);
+  font-weight: 700;
+}

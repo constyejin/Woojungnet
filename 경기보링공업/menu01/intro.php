@@ -1,5 +1,5 @@
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
-  <link rel="stylesheet" href="./intro.css">
+  <link rel="stylesheet" href="./style/intro.css">
 
     <section class="main-banner">
       <div>
@@ -17,7 +17,10 @@
 
     <main class="company-info">
       <section class="company-info-content">
-        <h2 class="sub-title">회사소개</h2>
+        <h2 class="sub-title">회사소개
+          <span>|</span>
+          <span>오시는길</span>
+        </h2>
         <div>
           <div class="company-info-img">
             <img src="/inc/assets/images/road.jpeg" alt="">

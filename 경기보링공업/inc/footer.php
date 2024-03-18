@@ -1,36 +1,66 @@
-  <footer class="sub-footer">
-    <div class="links">
-      <!-- <ul>
-        <li><a href="/menu01/sub01.php">회사소개</a></li>
-        <li><a href="/menu01/sub02.php">오시는 길</a></li>
-        <li><a href="./sub09.html">이용약관</a></li>
-        <li><a href="./sub11.html">개인정보처리방침</a></li>
-        <li><a href="/menu06/sub01.php">고객센터</a></li>
-      </ul> -->
-    </div>
-    <div class="company-info">
-      <img src="/front/src/image/icon_logo_footer.png" alt="narmi 로고">
-      <div class="numbers">
-        <span class="tel">TEL . 1588-1277</span>
-        <span class="fax">FAX . 02-794-3300</span>
-      </div>
-      <div class="info-list">
-        <ul>
-          <li>업체명 : 나르미모터스(주)</li>
-          <li>대표자 : 김재희</li>
-          <li>사업자등록번호 : 131-86-28719</li>
-          <li>이메일 : account@narmimotors.com</li>
-          <li>서울사무실 : 서울 용산구 원효로 243-2 1층</li>
-          <li>화성공장 : 경기 화성시 송산면 화성로 580-73</li>
-        </ul>
-        <p class="copy">
-            <a href="/member/login.php">
-              Copyright © 2023 나르미모터스(주) All Right Reserved.
+    <footer class="global-footer">
+      <div class="global-footer-wrap">
+        <div class="footer-info">
+          <h1 class="footer-logo">
+            <a href="">
+              <p>&#40;주&#41;경기보링공업</p>
+              <p class="logo-sub">자동차보링전문기업</p>
             </a>
-          </p>
-
+          </h1>
+          <div>
+            <ul>
+              <li>전화:032-673-2511~2/ 010-4369-4117</li>
+              <li>팩스:032-674-9847</li>
+              <li>&#40;주&#41;경기보링공업</li>
+              <li>대표:이상수</li>
+            </ul>
+            <ul>
+              <li>사업자:130-34-85251</li>
+              <li>주소:인천광역시 서구 거북로22.2동&#40;석남동&#41;</li>
+              <li>이메일:drg1038@naver.com</li>
+            </ul>
+            <p class="copyright">copyright (주)경기보링공업 all right reserved</p>
+          </div>
+          <ul class="footer-menu">
+            <li>
+              <a href="">회사소개</a>
+            </li>
+            <li>
+              <a href="">오시는길</a>
+            </li>
+            <li>
+              <a href="">개인정보처리방침</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+
+    <aside class="quick-menu">
+      <div class="quick-menu-num">
+        <p class="quick-menu-icon">
+          <i class="fa-solid fa-phone-volume"></i>
+        </p>
+        <h4>차량전문상담</h4>
+        <p class="quick-menu-sub">보랑전문상담원이<br>상담해드립니다</p>
+        <div class="quick-menu-main">
+          <p>상담문의</p>
+          <p>010-4369-4117</p>
+        </div>
+      </div>
+
+      <div class="quick-menu-loca">
+        <p class="quick-menu-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </p>
+        <h4>오시는길</h4>
+        <p class="quick-menu-map">
+          <a href="">약도보기</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="./script/main-slide.js"></script>
 </body>
 </html>

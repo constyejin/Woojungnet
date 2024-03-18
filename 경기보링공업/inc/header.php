@@ -1,7 +1,7 @@
 <?
 include $_SERVER['DOCUMENT_ROOT']."/inc/lib.php";
 
-// ī����
+// 카운터
 include_once $_SERVER[DOCUMENT_ROOT]."/inc/counter.php";
 if(!$_SESSION[counter_ip]){
 	$_SESSION[counter_ip]=$_SERVER['REMOTE_ADDR'];
@@ -16,23 +16,76 @@ if(!$_SESSION[counter_ip]){
 
 $web_config=sql_fetch("select * from web_config where idx=1 ");
 ?>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width:1200">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="/front/src/js/script.js"></script>
-  <script src="/inc/script.js"></script>
-
-  <!-- swiper.js -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  
-  <link rel="stylesheet" href="/front/src/css/style.css">
-  <title><?=$web_config[web_sitename]?></title>
-  <?=$web_config[web_meta]?>
+  <title>&#40;주&#41;경기보링공업</title>
+  <link rel="stylesheet" href="/inc/styles/reset.css">
+  <link rel="stylesheet" href="/inc/styles/header.css">
+  <link rel="stylesheet" href="/inc/styles/footer.css">
+  <link rel="stylesheet" href="/inc/styles/quickMenu.css">
+  <link rel="stylesheet" href="/inc/styles/buttons.css">
+  <link rel="stylesheet" href="/inc/styles/main-banner.css">
+  <link rel="stylesheet" href="/inc/styles/style.css">
+  <!-- Slick Slide -->
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <iframe name="HiddenFrm" id="HiddenFrm" style="display:none;"></iframe>
+  <div class="wrapper">
+    <header class="global-header">
+      <div>
+        <h1 class="logo">
+          <a href="/">
+            <p>&#40;주&#41;경기보링공업</p>
+            <p class="logo-sub">자동차보링전문기업</p>
+          </a>
+        </h1>
+
+        <nav>
+          <h2 class="visually-hidden">메뉴</h2>
+          <ul class="gnb-nav-list">
+            <li class="gnb-nav-item">
+              <a href="/menu01/intro.php">회사소개</a>
+            </li>
+            <li class="gnb-nav-item">
+              <a href="./02_work_status/workStatus.html">작업현황</a>
+            </li>
+            <li class="gnb-nav-item">
+              <a href="./03_estimate/estimate.html">견적신청</a>
+            </li>
+            <li class="gnb-nav-item">
+              <a href="./04_notice/notice.html">공지사항</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <!-- NOTE : 로그인 한 경우 -->
+        <!-- <ul class="auth user-info">
+          <li class="admin">
+            <a href="">&#91;관리자모드&#93;</a>
+          </li>
+          <li class="user-name">
+            <span>관리자</span>님
+          </li>
+          <li>
+            <button class="btn-blue-sm" href="">로그아웃</button>
+          </li>
+        </ul> -->
+
+        <!-- NOTE : 로그인 하지 않은 경우 -->
+        <ul class="auth join">
+            <li>
+              <a href="./login/login.html" class="btn-blue-sm">로그인</a>
+            </li>
+          </ul>
+      </div>
+    </header>
