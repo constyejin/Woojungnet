@@ -93,6 +93,12 @@ $web_fax=explode("-" , $web_config[web_fax]);
                   </td>
                 </tr>
                 <tr>
+                  <th>문자인증키값</th>
+                  <td colspan="3">
+                    <input type="text" class="form-control" id="" placeholder="" name="" value="">
+                  </td>
+                </tr>
+                <tr>
                   <th>문자아이디</th>
                   <td>
                     <input type="text" class="form-control" id="" placeholder="" name="web_smsid" value="<?=$web_config[web_smsid]?>">

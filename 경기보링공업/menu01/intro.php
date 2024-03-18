@@ -1,77 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width:1200">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회사소개 | &#40;주&#41;경기보링공업</title>
-  <link rel="stylesheet" href="../styles/reset.css">
-  <link rel="stylesheet" href="../styles/header.css">
-  <link rel="stylesheet" href="../styles/footer.css">
-  <link rel="stylesheet" href="../styles/quickMenu.css">
-  <link rel="stylesheet" href="../styles/buttons.css">
-  <link rel="stylesheet" href="../styles/main-banner.css">
+<? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
   <link rel="stylesheet" href="./intro.css">
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <header class="global-header">
-      <div>
-        <h1 class="logo">
-          <a href="../index.html">
-            <p>&#40;주&#41;경기보링공업</p>
-            <p class="logo-sub">자동차보링전문기업</p>
-          </a>
-        </h1>
-
-        <nav>
-          <h2 class="visually-hidden">메뉴</h2>
-          <ul class="gnb-nav-list">
-            <li class="gnb-nav-item">
-              <a href="">회사소개</a>
-            </li>
-            <li class="gnb-nav-item">
-              <a href="../02_work_status/workStatus.html">작업현황</a>
-            </li>
-            <li class="gnb-nav-item">
-              <a href="../03_estimate/estimate.html">견적신청</a>
-            </li>
-            <li class="gnb-nav-item">
-              <a href="../04_notice/notice.html">공지사항</a>
-            </li>
-          </ul>
-        </nav>
-        
-        <!-- NOTE : 로그인 한 경우 -->
-        <!-- <ul class="auth user-info">
-          <li class="admin">
-            <a href="">&#91;관리자모드&#93;</a>
-          </li>
-          <li class="user-name">
-            <span>관리자</span>님
-          </li>
-          <li>
-            <button class="btn-blue-sm">로그아웃</button>
-          </li>
-        </ul> -->
-
-        <!-- NOTE : 로그인 하지 않은 경우 -->
-        <ul class="auth join">
-            <li>
-              <a href="" class="btn-blue-sm">회원가입</a>
-            </li>
-            <li>
-              <a href="../login/login.html" class="btn-blue-sm">로그인</a>
-            </li>
-          </ul>
-      </div>
-    </header>
 
     <section class="main-banner">
       <div>
-        <img src="../assets/images/slide02.jpeg" alt="slide-img01">
+        <img src="/inc/assets/images/slide02.jpeg" alt="slide-img01">
 
         <div class="main-banner-txt">
           <div>
@@ -85,13 +17,10 @@
 
     <main class="company-info">
       <section class="company-info-content">
-        <h2 class="sub-title">회사소개
-          <span>|</span>
-          <span> 오시는길</span>
-        </h2>
+        <h2 class="sub-title">회사소개</h2>
         <div>
           <div class="company-info-img">
-            <img src="../assets/images/road.jpeg" alt="">
+            <img src="/inc/assets/images/road.jpeg" alt="">
           </div>
 
           <div class="company-info-txt">
