@@ -14,7 +14,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
         <!-- 사이트설정 테이블 -->
         <div class="row mt-5">
           <div class="col-12">
-<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub05_save.php">
+<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub06_save.php">
             <table class="table table-layout border-type text-center site-setting">
               <colgroup>
                 <col style="width: 180px">

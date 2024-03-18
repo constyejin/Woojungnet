@@ -14,7 +14,7 @@
         업무관리
       </div>
       <ul>
-        <li><a href="/manage/menu01/sub01.php">상담문의</a></li>
+        <li><a href="/manage/menu01/sub01.php">견적신청</a></li>
         <li><a href="/manage/menu01/sub02.php">업체정보 </a></li>
         <li><a href="/manage/menu01/sub03.php">팝업설정</a></li>
         <li><a href="/manage/menu01/sub04.php">게시판</a></li>

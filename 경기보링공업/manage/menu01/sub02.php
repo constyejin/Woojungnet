@@ -19,7 +19,7 @@ $web_fax=explode("-" , $web_config[web_fax]);
           <div class="col-10">
             <h3>기본정보</span> </h3>
 
-           <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub01_save.php">
+           <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub02_save.php">
             <table class="table table-layout border-type basic-info">
               <colgroup>
                 <col style="width: 150px;">
@@ -95,7 +95,7 @@ $web_fax=explode("-" , $web_config[web_fax]);
                 <tr>
                   <th>문자인증키값</th>
                   <td colspan="3">
-                    <input type="text" class="form-control" id="" placeholder="" name="" value="">
+                    <input type="text" class="form-control" id="" placeholder="" name="web_smskey" value="<?=$web_config[web_smskey]?>">
                   </td>
                 </tr>
                 <tr>
@@ -186,13 +186,13 @@ $web_fax=explode("-" , $web_config[web_fax]);
                       <input type="text" class="form-control" id="" placeholder="" name="admin_pass" value="<?=$member_admin[$i][admin_pass]?>">
                     </td>
                     <td>
-                      <select class="form-select" name="" id="">
+                      <select class="form-select" name="admin_level" id="">
                         <option value="">=회원레벨=</option>
-                        <option value="">일반회원</option>
-                        <option value="">일반관리자</option>
-                        <option value="">중간관리자</option>
-                        <option value="">최고관리자</option>
-                        <option value="">슈퍼관리자</option>
+                        <option value="50" <?=$member_admin[$i][admin_level]=="50"?"selected":""?>>일반회원</option>
+                        <option value="40" <?=$member_admin[$i][admin_level]=="40"?"selected":""?>>일반관리자</option>
+                        <option value="30" <?=$member_admin[$i][admin_level]=="30"?"selected":""?>>중간관리자</option>
+                        <option value="20" <?=$member_admin[$i][admin_level]=="20"?"selected":""?>>최고관리자</option>
+                        <option value="10" <?=$member_admin[$i][admin_level]=="10"?"selected":""?>>슈퍼관리자</option>
                       </select>
                     </td>
                     <td>

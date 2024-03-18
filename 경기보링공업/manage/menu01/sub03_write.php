@@ -16,7 +16,7 @@ if($idx) $popup=sql_fetch("select * from popup where idx=$idx ");
         <!-- 팝업설정 등록 테이블 -->
         <div class="row mt-5">
           <div class="col-10">
-<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub02_save.php">
+<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub03_save.php">
 <input type="hidden" name="idx" value="<?=$popup[idx]?>">
             <table class="table table-layout border-type mt-1 popup-write">
               <colgroup>

@@ -18,7 +18,7 @@ $list_num=$total_count-$page_start;
           <div class="col-12">
             <div class="table-topper">
               <div class="suffix">
-                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='sub02_write.php';">등록하기</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='sub03_write.php';">등록하기</button>
               </div>
             </div>
 <form name="lform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="/manage/inc/alldel.php">

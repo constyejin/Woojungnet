@@ -15,7 +15,7 @@ $image_main=sql_list("select * from image_main where 1=1 order by main_list asc 
         <!-- 이미지등록 및 관리 -->
         <div class="row">
           <div class="col-12">
-<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub02_save.php">
+<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub07_save.php">
 <input type="hidden" name="idx" value="<?=$idx?>">
 <input type="hidden" name="del_idx" value="">
             <table class="table table-layout border-type main-visual">
@@ -86,7 +86,7 @@ $image_main=sql_list("select * from image_main where 1=1 order by main_list asc 
                         <input class="form-control" type="file" id="formFile" name="upfile">
                       </div>
                       <div class="col-auto d-flex align-items-center">
-                        <div class="form-text">크기:2000*900 (gif/jpg/png)</div>
+                        <div class="form-text">크기:2000*950 (gif/jpg/ jpeg/png)</div>
                       </div>
                     </div>
                   </td>
@@ -138,12 +138,12 @@ $image_main=sql_list("select * from image_main where 1=1 order by main_list asc 
                   <td><?=$image_main[$i][main_list]?></td>
                   <td>
 				  <? if($image_main[$i][main_file]){ ?>
-                    <img src="/images/img/<?=$image_main[$i][main_file]?>" style="width:750px;height:280px;">
+                    <img src="/mainimg/<?=$image_main[$i][main_file]?>" style="width:750px;height:280px;">
 				  <? } ?>
                   </td>
                   <td><?=$image_main[$i][main_view]?></td>
                   <td>
-                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='sub02.php?idx=<?=$image_main[$i][idx]?>';">수정</button>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="location.href='sub07.php?idx=<?=$image_main[$i][idx]?>';">수정</button>
                     <button class="btn btn-outline-dark btn-sm" onclick="board_del('<?=$image_main[$i][idx]?>');">삭제</button>
                   </td>
                 </tr>

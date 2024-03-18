@@ -48,7 +48,7 @@ if(!$idx){
 	";
 	mysql_query($query);
 
-	alert_p("등록완료","sub02.php");
+	alert_p("등록완료","sub03.php");
 }else{
 	$popup=sql_fetch("select * from popup where idx=$idx ");
 	if($pop_file_del=="Y"){
@@ -101,6 +101,6 @@ if(!$idx){
 	";
 	mysql_query($query);
 
-	alert_p("수정완료","sub02.php");
+	alert_p("수정완료","sub03.php");
 }
 ?>

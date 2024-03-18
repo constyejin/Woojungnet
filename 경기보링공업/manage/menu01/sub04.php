@@ -16,7 +16,7 @@ $total_count=sql_total("select count(*) as cnt from popup where 1=1 ");
         <div class="row mt-5">
           <div class="col-12">
             <div class="set-board border-box">
-<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub03_save.php">
+<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub04_save.php">
 <input type="hidden" name="del_idx" value="">
               <div class="row align-items-center">
                 <div class="col-4">

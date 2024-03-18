@@ -13,7 +13,7 @@ $list_num=$total_count-$page_start;
 </form>
     <!-- 본문 -->
     <div class="container-fluid title">
-      <h2>상담문의</h2>
+      <h2>견적신청</h2>
     </div>
     <div class="content-container">
 

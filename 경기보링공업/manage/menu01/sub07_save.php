@@ -24,11 +24,11 @@ if(!$idx){
 		$copyday=date("Ymd");
 		$copyname = $copyday ."." . $extension;
 		$k=1;
-		while (file_exists("../../images/img/".$copyname)) {
+		while (file_exists("../../mainimg/".$copyname)) {
 			$copyname=$copyday."_".$k.".".$extension;
 			$k++;
 		}
-		if(!move_uploaded_file($file1,"../../images/img/".$copyname)){
+		if(!move_uploaded_file($file1,"../../mainimg/".$copyname)){
 			msg("파일업로드 오류");
 		}else{
 			$main_file="main_file='".$copyname."', ";
@@ -62,11 +62,11 @@ if(!$idx){
 		$copyday=date("Ymd");
 		$copyname = $copyday ."." . $extension;
 		$k=1;
-		while (file_exists("../../images/img/".$copyname)) {
+		while (file_exists("../../mainimg/".$copyname)) {
 			$copyname=$copyday."_".$k.".".$extension;
 			$k++;
 		}
-		if(!move_uploaded_file($file1,"../../images/img/".$copyname)){
+		if(!move_uploaded_file($file1,"../../mainimg/".$copyname)){
 			msg("파일업로드 오류");
 		}else{
 			$main_file="main_file='".$copyname."', ";
@@ -82,6 +82,6 @@ if(!$idx){
 	";
 	mysql_query($query);
 
-	alert_p("수정완료","sub02.php");
+	alert_p("수정완료","sub07.php");
 }
 ?>
