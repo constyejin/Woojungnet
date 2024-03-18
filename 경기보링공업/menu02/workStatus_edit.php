@@ -2,35 +2,32 @@
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/sub-visual.php"; ?>
 <link rel="stylesheet" href="/inc/styles/sub-visual.css">
 <link rel="stylesheet" href="/inc/styles/form-table.css">
-<link rel="stylesheet" href="/menu03/style/estimate.css">
+<link rel="stylesheet" href="/menu02/style//workStatus.css">
 
-<main class="estimate">
+<main class="work-status">
   <section>
-    <h2 class="sub-title">견적신청</h2>
+    <h2 class="sub-title">작업현황</h2>
     <form name="" method="" action="" enctype="">
       <table>
         <thead>
           <tr>
-            <th>이름</th>
+            <th>차량명</th>
             <td><div class="input-wrap"><input type="text"></div></td>
           </tr>
-          <tr>
-            <th>연락처</th>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <th>이메일</th>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <th>차량명</th>
-            <td><input type="text"></td>
-          </tr>
+
           <tr>
             <th>년식</th>
             <td class="sm-input">
               <input type="text">
               <span>년</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>작업비</th>
+            <td class="sm-input">
+              <input type="text">
+              <span>원</span>
             </td>
           </tr>
         </thead>
@@ -114,36 +111,43 @@
 
           <tr>
             <td colspan="2" style="padding:0;border:none;">
-              <div style="width:1200px; height:110px; overflow-y:scroll; padding:10px; border:1px solid #cccccc; margin-bottom:5px;"></div>
+              <div class="register-img-list">
+                <div class="register-img-item">
+                  <img src="/inc/assets/images/slide01.jpeg" alt="">
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="">
+            <td colspan="2" style="padding:0;border:none;">
+              <div class="existing-img-list">
+                <div class="existing-img-item">
+                  <img src="/inc/assets/images/slide01.jpeg" alt="">
+                  <div class="img-item-chk">
+                    <input type="checkbox">
+                    <p>1</p>
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <div class="personal-info">
-        <b>개인정보처리방침</b>
-        <div class="personal-info-txt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam alias eos, facilis veniam, doloremque, architecto animi reiciendis deserunt atque accusamus quod in dolore veritatis necessitatibus labore hic dicta neque repellat!
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse asperiores, magni architecto optio id aliquid est exercitationem ea quos, quis molestiae fuga eum illum consectetur labore accusantium? Sed, beatae maiores.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque repellendus porro fugiat maiores libero quos, impedit distinctio itaque vel velit sed? Totam earum nobis amet aliquam minima? Unde, ut.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore delectus molestias enim nostrum ullam quibusdam, officia voluptates impedit quae iusto sequi. Aliquam natus odit eligendi dolores pariatur quam architecto?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam alias eos, facilis veniam, doloremque, architecto animi reiciendis deserunt atque accusamus quod in dolore veritatis necessitatibus labore hic dicta neque repellat!
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse asperiores, magni architecto optio id aliquid est exercitationem ea quos, quis molestiae fuga eum illum consectetur labore accusantium? Sed, beatae maiores.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque repellendus porro fugiat maiores libero quos, impedit distinctio itaque vel velit sed? Totam earum nobis amet aliquam minima? Unde, ut.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore delectus molestias enim nostrum ullam quibusdam, officia voluptates impedit quae iusto sequi. Aliquam natus odit eligendi dolores pariatur quam architecto?
+      <div class="post-btn-box">
+        <button class="post-btn select-del-btn">선택삭제</button>
+        <div>
+          <button class="post-btn show-list-btn">
+            <a href="/menu02/workStatus.php">목록보기</a>
+          </button>
+          <button class="post-btn register-btn">등록하기</button>
         </div>
-        <div class="personal-info-check">
-          <input type="checkbox">
-          <b>개인정보수집에 동의합니다</b>
-        </div>
-      </div>
-
-      <div class="submit-btn">
-        <button type="submit" class="btn-blue-lg">견적신청</button>
       </div>
     </form>
   </section>
 </main>
 
+<script src="/inc/js/car-slide.js"></script>
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/footer.php"; ?>
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/quick.php"; ?>

@@ -28,7 +28,6 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
   <link rel="stylesheet" href="/inc/styles/footer.css">
   <link rel="stylesheet" href="/inc/styles/quickMenu.css">
   <link rel="stylesheet" href="/inc/styles/buttons.css">
-  <link rel="stylesheet" href="/inc/styles/main-banner.css">
   <link rel="stylesheet" href="/inc/styles/style.css">
   <!-- Slick Slide -->
   <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -57,13 +56,13 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
               <a href="/menu01/intro.php">회사소개</a>
             </li>
             <li class="gnb-nav-item">
-              <a href="./02_work_status/workStatus.html">작업현황</a>
+              <a href="/menu02/workStatus.php">작업현황</a>
             </li>
             <li class="gnb-nav-item">
-              <a href="./03_estimate/estimate.html">견적신청</a>
+              <a href="/menu03/estimate.php">견적신청</a>
             </li>
             <li class="gnb-nav-item">
-              <a href="./04_notice/notice.html">공지사항</a>
+              <a href="/menu04/notice.php">공지사항</a>
             </li>
           </ul>
         </nav>
@@ -84,7 +83,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
         <!-- NOTE : 로그인 하지 않은 경우 -->
         <ul class="auth join">
             <li>
-              <a href="./login/login.html" class="btn-blue-sm">로그인</a>
+              <a href="/inc/login.php" class="btn-blue-sm">로그인</a>
             </li>
           </ul>
       </div>
