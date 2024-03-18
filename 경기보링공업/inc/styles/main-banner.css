@@ -18,7 +18,7 @@
 
 .main-banner-txt {
   position: absolute;
-  top: 50%;
+  top: 61%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 800px;
@@ -28,7 +28,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 
   div {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 500;
     
     p:nth-child(2) {
@@ -39,7 +39,7 @@
 
 .main-banner-txt > p {
   margin: 8px 0;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 }
 
