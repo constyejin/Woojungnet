@@ -1,5 +1,5 @@
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
-  <link rel="stylesheet" href="./style/intro.css">
+<link rel="stylesheet" href="./style/intro.css">
 
     <section class="main-banner">
       <div>
@@ -18,9 +18,9 @@
     <main class="company-info">
       <section class="company-info-content">
         <h2 class="sub-title">회사소개
-          <span>|</span>
-          <span>오시는길</span>
+          <span><a href="#map-sec">오시는길</a></span>
         </h2>
+
         <div>
           <div class="company-info-img">
             <img src="/inc/assets/images/road.jpeg" alt="">
@@ -29,7 +29,7 @@
           <div class="company-info-txt">
             <h3>안녕하십니까?</h3>
             <h4>경기보링 홈페이지를 방문해 주셔서 감사합니다.</h4>
-            <p>저희 경기보령공업사는 경기도의 대표적인 자동차엔진 전문기업 입니다. 경기권 1공장 지방권 2공장으로 나뉘어져 있어 국내 어디든지 24시간 견인가능하여 국내 최저 비용으로 고객님의 부담을 멀어드립니다.</p>
+            <p>저희 경기보령공업사는 경기도의 대표적인 자동차엔진 전문기업 입니다. 경기권 1공장 지방권 2공장으로 나뉘어져 있어 국내 어디든지 24시간 견인가능하여 국내 최저 비용으로 고객님의 부담을 덜어드립니다.</p>
             <p>
               언제나 고객의 입장에서 믿을 수 있는 업체로서 책무를 다하여 서비스하고 있으며 고객님의 어떠한 불편사항도 저희가 최대한 책임지고 처리해 드리겠습니다.
             </p>
@@ -41,7 +41,7 @@
         </div>
       </section>
 
-      <section class="company-map">
+      <section id="map-sec" class="company-map">
         <h2>오시는 길</h2>
         <table>
           <thead>
@@ -57,7 +57,37 @@
           </thead>
           <tr class="table-map">
             <td colspan="2">
-              지도
+              <div id="map" style="width:1200px; height:600px;"></div>
+              <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
+              <script>
+                let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                    mapOption = { 
+                        center: new kakao.maps.LatLng(37.5037423, 126.668249), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                let map = new kakao.maps.Map(mapContainer, mapOption); 
+
+                // 지도를 클릭한 위치에 표출할 마커입니다
+                let marker = new kakao.maps.Marker({ 
+                    // 지도 중심좌표에 마커를 생성합니다 
+                    position: map.getCenter() 
+                }); 
+                // 지도에 마커를 표시합니다
+                marker.setMap(map);
+
+                kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+                  let latlng = mouseEvent.latLng; 
+                  marker.setPosition(latlng);
+                  
+                  let message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+                  message += '경도는 ' + latlng.getLng() + ' 입니다';
+                  
+                  let resultDiv = document.getElementById('clickLatlng'); 
+                  resultDiv.innerHTML = message;
+                });
+              </script>
             </td>
           </tr>
         </table>
