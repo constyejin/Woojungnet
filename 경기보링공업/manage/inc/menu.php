@@ -20,4 +20,5 @@
         <li><a href="/manage/menu01/sub04.php">게시판</a></li>
         <li><a href="/manage/menu01/sub05.php">접속자료</a></li>
         <li><a href="/manage/menu01/sub06.php">사이트설정</a></li>
+        <li><a href="/manage/menu01/sub07.php">메인이미지</a></li>
         </nav>

@@ -7,7 +7,6 @@ $consult=sql_list("select * from consult where 1=1 $where order by idx desc limi
 $total_count=sql_total("select count(*) as cnt from consult where 1=1 $where ");
 $list_num=$total_count-$page_start;
 ?>
-
 <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub01_change_save.php">
 <input type="hidden" name="idx" value="">
 <input type="hidden" name="val" value="">

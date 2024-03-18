@@ -19,8 +19,8 @@ $web_fax=explode("-" , $web_config[web_fax]);
           <div class="col-10">
             <h3>기본정보</span> </h3>
 
-<form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub01_save.php">
-			<table class="table table-layout border-type basic-info">
+           <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub01_save.php">
+            <table class="table table-layout border-type basic-info">
               <colgroup>
                 <col style="width: 150px;">
                 <col style="width: auto;">
@@ -158,32 +158,43 @@ $web_fax=explode("-" , $web_config[web_fax]);
                 <th>이름</th>
                 <th>아이디</th>
                 <th>비밀번호</th>
+                <th>회원레벨</th>
                 <th>비고</th>
               </thead>
               <tbody class="table-light">
-<?
-$member_admin=sql_list("select * from member_admin where 1=1 ");
-for($i=0;$i<10;$i++){
-?>
-<form name="adminform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="member_save.php">
-<input type="hidden" name="idx" value="<?=$member_admin[$i][idx]?>">
-				<tr>
-                  <th>관리자<?=$i+1?></th>
-                  <td>
-                    <input type="text" class="form-control" id="" placeholder="" name="admin_name" value="<?=$member_admin[$i][admin_name]?>">
-                  </td>
-                  <td>
-                    <input type="text" class="form-control" id="" placeholder="" name="admin_id" value="<?=$member_admin[$i][admin_id]?>">
-                  </td>
-                  <td>
-                    <input type="text" class="form-control" id="" placeholder="" name="admin_pass" value="<?=$member_admin[$i][admin_pass]?>">
-                  </td>
-                  <td>
+                <?
+                $member_admin=sql_list("select * from member_admin where 1=1 ");
+                for($i=0;$i<10;$i++){
+                ?>
+                <form name="adminform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="member_save.php">
+                <input type="hidden" name="idx" value="<?=$member_admin[$i][idx]?>">
+                  <tr>
+                    <th>관리자<?=$i+1?></th>
+                    <td>
+                      <input type="text" class="form-control" id="" placeholder="" name="admin_name" value="<?=$member_admin[$i][admin_name]?>">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="" placeholder="" name="admin_id" value="<?=$member_admin[$i][admin_id]?>">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" id="" placeholder="" name="admin_pass" value="<?=$member_admin[$i][admin_pass]?>">
+                    </td>
+                    <td>
+                      <select class="form-select" name="" id="">
+                        <option value="">=회원레벨=</option>
+                        <option value="">일반회원</option>
+                        <option value="">일반관리자</option>
+                        <option value="">중간관리자</option>
+                        <option value="">최고관리자</option>
+                        <option value="">슈퍼관리자</option>
+                      </select>
+                    </td>
+                    <td>
                     <button class="btn btn-outline-secondary btn-sm" onclick="this.submit();">등록</button>
                   </td>
                 </tr>
-</form>
-<? } ?>
+                </form>
+                <? } ?>
               </tbody>
             </table>
           </div>
