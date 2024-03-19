@@ -7,7 +7,7 @@
         <p class="quick-menu-sub">보랑전문상담원이<br>상담해드립니다</p>
         <div class="quick-menu-main">
           <p>상담문의</p>
-          <p>010-4369-4117</p>
+          <p>010-4598-8690</p>
         </div>
       </div>
 
@@ -17,7 +17,7 @@
         </p>
         <h4>오시는길</h4>
         <p class="quick-menu-map">
-          <a href="">약도보기</a>
+          <a href="/menu01/intro.php">약도보기</a>
         </p>
       </div>
     </aside>
