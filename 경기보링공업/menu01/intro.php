@@ -21,8 +21,7 @@
         <p>경기보링공업은 경기도의 대표적인 자동차엔진 전문기업입니다. </p>
         <p> 국내 어느곳이든 24시간 견인이 가능하며 국내 최저 비용으로 </p>
         <p>고객님의 부담을 덜어드립니다.</p>
-        <p>
-        언제나 고객의 입장에서 성실하고 책임감있는 서비스를 </p>
+        <p>언제나 고객의 입장에서 성실하고 책임감있는 서비스를 </p>
         <p>제공할것이며  고객님의  불편사항도 신속하게 </p>
         <p> 책임지고 처리해 드리겠습니다. </p>
         <p>우수한 인재를 보유하고 고객만족을 최우선으로 하며</p>
@@ -54,10 +53,10 @@
           <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
           <script>
             let mapContainer = document.getElementById('map'), 
-                mapOption = { 
-                    center: new kakao.maps.LatLng(37.5016816, 126.6638402), 
-                    level: 3 
-                };
+            mapOption = { 
+              center: new kakao.maps.LatLng(37.5016816, 126.6638402), 
+              level: 3 
+            };
 
             let map = new kakao.maps.Map(mapContainer, mapOption); 
             let marker = new kakao.maps.Marker({ 
