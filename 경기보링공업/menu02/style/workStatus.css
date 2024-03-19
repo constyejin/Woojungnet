@@ -4,8 +4,10 @@
 }
 
 .sub-txt {
+  display: flex;
+  justify-content: space-between;
   margin-top: 50px;
-  font-style: 14px;
+  font-size: 14px;
   font-weight: 700;
 }
 
