@@ -19,7 +19,6 @@
       </form>
     </div>
   </div>
-  <p class="login-num">상담문의:010-4369-4117</p>
 </main>
 
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/footer.php"; ?>

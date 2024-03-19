@@ -4,7 +4,6 @@
         <h1 class="footer-logo">
           <a href="">
             <p>&#40;주&#41;경기보링공업</p>
-            <p class="logo-sub">자동차보링전문기업</p>
           </a>
         </h1>
         <div>
