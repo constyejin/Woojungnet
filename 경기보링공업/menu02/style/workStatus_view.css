@@ -3,15 +3,25 @@
   margin: 0 auto;
 }
 
+.sub-txt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  font-size: 14px;
+  font-weight: 700;
+}
 .item-description {
   p {
     font-weight: 500;
   }
 }
 
-.item-title {
+.item-title th {
+	background-color: var(--title-back);
+	color: var(--white);
+	font-weight: 800 !important;
+
 	span {
-		/* border: 1px solid red; */
 		margin: 0 8px;
 	}
 }
