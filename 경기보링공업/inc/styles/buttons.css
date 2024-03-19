@@ -17,22 +17,22 @@
   border-radius: 4px;
 }
 
-.file-btn {
+ .reset-btn {
   height:26px; 
   padding:0 6px 0 6px; 
   color: #165899;  
   background-color : #edf1f6; 
-  font-size: 9px; 
+  font-size: 12px; 
   border: 1px solid #7FA8C4; 
   cursor:pointer;
 }
 
-.reset-btn {
+.file-btn {
   height:26px; 
   padding:0 6px 0 6px; 
   color: #ff0000;  
   background-color : #ffe3e7; 
-  font-size: 9px; 
+  font-size: 12px; 
   border: 1px solid #ff0000; 
   cursor:pointer;
 }
