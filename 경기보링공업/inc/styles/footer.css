@@ -1,6 +1,7 @@
 /* ----- Footer ----- */
 .global-footer {
-  padding: 30px 0;
+  width: 100%;
+  padding: 30px 20px;
   color: var(--white);
   background-color: var(--border);
 
@@ -16,7 +17,6 @@
 
 .global-footer-wrap {
   max-width: 1200px;
-  min-width: 1200px;
   margin: 0 auto;
 }
 

@@ -1,8 +1,9 @@
 .global-header {
   position: relative;
   z-index: 100;
+  width: 100%;
   height: 100px;
-  padding: 10px 0;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid var(--border);
   transition: all 300ms ease-in-out;
@@ -13,8 +14,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  min-width: 1200px;
-  height: 100%;
+  height: 100%; 
   margin: 0 auto;
   color: var(--white);
   transition: color 200ms ease-in-out;
@@ -34,6 +34,7 @@
 
 .gnb-nav-list {
   display: flex;
+  min-width: 370px;
 }
 
 .gnb-nav-item a {
