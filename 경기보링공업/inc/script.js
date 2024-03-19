@@ -5,7 +5,7 @@ function login_check(){
 	}else if(!f.login_pass.value){
 		alert('아이디를 입력해 주세요.');
 	}else{
-		f.action='/member/login_check.php';
+		f.action='/inc/login_check.php';
 		f.submit();
 	}
 }
