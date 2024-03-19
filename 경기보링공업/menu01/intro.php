@@ -53,21 +53,17 @@
           <div id="map" style="width:1200px; height:600px;"></div>
           <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
           <script>
-            let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            let mapContainer = document.getElementById('map'), 
                 mapOption = { 
-                    center: new kakao.maps.LatLng(37.5037423, 126.668249), // 지도의 중심좌표
-                    level: 3 // 지도의 확대 레벨
+                    center: new kakao.maps.LatLng(37.5016816, 126.6638402), 
+                    level: 3 
                 };
 
-            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
             let map = new kakao.maps.Map(mapContainer, mapOption); 
-
-            // 지도를 클릭한 위치에 표출할 마커입니다
             let marker = new kakao.maps.Marker({ 
-                // 지도 중심좌표에 마커를 생성합니다 
-                position: map.getCenter() 
+              position: map.getCenter() 
             }); 
-            // 지도에 마커를 표시합니다
+            
             marker.setMap(map);
 
             kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
