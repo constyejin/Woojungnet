@@ -4,7 +4,8 @@ $(document).ready(function(){
     nextArrow: false,    
     dots: true,
     autoplay: true,
-    autoplaySpeed: 4000
+    autoplaySpeed: 4000,
+    pauseOnHover : false,
   });
 
   $('.slide-img-list').find('[data-slick-index=0]').children('li').animate({
