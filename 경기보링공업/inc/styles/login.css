@@ -10,8 +10,8 @@
   width: 548px;
   height: 440px;
   padding: 30px 50px 50px 50px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border-bright);
+  border-bottom: 1px solid var(--border-bright);
 
   h2 {
     margin: 0 0 0.625rem;
