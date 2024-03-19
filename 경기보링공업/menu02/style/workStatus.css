@@ -3,14 +3,6 @@
   margin: 0 auto;
 }
 
-.sub-txt {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
 /* workStatus */
 .work-status-list {
   display: flex;
