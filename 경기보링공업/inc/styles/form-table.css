@@ -1,6 +1,7 @@
 table {
   width: 1200px;
   margin: 50px auto;
+  font-size: 14px;
   border-collapse: collapse;
 
   th {
@@ -21,6 +22,7 @@ table {
   
   input {
     width: 90%;
+    padding: 4px 0;
     border: 1px solid var(--border-bright);
   }
 }
