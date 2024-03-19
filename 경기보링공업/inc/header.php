@@ -26,7 +26,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
   <link rel="stylesheet" href="/inc/styles/reset.css">
   <link rel="stylesheet" href="/inc/styles/header.css">
   <link rel="stylesheet" href="/inc/styles/footer.css">
-  <link rel="stylesheet" href="/inc/styles/quickMenu.css">
+  <link rel="stylesheet" href="/inc/styles/quick.css">
   <link rel="stylesheet" href="/inc/styles/buttons.css">
   <link rel="stylesheet" href="/inc/styles/style.css">
   <!-- Slick Slide -->
@@ -48,7 +48,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
           </a>
         </h1>
 
-        <nav>
+        <nav class="global-menu">
           <h2 class="visually-hidden">메뉴</h2>
           <ul class="gnb-nav-list">
             <li class="gnb-nav-item">
