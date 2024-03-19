@@ -25,7 +25,7 @@
   padding: 30px 0;
   text-align: center;
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(27, 37, 103, .45);
 
   div {
     font-size: 30px;
