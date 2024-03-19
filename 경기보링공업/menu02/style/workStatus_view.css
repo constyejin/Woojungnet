@@ -9,6 +9,13 @@
   }
 }
 
+.item-title {
+	span {
+		/* border: 1px solid red; */
+		margin: 0 8px;
+	}
+}
+
 .car-image {
 	position: relative;
 }
