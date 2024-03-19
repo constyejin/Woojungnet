@@ -7,6 +7,13 @@
 <main class="work-status">
   <section>
     <h2 class="sub-title">작업현황</h2>
+    <div class="sub-txt">
+      <p>작업중이거나 작업이 완료된 차량정보입니다</p>
+      <p>
+        <a href="/menu02/workStatus_list.php">목록보기 LIST</a>
+      </p>
+    </div>
+
     <form name="" method="" action="" enctype="">
       <table>
         <thead>
@@ -20,6 +27,14 @@
             <td class="sm-input">
               <input type="text">
               <span>년</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>주행거리</th>
+            <td class="sm-input">
+              <input type="text" name="" value="">
+              <span>Km</span>
             </td>
           </tr>
 
