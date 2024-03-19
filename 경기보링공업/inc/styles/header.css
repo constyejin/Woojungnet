@@ -22,14 +22,7 @@
 
 .logo {
   width: 250px;
-  height: 70px;
-}
-
-.logo-sub {
-  margin-left: 2px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 13.4px;
+  font-size: 26px;
 }
 
 .gnb-nav-list {
