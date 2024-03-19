@@ -20,8 +20,8 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width:1200">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1200">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title>&#40;주&#41;경기보링공업</title>
   <link rel="stylesheet" href="/inc/styles/reset.css">
   <link rel="stylesheet" href="/inc/styles/header.css">
@@ -36,6 +36,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
   <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
+  <script src="/inc/script.js"></script>
 </head>
 <body>
 <iframe name="HiddenFrm" id="HiddenFrm" style="display:none;"></iframe>
@@ -66,24 +67,26 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
           </ul>
         </nav>
         
+		    <? if($_SESSION[login_idx]){ ?>
         <!-- NOTE : 로그인 한 경우 -->
-        <!-- <ul class="auth user-info">
+        <ul class="auth user-info">
           <li class="admin">
-            <a href="">&#91;관리자모드&#93;</a>
+            <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
           </li>
           <li class="user-name">
             <span>관리자</span>님
           </li>
           <li>
-            <button class="btn-blue-sm" href="">로그아웃</button>
+            <a class="btn-blue-sm" href="/inc/logout.php">로그아웃</a>
           </li>
-        </ul> -->
-
+        </ul>
+		    <? }else { ?>
         <!-- NOTE : 로그인 하지 않은 경우 -->
         <ul class="auth join">
             <li>
               <a href="/inc/login.php" class="btn-blue-sm">로그인</a>
             </li>
           </ul>
+        <? } ?>
       </div>
     </header>
