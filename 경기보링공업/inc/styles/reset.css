@@ -12,8 +12,15 @@
   --th : #888;
 }
 
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,12 +29,12 @@
 }
 
 html {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-optical-sizing: auto;
 }
 
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-optical-sizing: auto;
   margin: 0 auto;
   color: var(--primary);
