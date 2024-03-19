@@ -78,24 +78,47 @@
   }
 }
 
-.pagenation-icons {
-  a {
-    position: relative;
+.pagenation-icons.prev {
+  a:first-child {
     display: inline-block;
-    width: 22px;
-    height: 22px;
-    padding: 4px;
-    font-weight: 700;
-    color: var(--white);
-    background-color: var(--border-bright);
-    border-radius: 6px;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -20px left -23px;
+    background-repeat: no-repeat;
   }
 
-  i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  a:last-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -50px left -23px;
+    background-repeat: no-repeat;
+  }
+}
+
+.pagenation-icons.next {
+  a:first-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -50px left -52.5px;
+    background-repeat: no-repeat;
+  }
+
+  a:last-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -20px left -52.5px;
+    background-repeat: no-repeat;
   }
 }
 

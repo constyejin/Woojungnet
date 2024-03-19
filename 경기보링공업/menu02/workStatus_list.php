@@ -29,13 +29,9 @@
     <button class="post-btn select-del-btn">선택삭제</button>
 
     <div class="pagenation">
-      <div class="pagenation-icons">
-        <a href="">
-          <i class="fa-solid fa-angles-left"></i>
-        </a>
-        <a href="">
-          <i class="fa-solid fa-angle-left"></i>
-        </a>
+      <div class="pagenation-icons prev">
+        <a href=""></a>
+        <a href=""></a>
       </div>
 
       <ol class="pagenation-list">
@@ -44,13 +40,9 @@
         <li><a href="">3</a></li>
       </ol>
 
-      <div class="pagenation-icons">
-        <a href="">
-          <i class="fa-solid fa-angle-right"></i>
-        </a>
-        <a href="">
-          <i class="fa-solid fa-angles-right"></i>
-        </a>
+      <div class="pagenation-icons next">
+        <a href=""></a>
+        <a href=""></a>
       </div>
     </div>
 
