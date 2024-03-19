@@ -17,7 +17,7 @@
         </p>
         <h4>오시는길</h4>
         <p class="quick-menu-map">
-          <a href="/menu01/intro.php">약도보기</a>
+          <a href="/menu01/intro.php/#map-sec">약도보기</a>
         </p>
       </div>
     </aside>
