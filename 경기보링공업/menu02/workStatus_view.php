@@ -10,14 +10,21 @@
 <main class="work-status">
   <section>
     <h2 class="sub-title">작업현황</h2>
+    <div class="sub-txt">
+      <p>작업중이거나 작업이 완료된 차량정보입니다</p>
+      <p>
+        <a href="/menu02/workStatus_list.php">목록보기 LIST</a>
+      </p>
+    </div>
+
     <form name="" method="" action="" enctype="">
       <table>
         <thead>
           <tr class="item-title">
             <th colspan="2" style="padding:14px">
-              <span>차랑명</span>|
-              <span>년식</span>|
-              <span>주행거리</span>
+              <span>그렌저2.4</span>|
+              <span>2015</span>|
+              <span> 100,000km</span>
             </th>
           </tr>
 
