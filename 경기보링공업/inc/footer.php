@@ -8,28 +8,26 @@
         </h1>
         <div>
           <ul>
-            <li>전화:032-673-2511~2/ 010-4369-4117</li>
-            <li>팩스:032-674-9847</li>
+            <li>전화:032-571-4117/ 010-4598-8690</li>
+            <li>팩스:032-571-4118</li>
             <li>&#40;주&#41;경기보링공업</li>
-            <li>대표:이상수</li>
+            <li>대표:이성삼</li>
           </ul>
           <ul>
-            <li>사업자:130-34-85251</li>
+            <li>사업자:125-87-02875</li>
             <li>주소:인천광역시 서구 거북로22.2동&#40;석남동&#41;</li>
-            <li>이메일:drg1038@naver.com</li>
+            <li>이메일:obba623@hanmail.net</li>
           </ul>
           <p class="copyright">copyright (주)경기보링공업 all right reserved</p>
         </div>
         <ul class="footer-menu">
           <li>
-            <a href="">회사소개</a>
+            <a href="/menu01/intro.php">회사소개</a>
           </li>
           <li>
-            <a href="">오시는길</a>
+            <a href="/menu01/intro.php#map-sec">오시는길</a>
           </li>
-          <li>
-            <a href="">개인정보처리방침</a>
-          </li>
+              </li>
         </ul>
       </div>
     </div>
