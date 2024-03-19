@@ -7,6 +7,7 @@
 <main class="work-status">
   <section>
     <h2 class="sub-title">작업현황</h2>
+    <p class="sub-txt">작업중이거나 작업이 완료된 차량정보입니다</p>
     <form name="" method="" action="" enctype="">
       <table>
         <thead>
@@ -132,10 +133,9 @@
       </table>
 
       <div class="post-btn-box">
-        <button class="post-btn select-del-btn">선택삭제</button>
         <div>
           <button class="post-btn show-list-btn">
-            <a href="/menu02/workStatus.php">목록보기</a>
+            <a href="/menu02/workStatus_list.php">목록보기</a>
           </button>
           <button class="post-btn register-btn">등록하기</button>
         </div>

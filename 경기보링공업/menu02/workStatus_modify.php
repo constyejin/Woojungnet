@@ -139,7 +139,7 @@
         <button class="post-btn select-del-btn">선택삭제</button>
         <div>
           <button class="post-btn show-list-btn">
-            <a href="/menu02/workStatus.php">목록보기</a>
+            <a href="/menu02/workStatus_list.php">목록보기</a>
           </button>
           <button class="post-btn register-btn">등록하기</button>
         </div>

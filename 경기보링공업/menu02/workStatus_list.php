@@ -29,7 +29,7 @@
     <button class="post-btn select-del-btn">선택삭제</button>
 
     <div class="pagenation">
-      <div>
+      <div class="pagenation-icons">
         <a href="">
           <i class="fa-solid fa-angles-left"></i>
         </a>
@@ -38,13 +38,13 @@
         </a>
       </div>
 
-      <ol>
-        <li><a href="">1</a></li>
+      <ol class="pagenation-list">
+        <li class="active"><a href="">1</a></li>
         <li><a href="">2</a></li>
         <li><a href="">3</a></li>
       </ol>
 
-      <div>
+      <div class="pagenation-icons">
         <a href="">
           <i class="fa-solid fa-angle-right"></i>
         </a>
@@ -55,7 +55,7 @@
     </div>
 
     <button class="post-btn register-btn">
-      <a href="/menu02/workStaus_register.php">등록하기</a>
+      <a href="/menu02/workStaus_write.php">등록하기</a>
     </button>
   </section>
 </main>

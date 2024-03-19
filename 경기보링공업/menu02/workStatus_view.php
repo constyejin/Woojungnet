@@ -13,8 +13,12 @@
     <form name="" method="" action="" enctype="">
       <table>
         <thead>
-          <tr>
-            <th colspan="2">차량이미지</th>
+          <tr class="item-title">
+            <th colspan="2" style="padding:14px">
+              <span>차랑명</span>|
+              <span>년식</span>|
+              <span>주행거리</span>
+            </th>
           </tr>
 
           <tr class="item-img">
@@ -72,6 +76,14 @@
           </tr>
 
           <tr>
+            <th>주행거리</th>
+            <td class="sm-input">
+              <input type="text" name="" value="">
+              <span>Km</span>
+            </td>
+          </tr>
+
+          <tr>
             <th>작업비</th>
             <td class="sm-input">
               <input type="text">
@@ -79,7 +91,7 @@
             </td>
           </tr>
           <tr>
-            <th colspan="2">상세설명</th>
+            <th colspan="2" style="padding:14px">상세설명</th>
           </tr>
 
           <tr class="item-description">
@@ -97,10 +109,10 @@
       <div class="post-btn-box">
         <div>
           <button class="post-btn show-list-btn">
-            <a href="/menu02/workStatus.php">목록보기</a>
+            <a href="/menu02/workStatus_list.php">목록보기</a>
           </button>
           <button class="post-btn register-btn">
-            <a href="/menu02/workStatus_edit.php">수정하기</a>
+            <a href="/menu02/workStatus_modify.php">수정하기</a>
           </button>
         </div>
       </div>

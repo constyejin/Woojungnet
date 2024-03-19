@@ -55,7 +55,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
               <a href="/menu01/intro.php">회사소개</a>
             </li>
             <li class="gnb-nav-item">
-              <a href="/menu02/workStatus.php">작업현황</a>
+              <a href="/menu02/workStatus_list.php">작업현황</a>
             </li>
             <li class="gnb-nav-item">
               <a href="/menu03/estimate.php">견적신청</a>
