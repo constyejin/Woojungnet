@@ -26,6 +26,14 @@
           </tr>
 
           <tr>
+            <th>주행거리</th>
+            <td class="sm-input">
+              <input type="text" name="" value="">
+              <span>Km</span>
+            </td>
+          </tr>
+
+          <tr>
             <th>작업비</th>
             <td class="sm-input">
               <input type="text" name="" value="">
@@ -36,7 +44,7 @@
 
         <tbody>
           <tr>
-            <th colspan="2">
+            <th colspan="2" style="padding:14px">
               상세설명
             </th>
           </tr>
