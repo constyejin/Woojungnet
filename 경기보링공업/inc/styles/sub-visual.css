@@ -21,18 +21,18 @@
   top: 61%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 800px;
+  width: 620px;
   padding: 30px 0;
   text-align: center;
   color: var(--white);
-  background-color: rgb(27, 37, 103, .45);
+  background-color: rgb(0,0,0, .3);
 
   div {
     font-size: 30px;
     font-weight: 500;
     
-    p:nth-child(2) {
-      font-size: 30px;
+    p:nth-child(1) {
+      font-weight: 700;
     }
   }
 }
