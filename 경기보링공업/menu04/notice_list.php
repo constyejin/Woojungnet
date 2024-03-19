@@ -9,19 +9,8 @@
     
     <form name="" method="" action="" enctype="">
       <div class="search-box">
-        <h4>공지사항</h4>
-        <div class="search-box-right">
-          <select name="" id="">
-            <option value="">제목</option>
-            <option value="">번호</option>
-            <option value="">이름</option>
-            <option value="">등록일</option>
-          </select>
-          <div class="serach">
-            <input type="text">
-            <button>검색</button>
-          </div>
-        </div>
+        <input type="text">
+        <i class="fa-solid fa-magnifying-glass"></i>
       </div>
 
       <div class="post-wrap">
@@ -40,20 +29,30 @@
           <li class="post-item">
             <span class="post-chk"><input type="checkbox"></span>
             <p class="post-num">2</p>
-            <p class="post-title"><a href="">테스트</a></p>
-            <p class="post-name">admin</p>
-            <p class="post-date">2024.03.17</p>
-            <p class="post-see">4</p>
+            <a class="post-link" href="/menu04/notice_view.php">
+              <p class="post-title">Test</p>
+              <p class="post-name">admin</p>
+              <p class="post-date">2024.03.17</p>
+              <p class="post-see">4</p>
+            </a>
           </li>
 
           <li class="post-item">
             <span class="post-chk"><input type="checkbox"></span>
             <p class="post-num">1</p>
-            <p class="post-title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero blanditiis voluptatibus soluta mollitia quia ab est. Officia praesentium cum distinctio!</a></p>
-            <p class="post-name">admin124</p>
-            <p class="post-date">2024.03.17</p>
-            <p class="post-see">133</p>
+            <a class="post-link" href="/menu04/notice_view.php">
+              <p class="post-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero blanditiis voluptatibus soluta mollitia quia ab est. Officia praesentium cum distinctio!</p>
+              <p class="post-name">admin124</p>
+              <p class="post-date">2024.03.17</p>
+              <p class="post-see">133</p>
+            </a>
           </li>
+        </ul>
+      </div>
+
+      <div class="pagenation">
+        <ul>
+          <li><a class="current" href="">1</a></li>
         </ul>
       </div>
 
@@ -62,7 +61,7 @@
           선택삭제
         </button>
         <button class="post-btn register-btn">
-            <a href="">글쓰기</a>
+            <a href="/menu04/notice_write.php">글쓰기</a>
         </button>
       </div>
     </form>

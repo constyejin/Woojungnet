@@ -62,7 +62,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
               <a href="/menu03/estimate.php">견적신청</a>
             </li>
             <li class="gnb-nav-item">
-              <a href="/menu04/notice.php">공지사항</a>
+              <a href="/menu04/notice_list.php">공지사항</a>
             </li>
           </ul>
         </nav>
