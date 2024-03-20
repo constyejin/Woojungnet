@@ -50,8 +50,8 @@
         </thead>
 
         <tbody>
-          <tr>
-            <th colspan="2" style="padding:14px">
+          <tr class="table-lg-box">
+            <th colspan="2">
               상세설명
             </th>
           </tr>

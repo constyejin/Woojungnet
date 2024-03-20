@@ -48,7 +48,7 @@
         </thead>
 
         <tbody>
-          <tr>
+          <tr cladd="table-lg-box">
             <th colspan="2">
               상세설명
             </th>

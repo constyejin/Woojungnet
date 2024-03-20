@@ -1,6 +1,16 @@
 .work-status {
   max-width: 1200px;
   margin: 0 auto;
+
+	table {
+		th {
+			width: 280px;
+		}
+		
+		th, td {
+			padding: 14px;
+		}
+	}
 }
 
 .item-description {

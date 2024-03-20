@@ -20,8 +20,8 @@
     <form name="" method="" action="" enctype="">
       <table>
         <thead>
-          <tr class="item-title">
-            <th colspan="2" style="padding:14px">
+          <tr class="item-title table-lg-box">
+            <th colspan="2">
               <span>그렌저2.4</span>|
               <span>2015</span>|
               <span> 100,000km</span>
@@ -71,13 +71,13 @@
         <tbody>
           <tr>
             <th>차량명</th>
-            <td><div class="input-wrap"><input type="text"></div></td>
+            <td>그렌저2.4</td>
           </tr>
 
           <tr>
             <th>년식</th>
             <td class="sm-input">
-              <input type="text">
+              <span>2015</span>
               <span>년</span>
             </td>
           </tr>
@@ -85,7 +85,7 @@
           <tr>
             <th>주행거리</th>
             <td class="sm-input">
-              <input type="text" name="" value="">
+              <span>100,000km</span>
               <span>Km</span>
             </td>
           </tr>
@@ -93,12 +93,13 @@
           <tr>
             <th>작업비</th>
             <td class="sm-input">
-              <input type="text">
+              <span></span>
               <span>원</span>
             </td>
           </tr>
-          <tr>
-            <th colspan="2" style="padding:14px">상세설명</th>
+
+          <tr class="table-lg-box">
+            <th colspan="2"">상세설명</th>
           </tr>
 
           <tr class="item-description">
