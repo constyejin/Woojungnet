@@ -16,13 +16,22 @@
         ?>
         </ul>
 
-        <div class="slide-fix-txt">
+        <div class="slide-fix-txt lg-only">
           <div class="slide-fix-txt-main">
             <p>자동차보링전문기업 !!! KGBORING</p>
             <p>신속,정확,안전한서비스를 약속드립니다</p>
           </div>
           <p class="slide-fix-txt-sub">오랜경험과 노하우로 고객님들께 최선을 다 하겠습니다</p>
         </div>
+
+        <div class="slide-fix-txt sm-only">
+          <div class="slide-fix-txt-main">
+            <p>자동차엔진&#40;보링&#41;전문기업</p>
+            <p>&#40;주&#41;<span>보링공업에서</span></p>
+            <p>안전한서비스를 보장합니다</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
