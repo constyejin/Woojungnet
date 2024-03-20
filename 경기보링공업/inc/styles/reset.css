@@ -4,6 +4,7 @@
   --black : #000;
   --red : #ea0000;
   --blue : #417ed0;
+  --yellow : #FEE000;
   --active : #00b5ff;
   --title-back : #2cade2;
   --border : #404347;
@@ -82,12 +83,24 @@ address {
   font-style: normal;
 }
 
-.visually-hidden {
-  display: none;
-}
-
 input[type="text"]:focus, 
 input[type="password"]:focus {
   border: 1px solid var(--blue) !important;
   background-color: rgb(65, 126, 208, .1)
+}
+
+.sm-only,
+.visually-hidden {
+  display: none;
+}
+
+
+@media screen and (max-width : 768px) {
+  .sm-only {
+    display: block;
+  }
+  
+  .lg-only {
+    display: none;
+  }
 }
