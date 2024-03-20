@@ -129,4 +129,38 @@
   .slide-fix-txt-main p:nth-child(2) span {
     letter-spacing: 6px;
   }
+
+  .main-bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--yellow);
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      position: relative;
+      width: 50%;
+      text-align: center;
+
+      a {
+        display: inline-block;
+        padding: 20px;
+        font-weight: 700;
+      }
+    }
+
+    li:first-child::after {
+      content: '|';
+      position: absolute;
+      top: 50%;
+      right: -3px;
+      transform: translateY(-50%);
+      font-weight: 700;
+      color: var(--border);
+    }
+  }
 }
