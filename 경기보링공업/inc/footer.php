@@ -15,10 +15,10 @@
           </ul>
           <ul>
             <li>사업자:125-87-02875</li>
-            <li>주소:인천광역시 서구 거북로22.2동&#40;석남동&#41;</li>
+            <li>주소:인천광역시 서구 거북로24번길22.2동&#40;석남동&#41;</li>
             <li>이메일:obba623@hanmail.net</li>
           </ul>
-          <p class="copyright">copyright (주)경기보링공업 all right reserved</p>
+          <p class="copyright">Copyright ⓒ (주)경기보링공업 all rights reserved </p>
         </div>
         <ul class="footer-menu">
           <li>
