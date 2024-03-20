@@ -1,4 +1,4 @@
-    <aside class="quick-menu">
+    <aside class="quick-menu lg-only">
       <div class="quick-menu-num">
         <p class="quick-menu-icon">
           <i class="fa-solid fa-phone-volume"></i>
