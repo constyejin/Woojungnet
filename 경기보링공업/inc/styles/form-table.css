@@ -33,6 +33,10 @@ table {
   }
 }
 
+.table-lg-box th {
+  padding: 14px 0;
+}
+
 .smart-editor td {
   border: none !important;
   padding: 0 !important;
