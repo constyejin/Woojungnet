@@ -13,12 +13,17 @@
             <li>&#40;주&#41;경기보링공업</li>
             <li>대표:이성삼</li>
           </ul>
+
           <ul>
             <li>사업자:125-87-02875</li>
             <li>주소:인천광역시 서구 거북로24번길22.2동&#40;석남동&#41;</li>
             <li>이메일:obba623@hanmail.net</li>
           </ul>
-          <p class="copyright">Copyright ⓒ (주)경기보링공업 all rights reserved </p>
+
+          <ul class="copyright">
+            <li>Copyright ⓒ (주)경기보링공업 all rights reserved</li>
+            <li>Produce : <a href="http://www.woojungnet.co.kr" target="_blank">우정넷</a></li>
+          </ul>
         </div>
         <ul class="footer-menu">
           <li>
