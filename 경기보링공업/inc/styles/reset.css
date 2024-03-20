@@ -97,10 +97,10 @@ input[type="password"]:focus {
 
 @media screen and (max-width : 768px) {
   .sm-only {
-    display: block;
+    display: block !important;
   }
   
   .lg-only {
-    display: none;
+    display: none !important;
   }
 }
