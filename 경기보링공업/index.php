@@ -35,6 +35,13 @@
       </div>
     </section>
 
+    <div class="main-bottom-menu sm-only">
+      <ul>
+        <li><a href="/menu01/intro.php/#map-sec">오시는길</a></li>
+        <li><a href="/menu03/estimate.php">견적신청</a></li>
+      </ul>
+    </div>
+
     <script src="/inc/js/main-slide.js"></script>
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/footer.php"; ?>
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/quick.php"; ?>
