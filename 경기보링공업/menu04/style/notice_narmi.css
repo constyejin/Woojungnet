@@ -9,6 +9,11 @@
   margin: 60px 0;
 }
 
+.input-wrap input {
+  padding: 4px;
+  border: 1px solid var(--border-bright);
+}
+
 .main.content-wrap {
   position: absolute;
   top: 100vh;
