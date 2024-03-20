@@ -16,7 +16,7 @@
           <div class="input-wrap">
             <input type="password" name="login_pass" placeholder="비밀번호를 입력하세요">
           </div>
-          <button class="btn-blue-lg" type="submit">로그인</button>
+          <button class="login-btn btn-blue-lg" type="submit">로그인</button>
         </div>
       </form>
     </div>
