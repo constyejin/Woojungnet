@@ -45,62 +45,81 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 480px;
+  max-width: 560px;
 }
 
 .company-map {
+  max-width: 1200px;
   margin: 100px 0;
   
   h2 {
     text-align: center;
   }
-
-  table {
-    width: 1200px;
-    margin: 60px auto;
-    border-collapse: collapse;
-
-    thead {
-      th {
-        background-color: var(--table-back);
-      }
-
-      tr:first-child {
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border-bright)
-      }
-
-      tr:last-child {
-        border-bottom: 1px solid var(--border);
-      }
-
-      td {
-        padding: 12px;
-      }
-    }
-  }
 }
 
-.table-map {
+.map-table {
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
+.map-table-list {
+  display: flex;
+}
+
+.map-table-list:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-bright);
+}
+
+
+.map-table-list:last-of-type {
+  border-bottom: 1px solid var(--border);
+}
+
+.map-table-list li {
+  padding: 16px;
+  font-size: 16px;
+}
+
+.table-title {
+  width: 20%;
+  color: var(--th);
+  text-align: center;
+  font-weight: 700;
+  background-color: var(--table-back);
+}
+
+.table-content {
+  width: 80%;
+}
+
+.map {
+  height: 600px;
+}
+
+.customoverlay {
+  margin-bottom: 46px;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--white);
+}
 
 @media screen and (max-width : 768px){
   .company-info {
     width: 100%;
     max-width: 768px;
-    margin-top: 50px;
   }
 
   .menu-path {
-    padding: 10px;
+    padding: 20px;
     font-size: 12px;
     font-weight: 600;
   }
 
   .sub-title {
-    margin-top: 12px;
     font-size: 18px;
   }
 
@@ -116,42 +135,84 @@
   }
 
   .company-info-content > div {
-    margin-top: 30px;
+    flex-direction: column;
+    margin-top: 0;
+    padding: 12px;
   }
 
+  .company-info-img {
+    width: 100%;
+    height: 300px;
+    margin-right: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .company-info-txt {
+    margin-top: 12px;
+    font-size: .8em;
+
+    h3 {
+      margin-top: 12px;
+    }
+
+    h4 {
+      margin: 8px 0;
+    }
+
+    p {
+      line-height: 20px;
+    }
+  }
 
   .company-map {
-    margin: 100px 0;
+    margin: 40px 0;
     
     h2 {
       text-align: center;
     }
+  }
 
-    table {
-      padding: 10px;
-      /* max-width: 768px !important; */
-      border: 2px solid red;
-      margin: 60px auto;
-      border-collapse: collapse;
+  .map-table {
+    margin-top: 0;
+    margin: 12px;
+  }
 
-      thead {
-      th {
-          background-color: var(--table-back);
-        }
+  /* .map-table-list {
+    display: flex;
+    align-items: center;
+  } */
 
-        tr:first-child {
-          border-top: 1px solid var(--border);
-          border-bottom: 1px solid var(--border-bright)
-        }
+  .map-table-list:not(:last-of-type) {
+    border-bottom: 1px solid var(--border-bright);
+  }
 
-        tr:last-child {
-          border-bottom: 1px solid var(--border);
-        }
 
-        td {
-          padding: 12px;
-        }
-      }
-    }
+  .map-table-list:last-of-type {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .map-table-list li {
+    padding: 14px;
+    font-size: 0.7em;
+  }
+
+  .table-title {
+    width: 30%;
+    color: var(--th);
+    text-align: center;
+    font-weight: 700;
+    background-color: var(--table-back);
+  }
+
+  .table-content {
+    width: 70%;
+  }
+
+  .map {
+    height: 400px;
   }
 }
