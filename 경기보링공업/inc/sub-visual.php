@@ -1,4 +1,4 @@
-<section class="main-banner">
+<section class="main-banner lg-only">
   <div>
     <img src="/inc/assets/images/slide02.jpeg" alt="slide-img01">
 
