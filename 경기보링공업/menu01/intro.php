@@ -35,52 +35,70 @@
   </section>
 
   <section id="map-sec" class="company-map">
-    <h2>오시는 길</h2>
+    <h2 class="sub-title">오시는 길</h2>
 
-    <table>
-      <thead>
-        <tr>
-          <th>도로명주소</th>
-          <td>인천광역시 서구 거북로24번길22. 2동&#40;석남동&#41;</td>
-        </tr>
+    <div class="map-table">
+      <ul class="map-table-list">
+        <li class="table-title">도로명주소</li>
+        <li class="table-content">인천광역시 서구 거북로24번길22. 2동&#40;석남동&#41;</li>
+      </ul>
 
-        <tr>
-          <th>대 표 전 화</th>
-          <td>032-571-4117</td>
-        </tr>
-      </thead>
-      <tr class="table-map">
-        <td colspan="2" style="padding:0;">
-          <div id="map" style="width:1200px; height:600px;"></div>
-          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
-          <script>
-            let mapContainer = document.getElementById('map'), 
-            mapOption = { 
-              center: new kakao.maps.LatLng(37.5016816, 126.6638402), 
-              level: 3 
-            };
+      <ul class="map-table-list">
+        <li class="table-title">대 표 전 화</li>
+        <li class="table-content">
+          <a href="tel:032-571-4117">032-571-4117</a>
+        </li>
+      </ul>
 
-            let map = new kakao.maps.Map(mapContainer, mapOption); 
-            let marker = new kakao.maps.Marker({ 
-              position: map.getCenter() 
-            }); 
+      <div class="map" id="map"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
+        <script>
+          let mapContainer = document.getElementById('map'), 
+          mapOption = { 
+            center: new kakao.maps.LatLng(37.5016816, 126.6638402), 
+            level: 3 
+          };
+
+          let map = new kakao.maps.Map(mapContainer, mapOption); 
+
+          var content = '<div class="customoverlay">' +
+          ' <span>' +
+          '  (주)경기보링공업' +
+          '  </span>' +
+          '</div>';
+
+          var position = new kakao.maps.LatLng(37.5016816, 126.6638402);
+
+          var customOverlay = new kakao.maps.CustomOverlay({
+            map: map,
+            position: position,
+            content: content,
+            yAnchor: 1
+          });
+
+
+          var markerPosition  = new daum.maps.LatLng(37.5016816, 126.6638402);
+
+          var marker = new daum.maps.Marker({
+            position: markerPosition,
+            title : "(주)경기보링공업",
+            clickable : true
+          });
             
-            marker.setMap(map);
+          marker.setMap(map);
 
-            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-              let latlng = mouseEvent.latLng; 
-              marker.setPosition(latlng);
-              
-              let message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
-              message += '경도는 ' + latlng.getLng() + ' 입니다';
-              
-              let resultDiv = document.getElementById('clickLatlng'); 
-              resultDiv.innerHTML = message;
-            });
-          </script>
-        </td>
-      </tr>
-    </table>
+          // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+          var mapTypeControl = new daum.maps.MapTypeControl();
+
+          // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+          // daum.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+          map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+          // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+          var zoomControl = new daum.maps.ZoomControl();
+          map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+        </script>
+    </div>
   </section>
 </main>
 
