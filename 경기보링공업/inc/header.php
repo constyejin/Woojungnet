@@ -41,12 +41,8 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
 <body>
 <iframe name="HiddenFrm" id="HiddenFrm" style="display:none;"></iframe>
   <div class="wrapper">
-    <header class="global-header">
+    <header class="global-header lg-only">
       <div>
-        <div class="sidebar-icon sm-only">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-
         <h1 class="logo">
           <a href="/">
             <p>&#40;주&#41;경기보링공업</p>
@@ -71,32 +67,80 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
           </ul>
         </nav>
 
-        <div class="call-icon sm-only">
+        <? if($_SESSION[login_idx]){ ?>
+          <!-- NOTE : 로그인 한 경우 -->
+            <ul class="auth user-info">
+              <li class="admin">
+                <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
+              </li>
+              <li class="user-name">
+                <span>관리자</span>님
+              </li>
+              <li>
+                <a class="btn-blue-sm" href="/inc/logout.php">로그아웃</a>
+              </li>
+            </ul>
+            <? }else { ?>
+            <!-- NOTE : 로그인 하지 않은 경우 -->
+            <ul class="auth join">
+              <li>
+                <a href="/inc/login.php" class="btn-blue-sm">로그인</a>
+              </li>
+            </ul>
+          <? } ?>
+      </div>
+    </header>
+
+    <header class="global-header sm-only">
+      <? if($_SESSION[login_idx]){ ?>
+      <!-- NOTE : 로그인 한 경우 -->
+        <ul class="auth user-info">
+          <li class="admin">
+            <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
+          </li>
+          <li class="user-name">
+            <span>관리자</span>님
+          </li>
+          <!-- <li>
+            <a class="btn-blue-sm" href="/inc/logout.php">로그아웃</a>
+          </li> -->
+        </ul>
+        <? }else { ?>
+        <!-- NOTE : 로그인 하지 않은 경우 -->
+        <ul class="auth join"></ul>
+      <? } ?>
+
+      <div class="global-logo">
+        <div class="sidebar-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <h1 class="logo">
+          <a href="/">
+            <p>&#40;주&#41;경기보링공업</p>
+          </a>
+        </h1>
+        <div class="call-icon">
           <i class="fa-solid fa-phone-volume"></i>
         </div>
-        
-		    <? if($_SESSION[login_idx]){ ?>
-        <!-- NOTE : 로그인 한 경우 -->
-          <ul class="auth user-info">
-            <li class="admin">
-              <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
-            </li>
-            <li class="user-name">
-              <span>관리자</span>님
-            </li>
-            <li>
-              <a class="btn-blue-sm" href="/inc/logout.php">로그아웃</a>
-            </li>
-          </ul>
-          <? }else { ?>
-          <!-- NOTE : 로그인 하지 않은 경우 -->
-          <ul class="auth join">
-            <li>
-              <a href="/inc/login.php" class="btn-blue-sm">로그인</a>
-            </li>
-          </ul>
-        <? } ?>
       </div>
+
+      <nav class="global-menu">
+        <h2 class="visually-hidden">메뉴</h2>
+        <ul class="gnb-nav-list">
+          <li class="gnb-nav-item">
+            <a href="/menu01/intro.php">회사소개</a>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/menu02/workStatus_list.php">작업현황</a>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/menu03/estimate.php">견적신청</a>
+          </li>
+          <li class="gnb-nav-item">
+            <a href="/menu04/notice_list.php">공지사항</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     
     <aside class="sidebar sm-only">
@@ -113,14 +157,6 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
         <? if($_SESSION[login_idx]){ ?>
         <!-- NOTE : 로그인 한 경우 -->
         <ul class="sidebar-auth">
-          <li class="admin">
-            <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
-          </li>
-
-          <li class="user-name">
-            <span>관리자</span>님
-          </li>
-
           <li>
             <a href="/inc/logout.php">로그아웃</a>
           </li>
