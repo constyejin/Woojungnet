@@ -6,7 +6,7 @@
 
 <main class="company-info">
   <section class="company-info-content">
-    <p class="menu-path sm-only">홈 > 회사소개</p>
+    <p class="menu-path sm-only"><a href="/">홈</a> > 회사소개</p>
     <h2 class="sub-title">회사소개
       <span><a href="#map-sec">오시는길</a></span>
     </h2>
