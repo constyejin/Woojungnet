@@ -167,7 +167,7 @@
     background-color: var(--border);
     transform: translateX(-100vw);
     transition: transform 300ms ease-in-out;
-
+    overflow: hidden;
   }
 
   .sidebar.is-active {
