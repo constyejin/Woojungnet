@@ -7,7 +7,7 @@
   <section>
     <p class="menu-path sm-only"><a href="/">홈</a> > 작업현황</p>
     <h2 class="sub-title">작업현황
-      <p>작업중이거나 작업이 완료된 차량정보입니다</p>
+      <p class="sm-only">작업중이거나 작업이 완료된 차량정보입니다</p>
     </h2>
     <form action="" method="">
       <ul class="work-status-list">
