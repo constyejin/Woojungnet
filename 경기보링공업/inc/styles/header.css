@@ -74,6 +74,7 @@
 
 @media screen and (max-width : 768px){
   .global-header {
+    height: auto;
     padding: 0;
     background-color: var(--white);
     border-bottom: none;
