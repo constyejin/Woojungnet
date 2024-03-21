@@ -1,7 +1,12 @@
 .company-info {
-  max-width: 1200px;
-  min-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
+}
+
+.sub-title {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-bright);
 }
 
 .sub-title span {
@@ -81,3 +86,70 @@
 }
 
 
+@media screen and (max-width : 768px){
+  .company-info {
+    width: 100%;
+    max-width: 768px;
+    margin-top: 50px;
+  }
+
+  .menu-path {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .sub-title {
+    margin-top: 12px;
+    font-size: 18px;
+  }
+
+  .sub-title span {
+    padding-left: 20px;
+  }
+
+  .sub-title span::before {
+    content: '|';
+    top: 0;
+    left: 6px;
+    font-size: 16px;
+  }
+
+  .company-info-content > div {
+    margin-top: 30px;
+  }
+
+
+  .company-map {
+    margin: 100px 0;
+    
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      width: 100% !important;
+      margin: 60px auto;
+      border-collapse: collapse;
+
+      thead {
+        th {
+          background-color: var(--table-back);
+        }
+
+        tr:first-child {
+          border-top: 1px solid var(--border);
+          border-bottom: 1px solid var(--border-bright)
+        }
+
+        tr:last-child {
+          border-bottom: 1px solid var(--border);
+        }
+
+        td {
+          padding: 12px;
+        }
+      }
+    }
+  }
+}
