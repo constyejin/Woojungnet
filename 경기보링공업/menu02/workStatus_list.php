@@ -5,13 +5,44 @@
 
 <main class="work-status">
   <section>
-    <h2 class="sub-title">작업현황</h2>
+    <p class="menu-path sm-only"><a href="/">홈</a> > 작업현황</p>
+    <h2 class="sub-title">작업현황
+      <p>작업중이거나 작업이 완료된 차량정보입니다</p>
+    </h2>
     <form action="" method="">
       <ul class="work-status-list">
         <li class="work-status-item">
-          <div class="work-status-chk">
+          <div class="work-status-chk lg-only">
             <input type="checkbox" name="" value="">
-            <span>5</span>
+            <span>3</span>
+          </div>
+
+          <a href="/menu02/workStatus_view.php">
+            <div class="work-status-img">
+              <img src="/inc/assets/images/slide01.jpeg" alt="">
+            </div>
+            <b>소나타차차ㅏ타</b>
+          </a>
+        </li>
+
+        <li class="work-status-item">
+          <div class="work-status-chk lg-only">
+            <input type="checkbox" name="" value="">
+            <span>2</span>
+          </div>
+
+          <a href="/menu02/workStatus_view.php">
+            <div class="work-status-img">
+              <img src="/inc/assets/images/slide01.jpeg" alt="">
+            </div>
+            <b>2022 BMWWWW</b>
+          </a>
+        </li>
+
+        <li class="work-status-item">
+          <div class="work-status-chk lg-only">
+            <input type="checkbox" name="" value="">
+            <span>1</span>
           </div>
 
           <a href="/menu02/workStatus_view.php">
@@ -26,7 +57,7 @@
   </section>
 
   <section class="work-status-control">
-    <button class="post-btn select-del-btn">선택삭제</button>
+    <button class="post-btn select-del-btn lg-only">선택삭제</button>
 
     <div class="pagenation">
       <div class="pagenation-icons prev">
@@ -46,7 +77,7 @@
       </div>
     </div>
 
-    <button class="post-btn register-btn">
+    <button class="post-btn register-btn lg-only">
       <a href="/menu02/workStaus_write.php">등록하기</a>
     </button>
   </section>
