@@ -37,13 +37,13 @@
   <section id="map-sec" class="company-map">
     <h2 class="sub-title">오시는 길</h2>
 
-    <div class="map-table">
-      <ul class="map-table-list">
+    <div class="table">
+      <ul class="table-list">
         <li class="table-title">도로명주소</li>
         <li class="table-content">인천광역시 서구 거북로24번길22. 2동&#40;석남동&#41;</li>
       </ul>
 
-      <ul class="map-table-list">
+      <ul class="table-list">
         <li class="table-title">대 표 전 화</li>
         <li class="table-content">
           <a href="tel:032-571-4117">032-571-4117</a>
