@@ -128,12 +128,14 @@
     }
 
     table {
-      width: 100% !important;
+      padding: 10px;
+      /* max-width: 768px !important; */
+      border: 2px solid red;
       margin: 60px auto;
       border-collapse: collapse;
 
       thead {
-        th {
+      th {
           background-color: var(--table-back);
         }
 

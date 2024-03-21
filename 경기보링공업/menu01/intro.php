@@ -36,6 +36,7 @@
 
   <section id="map-sec" class="company-map">
     <h2>오시는 길</h2>
+
     <table>
       <thead>
         <tr>

@@ -71,33 +71,3 @@ table {
   justify-content: center;
 }
 
-@media screen and (max-width : 768px){
-  table {
-    width: 100% !important;
-    margin: 12px auto 50px auto;
-    font-size: 14px;
-    border-collapse: collapse;
-
-    th {
-      color: var(--th);
-      background-color: var(--table-back);
-    }
-
-    th, td {
-      padding: 10px;
-      border: 1px solid var(--border-bright);
-    }
-
-    thead {
-      th {
-        width: 20%;
-      }
-    }
-    
-    input {
-      width: 90%;
-      padding: 4px 8px;
-      border: 1px solid var(--border-bright);
-    }
-  }
-}
