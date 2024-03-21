@@ -1,5 +1,5 @@
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
-    <section class="slide">
+    <section class="slide lg-only">
       <div>
         <ul class="slide-img-list">
           <?
@@ -23,15 +23,20 @@
           </div>
           <p class="slide-fix-txt-sub">오랜경험과 노하우로 고객님들께 최선을 다 하겠습니다</p>
         </div>
+      </div>
+    </section>
 
-        <div class="slide-fix-txt sm-only">
-          <div class="slide-fix-txt-main">
-            <p>자동차엔진&#40;보링&#41;전문기업</p>
-            <p>&#40;주&#41;<span>보링공업에서</span></p>
-            <p>안전한서비스를 보장합니다</p>
-          </div>
+    <section class="main-img sm-only">
+      <div class="main-img-box">
+        <img src="/inc/assets/images/slide03.jpeg" alt="main-image">
+      </div>
+
+      <div class="slide-fix-txt">
+        <div class="slide-fix-txt-main">
+          <p>자동차엔진&#40;보링&#41;전문기업</p>
+          <p>&#40;주&#41;<span>보링공업에서</span></p>
+          <p>안전한서비스를 보장합니다</p>
         </div>
-
       </div>
     </section>
 
@@ -43,5 +48,6 @@
     </div>
 
     <script src="/inc/js/main-slide.js"></script>
+    
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/footer.php"; ?>
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/quick.php"; ?>
