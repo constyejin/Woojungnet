@@ -65,7 +65,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
           </a>
         </h1>
         <div class="call-icon">
-          <a href="tel:"><i class="fa-solid fa-phone-volume"></i></a>
+          <a href="tel:032-571-4117""><i class="fa-solid fa-phone-volume"></i></a>
         </div>
       </div>
 
@@ -107,6 +107,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
           </li>
         </ul>
         <? }else { ?>
+          
         <!-- NOTE : 로그인 하지 않은 경우 -->
         <ul class="sidebar-auth">
           <li>
