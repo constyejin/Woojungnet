@@ -76,10 +76,6 @@
   display: flex;
   justify-content: center;
   flex: 1 1 auto;
-
-  a {
-    font-size: 0.9em;
-  }
 }
 
 .gnb-nav-item:not(:last-child)::after {
@@ -97,6 +93,8 @@
 .gnb-nav-item a {
   display: inline-block;
   padding: 16px 0;
+  font-size: 0.9em;
+  font-weight: 700;
 }
 
 .gnb-nav-item a:hover {

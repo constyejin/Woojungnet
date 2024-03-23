@@ -63,7 +63,7 @@ if($wc_idx){
               </div>
             </div>
 
-            <div class="img-list-wrap view-thumb lg-only">
+            <div class="img-list-wrap view-thumb">
               <div class="img-list">
                 <div class="thum-btn-list">
                   <button class="prev-btn">
@@ -144,7 +144,7 @@ if($wc_idx){
       </div>
     </form>
 
-    <div class="post-btn-box lg-only">
+    <div class="post-btn-box">
       <div>
         <button class="post-btn show-list-btn">
           <a href="/menu02/workStatus_list.php">목록보기</a>

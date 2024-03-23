@@ -143,4 +143,4 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
       </footer>
     </aside>
 
-    <script src="/inc/js/sidebar.js"></script>
+    <script src="/mobile/inc/js/sidebar.js"></script>
