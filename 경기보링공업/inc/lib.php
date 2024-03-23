@@ -15,6 +15,11 @@ define('G5_SERVER_TIME',    time());
 define('G5_TIME_YMDHIS',    date('Y-m-d H:i:s', G5_SERVER_TIME));
 define('G5_TIME_YMD',       substr(G5_TIME_YMDHIS, 0, 10));
 
+$mobileBrower = '/(iPod|iPhone|Android|BlackBerry|SymbianOS|SCH-M\d+|Opera Mini|Windows CE|Nokia|SonyEricsson|webOS|PalmOS)/';
+if(preg_match($mobileBrower, $_SERVER['HTTP_USER_AGENT'])) {
+	$is_mobile="Y";
+}
+
 $page_row=20;
 $page_scale=10;
 if(!$page) $page=1;
@@ -216,7 +221,7 @@ function paging_f($page, $page_row, $page_scale, $total_count, $ext)
     //    $paging_str .= '<a href="'.$ext."page=".($start_page - 1).'" class="prev disabled"></a>';
 	}
 
-	$paging_str .= "<ul>";
+	$paging_str .= '<ol class="pagenation-list">';
     // 7. 페이지들 출력 부분 링크 만들기
     if ($total_page >= 1) {
         for ($i=$start_page;$i<=$end_page;$i++) {
@@ -225,11 +230,11 @@ function paging_f($page, $page_row, $page_scale, $total_count, $ext)
                 $paging_str .= '<li><a href="'.$ext."page=".$i.'">'.$i.'</a></li>';
             // 현재페이지면 굵게 표시하기
             }else{
-                $paging_str .= '<li><a class="current" href="'.$ext."page=".$i.'">'.$i.'</a></li>';
+                $paging_str .= '<li class="active"><a href="'.$ext."page=".$i.'">'.$i.'</a></li>';
             }
         }
     }
-	$paging_str .= "</ul>";
+	$paging_str .= "</ol>";
 
     // 8. 다음 페이징 영역으로 가는 링크 만들기
     if ($total_page > $end_page+10){
@@ -249,6 +254,10 @@ function paging_f($page, $page_row, $page_scale, $total_count, $ext)
 }
 
 function number($val){
+	if($val){return number_format($val);}else{return ;}
+}
+
+function number_zero($val){
 	if($val){return number_format($val);}else{return 0;}
 }
 
