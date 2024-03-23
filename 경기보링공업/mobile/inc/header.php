@@ -20,13 +20,15 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=768">
+  <!-- <meta name="viewport" content="width=768"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?=$web_config[web_sitename]?></title>
   <?=$web_config[web_meta]?>
   <link rel="stylesheet" href="/inc/styles/reset.css">
   <link rel="stylesheet" href="/inc/styles/buttons.css">
   <link rel="stylesheet" href="/mobile/inc/styles/header.css">
   <link rel="stylesheet" href="/mobile/inc/styles/style.css">
+  <link rel="stylesheet" href="/mobile/inc/styles/footer.css">
 
   <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
   <script src="/inc/script.js"></script>
