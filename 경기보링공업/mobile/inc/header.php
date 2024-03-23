@@ -42,7 +42,10 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
             <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
           </li>
           <li class="user-name">
-            <span>관리자</span>님
+            <span>홍길동</span>님
+          </li>
+          <li>
+            <a href="/inc/logout.php">로그아웃</a>
           </li>
         </ul>
         <? }else { ?>
