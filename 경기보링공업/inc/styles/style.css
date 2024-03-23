@@ -85,7 +85,9 @@
 
 @media screen and (max-width : 768px){
   .main-img {
-    height: 70vh;
+    width: 100%;
+    max-width: 768px;
+    height: 60vh;
   }
 
   .main-img-box {
