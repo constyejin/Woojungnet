@@ -7,6 +7,12 @@
   padding: 20px 0;
   text-align: center;
   border-bottom: 1px solid var(--border-bright);
+
+  p {
+    margin-top: 12px;
+    font-size: 16px;
+    font-size: 500;
+  }
 }
 
 /* workStatus */
@@ -123,7 +129,32 @@
 }
 
 
-/* workStatus_register / workStatus_Edit */
+/* workStatus_write / workStatus_Modify */
+.top-list-btn {
+  padding: 24px;
+  text-align: right;
+
+  a {
+    font-weight: 700;
+  }
+}
+
+.upload-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.table-list-btn {
+  padding: 12px 0;
+  text-align: right;
+
+  a {
+    font-weight: 700;
+  }
+}
+
 .register-img-list {
   display: flex;
   flex-wrap: wrap;
