@@ -1,13 +1,27 @@
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/sub-visual.php"; ?>
+<?
+if(!$id) $id="notice";
+$web_table=sql_fetch("select * from web_table where table_id='$id' order by idx desc ");
+
+if($web_table[table_write]<$_SESSION[login_level]||!$_SESSION[login_level]){
+	alert("권한이 없습니다.","/");
+	exit;
+}
+
+if($idx) $board_view=sql_fetch("select * from board where idx='$idx' ");
+?>
 <link rel="stylesheet" href="/inc/styles/sub-visual.css">
 <link rel="stylesheet" href="/menu04/style/notice_narmi.css">
 
 <main class="notice">
   <section>
+    <p class="menu-path sm-only"><a href="/">홈</a> > 공지사항</p>
     <h2 class="sub-title">공지사항</h2>
     
-    <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub01_save.php">
+    <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="notice_save.php" onsubmit="board_save()">
+	<input type="hidden" name="idx" value="<?=$idx?>">
+	<input type="hidden" name="id" value="<?=$id?>">
       <div class="content-wrap sub">
         <div class="anchor-wrap">
           <a href="#" class="anchor"></a>
@@ -18,25 +32,25 @@
               <div class="label">이름</div>
               <div class="dd name">
                 <div class="input-wrap">
-                  <input type="text" name="" value="">
+                  <input type="text" name="board_name" value="<?=$board_view[board_name]?>">
                 </div>
               </div>
 
               <div class="label">제목</div>
                 <div class="dd title">
                   <div class="input-wrap">
-                    <input type="text" name="board_title"  value="">
+                    <input type="text" name="board_title"  value="<?=$board_view[board_title]?>">
                   </div>
 
                   <div class="check-wrap">
-                    <input type="checkbox" name="board_notice" id="checkAnounce" value="Y" >
+                    <input type="checkbox" name="board_notice" id="checkAnounce" value="Y" <?=$board_view[board_notice]=="Y"?"checked":""?>>
                     <label for="checkAnounce">공지</label>
                   </div>
                 </div>
               </div>
 
             <div class="notice-write-body" style="min-height: 300px">
-              <textarea name="memo" id="ir1" rows="10" cols="100" style="width:100%; height:300px; display:none;"></textarea>
+              <textarea name="memo" id="ir1" rows="10" cols="100" style="width:100%; height:300px; display:none;"><?=$board_view[board_memo]?></textarea>
               <script type="text/javascript" src="/inc/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
               <script type="text/javascript">
               var oEditors = [];
@@ -93,15 +107,12 @@
             </div>
             
             <div class="notice-detail-file">
+<? for($i=0;$i<$web_table[table_file];$i++){ ?>
               <div class="label">파일</div>
               <div class="dd file">
                 <input type="file" name="upfile[]">
               </div>
-
-              <div class="label">파일</div>
-              <div class="dd file">
-                <input type="file" name="upfile[]">
-              </div>
+<? } ?>
             </div>
 
             <div class="post-btn-box">
