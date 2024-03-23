@@ -41,7 +41,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
 <body>
 <iframe name="HiddenFrm" id="HiddenFrm" style="display:none;"></iframe>
   <div class="wrapper">
-    <header class="global-header lg-only">
+    <header class="global-header">
       <div>
         <h1 class="logo">
           <a href="/">
@@ -90,111 +90,5 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
           <? } ?>
       </div>
     </header>
-
-    <header class="global-header sm-only">
-      <? if($_SESSION[login_idx]){ ?>
-      <!-- NOTE : 로그인 한 경우 -->
-        <ul class="auth user-info">
-          <li class="admin">
-            <a href="/manage/menu01/sub01.php">&#91;관리자모드&#93;</a>
-          </li>
-          <li class="user-name">
-            <span>관리자</span>님
-          </li>
-          <!-- <li>
-            <a class="btn-blue-sm" href="/inc/logout.php">로그아웃</a>
-          </li> -->
-        </ul>
-        <? }else { ?>
-        <!-- NOTE : 로그인 하지 않은 경우 -->
-        <ul class="auth join"></ul>
-      <? } ?>
-
-      <div class="global-logo">
-        <div class="sidebar-icon">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <h1 class="logo">
-          <a href="/">
-            <p>&#40;주&#41;경기보링공업</p>
-          </a>
-        </h1>
-        <div class="call-icon">
-          <i class="fa-solid fa-phone-volume"></i>
-        </div>
-      </div>
-
-      <nav class="global-menu">
-        <h2 class="visually-hidden">메뉴</h2>
-        <ul class="gnb-nav-list">
-          <li class="gnb-nav-item">
-            <a href="/menu01/intro.php">회사소개</a>
-          </li>
-          <li class="gnb-nav-item">
-            <a href="/menu02/workStatus_list.php">작업현황</a>
-          </li>
-          <li class="gnb-nav-item">
-            <a href="/menu03/estimate.php">견적신청</a>
-          </li>
-          <li class="gnb-nav-item">
-            <a href="/menu04/notice_list.php">공지사항</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    
-    <aside class="sidebar sm-only">
-      <header class="sidebar-header">
-        <button class="sidebar-close-icon">
-          <i class="fa fa-close"></i>
-        </button>
-        <h1 class="sidebar-logo">
-          <a href="/">
-            <p>&#40;주&#41;경기보링공업</p>
-          </a>
-        </h1>
-
-        <? if($_SESSION[login_idx]){ ?>
-        <!-- NOTE : 로그인 한 경우 -->
-        <ul class="sidebar-auth">
-          <li>
-            <a href="/inc/logout.php">로그아웃</a>
-          </li>
-        </ul>
-        <? }else { ?>
-        <!-- NOTE : 로그인 하지 않은 경우 -->
-        <ul class="sidebar-auth">
-          <li>
-            <a href="/inc/login.php">로그인</a>
-          </li>
-        </ul>
-        <? } ?>
-      </header>
-
-      <nav class="sidebar-nav">
-        <h2 class="visually-hidden">메뉴</h2>
-        <ul>
-          <li>
-            <a href="/menu02/workStatus_list.php">- 작업현황</a>
-          </li>
-          <li>
-            <a href="/menu03/estimate.php">- 견적신청</a>
-          </li>
-          <li>
-            <a href="/menu04/notice_list.php">- 공지사항</a>
-          </li>
-          <li><a href="/menu01/intro.php">- 회사소개</a></li>
-          <li><a href="/menu01/intro.php/#map-sec">- 오시는길</a></li>
-        </ul>
-      </nav>
-
-      <footer class="sidebar-footer">
-        <ul>
-          <li>전화:032-571-4117/ 010-4598-8690</li>
-          <li>팩스:032-571-4118</li>
-          <li>주소:인천광역시 서구 거북로24번길22.2동(석남동)</li>
-        </ul>
-      </footer>
-    </aside>
 
     <script src="/inc/js/sidebar.js"></script>
