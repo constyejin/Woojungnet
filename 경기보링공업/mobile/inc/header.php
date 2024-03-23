@@ -130,7 +130,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
             <a href="/mobile/menu04/notice_list.php">- 공지사항</a>
           </li>
           <li><a href="/mobile/menu01/intro.php">- 회사소개</a></li>
-          <li><a href="/mobile/menu01/intro.php/#map-sec">- 오시는길</a></li>
+          <li><a href="#map-sec">- 오시는길</a></li>
         </ul>
       </nav>
 
