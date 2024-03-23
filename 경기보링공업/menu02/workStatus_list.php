@@ -1,66 +1,78 @@
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
-<? include $_SERVER['DOCUMENT_ROOT']."/inc/sub-visual.php"; ?>
+<? 
+include $_SERVER['DOCUMENT_ROOT']."/inc/sub-visual.php";
+
+$start=$page_row*($page-1);
+$woojung_part=sql_list("select * from woojung_part where wc_gubun1='1' $where order by wc_regdate desc limit $start,$page_row ");
+$total_count=sql_total("select count(*) as cnt from woojung_part where wc_gubun1='1' $where ");
+$list_num=$total_count-$page_start;
+?>
 <link rel="stylesheet" href="/inc/styles/sub-visual.css">
 <link rel="stylesheet" href="/menu02/style//workStatus.css">
+<script>
+  function delete_member() {
+    var j = 0;
+    var obj = document.getElementsByName('check[]');
+    for (var i = 0; i < obj.length; i++) {
+      if (obj[i].checked == true) {
+          j++;
+          break;
+      }
+    }
+
+    if (j == 0) {
+        alert("선택된 자료가 없습니다.");
+        return;
+    }
+
+    result = confirm("한번 삭제하신 자료는 복구 불가능 합니다.  \n\n정말 삭제 하시겠습니까??");
+    if (result) {
+      document.f.submit();
+    }
+  }
+</script>
 
 <main class="work-status">
   <section>
     <p class="menu-path sm-only"><a href="/">홈</a> > 작업현황</p>
     <h2 class="sub-title">작업현황
-      <p class="sm-only">작업중이거나 작업이 완료된 차량정보입니다</p>
+      <p>작업중이거나 작업이 완료된 차량정보입니다</p>
     </h2>
-    <form action="" method="">
+	<form name="f" action="proc.php" method="post" target="HiddenFrm">
+	  <input type="hidden" name="mode" value="delete">
       <ul class="work-status-list">
-        <li class="work-status-item">
+
+<? for($i=0;$i<count($woojung_part);$i++){ 
+	$car_img_arr = explode('/', $woojung_part[$i][wc_img_1]);
+?>
+		<li class="work-status-item">
           <div class="work-status-chk lg-only">
-            <input type="checkbox" name="" value="">
-            <span>3</span>
+            <input type="checkbox" name="check[]" value="<?= $woojung_part[$i][wc_idx] ?>">
+            <span><?=$list_num--;?></span>
           </div>
 
-          <a href="/menu02/workStatus_view.php">
+          <a href="/menu02/workStatus_view.php?wc_idx=<?=$woojung_part[$i][wc_idx]?>">
             <div class="work-status-img">
-              <img src="/inc/assets/images/slide01.jpeg" alt="">
+              <img src="/data/<?= $car_img_arr[0] ?>" alt="">
             </div>
-            <b>소나타차차ㅏ타</b>
+            <b><?=$woojung_part[$i][wc_mem_etc]?></b>
           </a>
         </li>
+<? } ?>
 
-        <li class="work-status-item">
-          <div class="work-status-chk lg-only">
-            <input type="checkbox" name="" value="">
-            <span>2</span>
-          </div>
-
-          <a href="/menu02/workStatus_view.php">
-            <div class="work-status-img">
-              <img src="/inc/assets/images/slide01.jpeg" alt="">
-            </div>
-            <b>2022 BMWWWW</b>
-          </a>
-        </li>
-
-        <li class="work-status-item">
-          <div class="work-status-chk lg-only">
-            <input type="checkbox" name="" value="">
-            <span>1</span>
-          </div>
-
-          <a href="/menu02/workStatus_view.php">
-            <div class="work-status-img">
-              <img src="/inc/assets/images/slide01.jpeg" alt="">
-            </div>
-            <b>2018 BMW</b>
-          </a>
         </li>
       </ul>
     </form>
   </section>
 
   <section class="work-status-control">
-    <button class="post-btn select-del-btn lg-only">선택삭제</button>
+  <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
+    <button class="post-btn select-del-btn lg-only" type="button" onclick="delete_member()">선택삭제
+	</button>
+  <? } ?>
 
     <div class="pagenation">
-      <div class="pagenation-icons prev">
+      <!--div class="pagenation-icons prev">
         <a href=""></a>
         <a href=""></a>
       </div>
@@ -74,13 +86,16 @@
       <div class="pagenation-icons next">
         <a href=""></a>
         <a href=""></a>
-      </div>
+      </div-->
+<? echo paging_f($page, $page_row, $page_scale, $total_count, $ext); ?>               
     </div>
 
+  <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
     <button class="post-btn register-btn lg-only">
-      <a href="/menu02/workStaus_write.php">등록하기</a>
+      <a href="/menu02/workStatus_write.php">등록하기</a>
     </button>
-  </section>
+    <? } ?>
+</section>
 </main>
 
 <? include $_SERVER['DOCUMENT_ROOT']."/inc/footer.php"; ?>
