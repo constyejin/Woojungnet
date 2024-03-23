@@ -1,4 +1,6 @@
-    <aside class="quick-menu lg-only">
+<? if($is_mobile=="Y") $quick_style='style="display:none;"'; ?>
+	
+	<aside class="quick-menu lg-only" <?=$quick_style?>>
       <div class="quick-menu-num">
         <p class="quick-menu-icon">
           <i class="fa-solid fa-phone-volume"></i>
