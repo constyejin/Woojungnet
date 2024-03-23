@@ -89,17 +89,6 @@ input[type="password"]:focus {
   background-color: rgb(65, 126, 208, .1)
 }
 
-.sm-only,
 .visually-hidden {
   display: none;
-}
-
-@media screen and (max-width : 768px) {
-  .sm-only {
-    display: block !important;
-  }
-  
-  .lg-only {
-    display: none !important;
-  }
 }
