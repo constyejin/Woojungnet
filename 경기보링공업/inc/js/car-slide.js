@@ -32,10 +32,19 @@ $(document).ready(function(){
       
   function sliding(dir,num){
     cur = cur + dir;
+    if(len <= num) {
+      // 아이템이 10개 미만인 경우
+      $('.prev-btn').attr('disabled', true);
+      $('.next-btn').attr('disabled', true);
+      return;
+    }
     if(cur >= len - num) {
+      // 마지막 페이지일 떄
+      cur = len - num;
       $('.prev-btn').attr('disabled', false);
       $('.next-btn').attr('disabled', true);
     } else if(cur <= 0) {
+      // 첫 번째 페이지일 때
       cur = 0;
       $('.prev-btn').attr('disabled', true);
       $('.next-btn').attr('disabled', false);
