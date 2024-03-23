@@ -20,7 +20,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width:768">
+  <meta name="viewport" content="width=768">
   <title><?=$web_config[web_sitename]?></title>
   <?=$web_config[web_meta]?>
   <link rel="stylesheet" href="/inc/styles/reset.css">
