@@ -14,6 +14,14 @@
   border: 1px solid var(--border-bright);
 }
 
+.sub-title {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-bright);
+}
+
+
+
 .main.content-wrap {
   position: absolute;
   top: 100vh;
@@ -4418,3 +4426,35 @@ footer.sub-footer .company-info .info-list ul li:nth-of-type(4):after, footer.su
   }
 }
 /*# sourceMappingURL=../maps/style.css.map */
+
+@media screen and (max-width : 768px){
+  .notice {
+    width: 100%;
+    max-width: 768px;
+  }
+
+  .notice-view-top {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 20px 12px;
+  }
+
+  .menu-path {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .top-list-btn {
+		a {
+			font-size: 12px;
+      font-weight: 700;
+		}
+	}
+
+  .notice-detail-header {
+    margin-top: 0 !important;
+  }
+}
+
+
