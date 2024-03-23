@@ -47,7 +47,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
             <span>홍길동</span>님
           </li>
           <li>
-            <a href="/inc/logout.php">로그아웃</a>
+            <a href="/mobile/inc/logout.php">로그아웃</a>
           </li>
         </ul>
         <? }else { ?>
@@ -103,7 +103,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
         <!-- NOTE : 로그인 한 경우 -->
         <ul class="sidebar-auth">
           <li>
-            <a href="/inc/logout.php">로그아웃</a>
+            <a href="/mobile/inc/logout.php">로그아웃</a>
           </li>
         </ul>
         <? }else { ?>
@@ -111,7 +111,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
         <!-- NOTE : 로그인 하지 않은 경우 -->
         <ul class="sidebar-auth">
           <li>
-            <a href="/inc/login.php">로그인</a>
+            <a href="/mobile/inc/login.php">로그인</a>
           </li>
         </ul>
         <? } ?>
@@ -130,7 +130,7 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
             <a href="/mobile/menu04/notice_list.php">- 공지사항</a>
           </li>
           <li><a href="/mobile/menu01/intro.php">- 회사소개</a></li>
-          <li><a href="#map-sec">- 오시는길</a></li>
+          <li><a href="/mobile/menu01/intro.php/#map-sec">- 오시는길</a></li>
         </ul>
       </nav>
 
