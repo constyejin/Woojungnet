@@ -24,6 +24,8 @@
 
 .table-list {
   display: flex;
+  align-items: center;
+  background-color: var(--table-back);
 }
 
 .table-list:not(:last-of-type) {
@@ -31,7 +33,7 @@
 }
 
 .table-list li {
-  padding: 16px;
+  padding: 12px;
   font-size: 16px;
 }
 
@@ -40,12 +42,23 @@
   color: var(--th);
   text-align: center;
   font-weight: 700;
-  background-color: var(--table-back);
 }
 
 .table-content {
   width: 80%;
+  background-color: var(--white);
+
+  input {
+    width: 90%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-bright);
+  }
 }
+
+.smart-editor .table-content {
+  padding: 0;
+}
+
 
 .sm-input {
   input {
@@ -94,11 +107,10 @@
 @media screen and (max-width : 768px){
   .table {
     margin-top: 0;
-    margin: 12px;
   }
 
   .table-list li {
-    padding: 14px;
+    padding: 12px;
     font-size: 0.7em;
   }
 
@@ -108,6 +120,12 @@
     text-align: center;
     font-weight: 700;
     background-color: var(--table-back);
+  }
+
+  .table-content {
+    input {
+      padding: 2px 4px;
+    }
   }
 
   .table-content {
