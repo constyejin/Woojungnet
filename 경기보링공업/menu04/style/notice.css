@@ -3,6 +3,12 @@
   margin: 0 auto;
 }
 
+.sub-title {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-bright);
+}
+
 .search-box {
   position: relative;
   margin-top: 40px;
@@ -23,35 +29,17 @@
   }
 }
 
-.search-box-right {
-  display: flex;
-
-  select {
-    margin-right: 4px;
-  }
-
-  select,
-  input {
-    height: 100%;
-    border: 1px solid var(--border-bright);
-  }
-
-  button {
-    height: 100%;
-    padding: 0 6px;
-    font-weight: 500;
-    background-color: var(--border-bright);
-  }
+.post-wrap {
+  width: 100%;
 }
 
-.post-list {
-  text-align: center;
-}
-
-.post-main ul {
+.post-main-list {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 12px;
   padding: 12px;
+  text-align: center;
   font-weight: 700;
   background-color: var(--table-back);
   border-top: 2px solid var(--border);
@@ -60,17 +48,20 @@
 
 .post-item {
   display: flex;
+  justify-content: center;
   padding: 12px;
+  text-align: center;
   font-weight: 500;
   border-bottom: 1px solid var(--post-border);
 }
 
 .post-chk {
-  min-width: 40px;
+  padding: 0 4px;
 }
 
 .post-num {
-  min-width: 80px;
+  width: 100px;
+  min-width: 100px;
 }
 
 .post-link {
@@ -84,9 +75,8 @@
 }
 
 .post-title {
-  width: 700px;
-  min-width: 700px;
-  margin-right: 8px;
+  flex-grow: 3;
+  max-width: 640px;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
@@ -97,30 +87,146 @@
 }
 
 .post-name {
-  min-width: 140px;
+  flex-grow: 1;
+  max-width: 140px;
 }
 
 .post-date {
-  min-width: 140px;
+  flex-grow: 1;
+  max-width: 140px;
 }
 
 .post-see {
-  min-width: 80px;
+  flex-grow: 1;
+  max-width: 80px;
 }
 
 .pagenation {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  font-weight: 700;
+  align-items: center;
+  margin-top: 50px;
+
+  ol {
+    display: flex;
+
+    li {
+      padding: 0 6px;
+      font-weight: 600;
+    }
+
+    li.active {
+      color: red;
+    }
+  }
 }
 
-.pagenation a.current {
-  color: var(--red);
+.pagenation-icons.prev {
+  a:first-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -20px left -23px;
+    background-repeat: no-repeat;
+  }
+
+  a:last-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -50px left -23px;
+    background-repeat: no-repeat;
+  }
+}
+
+.pagenation-icons.next {
+  a:first-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -50px left -52.5px;
+    background-repeat: no-repeat;
+  }
+
+  a:last-child {
+    display: inline-block;
+    width: 25px;
+    height: 28px;
+    /* border: 1px solid red; */
+    background-image: url('/inc/assets/images/arrow-icon.png');
+    background-position: top -20px left -52.5px;
+    background-repeat: no-repeat;
+  }
 }
 
 .post-btn-list {
   margin : 50px 0;
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width : 768px){
+  .notice {
+    width: 100%;
+    max-width: 768px;
+    font-size: 0.8em;
+  }
+
+  .menu-path {
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .post-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 1px solid var(--post-border);
+  }
+
+  .post-title {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .post-num {
+    width: auto;
+    min-width: auto;
+  }
+
+  .post-item > div {
+    display: flex;
+    margin-top: 6px;
+    color: var(--th);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .post-date,
+  .post-see{
+    flex-grow: 0;
+    max-width: auto;
+  }
+
+  .post-item > div p:not(:last-child)::after {
+    content: '|';
+    /* position: relative;
+    top: 0; */
+    padding: 0 12px;
+    font-weight: 700;
+  }
+
+  .pagenation {
+    margin : 40px 0;
+  }
 }
