@@ -1,11 +1,11 @@
-<? include $_SERVER['DOCUMENT_ROOT']."/inc/header.php"; ?>
-<? include $_SERVER['DOCUMENT_ROOT']."/inc/sub-visual.php"; ?>
-<link rel="stylesheet" href="/inc/styles/sub-visual.css">
+<? include $_SERVER['DOCUMENT_ROOT']."/mobile/inc/header.php"; ?>
+
 <link rel="stylesheet" href="/inc/styles/form-table.css">
-<link rel="stylesheet" href="/menu01/style/intro.css">
+<link rel="stylesheet" href="/mobile/menu01/style/intro.css">
 
 <main class="company-info">
   <section class="company-info-content">
+    <p class="menu-path"><a href="/mobile/index.php">홈</a> > 회사소개</p>
     <h2 class="sub-title">회사소개
       <span><a href="#map-sec">오시는길</a></span>
     </h2>
@@ -50,7 +50,7 @@
       </ul>
 
       <div class="map" id="map"></div>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
+        <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5df378863cf00d87eaff3de9f96ddcc6"></script>
         <script>
           let mapContainer = document.getElementById('map'), 
           mapOption = { 
@@ -96,10 +96,9 @@
           // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
           var zoomControl = new daum.maps.ZoomControl();
           map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
-        </script>
+        </script> -->
     </div>
   </section>
 </main>
 
-<? include $_SERVER['DOCUMENT_ROOT']."/inc/footer.php"; ?>
-<? include $_SERVER['DOCUMENT_ROOT']."/inc/quick.php"; ?>
+<? include $_SERVER['DOCUMENT_ROOT']."/mobile/inc/footer.php"; ?>
