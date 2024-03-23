@@ -1,6 +1,4 @@
 .global-header {
-  position: relative;
-  z-index: 100;
   width: 100%;
   background-color: var(--white);
 }
@@ -110,20 +108,17 @@
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100vw;
-  height: 100vh;
   z-index: 200;
   padding: 40px 0;
   color: var(--white);
   background-color: var(--border);
   transform: translateX(-100vw);
   transition: transform 300ms ease-in-out;
-  overflow: hidden;
 
   a {
     font-size: 0.9em;
