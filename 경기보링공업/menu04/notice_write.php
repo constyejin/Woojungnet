@@ -16,16 +16,19 @@ if($idx) $board_view=sql_fetch("select * from board where idx='$idx' ");
 
 <main class="notice">
   <section>
-    <p class="menu-path sm-only"><a href="/">홈</a> > 공지사항</p>
     <h2 class="sub-title">공지사항</h2>
+    <p class="top-list-btn">
+      <a href="/menu04/notice_list.php">목록보기 LIST</a>
+    </p>
     
     <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="notice_save.php" onsubmit="board_save()">
-	<input type="hidden" name="idx" value="<?=$idx?>">
-	<input type="hidden" name="id" value="<?=$id?>">
+      <input type="hidden" name="idx" value="<?=$idx?>">
+      <input type="hidden" name="id" value="<?=$id?>">
       <div class="content-wrap sub">
         <div class="anchor-wrap">
           <a href="#" class="anchor"></a>
         </div>
+
         <section class="notice-list">
           <div class="container">
             <div class="notice-write-header">
@@ -107,12 +110,12 @@ if($idx) $board_view=sql_fetch("select * from board where idx='$idx' ");
             </div>
             
             <div class="notice-detail-file">
-<? for($i=0;$i<$web_table[table_file];$i++){ ?>
+              <? for($i=0;$i<$web_table[table_file];$i++){ ?>
               <div class="label">파일</div>
               <div class="dd file">
                 <input type="file" name="upfile[]">
               </div>
-<? } ?>
+              <? } ?>
             </div>
 
             <div class="post-btn-box">

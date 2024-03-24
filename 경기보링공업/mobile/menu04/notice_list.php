@@ -20,22 +20,23 @@ $list_num=$total_count-$page_start;
 
 <main class="notice">
   <section>
+    <p class="menu-path sm-only"><a href="/">홈</a> > 공지사항</p>
     <h2 class="sub-title">공지사항</h2>
     
-    <form name="sform" method="get" enctype="multipart/form-data" action="notice_list.php">
-      <div class="search-box">
+<form name="sform" method="get" enctype="multipart/form-data" action="notice_list.php">
+      <div class="search-box lg-only">
         <input type="text" name="s_text" value="<?=$s_text?>">
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
-    </form>
+</form>
 
-    <form name="lform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="/manage/inc/alldel.php">
-      <input type="hidden" name="db_name" value="board">
+<form name="lform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="/manage/inc/alldel.php">
+<input type="hidden" name="db_name" value="board">
       <div class="post-wrap">
-        <ul class="post-main-list">
-          <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
+        <ul class="post-main-list lg-only">
+  <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
           <li class="post-chk"><input type="checkbox" id="all-check"></li>
-          <? } ?>
+  <? } ?>
           <li class="post-num">번호</li>
           <li class="post-title">제목</li>
           <li class="post-name">이름</li>
@@ -43,60 +44,74 @@ $list_num=$total_count-$page_start;
           <li class="post-see">조회</li>
         </ul>
 
-        <? 
-        for($i=0;$i<count($board_list);$i++){
-          if($board_list[$i][board_notice]=="Y"){
-            $not='<span class="emphas">공지</span>';
-            $list_num--;
-          }else{
-            $not=$list_num--;
-          }
-          if($board_list[$i][board_file1]){
-            $fil='<span class="icon-file"></span>';
-          }else{
-            $fil="";
-          }
-        ?>
-        <ul class="post-item">
-          <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
+<? 
+for($i=0;$i<count($board_list);$i++){
+	if($board_list[$i][board_notice]=="Y"){
+		$not='<span class="emphas">공지</span>';
+		$list_num--;
+	}else{
+		$not=$list_num--;
+	}
+	if($board_list[$i][board_file1]){
+		$fil='<span class="icon-file"></span>';
+	}else{
+		$fil="";
+	}
+?>
+        <ul class="post-item lg-only">
+  <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
           <li class="post-chk"><input type="checkbox" id="check<?=$i?>" name="checkidx[]" value="<?=$board_list[$i][idx]?>"></li>
-          <? } ?>
+  <? } ?>
           <li class="post-num"><?=$not?></li>
           <li class="post-title"><a class="post-link" href="notice_view.php?idx=<?=$board_list[$i][idx]?>"><?=$board_list[$i][board_title]?></a></li>
           <li class="post-name"><?=$board_list[$i][board_name]?></li>
           <li class="post-date"><?=substr($board_list[$i][regdate],0,10)?></li>
           <li class="post-see"><?=number_zero($board_list[$i][board_hits])?></li>
         </ul>
-        <? } ?>
+
+        <div class="sm-only">
+          <div class="post-item">
+            <p class="post-title">
+              <a class="post-link" href="notice_view.php?idx=<?=$board_list[$i][idx]?>"><?=$board_list[$i][board_title]?>
+              </a>
+            </p>
+            <div>
+              <p class="post-num"><?=$not?></p>
+              <p><?=$board_list[$i][board_name]?></p>
+              <p class="post-date"><?=substr($board_list[$i][regdate],0,10)?></p>
+              <p class="post-see">조회<span><?=number_zero($board_list[$i][board_hits])?></span>회</p>
+            </div>
+          </div>
+        </div>
+<? } ?>
       </div>
 
       <div class="pagenation">
-        <div class="pagenation-icons prev">
+        <!--div class="pagenation-icons prev">
           <a href=""></a>
           <a href=""></a>
         </div>
 
         <ol class="pagenation-list">
-          <li class="active">
-            <? echo paging_f($page, $page_row, $page_scale, $total_count, $ext); ?> 
-          </li>
+          <li class="active"><a href="">1</a></li>
         </ol>
 
         <div class="pagenation-icons next">
           <a href=""></a>
           <a href=""></a>
-        </div>              
+        </div-->
+<? echo paging_f($page, $page_row, $page_scale, $total_count, $ext); ?>               
       </div>
 
-      <div class="post-btn-list">
-        <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
+      <div class="post-btn-list lg-only">
+  <? if($_SESSION[login_level]>="10"&&$_SESSION[login_level]<="40"){ ?>
         <button class="post-btn select-del-btn" type="button" onclick="all_del();">
           선택삭제
         </button>
         <button class="post-btn register-btn" type="button">
             <a href="/menu04/notice_write.php">글쓰기</a>
         </button>
-        <? } ?>
+  <? } ?>
       </div>
     </form>
   </section>

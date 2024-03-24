@@ -32,45 +32,48 @@ if($board_view[board_file1]){
 <link rel="stylesheet" href="/menu04/style/notice_narmi.css">
 
 <main class="notice">
-  <h2 class="sub-title">공지사항</h2>
-  
   <section>
+    <h2 class="sub-title">공지사항</h2>
+
     <div class="content-wrap sub">
       <div class="anchor-wrap">
         <a href="#" class="anchor"></a>
       </div>
       <section class="notice-list">
         <div class="container">
-          <p class="top-list-btn">
-            <a href="/menu04/notice_list.php">목록보기 LIST</a>
-          </p>
+          <div class="notice-view-top sm-only">
+            <p class="menu-path"><a href="/">홈</a> > 공지사항</p>
+            <p class="top-list-btn">
+              <a href="/menu04/notice_list.php">목록보기 LIST</a>
+            </p>
+          </div>
 
           <div class="notice-detail-header">
             <div class="label">제목</div>
-            <div class="dd title"><?=$board_view[board_title]?></div>
-            <div class="label">이름</div>
-            <div class="dd name"><?=$board_view[board_name]?></div>
-            <div class="label">등록일</div>
-            <div class="dd name"><?=substr($board_view[regdate],0,10)?></div>
-            <div class="label">조회</div>
-            <div class="dd name"><?=$board_view[board_hits]?></div>
+			<div class="dd title"><?=$board_view[board_title]?></div>
+			<div class="label">이름</div>
+			<div class="dd name"><?=$board_view[board_name]?></div>
+			<div class="label">등록일</div>
+			<div class="dd name"><?=substr($board_view[regdate],0,10)?></div>
+			<div class="label">조회</div>
+			<div class="dd name"><?=$board_view[board_hits]?></div>
           </div>
 
           <div class="notice-detail-body">
             <p class="download"><?=$memo_down?></p>
-		        <?=$memo_img?>
-            <?=$board_view[board_memo]?>
+		  <?=$memo_img?>
+          <?=$board_view[board_memo]?>
           </div>
 
           <div class="post-btn-box lg-only">
             <button class="post-btn show-list-btn">
               <a href="/menu04/notice_list.php">목록보기</a>
             </button>
-		        <? if($web_table[table_write]>=$_SESSION[login_level]&&$_SESSION[login_level]){ ?>
+		  <? if($web_table[table_write]>=$_SESSION[login_level]&&$_SESSION[login_level]){ ?>
             <button class="post-btn register-btn">
               <a href="/menu04/notice_write.php?idx=<?=$idx?>">수정하기</a>
             </button>
-		        <? } ?>
+		  <? } ?>
           </div>
 
           <div class="notice-detail-nav">
@@ -81,7 +84,8 @@ if($board_view[board_file1]){
           </div>
         </div>
       </section>
-     </div>
+   </div>
+
   </section>
 </main>
 

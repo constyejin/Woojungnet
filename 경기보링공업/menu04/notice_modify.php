@@ -6,9 +6,11 @@
 <main class="notice">
   <section>
     <h2 class="sub-title">공지사항</h2>
+    <p class="top-list-btn">
+      <a href="/menu04/notice_list.php">목록보기 LIST</a>
+    </p>
 
     <form name="wform" method="post" enctype="multipart/form-data" target="HiddenFrm" action="sub01_save.php">
-
       <input type="hidden" name="idx" value="16">
       <input type="hidden" name="id" value="notice">
 
@@ -35,7 +37,7 @@
                   <input type="checkbox" name="board_notice" id="checkAnounce" value="Y" checked>
                   <label for="checkAnounce">공지</label>
                 </div>
-                    </div>
+              </div>
             </div>
 
             <div class="notice-write-body" style="min-height: 300px">
