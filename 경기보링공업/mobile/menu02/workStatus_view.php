@@ -8,13 +8,12 @@
 
 <main class="work-status">
   <section>
-    <p class="menu-path"><a href="/mobile/index.php">홈</a> > 작업현황</p>
-    <h2 class="sub-title">작업현황
-      <p>작업중이거나 작업이 완료된 차량정보입니다</p>
-    </h2>
-    <p class="top-list-btn">
-      <a href="/mobile/menu02/workStatus_list.php">목록보기 LIST</a>
-    </p>
+    <div class="top-list-btn">
+      <p class="menu-path"><a href="/mobile/index.php">홈</a> > 작업현황</p>
+      <p>
+        <a href="/mobile/menu02/workStatus_list.php">목록보기 LIST</a>
+      </p>
+    </div>
 
     <form name="" method="" action="" enctype="">
       <div class="table-form">
