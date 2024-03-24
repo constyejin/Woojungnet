@@ -46,8 +46,6 @@
 
 .post-link > div p:not(:last-child)::after {
   content: '|';
-  position: relative;
-  top: 0;
   padding: 0 6px;
   font-weight: 700;
 }
