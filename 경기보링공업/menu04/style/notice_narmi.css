@@ -3,15 +3,6 @@
   margin: 0 auto;
 }
 
-.top-list-btn {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 12px;
-	font-size: 0.8em;
-	font-weight: 700;
-}
-
 .post-btn-box {
   display: flex;
   justify-content: center;
