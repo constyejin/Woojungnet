@@ -7,6 +7,7 @@
 
 <main class="estimate">
   <section>
+    <p class="menu-path sm-only"><a href="/">홈</a> > 견적신청</p>
     <h2 class="sub-title">견적신청
       <p>아래 내용을 남겨주시면 신속하게 보링전문상담원이 연락을 드립니다.</p>
     </h2>
@@ -51,7 +52,12 @@
 
         <ul class="table-list align-col smart-editor">
           <li class="table-title">상세설명</li>
-          <li class="table-content">
+
+          <li class="table-content sm-only">
+            <textarea name="" id="" cols="30" rows="10" style="width:100%; height:220px;"></textarea>
+          </li>
+          
+          <li class="table-content lg-only">
             <script type="text/javascript" src="/inc/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
             <textarea name="con_memo" id="ir1" rows="10" cols="100" style="width:100%; height:320px; display:none;"></textarea>
             <script type="text/javascript">
