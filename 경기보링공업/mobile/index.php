@@ -7,9 +7,10 @@
 
   <div class="slide-fix-txt">
     <div class="slide-fix-txt-main">
-      <p>자동차엔진&#40;보링&#41;전문기업</p>
-      <p>&#40;주&#41;<span>보링공업에서</span></p>
-      <p>안전한서비스를 보장합니다</p>
+      <p>자동차보링전문기업</p>
+      <p>&#40;주&#41;경기보링공업</p>
+      <p>신속,정확,안전한서비를</p>
+      <p>약속드립니다</p>
     </div>
   </div>
 </section>

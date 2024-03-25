@@ -24,6 +24,7 @@
   white-space: nowrap; 
   padding: 50px 0;
   text-align: center;
+  font-weight: 700;
   color: #fff;
   background-color: rgb(27, 37, 103, .45);
 }
@@ -38,12 +39,12 @@
   font-size: 1.2em;
 }
 
-.slide-fix-txt-main p:nth-child(1),
+/* .slide-fix-txt-main p:nth-child(1),
 .slide-fix-txt-main p:nth-child(3) {
   letter-spacing: -2px;
 }
 .slide-fix-txt-main p:nth-child(2) span {
   letter-spacing: 6px;
-}
+} */
 
 
