@@ -1,3 +1,10 @@
+<div class="main-bottom-menu">
+  <ul>
+    <li><a href="/mobile/menu01/intro.php/#map-sec">오시는길</a></li>
+    <li><a href="/mobile/menu03/estimate.php">견적신청</a></li>
+  </ul>
+</div>
+
 <footer class="global-footer">
   <div class="global-footer-wrap">
     <div class="footer-info">
