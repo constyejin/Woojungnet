@@ -61,7 +61,8 @@
 .flex-col {
   flex-direction: column;
 
-  li:first-child::after {
-    content: '';
+  li:not(:last-child)::after {
+    content: '' !important;
+    padding: 0;
   }
 }
