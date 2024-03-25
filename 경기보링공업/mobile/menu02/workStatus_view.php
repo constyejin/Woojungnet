@@ -30,7 +30,7 @@
             <div class="car-image">
               <div class="img-wrap bxslider">
                 <div data-hash="" class="slide">
-                  <img src="/inc/assets/images/slide01.jpeg" alt="차량이미지">
+                  <img src="/inc/assets/images/car.jpeg" alt="차량이미지">
                 </div> 
 
                 <div data-hash="" class="slide">
