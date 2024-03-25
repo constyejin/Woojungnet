@@ -53,6 +53,17 @@
   }
 }
 
+.call-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+}
+
 .logo {
   font-size: 1.2em;
   color: var(--primary);
@@ -137,9 +148,9 @@
 
 .sidebar-close-icon {
   position: absolute;
-  top: -12px;
-  right: 12px;
-  font-size: 24px;
+  top: -40px;
+  right: 0;
+  font-size: 36px;
   color: var(--white);
 }
 
