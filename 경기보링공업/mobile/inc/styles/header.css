@@ -47,14 +47,15 @@
 .call-icon {
   cursor: pointer;
   color: var(--primary);
+}
 
+.sidebar-icon {
   i {
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 
 .call-icon {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,11 +63,26 @@
   height: 44px;
   border: 2px solid var(--primary);
   border-radius: 50%;
+
+  i {
+    position: relative;
+    top: 2px;
+    left: -1px;
+    font-size: 24px;
+  }
 }
 
+
 .logo {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: var(--primary);
+}
+
+.logo span {
+  display: block;
+  width: 100%;
+  letter-spacing: 0.45em;
+  font-size: 0.6em;
 }
 
 .global-menu {

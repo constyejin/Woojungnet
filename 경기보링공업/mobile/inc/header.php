@@ -62,10 +62,11 @@ $web_config=sql_fetch("select * from web_config where idx=1 ");
         <h1 class="logo">
           <a href="/mobile/index.php">
             <p>&#40;주&#41;경기보링공업</p>
+            <span>자동차보링전문기업</span>
           </a>
         </h1>
         <div class="call-icon">
-          <a href="tel:032-571-4117""><i class="fa-solid fa-phone-volume"></i></a>
+          <a href="tel:010-4598-8690"><i class="fa-solid fa-phone-volume"></i></a>
         </div>
       </div>
 
